@@ -9,7 +9,7 @@ Every agent session adds an entry here (rules and template: `AGENTS.md` §5). **
 | 0 Repo + docs | ✅ done | Pranav | `main` @ `d33536a` |
 | 1 Data + database | ✅ done (local Supabase check pending — Docker Desktop wasn't starting) | Pranav | `main` @ `9a2f0b8` |
 | 2 Tools + API | ✅ done | Pranav | `main` @ `7343662` |
-| 3 Text-mode agent + eval | ✅ done (PR pending) | Pranav (via Claude Code) | branch `phase-3-text-agent` |
+| 3 Text-mode agent + eval | ✅ done | Pranav (via Claude Code) | `main` via PR #1 |
 | 4 Voice over browser | ⬜ not started | open | — |
 | 5 Websites | 🟡 in progress outside this repo | Akshit, Karthik | `docs/FRONTEND_PROMPT.md` |
 | 6 Phone calls + WhatsApp | ⬜ not started (needs Twilio) | open | — |
@@ -21,7 +21,7 @@ Baseline on `main`: `uv run pytest -q` → **131 passed** · ruff ✓ · mypy �
 ## Entries
 
 ### 2026-11-22 20:26 IST · Phase 3 · Pranav via Claude Code · done (finished 20:53 IST)
-**Branch:** `phase-3-text-agent` (from `main` @ `2e43029`) · **Commits:** the Phase 3 commit on this branch (PR to `main` pending)
+**Branch:** `phase-3-text-agent` (from `main` @ `2e43029`) · **Commits:** `42eee82`, merged via PR #1
 **Goal:** text-mode agent (router + restaurant + hospital), CLI, eval on the 40 test calls.
 **Done:**
 - Fixed `parse_time` (clock times on raw text; last "<n> ki/baje" wins; nearest part-of-day cue, because "Udayam" clinic means "morning" in Telugu); added `latest_time` / `latest_day` for corrections ("4:30… ledu, 5:30").
