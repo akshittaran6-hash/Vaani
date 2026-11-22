@@ -14,7 +14,7 @@ One ready-to-paste prompt per phase, for whoever picks it up (Rithvik, Pranav or
 | 0 Repo + docs | ✅ done | — | — |
 | 1 Data + database | ✅ done (local Supabase check open) | `chore/supabase-local-check` | Docker Desktop |
 | 2 Tools + API | ✅ done | — | — |
-| 3 Text-mode agent + eval | 🟡 started (see WORKLOG) | `phase-3-text-agent` | `LLM_*` in `.env` |
+| 3 Text-mode agent + eval | ✅ done (40/40 on placeholder data) | `phase-3-text-agent` | `LLM_*` in `.env` |
 | 4 Voice over browser | ⬜ | `phase-4-voice` | Phase 3; `SARVAM_API_KEY` (+ optional TTS key) |
 | 5 Websites | 🟡 Akshit + Karthik | `phase-5-frontend` | `docs/FRONTEND_PROMPT.md` |
 | 6 Phone calls + WhatsApp | ⬜ | `phase-6-telephony` | Phase 4; Twilio trial + verified numbers; ngrok |
@@ -150,6 +150,17 @@ docs/ARCHITECTURE.md and the Phase 3 code in backend/flows/. Start a work-log en
 
 GOAL: talk to Vaani in the browser by voice, with the same flows and tools as Phase 3, ~1 s to first audio, barge-in
 under 0.5 s.
+
+WHAT PHASE 3 LEFT YOU (read backend/flows/session.py first): the whole conversation brain is Session.handle(text) →
+TurnResult(reply, fillers, actions, guard). It already does redaction, language detection, extraction, the deterministic
+guards (emergency, unsupported area, FAQ, OTP), code-written read-backs and confirmation, and the JSON-action LLM loop.
+The LLM is Featherless Qwen3-30B-A3B-Instruct-2507 via the JSON protocol in backend/voice/llm.py (native tool calling
+failed there): ~1.5 s median per LLM step, often 1–2 steps per turn, and many turns need no LLM at all (guards,
+auto read-back, plain-yes confirm). Recommended first approach: a custom Pipecat FrameProcessor that takes final
+transcriptions, calls Session.handle, speaks the first filler at once while it runs, then the reply. Measure it before
+deciding whether to move to Pipecat Flows' FlowManager with a native-tool-calling provider (nodes.py is already in
+NodeConfig / FlowsFunctionSchema shape for that). Either way keep every guard and the read-back rule. Don't
+reimplement them in prompts.
 
 CHECK CURRENT DOCS FIRST (Context7 / official): Pipecat (pipeline, SmallWebRTCTransport or the current WebRTC
 transport, VAD/Silero, smart turn detection, interruptions, observers/metrics), Pipecat Flows (FlowManager,

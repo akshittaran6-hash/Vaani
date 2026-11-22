@@ -11,6 +11,7 @@ Vaani is built on open-source libraries and third-party services. This file is u
 | [psycopg 3](https://www.psycopg.org/) + psycopg_pool | Postgres driver and async pool | LGPL-3.0 |
 | [Uvicorn](https://www.uvicorn.org/) | ASGI server | BSD-3-Clause |
 | [pydantic-settings](https://github.com/pydantic/pydantic-settings) | Settings from env | MIT |
+| [OpenAI Python SDK](https://github.com/openai/openai-python) | Client for any OpenAI-compatible LLM API | Apache-2.0 |
 | [HTTPX](https://www.python-httpx.org/), [pytest-asyncio](https://github.com/pytest-dev/pytest-asyncio) | API tests | BSD-3-Clause / Apache-2.0 |
 | [python-dotenv](https://github.com/theskumar/python-dotenv) | Loads `.env` | BSD-3-Clause |
 | [PostgreSQL](https://www.postgresql.org/) | Database (via Supabase) | PostgreSQL Licence |
@@ -30,7 +31,7 @@ _Exact versions are pinned in `uv.lock` and `frontend/package-lock` once those e
 |---|---|---|
 | Twilio Programmable Voice, Media Streams, WhatsApp sandbox, SMS | Phone calls and confirmations | Trial account |
 | Sarvam AI | Speech-to-text (and TTS candidate, Bulbul voices) | |
-| LLM provider (OpenAI-compatible API) | Conversation | Chosen by latency + JSON reliability; recorded in EVAL.md |
+| LLM provider (OpenAI-compatible API) | Conversation | Phase 3: Featherless serving `Qwen/Qwen3-30B-A3B-Instruct-2507` (Qwen model, Apache-2.0); see EVAL.md |
 | Razorpay / Stripe | Payment links | Test mode only |
 | Vercel, Fly.io / Render / Railway | Hosting | |
 

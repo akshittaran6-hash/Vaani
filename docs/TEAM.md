@@ -44,9 +44,9 @@ Everyone owns a starting area, but nobody is limited to it. Pick up anything, ti
 - [x] Events into `call_events`
 
 ### Phase 3 — Text-mode agent
-- [ ] Router / restaurant / hospital flows + `python -m backend.flows.cli`
-- [ ] Prompts + 3–5 example dialogues per service per language
-- [ ] `eval.py` with accuracy by language
+- [x] Router / restaurant / hospital flows + `python -m backend.flows.cli`
+- [x] Prompts + 3 example dialogues per service per language
+- [x] `eval.py` with accuracy by language (40/40 on placeholder data; re-run on real data)
 
 ### Phase 4 — Voice over browser
 - [ ] STT / LLM / TTS adapters, pipeline, WebRTC + `/webrtc/offer`

@@ -9,16 +9,35 @@ Every agent session adds an entry here (rules and template: `AGENTS.md` §5). **
 | 0 Repo + docs | ✅ done | Pranav | `main` @ `d33536a` |
 | 1 Data + database | ✅ done (local Supabase check pending — Docker Desktop wasn't starting) | Pranav | `main` @ `9a2f0b8` |
 | 2 Tools + API | ✅ done | Pranav | `main` @ `7343662` |
-| 3 Text-mode agent + eval | 🟡 started, handed off (see entry below) | open — Rithvik or Pranav | `main` (WIP modules) |
+| 3 Text-mode agent + eval | ✅ done | Pranav (via Claude Code) | `main` via PR #1 |
 | 4 Voice over browser | ⬜ not started | open | — |
 | 5 Websites | 🟡 in progress outside this repo | Akshit, Karthik | `docs/FRONTEND_PROMPT.md` |
 | 6 Phone calls + WhatsApp | ⬜ not started (needs Twilio) | open | — |
 | 7 Integration, eval, deploy | ⬜ not started | open | — |
 | 8 Submission polish | ⬜ not started | open | — |
 
-Baseline on `main`: `uv run pytest -q` → **131 passed** · ruff ✓ · mypy ✓ · `validate_data.py` ✓ (0 warnings).
+Baseline on `main`: `uv run pytest -q` → **131 passed** · ruff ✓ · mypy ✓ · `validate_data.py` ✓ (0 warnings). On `phase-3-text-agent`: **195 passed**; eval 40/40.
 
 ## Entries
+
+### 2026-11-22 20:26 IST · Phase 3 · Pranav via Claude Code · done (finished 20:53 IST)
+**Branch:** `phase-3-text-agent` (from `main` @ `2e43029`) · **Commits:** `42eee82`, merged via PR #1
+**Goal:** text-mode agent (router + restaurant + hospital), CLI, eval on the 40 test calls.
+**Done:**
+- Fixed `parse_time` (clock times on raw text; last "<n> ki/baje" wins; nearest part-of-day cue, because "Udayam" clinic means "morning" in Telugu); added `latest_time` / `latest_day` for corrections ("4:30… ledu, 5:30").
+- `backend/flows/context.py` (CallContext + CONTRACTS §5 outcome JSON), `nodes.py` (router / restaurant / hospital nodes in Pipecat Flows shape, 13 functions + 4 globals), `session.py` (turn runner), `extract.py` (party size incl. "naluguru"/"tommidi mandi", names, named businesses/doctors), `speech.py` (code-written read-backs, spoken times), `prompts/` (rules + te/hi/en style + 18 example dialogues), `cli.py`.
+- `backend/eval/eval.py` + `scoring.py`: one cloned throwaway DB per call, metrics by language, JSON results in `backend/eval/results/` (git-ignored).
+- `find_emergency` / `find_speciality_phrase` extracted in `tools/hospitals.py` so the guards and the tools share one matcher.
+**Files:** see the commit; tests `test_flows_parsers.py`, `test_flows_session.py`, `test_eval_scoring.py` (new).
+**Tests / checks:** `uv run pytest -q` → **195 passed** · ruff ✓ · mypy ✓. Eval (Featherless Qwen3-30B-A3B-Instruct-2507, JSON protocol): first run 23/40; after fixes **40/40 on three consecutive runs** (booking accuracy 28/28, top-3 22/24, unsupported 4/4, emergency 3/3, FAQ 4/4, slot-full→nearest 2/3); LLM median ≈ 1.6 s, p95 ≈ 2.7 s; ≈ $0.05–0.06 per full run.
+**Decisions (why the numbers went from 23 to 40):** the small fast LLM misread facts, so **code reads them**: party size, names, named places, day/time from the caller's words beat the LLM's arguments; deterministic guards (emergency, unsupported area, FAQ, OTP redaction) run before the LLM; read-backs are written by code (the LLM once read back 8:30 while booking 19:30); a plain "yes" confirms in code; if all details are known, code proposes. The LLM may not invent a caller's name. Real bugs found and fixed on the way: knee-pain-as-emergency (Phase 2), OTP digits stored before redaction, a cut-off JSON reply spoken aloud, "Aapka naam" used as a name.
+**Caveat:** 40/40 is on the placeholder data the agent was tuned on. It proves the pipeline end to end, not held-out accuracy (written in EVAL.md and LIMITS.md).
+**Blockers / needs:** none. Local Supabase check still open (Docker).
+**Next steps:**
+1. Review + merge PR `phase-3-text-agent` → `main`.
+2. Phase 4 (voice): follow the updated Phase 4 prompt in `docs/PHASE_PROMPTS.md` (wrap `Session.handle` in a Pipecat processor first; measure latency); needs `SARVAM_API_KEY`.
+3. When the real data lands: validate, `make_seed_sql.py`, re-run the eval and update EVAL.md honestly.
+4. Optional: write 10–20 *new* test calls nobody tuned on, for a held-out number.
 
 ### 2026-11-22 13:04 IST · Phase 3 · Pranav via Claude Code · handed off
 **Branch:** `main` · **Commits:** the commit that adds this entry

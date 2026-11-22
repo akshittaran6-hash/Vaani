@@ -61,4 +61,6 @@ Full plan: `docs/MASTER_PLAN.md`. Call stages: `docs/CALL_FLOW.md`. Pages: `docs
 - DB tests start a temporary Postgres (or use `VAANI_TEST_DB_URL`); they must never point at a dev or demo database.
 - Bookings only via `book_table()` / `book_appointment()` / `cancel_booking()` (see `docs/CONTRACTS.md` §1); data shape lives in `backend/catalog/models.py`.
 - API: `uv run uvicorn backend.api.app:app --reload --port 8000` · passcodes: `uv run python scripts/partner_passcodes.py`
+- Agent (text): `uv run python -m backend.flows.cli` · eval: `uv run python -m backend.eval.eval` (both use throwaway DBs). Flow code: `backend/flows/` (session, nodes, extract, when, speech, prompts/).
+- Code decides in the flows: guards run before the LLM (emergency, unsupported area, FAQ, OTP redaction); party size / names / named places / days / times are extracted in code; read-backs are written by code (`flows/speech.py`) and a booking needs `propose_*` then the caller's yes on a later turn. Keep it that way.
 - Tools: always call through `backend.tools.run_tool(ctx, name, args)` (timeline + events); never write bookings or slots from flows directly. A new tool = Pydantic `Args` model + `@tool(...)` + tests + a row in CONTRACTS §2.

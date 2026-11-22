@@ -1,0 +1,156 @@
+"""Deterministic extraction from the caller's words: party size, the caller's name, and a
+business or doctor they named. The eval showed the small fast LLM misreads these
+("naluguru" → 1, "Coastal Kitchen" → a search in Gachibowli), so code reads them and
+the LLM gets them as known facts.
+"""
+
+from __future__ import annotations
+
+import re
+
+from backend.catalog.models import Catalog, Doctor, Hospital, Restaurant
+from backend.flows.when import NUM
+from backend.text import norm
+
+# Telugu people-counting words ("naluguru" = 4 people) and Hindi/English number words.
+TE_PEOPLE = {
+    "okkaru": 1,
+    "iddaru": 2,
+    "mugguru": 3,
+    "naluguru": 4,
+    "naaluguru": 4,
+    "aiduguru": 5,
+    "ayiduguru": 5,
+    "aaruguru": 6,
+    "eduguru": 7,
+    "enimidimandi": 8,
+    "tommidimandi": 9,
+    "padimandi": 10,
+}
+PEOPLE_NOUNS = r"(?:people|persons|person|log|logon|logo|logg|mandi|members|guests|pax|adults)"
+_CORRECTION = re.compile(r"\b(ledu|kaadu|vaddu|nahi|nahin|no|actually|instead|balki)\b")
+
+NOT_NAMES = {
+    "haan",
+    "han",
+    "avunu",
+    "sare",
+    "ok",
+    "okay",
+    "yes",
+    "no",
+    "ledu",
+    "nahi",
+    "theek",
+    "thanks",
+    "thank",
+    "andi",
+    "ji",
+    "confirm",
+    "please",
+    "sure",
+    "the",
+    "a",
+    "an",
+    "table",
+    "doctor",
+    "dr",
+    "book",
+    "kal",
+    "repu",
+    "it",
+    "for",
+    "me",
+    "my",
+    "is",
+    "and",
+}
+
+
+def _segments(text: str) -> list[str]:
+    """Clauses, last first: "4 log. Nahi, 5 log" → ["5 log", "4 log"]."""
+    return [s for s in reversed(_CORRECTION.split(norm(text))) if s and not _CORRECTION.fullmatch(s)]
+
+
+def parse_party(text: str) -> int | None:
+    for seg in _segments(text):
+        words = seg.split()
+        for w in reversed(words):
+            if w in TE_PEOPLE:
+                return TE_PEOPLE[w]
+        joined = seg.replace(" mandi", "mandi")
+        for w, count in TE_PEOPLE.items():
+            if w.endswith("mandi") and w in joined:
+                return count
+        if m := re.search(r"\b(?:table for|for|party of)\s+(\d{1,2}|\w+)\b(?!\s*(?:pm|am|baje|:))", seg):
+            n = _num(m[1])
+            if n and 1 <= n <= 30 and not re.search(rf"{m[1]}\s*(?:pm|am|o'?clock|baje)", seg):
+                return n
+        if m := re.search(rf"\b(\d{{1,2}}|\w+)\s+{PEOPLE_NOUNS}\b", seg):
+            n = _num(m[1])
+            if n and 1 <= n <= 30:
+                return n
+        if m := re.search(r"\b(\d{1,2}|\w+) of us\b", seg):
+            us = _num(m[1])
+            if us:
+                return us
+    return None
+
+
+def _num(word: str) -> int | None:
+    return int(word) if word.isdigit() else NUM.get(word)
+
+
+_NAME_LEADS = (
+    "my name is|name is|name's|naam hai|mera naam|naa peru|na peru|mee peru|peru|naam|name|"
+    "i am|i'm|this is|it's for|its for|booking for"
+)
+_NAME_PATTERNS = [rf"\b(?:{_NAME_LEADS})\s+([a-z][a-z]+(?:\s+[a-z][a-z]+)?)"]
+
+
+def parse_name(text: str, asked_for_name: bool = False) -> str | None:
+    t = re.sub(r"[^\w\s']", " ", text.lower())
+    for pat in _NAME_PATTERNS:
+        if m := re.search(pat, t):
+            words = [w for w in m[1].split() if w not in NOT_NAMES]
+            # "Naam Pooja Verma." → "Pooja Verma"; stop at filler words ("peru Rajesh andi")
+            if words:
+                return " ".join(w.capitalize() for w in words[:2])
+    if asked_for_name:
+        words = re.findall(r"[a-z]+", t)
+        if 1 <= len(words) <= 3 and not set(words) & NOT_NAMES:
+            return " ".join(w.capitalize() for w in words)
+    return None
+
+
+def find_business(text: str, catalog: Catalog) -> Restaurant | Hospital | None:
+    """The business named in the text (longest exact name/alias match)."""
+    t = f" {norm(text)} "
+    best: tuple[int, Restaurant | Hospital] | None = None
+    businesses: list[Restaurant | Hospital] = [*catalog.restaurants, *catalog.hospitals]
+    for b in businesses:
+        for alias in [b.name, *b.name_aliases]:
+            key = norm(alias)
+            if len(key) >= 4 and f" {key} " in t and (best is None or len(key) > best[0]):
+                best = (len(key), b)
+    return best[1] if best else None
+
+
+def find_doctor_named(text: str, catalog: Catalog, hospital_id: str | None = None) -> Doctor | None:
+    """'Dr. Kavya Sharma garu', 'Dr. Ananya garu', 'Dr Priya Reddy' → that doctor."""
+    t = norm(text).replace("dr ", "dr. ")
+    if "dr" not in t and "doctor" not in t:
+        return None
+    hits = []
+    for d in catalog.doctors:
+        if hospital_id and d.hospital_id != hospital_id:
+            continue
+        first, *rest = norm(d.name.replace("Dr. ", "")).split()
+        if re.search(rf"\b{first}\b", t) and (
+            not rest or re.search(rf"\b{rest[-1]}\b", t) or re.search(rf"(dr\.?|doctor)\s+{first}\b", t)
+        ):
+            hits.append((bool(rest and re.search(rf"\b{rest[-1]}\b", t)), d))
+    if not hits:
+        return None
+    hits.sort(key=lambda x: not x[0])  # full-name matches first
+    return hits[0][1]
