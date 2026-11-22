@@ -10,7 +10,7 @@ import psycopg
 from pydantic import Field
 from rapidfuzz import fuzz
 
-from backend.catalog.models import DAYS, SPECIALITIES, Doctor, Speciality
+from backend.catalog.models import DAYS, SPECIALITIES, Catalog, Doctor, Speciality
 from backend.clock import is_past, today_ist, window
 from backend.text import norm
 from backend.tools.base import Args, Result, ToolContext, ToolError, day_word, require_area, require_window, tool
@@ -58,6 +58,27 @@ def _window_score(text: str, phrase: str) -> float:
     return max(fuzz.ratio(" ".join(words[i : i + n]), phrase) for i in range(len(words) - n + 1))
 
 
+def find_emergency(text: str, catalog: Catalog) -> str | None:
+    """The emergency phrase found in `text` (exact, or one letter off), else None.
+
+    Shared by map_speciality and the session's pre-LLM guard, so both always agree.
+    """
+    t = norm(text)
+    for e in catalog.speciality_mapping.emergency_phrases:
+        p = norm(e.phrase)
+        if _contains(t, p) or (len(p) >= 6 and _window_score(t, p) >= EMERGENCY_FUZZY_CUTOFF):
+            return e.phrase
+    return None
+
+
+def find_speciality_phrase(text: str, catalog: Catalog) -> str | None:
+    """Exact speciality phrase in the text ("pallu noppi" → Dental), else None. No fuzzy."""
+    t = norm(text)
+    phrases = {norm(p.phrase): p.speciality for p in catalog.speciality_mapping.phrases} | SPECIALITY_NAMES
+    hits = [p for p in phrases if _contains(t, p)]
+    return phrases[max(hits, key=len)] if hits else None
+
+
 def doctor(ctx: ToolContext, doctor_id: str) -> Doctor:
     d = next((x for x in ctx.catalog.doctors if x.doctor_id == doctor_id), None)
     if d is None:
@@ -81,14 +102,12 @@ async def map_speciality(ctx: ToolContext, a: MapSpecialityArgs) -> tuple[Result
     reply = getattr(m.emergency_reply, lang if lang in ("te", "hi", "en") else "en")
 
     # 1. Emergency always wins (CLAUDE.md rule 7): exact phrase, then near-identical spelling.
-    for e in m.emergency_phrases:
-        p = norm(e.phrase)
-        if _contains(text, p) or (len(p) >= 6 and _window_score(text, p) >= EMERGENCY_FUZZY_CUTOFF):
-            return {
-                "emergency": True,
-                "matched": e.phrase,
-                "reply": reply,
-            }, f"Emergency phrase “{e.phrase}” → told caller to call 108 / 112"
+    if hit := find_emergency(a.text, ctx.catalog):
+        return {
+            "emergency": True,
+            "matched": hit,
+            "reply": reply,
+        }, f"Emergency phrase “{hit}” → told caller to call 108 / 112"
 
     # 2. Longest exact phrase or department name inside the utterance.
     phrases = {norm(p.phrase): p.speciality for p in m.phrases} | SPECIALITY_NAMES

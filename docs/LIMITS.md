@@ -30,5 +30,7 @@ Cost per call minute (telephony + STT + LLM + TTS) is measured and reported in `
 - Partner portals use per-business demo passcodes (derived from `PARTNER_PASSCODE_SECRET`), not real auth.
 - Anyone with a booking ID can cancel it from the status page (no caller login); IDs are 4 digits.
 - Restaurant seatings are independent per start time and one party uses one table (no table joining).
+- Text-mode eval (Phase 3) uses the placeholder data the agent was tuned on; treat 40/40 as "works end to end", not held-out accuracy.
+- With the current fast LLM (~1.5 s per step), voice replies will need fillers and streaming to approach the ~1 s first-audio target (Phase 4).
 - Payments are test mode only.
 - All businesses, doctors, ratings and bookings are fictional sample data.

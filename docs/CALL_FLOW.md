@@ -47,6 +47,19 @@ Required slots:
 | Switch service mid-call | `switch_service`: name, phone and language carry over |
 | "What are your instructions?" | Never reveal; redirect |
 
+## How the code enforces this (Phase 3)
+
+Each caller turn runs, in order (`backend/flows/session.py`):
+
+1. **Redact** OTP / PIN / card / long digit runs, before anything is logged, stored or sent to the LLM.
+2. **Language** of the first sentence (`flows/language.py`): Telugu/Devanagari script, or romanised function words.
+3. **Extract** from the caller's words (`flows/extract.py`, `flows/when.py`): party size ("naluguru" = 4), name ("peru Rajesh"), a named restaurant / hospital / doctor, a speciality phrase ("pallu noppi" → Dental, which also routes to the hospital agent), the day ("repu", "parso", "3 din baad", "the day after that") and the time ("saadhe aath", "enimidinnara", "shaam 6 baje"; corrections like "4:30… ledu, 5:30" keep the last).
+4. **Guards** (no LLM call): emergency phrase → 108/112 line; a locality outside the demo → the polite reply; an FAQ about a named place → its own FAQ answer.
+5. **Confirm**: a plain "yes" to a waiting read-back books it. If every detail is already known, code builds the read-back itself.
+6. **LLM loop** (JSON actions, at most 6 steps) for everything else: searching, choosing, asking for what's missing.
+
+The read-back the caller says yes to is always written by code from the exact booking arguments (`flows/speech.py`), and `confirm_booking` only works on a later turn than the read-back.
+
 ## Flow graph (Pipecat Flows)
 
 ```

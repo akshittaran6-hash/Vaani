@@ -4,7 +4,7 @@
 
 **Homingo Hack Days, Edition 01 · Track: LLM apps · Problem C2 "Voice is the interface" · Team PARK**
 
-> 🚧 Work in progress — Phase 2 done (all voice-AI tools + REST API on top of the database). Screenshots, demo video and live URL land in later phases.
+> 🚧 Work in progress — Phase 3 done (text-mode agent in te/hi/en + eval: 40/40 scripted calls on placeholder data). Voice, websites, phone calls and the live URL land in later phases.
 
 ## The problem
 
@@ -76,6 +76,16 @@ uv run python scripts/partner_passcodes.py                  # demo passcodes for
 ```
 
 With `DEV_SIMULATE=true`, `POST /api/dev/simulate-booking {"business_id": "r_jh_01"}` makes a fake call book through the real tools, so the websites get the same live events as a phone call. Endpoints and tools: [docs/CONTRACTS.md](docs/CONTRACTS.md) §2–3.
+
+### Chat with Vaani (text) and run the eval
+
+Needs `LLM_BASE_URL`, `LLM_MODEL`, `LLM_API_KEY` in `.env` (any OpenAI-compatible API) and local Postgres binaries (`brew install postgresql@16`) for the throwaway databases.
+
+```bash
+uv run python -m backend.flows.cli                 # chat in Telugu / Hindi / English
+uv run python -m backend.eval.eval                 # replay the 40 test calls, table by language
+uv run python -m backend.eval.eval --only T01 -v   # one call, with transcript
+```
 
 Voice server and website setup steps are added as later phases land (Phase 7: one-command `docker compose up`).
 

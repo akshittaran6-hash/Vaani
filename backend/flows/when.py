@@ -144,14 +144,16 @@ def _num(word: str) -> int | None:
 
 
 def parse_time(text: str, kind: Kind = "restaurant") -> str | None:
-    t = norm(text.replace(".", ":")) if re.search(r"\d\.\d\d", text) else norm(text)
+    # Clock times are matched on the raw text: norm() turns ":" into a space. "8.30" = "8:30".
+    raw = re.sub(r"(\d)\.(\d\d)\b", r"\1:\2", text.lower())
+    t = norm(raw)
     words = set(t.split())
-    if "noon" in words and not re.search(r"\d", t):
+    if "noon" in words and (not re.search(r"\d", t) or re.search(r"\b12\s*noon\b", t)):
         return "12:00"
 
     hour: int | None = None
     minute = 0
-    if m := re.search(r"\b(\d{1,2}):(\d{2})\b", t):
+    if m := re.search(r"\b(\d{1,2}):(\d{2})\b", raw):
         hour, minute = int(m[1]), int(m[2])
     elif m := re.search(r"\b(\d{1,2})\s*(am|pm)\b", t):
         hour = int(m[1])
@@ -165,14 +167,27 @@ def parse_time(text: str, kind: Kind = "restaurant") -> str | None:
         hour, minute = 1, 30
     elif "dhai" in words:
         hour, minute = 2, 30
-    elif m := re.search(r"\b(\d{1,2}|\w+)\s*(?:baje|bajey|o'?clock|gantalaki|gantaki|ganta|ki)\b", t):
-        hour = _num(m[1])
+    elif hits := [
+        _num(m[1]) for m in re.finditer(r"\b(\d{1,2}|\w+)\s*(?:baje|bajey|o'?clock|gantalaki|gantaki|ganta|ki)\b", t)
+    ]:
+        # "lunch ki aaruguru, okati gantaki" → the last <number> ki/baje wins (skip "lunch ki")
+        hour = next((h for h in reversed(hits) if h is not None), None)
     elif m := re.search(r"\bat (\d{1,2})\b", t):
         hour = int(m[1])
 
     if hour is None or not (0 <= hour <= 24) or not (0 <= minute < 60):
         return None
-    hour = _resolve_period(hour, words | set(re.findall(r"\d\s*(am|pm)", t)), kind)
+    cues = words | set(re.findall(r"\d\s*(am|pm)", t))
+    # Prefer a part-of-day word right next to the number: in "Udayam clinic, shaam 6 baje" the
+    # clinic's name ("udayam" = morning in Telugu) must not beat "shaam" (evening).
+    tokens = t.split()
+    num_idx = [i for i, w in enumerate(tokens) if re.search(r"\d", w) or w in NUM or w in TE_HALF]
+    if num_idx:
+        i = num_idx[-1]
+        near = set(tokens[max(0, i - 2) : i + 3]) | set(re.findall(r"\d\s*(am|pm)", t))
+        if near & (AM_CUES | PM_CUES | NOON_CUES):
+            cues = near
+    hour = _resolve_period(hour, cues, kind)
     return f"{hour:02d}:{minute:02d}"
 
 
@@ -192,3 +207,21 @@ def _resolve_period(hour: int, words: set[str], kind: Kind) -> int:
         return hour + 12
     # Doctors work ~09:00-20:00 → 8-11 morning, 1-7 afternoon/evening.
     return hour if hour >= 8 else hour + 12
+
+
+_CORRECTION = re.compile(r"\b(ledu|kaadu|vaddu|nahi|nahin|no|not|actually|instead|balki|marchandi|change)\b", re.I)
+
+
+def latest_time(text: str, kind: Kind = "restaurant") -> str | None:
+    """The time the caller settled on: "4:30. Ledu, 5:30 ki marchandi" → 17:30 (last segment wins)."""
+    for seg in reversed(_CORRECTION.split(text)):
+        if seg and not _CORRECTION.fullmatch(seg) and (t := parse_time(seg, kind)):
+            return t
+    return None
+
+
+def latest_day(text: str, today: date) -> date | None:
+    for seg in reversed(_CORRECTION.split(text)):
+        if seg and not _CORRECTION.fullmatch(seg) and (d := parse_day(seg, today)):
+            return d
+    return None

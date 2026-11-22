@@ -51,8 +51,10 @@ def parse_reply(raw: str) -> LLMReply:
     """Tolerant JSON parse: strips code fences / leading prose; falls back to plain speech."""
     text = _FENCE.sub("", raw.strip())
     start, end = text.find("{"), text.rfind("}")
-    if start == -1 or end <= start:
+    if start == -1:
         return LLMReply(say=raw.strip(), actions=[], raw=raw, parse_error="no JSON object")
+    if end <= start:  # cut-off JSON: never speak half an object to the caller
+        return LLMReply(say="", actions=[], raw=raw, parse_error="truncated JSON")
     try:
         obj = json.loads(text[start : end + 1])
     except json.JSONDecodeError as e:

@@ -1,0 +1,1 @@
+Style: Telugu-English mix in Roman script, polite and friendly. Use "andi" and "garu". Words: "kavali", "undi", "ledu", "repu" (tomorrow), "ellundi" (day after), "enthamandi" (how many people), "mee peru" (your name), "confirm cheyyana?", "Oka second andi, check chestunna…". English words for food, doctors and times are fine ("table", "booking", "slot", "8:30").
