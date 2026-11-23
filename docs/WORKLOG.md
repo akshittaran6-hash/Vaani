@@ -10,15 +10,32 @@ Every agent session adds an entry here (rules and template: `AGENTS.md` §5). **
 | 1 Data + database | ✅ done (local Supabase check pending — Docker Desktop wasn't starting) | Pranav | `main` @ `9a2f0b8` |
 | 2 Tools + API | ✅ done | Pranav | `main` @ `7343662` |
 | 3 Text-mode agent + eval | ✅ done; re-checked on real data | Pranav (via Claude Code) | `main` via PR #1; real data on `data-real-import` |
-| 4 Voice over browser | ⬜ not started | open | — |
+| 4 Voice over browser | ✅ done (synthetic callers; live-mic check pending) | Pranav (via Claude Code) | `phase-4-voice` |
 | 5 Websites | 🟡 in progress outside this repo | Akshit, Karthik | `docs/FRONTEND_PROMPT.md` |
 | 6 Phone calls + WhatsApp | ⬜ not started (needs Twilio) | open | — |
 | 7 Integration, eval, deploy | ⬜ not started | open | — |
 | 8 Submission polish | ⬜ not started | open | — |
 
-Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeholder data). On `data-real-import`: **231 passed** · ruff ✓ · mypy ✓ · `validate_data.py` ✓ (real data, 0 errors, 7 warnings) · eval on real data 32/40 first run → 40/40 × 5.
+Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeholder data). On `phase-4-voice`: **301 passed** · ruff ✓ · mypy ✓ · `validate_data.py` ✓ (real data, 0 errors, 7 warnings) · eval on real data 32/40 first run → 40/40 × 5.
 
 ## Entries
+
+### 2026-11-23 10:10 IST · Phase 4 · Pranav via Claude Code · done (17:40 IST)
+**Branch:** `phase-4-voice` (from `main` @ `f60f5d0`) · **Commits:** see `git log main..phase-4-voice`
+**Goal:** talk to Vaani by voice in the browser with the Phase 3 brain; measure latency and barge-in.
+**Done:**
+- Keys: `SARVAM_API_KEY` verified (text-lid 200); Supabase URL + secret/publishable keys saved to `.env` (REST OK, project empty). DB password still missing, so `SUPABASE_DB_URL` is empty and schema/seed are NOT applied to the hosted project yet.
+- `pipecat-ai[sarvam,silero,webrtc,local-smart-turn]==1.16.0` (1.17.0 was a day old). APIs read from the installed source + Context7.
+- `voice/stt.py` (Sarvam saaras, `translit` → romanised te/hi), `voice/tts.py` (Bulbul v3, voice `priya`, language switch frame), `voice/normalizer.py` (+51 tests), `voice/brain.py` (`VaaniBrain` + `AudioTap`), `voice/pipeline.py` (`run_call(transport, …)`), `voice/events.py`, `api/voice_routes.py` (`POST/PATCH /webrtc/offer`, `/voice/events/{pc_id}`, `/voice-test`), `static/voice_test.html`, `eval/voice_probe.py` (aiortc synthetic caller), `VAANI_DEV_DB=ephemeral` dev DB.
+- Session hooks: listeners (also on ToolContext → `booking_created` reaches the page), `on_progress` interim lines, per-turn `voice_turns` + `barge_in_ms` in `calls.latency_json`, real `call_ended.duration_s`.
+- Fixes found by voice runs (all tested): Sarvam's "chhah" (six); split turns → stale replies dropped; a second "yes" after booking no longer re-books (was SLOT_TAKEN → "slot full"); "Kavali N D" (STT for "kavali andi") no longer a name; slot checked before asking the name, nearest 2 times for doctors too; repeated doctor first names (two Dr. Suvins) — fuzzy surname + hospital/area/speciality, tie → ask (a run had booked the wrong Dr. Suvin); fuzzy business names ("Vana Grove"); Smart Turn wait capped at 1.5 s (a 3.2 s turn); first audio timed at the TTS output (a run logged a fake 15 s); booking IDs/helplines read digit by digit in English; voice LLM timeout 4.5 s × 1 retry + second filler + apology (provider stalls of 10–20 s); turn tasks cancelled at call end; STT "bantlaki" = gantalaki; an LLM that writes its own read-back is sent back once to call `propose_*`.
+**Tests / checks:** `uv run pytest -q` → **301 passed** · ruff ✓ · mypy ✓ · text eval 40/40 after the changes (LLM p95 12.3 s in the evening vs 2.2 s in the morning). Voice (EVAL.md): 9/10 late calls booked correctly (the 10th fixed after), final code 4/4; turn total median 1.24 s server / 1.51 s caller; code-only turns 0.54 s; barge-in 236 ms median after VAD.
+**Decisions:** kept the Phase 3 Session (custom Pipecat processor) instead of Pipecat Flows' FlowManager (guards + code read-backs + JSON-action LLM already 40/40; native tool calling failed on Featherless). Fillers at 0.6 s. English digits for IDs.
+**Blockers / needs from humans:** **Sarvam credits ran out** (402 `insufficient_quota_error`) — voice (STT + TTS) stops until topped up; Supabase DB password (for `SUPABASE_DB_URL` + `scripts/db_apply.py`); approval of the self-harm data change; a real-mic try in Chrome at `/voice-test`.
+**Next steps:**
+1. With the DB password: `uv run python scripts/db_apply.py` on the hosted project, check RLS (anon can't read phone) and Realtime.
+2. Try `/voice-test` with real voices in te/hi/en; note STT errors.
+3. Self-harm reply (after approval). 4. Phase 6 (Twilio) reuses `run_call`.
 
 ### 2026-11-23 09:25 IST · Data import (before Phase 4) · Pranav via Claude Code · done (09:50 IST)
 **Branch:** `data-real-import` (from `main` @ `cc42f64`) · **Commits:** see `git log main..data-real-import`
@@ -32,6 +49,7 @@ Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeh
 - Eval on real data, first run **32/40**. Fixes: Telugu party forms (naluguriki, mugguram, aaruguriki), "Change that to four", names before "peru meeda" / "ke naam se" / "under", "parson", FAQ topics (wheelchair, lab, fee, Sunday). **Safety:** a booking needs a yes word in the caller's own turn (T05 booked on a name); ₹ amounts the LLM states must come from a tool or the chosen business/doctor (it invented "fee 1000 / 900" for a ₹650 doctor); the doctor's own name can't become the caller's name.
 - Prompt examples rewritten with real businesses/doctors; CALL_FLOW, DEMO (new demo-scenarios table), WEBSITES, FRONTEND_PROMPT examples moved off "Spice Garden".
 **Tests / checks:** `uv run pytest -q` → **231 passed** · ruff ✓ · mypy ✓ · eval (Featherless Qwen3-30B-A3B-Instruct-2507): 32/40 → 40/40 on 6 consecutive runs, LLM median ≈ 1.5 s, p95 ≈ 2.0–2.3 s, ≈ $0.05 per run.
+**PR #3 review (17:50 IST):** cap on concurrent browser calls (`MAX_WEB_CALLS`, 503 `BUSY`) so a public page can't burn the credits; call-failure logging no longer raises on cancelled tasks; `PATCH /webrtc/offer` without `pc_id` → 400; typed web-call phone numbers noted in LIMITS (verify before Phase 6 WhatsApp).
 **PR review (10:00 IST):** the amount guard counted every number in the timeline (an `ms: 900` would "verify" a ₹900 fee) → only money fields + ₹ in text; the new yes check rejected "Go ahead" / "Kar do" while the plain-yes path accepted them → one shared `_affirmative()`; "Rs 500" now caught. Eval after review: 40/40.
 **Decisions:** keep the contract's file shapes and convert on import (no schema change). Merged our earlier tested phrase list into the teammate's mapping rather than trusting long-sentence emergency phrases alone.
 **Corrections to the handoff brief:** Pulao Pankthi tomorrow night is full for 3+ people, not for everyone (one 2-seater left; T16 books it). The real data has no blocked slots and no doctor on leave (validator warnings).

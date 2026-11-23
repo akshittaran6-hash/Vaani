@@ -281,8 +281,7 @@ async def book_appointment(ctx: ToolContext, a: BookAppointmentArgs) -> tuple[Re
         raise db_error(e) from e
     assert row is not None
     if ctx.call_id:
-        await ctx.store.emit(
-            ctx.call_id,
+        await ctx.emit(
             "booking_created",
             {
                 "booking_id": row["booking_id"],

@@ -39,6 +39,9 @@ NUM = {
     "panch": 5,
     "chhe": 6,
     "che": 6,
+    "chhah": 6,  # Sarvam STT (translit) spells six this way
+    "chah": 6,
+    "chhai": 6,
     "saat": 7,
     "aath": 8,
     "nau": 9,
@@ -168,7 +171,9 @@ def parse_time(text: str, kind: Kind = "restaurant") -> str | None:
     elif "dhai" in words:
         hour, minute = 2, 30
     elif hits := [
-        _num(m[1]) for m in re.finditer(r"\b(\d{1,2}|\w+)\s*(?:baje|bajey|o'?clock|gantalaki|gantaki|ganta|ki)\b", t)
+        _num(m[1]) for m in re.finditer(r"\b(\d{1,2}|\w+)\s*(?:baje|bajey|o'?clock|gantalaki|gantaki|ganta|ki|"
+            # STT spellings of "gantalaki" heard in voice runs ("moodu bantlaki", "gantlaki")
+            r"[bg]h?ant(?:a|h)?la?ki|gantalu)\b", t)
     ]:
         # "lunch ki aaruguru, okati gantaki" → the last <number> ki/baje wins (skip "lunch ki")
         hour = next((h for h in reversed(hits) if h is not None), None)

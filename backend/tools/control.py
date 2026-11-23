@@ -19,7 +19,7 @@ class SwitchServiceArgs(Args):
 @tool("switch_service", SwitchServiceArgs, "Move the caller to the other service; name, phone and language carry over.")
 async def switch_service(ctx: ToolContext, a: SwitchServiceArgs) -> tuple[Result, str]:
     if ctx.call_id:
-        await ctx.store.emit(ctx.call_id, "agent_switched", {"to": a.to, "reason": a.reason})
+        await ctx.emit("agent_switched", {"to": a.to, "reason": a.reason})
     return {"service": a.to}, f"Switched to {a.to} agent"
 
 

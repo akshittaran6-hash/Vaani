@@ -199,3 +199,24 @@ async def test_every_real_phrase_maps(real_ctx: ToolContext, real_catalog: Catal
     for e in m.emergency_phrases:
         r = await run_tool(real_ctx, "map_speciality", {"text": e.phrase})
         assert r.get("emergency") is True, e.phrase
+
+
+def test_repeated_doctor_first_names_are_not_guessed(real_catalog: Catalog) -> None:
+    """Two Dr. Suvins (Gachibowli derm, Jubilee Hills ortho). A voice run once booked the wrong one."""
+    from backend.flows.extract import find_doctor_named
+
+    t = "Vanagrao-lo Dr. Suvin Relimudi gaaru madhyaahnam moodu gantalaki"  # real STT output
+    assert getattr(find_doctor_named(t, real_catalog), "doctor_id", None) == "d_gb_01_derm_2"
+    assert find_doctor_named("Dr. Suvin garu tho", real_catalog) is None  # ambiguous → ask
+    jh = find_doctor_named("Dr. Suvin garu tho", real_catalog, area_id="jubilee_hills")
+    assert jh is not None and jh.hospital_id.startswith("h_jh")
+    derm = find_doctor_named("Dr. Suvin garu tho", real_catalog, speciality="Dermatology")
+    assert derm is not None and derm.doctor_id == "d_gb_01_derm_2"
+
+
+def test_stt_spellings_of_business_names(real_catalog: Catalog) -> None:
+    from backend.flows.extract import find_business
+
+    assert getattr(find_business("Vana Grove lo appointment", real_catalog), "hospital_id", None) == "h_gb_01"
+    assert getattr(find_business("Dumgali Courtyard 8:30 baje", real_catalog), "restaurant_id", None) == "r_jh_01"
+    assert find_business("Nenu Vaani tho matladutunna", real_catalog) is None  # not "Vaana Grove"

@@ -48,6 +48,16 @@ class ToolContext:
     phone: str | None = None  # caller ID; never asked from the caller
     language: str = "en"  # te | hi | en
     timeline: list[Result] = field(default_factory=list)
+    # Extra in-process listeners (the voice test page); the DB event is always written first.
+    listeners: list[Callable[[str, dict[str, Any]], Awaitable[None]]] = field(default_factory=list)
+
+    async def emit(self, type_: str, payload: dict[str, Any]) -> None:
+        """Write a call event (call_events → Supabase Realtime) and tell any listeners."""
+        if not self.call_id:
+            return
+        await self.store.emit(self.call_id, type_, payload)
+        for listener in self.listeners:
+            await listener(type_, payload)
 
 
 ToolFn = Callable[[ToolContext, Any], Awaitable[tuple[Result, str]]]
@@ -95,10 +105,7 @@ async def run_tool(ctx: ToolContext, name: str, raw_args: dict[str, Any] | None 
     ctx.timeline.append(
         {"ts": iso_ts(), "tool": name, "args": raw_args, "result": result, "summary": summary, "ms": ms}
     )
-    if ctx.call_id:
-        await ctx.store.emit(
-            ctx.call_id, "tool_called", {"tool": name, "summary": summary, "ms": ms, "ok": result["ok"]}
-        )
+    await ctx.emit("tool_called", {"tool": name, "summary": summary, "ms": ms, "ok": result["ok"]})
     return result
 
 

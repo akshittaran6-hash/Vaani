@@ -60,6 +60,21 @@ Each caller turn runs, in order (`backend/flows/session.py`):
 
 The read-back the caller says yes to is always written by code from the exact booking arguments (`flows/speech.py`), and `confirm_booking` only works on a later turn than the read-back.
 
+## Voice layer (Phase 4)
+
+`backend/voice/pipeline.py` runs one Pipecat pipeline per call; the Session above is unchanged and sits where an LLM service would go:
+
+| Step | What | Where |
+|---|---|---|
+| Audio in | WebRTC (browser) now; Twilio Media Streams in Phase 6, same pipeline | `voice/pipeline.py`, `api/voice_routes.py` |
+| STT | Sarvam saaras, streaming, language auto-detected, `translit` mode → romanised text like the test calls | `voice/stt.py` |
+| Turn taking | Silero VAD + Smart Turn v3 end the turn (capped at 1.5 s of silence when unsure); caller speech while Vaani talks interrupts her (barge-in) | Pipecat user aggregator |
+| Brain | `VaaniBrain` runs `Session.handle` on the final words; speaks a filler from `agent_phrases` if the reply isn't ready after 0.6 s (or the LLM's own interim line) and a second one at ~4 s; an LLM step that takes over 4.5 s is retried once, then Vaani apologises (`didnt_catch_that`) instead of going silent; a reply made stale by a newer caller turn is dropped (never an emergency line or a booking confirmation) | `voice/brain.py` |
+| Normaliser | times, dates, ₹, counts, ratings → spoken te / hi / en-IN; booking IDs and helplines digit by digit in English ("V N four eight two one", "one one two") | `voice/normalizer.py` |
+| TTS | Sarvam Bulbul v3, one Indian voice; language switches with the caller | `voice/tts.py` |
+| Silence | 5 s quiet → `silence_check` (twice) → `goodbye` → end | `VaaniBrain.on_user_idle` |
+| Post-call | `Session.end()` writes the `calls` row (transcript with language tags, outcome JSON, tool timeline, latency incl. per-turn voice rows and barge-in times, summary) and emits `call_ended` | `flows/session.py` |
+
 ## Flow graph (Pipecat Flows)
 
 ```

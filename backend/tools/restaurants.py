@@ -202,8 +202,7 @@ async def book_table(ctx: ToolContext, a: BookTableArgs) -> tuple[Result, str]:
         "deposit_inr": row["deposit_inr"],
     }
     if ctx.call_id:
-        await ctx.store.emit(
-            ctx.call_id,
+        await ctx.emit(
             "booking_created",
             {
                 "booking_id": row["booking_id"],

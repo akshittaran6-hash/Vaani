@@ -167,3 +167,8 @@ def test_parse_name_real_forms(text: str, expected: str | None) -> None:
 
 def test_parson_is_day_after_tomorrow() -> None:
     assert parse_day("Parson Jubilee Hills mein chaar logon ke liye", TODAY) == date(2026, 11, 24)
+
+
+@pytest.mark.parametrize("text", ["Thom madhyaahnam moodu bantlaki", "madhyahnam moodu gantlaki", "moodu gantalaki"])
+def test_stt_spellings_of_gantalaki(text: str) -> None:
+    assert parse_time(text, "hospital") == "15:00"

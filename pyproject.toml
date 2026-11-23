@@ -9,6 +9,7 @@ requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.165.0",
     "openai>=3.57.0",
+    "pipecat-ai[local-smart-turn,sarvam,silero,webrtc]==1.16.0",
     "psycopg-pool>=3.3.3",
     "psycopg[binary]>=3.3.9",
     "pydantic>=2.14.4",

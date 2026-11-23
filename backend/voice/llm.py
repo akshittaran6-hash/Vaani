@@ -137,10 +137,17 @@ class ScriptedLLM:
         return parse_reply(json.dumps(obj, ensure_ascii=False))
 
 
-def from_env() -> OpenAICompatLLM:
+def from_env(timeout_s: float | None = None, retries: int | None = None) -> OpenAICompatLLM:
+    """Text mode (eval, CLI) keeps the patient defaults; voice passes a short timeout, because a
+    caller can't wait 25 s (the provider sometimes stalls for 10–20 s)."""
     from backend.config import get_settings
 
     s = get_settings()
     if not (s.llm_base_url and s.llm_api_key and s.llm_model):
         raise SystemExit("Set LLM_BASE_URL, LLM_MODEL and LLM_API_KEY in .env")
-    return OpenAICompatLLM(base_url=s.llm_base_url, api_key=s.llm_api_key, model=s.llm_model)
+    llm = OpenAICompatLLM(base_url=s.llm_base_url, api_key=s.llm_api_key, model=s.llm_model)
+    if timeout_s is not None:
+        llm.timeout_s = timeout_s
+    if retries is not None:
+        llm.retries = retries
+    return llm

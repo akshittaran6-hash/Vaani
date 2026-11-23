@@ -280,3 +280,61 @@ async def test_yes_words_and_name_turns(reseed: None, services: Services) -> Non
         assert s._affirmative(text), text
     for text in ("Veya Madduluri peru meeda pettandi.", "Reyan Dharavolu ke naam se rakh dijiye.", "Haan, but change it"):
         assert not s._affirmative(text), text
+
+
+async def test_second_yes_after_booking_does_not_book_again(reseed: None, services: Services) -> None:
+    """Voice split "Avunu, confirm cheyandi" into two turns; the second must not re-book (SLOT_TAKEN)."""
+    s, llm = await new_session(services, [])
+    s.ctx.service = "restaurant"
+    s.ctx.booking_id = "VN-1234"
+    t = await s.handle("Confirm cheyandi.")
+    assert t.reply == s.phrase("anything_else") and llm.calls == []
+
+
+async def test_single_letters_are_not_a_name(reseed: None, services: Services) -> None:
+    from backend.flows.nodes import caller_name
+
+    s, _ = await new_session(services, [])
+    s.ctx.say("caller", "Gachibowli lo repu skin doctor kavali N D.", "te")  # STT for "kavali andi"
+    assert caller_name(s, "N D") == ""
+    s.ctx.say("caller", "Naa peru Lakshmi.", "te")
+    assert caller_name(s, "Lakshmi") == "Lakshmi"
+
+
+async def test_full_doctor_time_is_checked_before_asking_the_name(reseed: None, services: Services) -> None:
+    """Voice run: caller asked a taken 15:00 and Vaani asked "Mee peru?". Now: nearest times first."""
+    from backend.flows.nodes import propose_appointment
+    from backend.tools import run_tool
+
+    s, _ = await new_session(services, [])
+    s.ctx.service = "hospital"
+    tomorrow = today_ist() + timedelta(days=1)
+    row = await services.store.fetchrow(
+        """select doctor_id, to_char(time, 'HH24:MI') as t from public.doctor_slots
+           where date = %(d)s and status = 'booked' and doctor_id in
+             (select doctor_id from public.doctor_slots where date = %(d)s and status = 'free')
+           order by doctor_id, time limit 1""",
+        {"d": tomorrow},
+    )
+    assert row is not None
+    doc, taken = row["doctor_id"], row["t"]
+    res, _ = await propose_appointment(s, {"doctor": doc, "date": tomorrow.isoformat(), "time": taken})
+    assert res["error"] == "SLOT_TAKEN" and 1 <= len(res["nearest"]) <= 2  # no name yet, still checked
+    slots = await run_tool(s.tools, "get_doctor_slots", {"doctor_id": doc, "date": tomorrow.isoformat()})
+    free = slots["free"][0]
+    res, _ = await propose_appointment(s, {"doctor": doc, "date": tomorrow.isoformat(), "time": free})
+    assert res["error"] == "MISSING_DETAILS" and res["missing"] == ["name"] and res["time_free"] is True
+
+
+async def test_llm_self_written_readback_is_sent_back(reseed: None, services: Services) -> None:
+    """Voice run: the LLM said "…Confirm cheyyana?" without propose_*, then looped on it."""
+    s, llm = await new_session(
+        services,
+        [
+            {"say": "Madhyaanam 3 ki Dr. Suvin garu tho, Lakshmi garu peru meeda. Confirm cheyyana?", "actions": []},
+            {"say": "Ae time kavali andi?", "actions": []},
+        ],
+    )
+    t = await s.handle("skin doctor kavali")
+    assert len(llm.calls) == 2 and t.reply == "Ae time kavali andi?"
+    assert "Never read back a booking yourself" in str(llm.calls[1])

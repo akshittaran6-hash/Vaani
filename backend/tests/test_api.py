@@ -280,3 +280,19 @@ async def test_simulate_booking(client: httpx.AsyncClient, services: Services, m
 
     services.settings.dev_simulate = False
     assert (await client.post("/api/dev/simulate-booking", json={"business_id": "r_jh_01"})).status_code == 404
+
+
+async def test_webrtc_offer_guards(client: httpx.AsyncClient, services: Services) -> None:
+    """No key → 503; over the call cap → 503 BUSY; PATCH without pc_id → 400."""
+    from backend.api import voice_routes
+
+    services.settings.sarvam_api_key = ""
+    r = await client.post("/webrtc/offer", json={"sdp": "x", "type": "offer"})
+    assert r.status_code == 503 and r.json()["detail"]["error"] == "VOICE_NOT_CONFIGURED"
+    services.settings.sarvam_api_key = "test-only"
+    services.settings.max_web_calls = 0
+    r = await client.post("/webrtc/offer", json={"sdp": "x", "type": "offer"})
+    assert r.status_code == 503 and r.json()["detail"]["error"] == "BUSY"
+    r = await client.patch("/webrtc/offer", json={"candidates": []})
+    assert r.status_code == 400
+    assert voice_routes._calls == set()

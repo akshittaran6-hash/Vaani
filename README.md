@@ -4,7 +4,7 @@
 
 **Homingo Hack Days, Edition 01 · Track: LLM apps · Problem C2 "Voice is the interface" · Team PARK**
 
-> 🚧 Work in progress — Phase 3 done and re-checked on the real demo data (text-mode agent in te/hi/en; eval: 32/40 on first contact with the new data, 40/40 on six runs after the fixes — see [EVAL.md](EVAL.md)). Voice, websites, phone calls and the live URL land in later phases.
+> 🚧 Work in progress — Phase 4 done: talk to Vaani by voice in the browser (Telugu, Hindi, Indian English); both demo bookings complete by voice. Text eval 40/40 on the real demo data (32/40 on first contact — see [EVAL.md](EVAL.md)). Websites, phone calls and the live URL land in later phases.
 
 ## The problem
 
@@ -87,7 +87,27 @@ uv run python -m backend.eval.eval                 # replay the 40 test calls, t
 uv run python -m backend.eval.eval --only T01 -v   # one call, with transcript (clock frozen at 09:00 IST; --real-clock to turn off)
 ```
 
-Voice server and website setup steps are added as later phases land (Phase 7: one-command `docker compose up`).
+### Talk to Vaani in the browser (voice, Phase 4)
+
+Needs `SARVAM_API_KEY` (speech-to-text + Bulbul text-to-speech) and the `LLM_*` keys in `.env`.
+
+```bash
+uv run uvicorn backend.api.app:app --port 8000                       # with SUPABASE_DB_URL set
+VAANI_DEV_DB=ephemeral SUPABASE_DB_URL= uv run uvicorn backend.api.app:app --port 8000   # no Supabase: throwaway local Postgres
+```
+
+Open <http://localhost:8000/voice-test> in Chrome, click **Call Vaani**, allow the microphone and speak Telugu, Hindi or Indian English. The page shows the live transcript with language tags, the agent's actions and the latency of every turn. The browser's "Talk to Vaani" buttons use the same `POST /webrtc/offer`.
+
+Headless check (a synthetic caller over WebRTC, both demo scenarios, latency + barge-in):
+
+```bash
+uv run python -m backend.eval.voice_probe
+uv run python -m backend.eval.voice_probe --scenario hindi_restaurant --barge-in
+```
+
+How it works: one Pipecat pipeline per call. Sarvam STT (saaras, romanised output) → Silero VAD + Smart Turn (end of turn, barge-in, silence) → `VaaniBrain` runs the Phase 3 `Session` (every guard and rule stays in code) → `voice/normalizer.py` spells out times, ₹ amounts, counts and IDs in te/hi/en → Sarvam Bulbul TTS. Code: `backend/voice/`.
+
+Website setup steps are added as later phases land (Phase 7: one-command `docker compose up`).
 
 ## Evaluation
 
