@@ -85,7 +85,7 @@ TE_HALF = {
 
 TODAY = {"today", "aaj", "ivala", "ivvala", "eeroju", "tonight"}
 TOMORROW = {"tomorrow", "kal", "repu", "tmrw", "tomoro"}
-DAY_AFTER = {"parso", "ellundi"}
+DAY_AFTER = {"parso", "parson", "parsoon", "parsun", "ellundi"}
 WEEKDAYS = {
     0: {"monday", "mon", "somvar", "somvaar", "somavaram"},
     1: {"tuesday", "tue", "mangalvar", "mangalvaar", "mangalavaram"},

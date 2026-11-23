@@ -14,12 +14,22 @@ The demo proves "it got the thing done" by showing four things within about 2 se
 ## Before going live (checklist)
 
 - [ ] Backend deployed (or local + ngrok) and `GET /health` OK; Twilio voice webhook points at `/twilio/inbound`
-- [ ] Data reseeded today (`uv run python scripts/seed.py` — wipes test bookings too) so slots are on current dates and the demo slot (Spice Garden-style restaurant, tomorrow 20:00) is full
+- [ ] Data reseeded today (`uv run python scripts/seed.py` — wipes test bookings too) so slots are on current dates and the demo slots are full (Dumgalli Courtyard tomorrow 19:30–21:30 for 6 people; Dr. Navisha Vaanavolu tomorrow; Pulao Pankthi tomorrow night for 3+)
 - [ ] Click **Enable sound** on the TV portal
 - [ ] All team phones (4 + 1 spare) verified on Twilio and joined to the WhatsApp sandbox
 - [ ] Studio open and showing the green Live dot
 - [ ] Backup video ready on the laptop
 - [ ] Invite a judge to call and book while the TV shows the portal
+
+## Demo scenarios (from the real data; checked by `backend/tests/test_real_data.py`)
+
+| Scenario | What happens | Test call |
+|---|---|---|
+| Hindi restaurant, Jubilee Hills, tomorrow, 6 people | Top 3: Dumgalli Courtyard 4.7, Tandoor Taaraka 4.5, Aavakaaya Arugu 4.4. Caller asks Dumgalli at 8:30 → full (19:30–21:30 full for 6); Vaani offers Dumgalli 7:00 or Tandoor Taaraka 8:30 | T13 |
+| Payment demo | Aavakaaya Arugu needs a ₹300 test deposit for 6+ people → WhatsApp pay link → `/pay/VN-…` | T09 (Tandoor, 8 people) |
+| Telugu hospital, Gachibowli, skin doctor tomorrow | Vaana Grove 4.7: Dr. Navisha Vaanavolu fully booked → Dr. Suvin Rellimudi from 15:00 (fee ₹900); or Taarika Skin and Dental Clinic 4.5 (Dr. Vaanika Neelimodugu, morning) | T23 |
+| Restaurant full for a group | Pulao Pankthi (Gachibowli, 4.8) has no dinner table tomorrow for 3+ people; one 2-seater is left (T16 books it) | T07 |
+| Unsupported area / emergency | Kondapur, Madhapur, Manikonda, Shaikpet, Khajaguda → polite "only Jubilee Hills and Gachibowli"; "gundelo noppi, oopiri aadatledu" → 112 / 108, no booking | T04, T26 |
 
 ## Video script (~3 minutes, recorded with OBS)
 
@@ -37,9 +47,9 @@ The demo proves "it got the thing done" by showing four things within about 2 se
 ```
 11:42:03 Language: Hindi · Service: Restaurant
 11:42:05 Searched restaurants → 3 matches in Jubilee Hills (6 people, tomorrow)
-11:42:14 Checked Spice Garden slots → 19:30, 20:30 free (20:00 full)
-11:42:26 Booked table T4 · 20:30 · ID VN-4821
-11:42:27 WhatsApp confirmation sent · Spice Garden notified
+11:42:14 Checked Dumgalli Courtyard slots → 19:00 free (20:30 full)
+11:42:26 Booked table T6 · 19:00 · ID VN-4821
+11:42:27 WhatsApp confirmation sent · Dumgalli Courtyard notified
 ```
 
 ## Fallbacks

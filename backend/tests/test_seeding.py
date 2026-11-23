@@ -53,9 +53,9 @@ def test_seed_sql_is_relative_and_deterministic(catalog: Catalog) -> None:
     assert "2026-" not in sql
 
 
-def test_committed_seed_sql_is_up_to_date(catalog: Catalog) -> None:
+def test_committed_seed_sql_is_up_to_date(real_catalog: Catalog) -> None:
     committed = (SUPABASE_DIR / "seed.sql").read_text(encoding="utf-8")
-    assert committed == build_seed_sql(catalog), "run: uv run python scripts/make_seed_sql.py"
+    assert committed == build_seed_sql(real_catalog), "run: uv run python scripts/make_seed_sql.py"
 
 
 def test_preview_counts_and_no_skips_for_valid_data(catalog: Catalog) -> None:

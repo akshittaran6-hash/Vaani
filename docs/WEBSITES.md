@@ -70,7 +70,7 @@ Pick business → enter its demo passcode (listed in README "Known limits"). Sto
 - Floor plan: table cards T1…Tn with capacity, coloured free / booked / arrived for the selected time; a new booking pulses.
 - Timeline view: rows = tables, columns = time slots; booked blocks show name + party size.
 - Bookings list: time, name, party, table, source ("Vaani call · Hindi"), payment status, booking ID.
-- **New booking flash** card + chime: "New booking · Pranav · 6 · 20:30 · T4 · via Vaani (Hindi, 42 s)", link to the call transcript.
+- **New booking flash** card + chime: "New booking · Pranav · 6 people · 19:00 · T6 · via Vaani (Hindi call, 42 s)", link to the call transcript.
 - Staff actions: mark arrived, cancel, block a slot (the AI must then treat it as full), close for the day.
 - **TV mode** `?tv=1`: large type, no nav, dark, auto-follows the current dinner slot.
 
@@ -90,9 +90,9 @@ Example timeline:
 ```
 11:42:03 Language: Hindi · Service: Restaurant
 11:42:05 Searched restaurants → 3 matches in Jubilee Hills (6 people, tomorrow)
-11:42:14 Checked Spice Garden slots → 19:30, 20:30 free (20:00 full)
-11:42:26 Booked table T4 · 20:30 · ID VN-4821
-11:42:27 WhatsApp confirmation sent · Spice Garden notified
+11:42:14 Checked Dumgalli Courtyard slots → 19:00 free (20:30 full)
+11:42:26 Booked table T6 · 19:00 · ID VN-4821
+11:42:27 WhatsApp confirmation sent · Dumgalli Courtyard notified
 ```
 
 ### Call logs `/calls`, `/calls/[id]`
@@ -105,8 +105,8 @@ Accuracy by language, latency (median / slowest), naturalness, load-test table (
 
 ```
 ✅ Booking confirmed — Vaani
-Spice Garden, Jubilee Hills
-Sat 23 Nov · 8:30 PM · 6 people · Table T4
+Dumgalli Courtyard, Jubilee Hills
+Tue 24 Nov · 7:00 PM · 6 people · Table T6
 Booking ID: VN-4821
 Status & directions: <site>/b/VN-4821
 (Sample booking for a hackathon demo)

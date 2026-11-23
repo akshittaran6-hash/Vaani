@@ -74,6 +74,16 @@ def _time_outside_schedule(raw: Raw) -> None:
     raw["doctor_availability"][0]["booked_times"].append("23:45")
 
 
+def _time_only_on_some_weekdays(raw: Raw) -> None:
+    """Hours may differ per weekday, but an exception must be a slot on all of them."""
+    row = raw["doctor_availability"][0]
+    doc = next(d for d in raw["doctors"] if d["doctor_id"] == row["doctor_id"])
+    start, end = doc["schedule"]["sat"].split("-")
+    h, m = map(int, end.split(":"))
+    doc["schedule"]["sat"] = f"{start}-{h + 1:02d}:{m:02d}"  # Saturday runs an hour longer
+    row["booked_times"].append(end)  # first slot after the usual close: Saturday only
+
+
 def _part_week_doctor_in_availability(raw: Raw) -> None:
     did = raw["doctor_availability"][0]["doctor_id"]
     doc = next(d for d in raw["doctors"] if d["doctor_id"] == did)
@@ -120,7 +130,8 @@ MUTATIONS: list[tuple[Callable[[Raw], None], str]] = [
     (_bad_table, "booked table T99 does not exist"),
     (_unknown_restaurant, "unknown restaurant_id"),
     (_sample_flag, "is_sample_data must be true"),
-    (_time_outside_schedule, "not a slot inside the schedule"),
+    (_time_outside_schedule, "not a slot on every weekday"),
+    (_time_only_on_some_weekdays, "not a slot on every weekday"),
     (_part_week_doctor_in_availability, "must work all 7 days"),
     (_doctor_wrong_speciality, "is not offered by"),
     (_unknown_doctor_in_test, "unknown doctor_id"),

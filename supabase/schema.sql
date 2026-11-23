@@ -7,11 +7,16 @@
 -- ---------------------------------------------------------------------------
 
 -- "Today" for the demo is always the IST calendar date, whatever the server's timezone.
-create or replace function public.vaani_today() returns date
-language sql stable as $$ select (now() at time zone 'Asia/Kolkata')::date $$;
-
+-- The eval freezes the clock per database (`alter database … set vaani.now_ist = '…'`);
+-- unset everywhere else, so these are just "now in IST".
 create or replace function public.vaani_now_ist() returns timestamp
-language sql stable as $$ select now() at time zone 'Asia/Kolkata' $$;
+language sql stable as $$
+  select coalesce(nullif(current_setting('vaani.now_ist', true), '')::timestamp,
+                  now() at time zone 'Asia/Kolkata')
+$$;
+
+create or replace function public.vaani_today() returns date
+language sql stable as $$ select public.vaani_now_ist()::date $$;
 
 create or replace function public.vaani_touch_updated_at() returns trigger
 language plpgsql as $$

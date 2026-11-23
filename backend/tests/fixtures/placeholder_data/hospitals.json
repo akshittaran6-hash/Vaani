@@ -1,0 +1,801 @@
+[
+  {
+    "hospital_id": "h_jh_01",
+    "slug": "hillcrest-multispeciality-hospital-jubilee-hills",
+    "name": "Hillcrest Multispeciality Hospital",
+    "name_spoken_te": "హిల్‌క్రెస్ట్ మల్టీస్పెషాలిటీ హాస్పిటల్",
+    "name_spoken_hi": "हिलक्रेस्ट मल्टीस्पेशलिटी हॉस्पिटल",
+    "name_aliases": [
+      "hillcrest",
+      "hill crest",
+      "hillcrest hospital"
+    ],
+    "area_id": "jubilee_hills",
+    "type": "multi-speciality hospital",
+    "address": "Sunbird Avenue, Jubilee Hills",
+    "rating": 4.6,
+    "highlight": "Large multi-speciality hospital with a 24x7 emergency wing.",
+    "specialities": [
+      "General Medicine",
+      "Gynecology",
+      "Pediatrics",
+      "Orthopedics",
+      "Cardiology"
+    ],
+    "facilities": {
+      "emergency_24x7": true,
+      "pharmacy": true,
+      "lab": true,
+      "ambulance": true,
+      "cashless_insurance": true,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "08:00-21:00",
+      "tue": "08:00-21:00",
+      "wed": "08:00-21:00",
+      "thu": "08:00-21:00",
+      "fri": "08:00-21:00",
+      "sat": "08:00-21:00",
+      "sun": "08:00-21:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "accent_color": "#0F766E",
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, visitor parking is available at the entrance.",
+        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
+        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+      },
+      {
+        "q": "Do you accept cashless insurance?",
+        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
+        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
+        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
+      },
+      {
+        "q": "What are the OPD timings?",
+        "a_en": "OPD is open every day, 08:00-21:00.",
+        "a_te": "OPD prathi roju untundi andi, 08:00-21:00.",
+        "a_hi": "OPD roz khula hai ji, 08:00-21:00."
+      },
+      {
+        "q": "Can I walk in without an appointment?",
+        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
+        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
+        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
+      },
+      {
+        "q": "Do you have a 24x7 emergency?",
+        "a_en": "Yes, our emergency is open 24x7. In an emergency, please call 108 or 112 first.",
+        "a_te": "Avunu andi, emergency 24x7 open. Emergency aithe mundu 108 leda 112 ki call cheyyandi.",
+        "a_hi": "Haan ji, emergency 24x7 khula hai. Emergency mein pehle 108 ya 112 pe call kijiye."
+      }
+    ],
+    "phone": "DEMO-H-001",
+    "is_sample_data": true
+  },
+  {
+    "hospital_id": "h_jh_02",
+    "slug": "lotus-skin-child-clinic-jubilee-hills",
+    "name": "Lotus Skin & Child Clinic",
+    "name_spoken_te": "లోటస్ స్కిన్ అండ్ చైల్డ్ క్లినిక్",
+    "name_spoken_hi": "लोटस स्किन एंड चाइल्ड क्लिनिक",
+    "name_aliases": [
+      "lotus clinic",
+      "lotus",
+      "lotus skin clinic"
+    ],
+    "area_id": "jubilee_hills",
+    "type": "clinic",
+    "address": "Lily Pond Lane, Jubilee Hills",
+    "rating": 4.3,
+    "highlight": "Neighbourhood clinic for skin care and children's health.",
+    "specialities": [
+      "Dermatology",
+      "Pediatrics"
+    ],
+    "facilities": {
+      "emergency_24x7": false,
+      "pharmacy": true,
+      "lab": false,
+      "ambulance": false,
+      "cashless_insurance": true,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "09:00-21:00",
+      "tue": "09:00-21:00",
+      "wed": "09:00-21:00",
+      "thu": "09:00-21:00",
+      "fri": "09:00-21:00",
+      "sat": "09:00-21:00",
+      "sun": "09:00-20:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "accent_color": "#BE185D",
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, visitor parking is available at the entrance.",
+        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
+        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+      },
+      {
+        "q": "Do you accept cashless insurance?",
+        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
+        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
+        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
+      },
+      {
+        "q": "What are the OPD timings?",
+        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
+        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
+        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
+      },
+      {
+        "q": "Can I walk in without an appointment?",
+        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
+        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
+        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
+      },
+      {
+        "q": "Do you have a 24x7 emergency?",
+        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
+        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
+        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
+      }
+    ],
+    "phone": "DEMO-H-002",
+    "is_sample_data": true
+  },
+  {
+    "hospital_id": "h_jh_03",
+    "slug": "banyan-women-family-clinic-jubilee-hills",
+    "name": "Banyan Women & Family Clinic",
+    "name_spoken_te": "బన్యన్ ఉమెన్ అండ్ ఫ్యామిలీ క్లినిక్",
+    "name_spoken_hi": "बनयन वुमन एंड फ़ैमिली क्लिनिक",
+    "name_aliases": [
+      "banyan clinic",
+      "banyan",
+      "banyan family clinic"
+    ],
+    "area_id": "jubilee_hills",
+    "type": "clinic",
+    "address": "Old Banyan Junction, Jubilee Hills",
+    "rating": 4.1,
+    "highlight": "Family clinic focused on women's and children's care.",
+    "specialities": [
+      "General Medicine",
+      "Gynecology",
+      "Pediatrics"
+    ],
+    "facilities": {
+      "emergency_24x7": false,
+      "pharmacy": true,
+      "lab": true,
+      "ambulance": false,
+      "cashless_insurance": false,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "09:00-21:00",
+      "tue": "09:00-21:00",
+      "wed": "09:00-21:00",
+      "thu": "09:00-21:00",
+      "fri": "09:00-21:00",
+      "sat": "09:00-21:00",
+      "sun": "09:00-20:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "accent_color": "#7E22CE",
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, visitor parking is available at the entrance.",
+        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
+        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+      },
+      {
+        "q": "Do you accept cashless insurance?",
+        "a_en": "We don't offer cashless yet; you can pay and claim reimbursement from your insurer.",
+        "a_te": "Ippudu cashless ledu andi; pay chesi insurance lo reimbursement claim cheyyochu.",
+        "a_hi": "Abhi cashless nahi hai ji; pay karke insurance se reimbursement claim kar sakte hain."
+      },
+      {
+        "q": "What are the OPD timings?",
+        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
+        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
+        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
+      },
+      {
+        "q": "Can I walk in without an appointment?",
+        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
+        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
+        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
+      },
+      {
+        "q": "Do you have a 24x7 emergency?",
+        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
+        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
+        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
+      }
+    ],
+    "phone": "DEMO-H-003",
+    "is_sample_data": true
+  },
+  {
+    "hospital_id": "h_jh_04",
+    "slug": "pearl-city-hospital-jubilee-hills",
+    "name": "Pearl City Hospital",
+    "name_spoken_te": "పెర్ల్ సిటీ హాస్పిటల్",
+    "name_spoken_hi": "पर्ल सिटी हॉस्पिटल",
+    "name_aliases": [
+      "pearl city",
+      "pearl hospital",
+      "pearl city hospital"
+    ],
+    "area_id": "jubilee_hills",
+    "type": "multi-speciality hospital",
+    "address": "Moonstone Road, Jubilee Hills",
+    "rating": 4.4,
+    "highlight": "Multi-speciality hospital known for its eye and heart departments.",
+    "specialities": [
+      "General Medicine",
+      "Dermatology",
+      "Orthopedics",
+      "ENT",
+      "Cardiology",
+      "Ophthalmology"
+    ],
+    "facilities": {
+      "emergency_24x7": true,
+      "pharmacy": true,
+      "lab": true,
+      "ambulance": true,
+      "cashless_insurance": true,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "08:00-21:00",
+      "tue": "08:00-21:00",
+      "wed": "08:00-21:00",
+      "thu": "08:00-21:00",
+      "fri": "08:00-21:00",
+      "sat": "08:00-21:00",
+      "sun": "08:00-21:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "accent_color": "#1E40AF",
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, visitor parking is available at the entrance.",
+        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
+        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+      },
+      {
+        "q": "Do you accept cashless insurance?",
+        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
+        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
+        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
+      },
+      {
+        "q": "What are the OPD timings?",
+        "a_en": "OPD is open every day, 08:00-21:00.",
+        "a_te": "OPD prathi roju untundi andi, 08:00-21:00.",
+        "a_hi": "OPD roz khula hai ji, 08:00-21:00."
+      },
+      {
+        "q": "Can I walk in without an appointment?",
+        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
+        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
+        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
+      },
+      {
+        "q": "Do you have a 24x7 emergency?",
+        "a_en": "Yes, our emergency is open 24x7. In an emergency, please call 108 or 112 first.",
+        "a_te": "Avunu andi, emergency 24x7 open. Emergency aithe mundu 108 leda 112 ki call cheyyandi.",
+        "a_hi": "Haan ji, emergency 24x7 khula hai. Emergency mein pehle 108 ya 112 pe call kijiye."
+      }
+    ],
+    "phone": "DEMO-H-004",
+    "is_sample_data": true
+  },
+  {
+    "hospital_id": "h_jh_05",
+    "slug": "smilebright-dental-eye-clinic-jubilee-hills",
+    "name": "SmileBright Dental & Eye Clinic",
+    "name_spoken_te": "స్మైల్‌బ్రైట్ డెంటల్ అండ్ ఐ క్లినిక్",
+    "name_spoken_hi": "स्माइलब्राइट डेंटल एंड आई क्लिनिक",
+    "name_aliases": [
+      "smilebright",
+      "smile bright",
+      "smilebright clinic"
+    ],
+    "area_id": "jubilee_hills",
+    "type": "clinic",
+    "address": "Hilltop Arcade, Jubilee Hills",
+    "rating": 3.9,
+    "highlight": "Dental, eye and ENT care under one roof.",
+    "specialities": [
+      "ENT",
+      "Dental",
+      "Ophthalmology"
+    ],
+    "facilities": {
+      "emergency_24x7": false,
+      "pharmacy": true,
+      "lab": true,
+      "ambulance": false,
+      "cashless_insurance": false,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "09:00-21:00",
+      "tue": "09:00-21:00",
+      "wed": "09:00-21:00",
+      "thu": "09:00-21:00",
+      "fri": "09:00-21:00",
+      "sat": "09:00-21:00",
+      "sun": "09:00-20:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "accent_color": "#0369A1",
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, visitor parking is available at the entrance.",
+        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
+        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+      },
+      {
+        "q": "Do you accept cashless insurance?",
+        "a_en": "We don't offer cashless yet; you can pay and claim reimbursement from your insurer.",
+        "a_te": "Ippudu cashless ledu andi; pay chesi insurance lo reimbursement claim cheyyochu.",
+        "a_hi": "Abhi cashless nahi hai ji; pay karke insurance se reimbursement claim kar sakte hain."
+      },
+      {
+        "q": "What are the OPD timings?",
+        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
+        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
+        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
+      },
+      {
+        "q": "Can I walk in without an appointment?",
+        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
+        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
+        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
+      },
+      {
+        "q": "Do you have a 24x7 emergency?",
+        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
+        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
+        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
+      }
+    ],
+    "phone": "DEMO-H-005",
+    "is_sample_data": true
+  },
+  {
+    "hospital_id": "h_gb_01",
+    "slug": "navaniti-hospital-gachibowli",
+    "name": "Navaniti Hospital",
+    "name_spoken_te": "నవనీతి హాస్పిటల్",
+    "name_spoken_hi": "नवनीति हॉस्पिटल",
+    "name_aliases": [
+      "navaniti",
+      "navaneeti",
+      "navniti hospital"
+    ],
+    "area_id": "gachibowli",
+    "type": "multi-speciality hospital",
+    "address": "Lakeview Tech Park Lane, Gachibowli",
+    "rating": 4.4,
+    "highlight": "Multi-speciality hospital close to the tech parks.",
+    "specialities": [
+      "General Medicine",
+      "Dermatology",
+      "Gynecology",
+      "Pediatrics",
+      "Orthopedics",
+      "Cardiology"
+    ],
+    "facilities": {
+      "emergency_24x7": true,
+      "pharmacy": true,
+      "lab": true,
+      "ambulance": true,
+      "cashless_insurance": true,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "08:00-21:00",
+      "tue": "08:00-21:00",
+      "wed": "08:00-21:00",
+      "thu": "08:00-21:00",
+      "fri": "08:00-21:00",
+      "sat": "08:00-21:00",
+      "sun": "08:00-21:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "accent_color": "#047857",
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, visitor parking is available at the entrance.",
+        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
+        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+      },
+      {
+        "q": "Do you accept cashless insurance?",
+        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
+        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
+        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
+      },
+      {
+        "q": "What are the OPD timings?",
+        "a_en": "OPD is open every day, 08:00-21:00.",
+        "a_te": "OPD prathi roju untundi andi, 08:00-21:00.",
+        "a_hi": "OPD roz khula hai ji, 08:00-21:00."
+      },
+      {
+        "q": "Can I walk in without an appointment?",
+        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
+        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
+        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
+      },
+      {
+        "q": "Do you have a 24x7 emergency?",
+        "a_en": "Yes, our emergency is open 24x7. In an emergency, please call 108 or 112 first.",
+        "a_te": "Avunu andi, emergency 24x7 open. Emergency aithe mundu 108 leda 112 ki call cheyyandi.",
+        "a_hi": "Haan ji, emergency 24x7 khula hai. Emergency mein pehle 108 ya 112 pe call kijiye."
+      }
+    ],
+    "phone": "DEMO-H-006",
+    "is_sample_data": true
+  },
+  {
+    "hospital_id": "h_gb_02",
+    "slug": "udayam-family-clinic-gachibowli",
+    "name": "Udayam Family Clinic",
+    "name_spoken_te": "ఉదయం ఫ్యామిలీ క్లినిక్",
+    "name_spoken_hi": "उदयम फ़ैमिली क्लिनिक",
+    "name_aliases": [
+      "udayam",
+      "udayam clinic",
+      "udaya clinic"
+    ],
+    "area_id": "gachibowli",
+    "type": "clinic",
+    "address": "Sarovar Street, Gachibowli",
+    "rating": 4.2,
+    "highlight": "Family clinic with evening skin and general consultations.",
+    "specialities": [
+      "General Medicine",
+      "Dermatology",
+      "Pediatrics"
+    ],
+    "facilities": {
+      "emergency_24x7": false,
+      "pharmacy": true,
+      "lab": true,
+      "ambulance": false,
+      "cashless_insurance": false,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "09:00-21:00",
+      "tue": "09:00-21:00",
+      "wed": "09:00-21:00",
+      "thu": "09:00-21:00",
+      "fri": "09:00-21:00",
+      "sat": "09:00-21:00",
+      "sun": "09:00-20:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "accent_color": "#C2410C",
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, visitor parking is available at the entrance.",
+        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
+        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+      },
+      {
+        "q": "Do you accept cashless insurance?",
+        "a_en": "We don't offer cashless yet; you can pay and claim reimbursement from your insurer.",
+        "a_te": "Ippudu cashless ledu andi; pay chesi insurance lo reimbursement claim cheyyochu.",
+        "a_hi": "Abhi cashless nahi hai ji; pay karke insurance se reimbursement claim kar sakte hain."
+      },
+      {
+        "q": "What are the OPD timings?",
+        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
+        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
+        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
+      },
+      {
+        "q": "Can I walk in without an appointment?",
+        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
+        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
+        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
+      },
+      {
+        "q": "Do you have a 24x7 emergency?",
+        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
+        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
+        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
+      }
+    ],
+    "phone": "DEMO-H-007",
+    "is_sample_data": true
+  },
+  {
+    "hospital_id": "h_gb_03",
+    "slug": "cyber-valley-hospital-gachibowli",
+    "name": "Cyber Valley Hospital",
+    "name_spoken_te": "సైబర్ వ్యాలీ హాస్పిటల్",
+    "name_spoken_hi": "साइबर वैली हॉस्पिटल",
+    "name_aliases": [
+      "cyber valley",
+      "cyber valley hospital",
+      "cyber hospital"
+    ],
+    "area_id": "gachibowli",
+    "type": "multi-speciality hospital",
+    "address": "Silver Oak Towers, Gachibowli",
+    "rating": 4.7,
+    "highlight": "Large hospital with cardiology, orthopaedics and a 24x7 emergency.",
+    "specialities": [
+      "General Medicine",
+      "Gynecology",
+      "Orthopedics",
+      "ENT",
+      "Cardiology",
+      "Ophthalmology"
+    ],
+    "facilities": {
+      "emergency_24x7": true,
+      "pharmacy": true,
+      "lab": true,
+      "ambulance": true,
+      "cashless_insurance": true,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "08:00-21:00",
+      "tue": "08:00-21:00",
+      "wed": "08:00-21:00",
+      "thu": "08:00-21:00",
+      "fri": "08:00-21:00",
+      "sat": "08:00-21:00",
+      "sun": "08:00-21:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "accent_color": "#1D4ED8",
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, visitor parking is available at the entrance.",
+        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
+        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+      },
+      {
+        "q": "Do you accept cashless insurance?",
+        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
+        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
+        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
+      },
+      {
+        "q": "What are the OPD timings?",
+        "a_en": "OPD is open every day, 08:00-21:00.",
+        "a_te": "OPD prathi roju untundi andi, 08:00-21:00.",
+        "a_hi": "OPD roz khula hai ji, 08:00-21:00."
+      },
+      {
+        "q": "Can I walk in without an appointment?",
+        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
+        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
+        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
+      },
+      {
+        "q": "Do you have a 24x7 emergency?",
+        "a_en": "Yes, our emergency is open 24x7. In an emergency, please call 108 or 112 first.",
+        "a_te": "Avunu andi, emergency 24x7 open. Emergency aithe mundu 108 leda 112 ki call cheyyandi.",
+        "a_hi": "Haan ji, emergency 24x7 khula hai. Emergency mein pehle 108 ya 112 pe call kijiye."
+      }
+    ],
+    "phone": "DEMO-H-008",
+    "is_sample_data": true
+  },
+  {
+    "hospital_id": "h_gb_04",
+    "slug": "little-steps-childrens-clinic-gachibowli",
+    "name": "Little Steps Children's Clinic",
+    "name_spoken_te": "లిటిల్ స్టెప్స్ చిల్డ్రన్స్ క్లినిక్",
+    "name_spoken_hi": "लिटिल स्टेप्स चिल्ड्रन्स क्लिनिक",
+    "name_aliases": [
+      "little steps",
+      "little steps clinic",
+      "littlesteps"
+    ],
+    "area_id": "gachibowli",
+    "type": "clinic",
+    "address": "Coconut Grove Road, Gachibowli",
+    "rating": 4.0,
+    "highlight": "Children's clinic with a play corner and ENT care.",
+    "specialities": [
+      "Pediatrics",
+      "ENT"
+    ],
+    "facilities": {
+      "emergency_24x7": false,
+      "pharmacy": true,
+      "lab": true,
+      "ambulance": false,
+      "cashless_insurance": false,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "09:00-21:00",
+      "tue": "09:00-21:00",
+      "wed": "09:00-21:00",
+      "thu": "09:00-21:00",
+      "fri": "09:00-21:00",
+      "sat": "09:00-21:00",
+      "sun": "09:00-20:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "accent_color": "#CA8A04",
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, visitor parking is available at the entrance.",
+        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
+        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+      },
+      {
+        "q": "Do you accept cashless insurance?",
+        "a_en": "We don't offer cashless yet; you can pay and claim reimbursement from your insurer.",
+        "a_te": "Ippudu cashless ledu andi; pay chesi insurance lo reimbursement claim cheyyochu.",
+        "a_hi": "Abhi cashless nahi hai ji; pay karke insurance se reimbursement claim kar sakte hain."
+      },
+      {
+        "q": "What are the OPD timings?",
+        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
+        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
+        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
+      },
+      {
+        "q": "Can I walk in without an appointment?",
+        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
+        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
+        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
+      },
+      {
+        "q": "Do you have a 24x7 emergency?",
+        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
+        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
+        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
+      }
+    ],
+    "phone": "DEMO-H-009",
+    "is_sample_data": true
+  },
+  {
+    "hospital_id": "h_gb_05",
+    "slug": "neem-tree-dental-skin-clinic-gachibowli",
+    "name": "Neem Tree Dental & Skin Clinic",
+    "name_spoken_te": "నీమ్ ట్రీ డెంటల్ అండ్ స్కిన్ క్లినిక్",
+    "name_spoken_hi": "नीम ट्री डेंटल एंड स्किन क्लिनिक",
+    "name_aliases": [
+      "neem tree",
+      "neem tree clinic",
+      "neem clinic"
+    ],
+    "area_id": "gachibowli",
+    "type": "clinic",
+    "address": "Pearl Fountain Square, Gachibowli",
+    "rating": 3.8,
+    "highlight": "Dental, skin and eye consultations.",
+    "specialities": [
+      "Dermatology",
+      "Dental",
+      "Ophthalmology"
+    ],
+    "facilities": {
+      "emergency_24x7": false,
+      "pharmacy": true,
+      "lab": false,
+      "ambulance": false,
+      "cashless_insurance": true,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "09:00-21:00",
+      "tue": "09:00-21:00",
+      "wed": "09:00-21:00",
+      "thu": "09:00-21:00",
+      "fri": "09:00-21:00",
+      "sat": "09:00-21:00",
+      "sun": "09:00-20:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "accent_color": "#15803D",
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, visitor parking is available at the entrance.",
+        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
+        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+      },
+      {
+        "q": "Do you accept cashless insurance?",
+        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
+        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
+        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
+      },
+      {
+        "q": "What are the OPD timings?",
+        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
+        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
+        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
+      },
+      {
+        "q": "Can I walk in without an appointment?",
+        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
+        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
+        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
+      },
+      {
+        "q": "Do you have a 24x7 emergency?",
+        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
+        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
+        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
+      }
+    ],
+    "phone": "DEMO-H-010",
+    "is_sample_data": true
+  }
+]

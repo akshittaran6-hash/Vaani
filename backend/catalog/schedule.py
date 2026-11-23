@@ -46,9 +46,20 @@ def doctor_times(doctor: Doctor, day: str) -> list[str]:
     return [from_minutes(m) for m in range(lo, hi - step + 1, step)]
 
 
-def works_every_day_same_hours(doctor: Doctor) -> bool:
-    ranges = [doctor.schedule.get(d) for d in DAYS]  # type: ignore[call-overload]
-    return all(ranges) and len(set(ranges)) == 1
+def works_every_day(doctor: Doctor) -> bool:
+    return all(doctor.schedule.get(d) for d in DAYS)  # type: ignore[call-overload]
+
+
+def every_day_times(doctor: Doctor) -> list[str]:
+    """Slot times that exist on *every* weekday (hours may differ per weekday, e.g. a later
+    close on Saturday). A day_offset lands on a different weekday depending on the seed date,
+    so availability exceptions and test-call times must use only these. [] if a day is off."""
+    if not works_every_day(doctor):
+        return []
+    common = set(doctor_times(doctor, DAYS[0]))
+    for d in DAYS[1:]:
+        common &= set(doctor_times(doctor, d))
+    return sorted(common)
 
 
 def opd_range(hospital: Hospital, day: str) -> tuple[int, int] | None:

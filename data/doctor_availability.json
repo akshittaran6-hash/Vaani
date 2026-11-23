@@ -3,2060 +3,3244 @@
     "doctor_id": "d_jh_01_genmed_1",
     "day_offset": 0,
     "booked_times": [
-      "12:00"
-    ],
-    "blocked_times": []
+      "10:00",
+      "10:15",
+      "10:30",
+      "11:30",
+      "11:45"
+    ]
   },
   {
     "doctor_id": "d_jh_01_genmed_1",
     "day_offset": 1,
     "booked_times": [
-      "09:15",
-      "09:45",
       "10:00",
       "10:30",
+      "10:45",
+      "11:15",
       "11:45"
-    ],
-    "blocked_times": []
+    ]
   },
   {
     "doctor_id": "d_jh_01_genmed_1",
     "day_offset": 2,
     "booked_times": [
-      "10:45",
-      "11:00",
+      "10:00",
+      "10:15",
       "11:30"
-    ],
-    "blocked_times": []
+    ]
   },
   {
     "doctor_id": "d_jh_01_genmed_1",
     "day_offset": 3,
     "booked_times": [
-      "09:15",
-      "09:45",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_genmed_1",
-    "day_offset": 4,
-    "booked_times": [
-      "12:00",
-      "12:30",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_genmed_1",
-    "day_offset": 5,
-    "booked_times": [
-      "09:00",
-      "11:15",
-      "12:00",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_genmed_1",
-    "day_offset": 6,
-    "booked_times": [
-      "09:00",
-      "10:15",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_gyn_1",
-    "day_offset": 0,
-    "booked_times": [
-      "11:30",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_gyn_1",
-    "day_offset": 1,
-    "booked_times": [
-      "10:45",
-      "12:00",
-      "12:15",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_gyn_1",
-    "day_offset": 2,
-    "booked_times": [
-      "10:45",
-      "11:00",
-      "11:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_gyn_1",
-    "day_offset": 3,
-    "booked_times": [
-      "10:00",
-      "11:15",
-      "11:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_gyn_1",
-    "day_offset": 4,
-    "booked_times": [
-      "10:30",
-      "11:30",
-      "11:45",
-      "12:15",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_gyn_1",
-    "day_offset": 5,
-    "booked_times": [
-      "10:00",
-      "11:30",
-      "12:00",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_peds_1",
-    "day_offset": 0,
-    "booked_times": [
-      "16:30",
-      "17:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_peds_1",
-    "day_offset": 3,
-    "booked_times": [
-      "17:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_peds_1",
-    "day_offset": 4,
-    "booked_times": [
-      "16:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_peds_1",
-    "day_offset": 5,
-    "booked_times": [
-      "17:15",
-      "18:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_peds_1",
-    "day_offset": 6,
-    "booked_times": [
-      "17:00",
-      "17:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_ortho_2",
-    "day_offset": 0,
-    "booked_times": [
-      "17:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_ortho_2",
-    "day_offset": 1,
-    "booked_times": [
-      "17:00",
-      "19:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_ortho_2",
-    "day_offset": 3,
-    "booked_times": [
-      "17:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_cardio_1",
-    "day_offset": 0,
-    "booked_times": [
-      "10:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_cardio_1",
-    "day_offset": 2,
-    "booked_times": [
-      "10:30",
-      "10:45",
-      "11:45",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_cardio_1",
-    "day_offset": 3,
-    "booked_times": [
       "10:15",
       "10:45",
-      "11:00",
-      "11:45",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_cardio_1",
-    "day_offset": 4,
-    "booked_times": [
-      "10:30",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_01_cardio_1",
-    "day_offset": 5,
-    "booked_times": [
-      "10:15",
-      "10:30",
-      "11:00",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_1",
-    "day_offset": 0,
-    "booked_times": [
-      "10:00",
-      "11:00",
-      "11:30",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_1",
-    "day_offset": 1,
-    "booked_times": [
-      "10:00",
-      "10:15",
-      "10:30",
-      "10:45",
-      "11:00",
-      "11:15",
-      "11:30",
-      "11:45",
-      "12:00",
-      "12:15",
-      "12:30",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_1",
-    "day_offset": 2,
-    "booked_times": [
-      "10:15",
-      "10:45",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_1",
-    "day_offset": 3,
-    "booked_times": [
-      "10:15",
-      "10:45",
-      "12:30",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_1",
-    "day_offset": 4,
-    "booked_times": [
-      "10:00",
-      "10:15",
-      "11:00",
-      "12:15",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_1",
-    "day_offset": 5,
-    "booked_times": [
-      "11:30",
-      "12:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_1",
-    "day_offset": 6,
-    "booked_times": [
-      "10:00",
-      "10:15",
-      "11:15",
-      "12:00",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_2",
-    "day_offset": 0,
-    "booked_times": [
-      "17:15",
-      "18:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_2",
-    "day_offset": 1,
-    "booked_times": [
-      "18:15",
-      "19:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_2",
-    "day_offset": 2,
-    "booked_times": [
-      "17:30",
-      "19:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_2",
-    "day_offset": 3,
-    "booked_times": [
-      "17:30",
-      "19:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_2",
-    "day_offset": 4,
-    "booked_times": [
-      "19:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_2",
-    "day_offset": 5,
-    "booked_times": [
-      "18:30",
-      "18:45",
-      "19:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_derm_2",
-    "day_offset": 6,
-    "booked_times": [
-      "17:45",
-      "18:00",
-      "18:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_peds_1",
-    "day_offset": 1,
-    "booked_times": [
-      "10:45",
-      "11:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_peds_1",
-    "day_offset": 2,
-    "booked_times": [
-      "11:30",
-      "12:15",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_peds_1",
-    "day_offset": 3,
-    "booked_times": [
-      "10:00",
-      "11:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_peds_1",
-    "day_offset": 4,
-    "booked_times": [
-      "10:30",
-      "11:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_peds_1",
-    "day_offset": 5,
-    "booked_times": [
-      "11:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_02_peds_1",
-    "day_offset": 6,
-    "booked_times": [
       "11:00",
       "11:15"
-    ],
-    "blocked_times": []
+    ]
   },
   {
-    "doctor_id": "d_jh_03_gyn_1",
-    "day_offset": 0,
+    "doctor_id": "d_jh_01_genmed_1",
+    "day_offset": 4,
     "booked_times": [
       "10:00",
       "11:00",
-      "12:00",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_03_gyn_1",
-    "day_offset": 1,
-    "booked_times": [
-      "10:15",
-      "10:45",
       "11:30",
-      "12:45"
-    ],
-    "blocked_times": []
+      "11:45"
+    ]
   },
   {
-    "doctor_id": "d_jh_03_gyn_1",
-    "day_offset": 2,
-    "booked_times": [
-      "10:45",
-      "11:45",
-      "12:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_03_gyn_1",
-    "day_offset": 3,
-    "booked_times": [
-      "10:00",
-      "10:15",
-      "11:45",
-      "12:30",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_03_gyn_1",
-    "day_offset": 4,
-    "booked_times": [
-      "10:45",
-      "11:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_03_gyn_1",
+    "doctor_id": "d_jh_01_genmed_1",
     "day_offset": 5,
     "booked_times": [
       "10:45",
-      "11:00",
-      "11:15",
-      "11:45",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_03_gyn_1",
-    "day_offset": 6,
-    "booked_times": [
-      "11:15",
-      "11:30",
-      "12:00",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_03_genmed_1",
-    "day_offset": 0,
-    "booked_times": [
-      "18:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_03_genmed_1",
-    "day_offset": 1,
-    "booked_times": [
-      "18:00",
-      "19:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_03_genmed_1",
-    "day_offset": 2,
-    "booked_times": [
-      "17:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_03_genmed_1",
-    "day_offset": 5,
-    "booked_times": [
-      "17:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_03_genmed_1",
-    "day_offset": 6,
-    "booked_times": [
-      "17:30",
-      "17:45",
-      "19:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_genmed_1",
-    "day_offset": 0,
-    "booked_times": [
-      "11:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_genmed_1",
-    "day_offset": 1,
-    "booked_times": [
-      "10:00",
-      "11:00",
-      "11:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_genmed_1",
-    "day_offset": 2,
-    "booked_times": [
-      "09:15",
-      "09:45",
-      "10:00",
-      "11:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_genmed_1",
-    "day_offset": 3,
-    "booked_times": [
-      "10:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_genmed_1",
-    "day_offset": 4,
-    "booked_times": [
-      "10:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_genmed_1",
-    "day_offset": 6,
-    "booked_times": [
-      "09:00",
-      "09:30",
-      "10:00",
-      "11:00",
-      "11:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_derm_1",
-    "day_offset": 0,
-    "booked_times": [
-      "16:30",
-      "17:00",
-      "17:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_derm_1",
-    "day_offset": 3,
-    "booked_times": [
-      "17:00",
-      "17:45",
-      "18:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_derm_1",
-    "day_offset": 4,
-    "booked_times": [
-      "16:30",
-      "17:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_derm_1",
-    "day_offset": 6,
-    "booked_times": [
-      "17:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_ortho_1",
-    "day_offset": 2,
-    "booked_times": [
-      "10:15",
-      "11:45",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_ortho_1",
-    "day_offset": 3,
-    "booked_times": [
-      "10:00",
-      "10:30",
-      "11:00",
-      "12:15",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_ortho_1",
-    "day_offset": 5,
-    "booked_times": [
-      "10:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_ortho_1",
-    "day_offset": 6,
-    "booked_times": [
-      "10:45",
-      "11:30",
-      "12:15",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_ent_1",
-    "day_offset": 0,
-    "booked_times": [
-      "11:00",
-      "11:30",
-      "11:45",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_ent_1",
-    "day_offset": 1,
-    "booked_times": [
-      "10:00",
-      "11:00",
-      "11:30",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_ent_1",
-    "day_offset": 2,
-    "booked_times": [
-      "10:15",
-      "10:45",
-      "12:15",
-      "12:45"
-    ],
-    "blocked_times": [
       "11:00"
     ]
   },
   {
-    "doctor_id": "d_jh_04_ent_1",
-    "day_offset": 3,
-    "booked_times": [
-      "10:15",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_ent_1",
-    "day_offset": 4,
-    "booked_times": [
-      "10:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_ent_1",
-    "day_offset": 5,
-    "booked_times": [
-      "12:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_cardio_1",
-    "day_offset": 2,
-    "booked_times": [
-      "18:45",
-      "19:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_cardio_1",
-    "day_offset": 3,
-    "booked_times": [
-      "17:00",
-      "18:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_cardio_1",
-    "day_offset": 5,
-    "booked_times": [
-      "19:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_cardio_1",
+    "doctor_id": "d_jh_01_genmed_1",
     "day_offset": 6,
     "booked_times": [
-      "19:45"
-    ],
-    "blocked_times": []
+      "10:15",
+      "10:30",
+      "11:00",
+      "11:15",
+      "11:30"
+    ]
   },
   {
-    "doctor_id": "d_jh_04_ophth_1",
+    "doctor_id": "d_jh_01_genmed_2",
     "day_offset": 0,
     "booked_times": [
-      "10:15",
-      "10:45",
-      "12:30"
-    ],
-    "blocked_times": []
+      "16:00",
+      "16:30",
+      "16:45"
+    ]
   },
   {
-    "doctor_id": "d_jh_04_ophth_1",
+    "doctor_id": "d_jh_01_genmed_2",
     "day_offset": 1,
     "booked_times": [
-      "12:15",
-      "12:30"
-    ],
-    "blocked_times": []
+      "16:45",
+      "17:00",
+      "17:15"
+    ]
   },
   {
-    "doctor_id": "d_jh_04_ophth_1",
+    "doctor_id": "d_jh_01_genmed_2",
     "day_offset": 2,
     "booked_times": [
-      "10:15",
-      "10:45",
-      "11:30",
-      "12:00",
-      "12:45"
-    ],
-    "blocked_times": []
+      "16:30",
+      "17:15"
+    ]
   },
   {
-    "doctor_id": "d_jh_04_ophth_1",
+    "doctor_id": "d_jh_01_genmed_2",
     "day_offset": 3,
+    "booked_times": [
+      "16:15",
+      "16:45",
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_genmed_2",
+    "day_offset": 4,
+    "booked_times": [
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_genmed_2",
+    "day_offset": 5,
+    "booked_times": [
+      "16:15",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_genmed_2",
+    "day_offset": 6,
+    "booked_times": [
+      "16:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_derm_1",
+    "day_offset": 0,
+    "booked_times": [
+      "09:30",
+      "10:00",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_derm_1",
+    "day_offset": 1,
+    "booked_times": [
+      "10:00",
+      "10:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_derm_1",
+    "day_offset": 2,
+    "booked_times": [
+      "10:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_derm_1",
+    "day_offset": 3,
+    "booked_times": [
+      "09:45",
+      "10:00",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_derm_1",
+    "day_offset": 4,
+    "booked_times": [
+      "09:45",
+      "10:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_derm_1",
+    "day_offset": 5,
+    "booked_times": [
+      "09:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_derm_1",
+    "day_offset": 6,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:15",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_1",
+    "day_offset": 0,
+    "booked_times": [
+      "14:30",
+      "14:45",
+      "15:00",
+      "15:15",
+      "15:30",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_1",
+    "day_offset": 1,
+    "booked_times": [
+      "15:30",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_1",
+    "day_offset": 2,
+    "booked_times": [
+      "14:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_1",
+    "day_offset": 3,
+    "booked_times": [
+      "15:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_1",
+    "day_offset": 4,
+    "booked_times": [
+      "14:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_1",
+    "day_offset": 5,
+    "booked_times": [
+      "14:15",
+      "15:00",
+      "15:15",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_1",
+    "day_offset": 6,
+    "booked_times": [
+      "14:45",
+      "15:15",
+      "15:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_2",
+    "day_offset": 0,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:45",
+      "12:00",
+      "12:15",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_2",
+    "day_offset": 1,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45",
+      "12:15",
+      "12:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_2",
+    "day_offset": 2,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "12:00",
+      "12:15",
+      "12:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_2",
+    "day_offset": 3,
+    "booked_times": [
+      "11:30",
+      "11:45",
+      "12:00",
+      "12:15",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_2",
+    "day_offset": 4,
+    "booked_times": [
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_2",
+    "day_offset": 5,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "12:00",
+      "12:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_peds_2",
+    "day_offset": 6,
+    "booked_times": [
+      "11:00",
+      "11:45",
+      "12:15",
+      "12:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_ortho_1",
+    "day_offset": 0,
+    "booked_times": [
+      "15:00",
+      "15:45",
+      "16:15",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_ortho_1",
+    "day_offset": 1,
+    "booked_times": [
+      "15:15",
+      "15:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_ortho_1",
+    "day_offset": 2,
+    "booked_times": [
+      "15:15",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_ortho_1",
+    "day_offset": 3,
+    "booked_times": [
+      "15:15",
+      "16:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_ortho_1",
+    "day_offset": 4,
+    "booked_times": [
+      "16:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_ortho_1",
+    "day_offset": 5,
+    "booked_times": [
+      "15:15",
+      "15:30",
+      "15:45",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_ortho_1",
+    "day_offset": 6,
+    "booked_times": [
+      "15:00",
+      "15:30",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_ortho_2",
+    "day_offset": 0,
     "booked_times": [
       "10:00",
       "10:15",
       "10:30",
-      "11:00",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_ophth_1",
-    "day_offset": 4,
-    "booked_times": [
-      "11:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_04_ophth_1",
-    "day_offset": 5,
-    "booked_times": [
-      "11:00",
-      "11:45",
-      "12:15",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_05_dental_1",
-    "day_offset": 0,
-    "booked_times": [
-      "11:00",
       "11:30",
-      "12:45"
-    ],
-    "blocked_times": []
+      "11:45"
+    ]
   },
   {
-    "doctor_id": "d_jh_05_dental_1",
+    "doctor_id": "d_jh_01_ortho_2",
     "day_offset": 1,
     "booked_times": [
-      "12:00",
-      "12:45"
-    ],
-    "blocked_times": []
+      "10:00",
+      "10:15",
+      "10:45",
+      "11:15",
+      "11:30"
+    ]
   },
   {
-    "doctor_id": "d_jh_05_dental_1",
+    "doctor_id": "d_jh_01_ortho_2",
     "day_offset": 2,
     "booked_times": [
-      "10:15",
-      "11:45",
-      "12:15"
-    ],
-    "blocked_times": []
+      "10:00",
+      "10:30",
+      "10:45",
+      "11:00",
+      "11:15"
+    ]
   },
   {
-    "doctor_id": "d_jh_05_dental_1",
+    "doctor_id": "d_jh_01_ortho_2",
+    "day_offset": 3,
+    "booked_times": [
+      "10:30",
+      "10:45",
+      "11:00",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_ortho_2",
     "day_offset": 4,
     "booked_times": [
-      "11:15",
-      "12:15",
-      "12:45"
-    ],
-    "blocked_times": []
+      "10:30",
+      "11:45"
+    ]
   },
   {
-    "doctor_id": "d_jh_05_dental_1",
+    "doctor_id": "d_jh_01_ortho_2",
     "day_offset": 5,
     "booked_times": [
       "10:00",
-      "10:15"
-    ],
-    "blocked_times": []
+      "10:15",
+      "11:00",
+      "11:15",
+      "11:45"
+    ]
   },
   {
-    "doctor_id": "d_jh_05_dental_1",
+    "doctor_id": "d_jh_01_ortho_2",
     "day_offset": 6,
     "booked_times": [
-      "12:30"
-    ],
-    "blocked_times": []
+      "10:45",
+      "11:00",
+      "11:45"
+    ]
   },
   {
-    "doctor_id": "d_jh_05_dental_2",
+    "doctor_id": "d_jh_01_ent_1",
     "day_offset": 0,
     "booked_times": [
-      "17:00",
-      "18:00",
-      "19:15"
-    ],
-    "blocked_times": []
+      "16:00"
+    ]
   },
   {
-    "doctor_id": "d_jh_05_dental_2",
+    "doctor_id": "d_jh_01_ent_1",
     "day_offset": 1,
     "booked_times": [
-      "17:00",
-      "17:30",
-      "18:45"
-    ],
-    "blocked_times": []
+      "16:45",
+      "17:00"
+    ]
   },
   {
-    "doctor_id": "d_jh_05_dental_2",
+    "doctor_id": "d_jh_01_ent_1",
     "day_offset": 2,
-    "booked_times": [
-      "18:00",
-      "18:45",
-      "19:30"
-    ],
-    "blocked_times": []
+    "booked_times": []
   },
   {
-    "doctor_id": "d_jh_05_dental_2",
-    "day_offset": 4,
-    "booked_times": [
-      "18:30",
-      "18:45",
-      "19:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_05_dental_2",
-    "day_offset": 6,
-    "booked_times": [
-      "18:15",
-      "18:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_05_ophth_1",
-    "day_offset": 0,
-    "booked_times": [
-      "17:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_05_ophth_1",
+    "doctor_id": "d_jh_01_ent_1",
     "day_offset": 3,
-    "booked_times": [
-      "17:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_05_ophth_1",
-    "day_offset": 4,
-    "booked_times": [
-      "17:00",
-      "18:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_05_ophth_1",
-    "day_offset": 5,
-    "booked_times": [
-      "16:00",
-      "18:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_jh_05_ophth_1",
-    "day_offset": 6,
     "booked_times": [
       "16:15",
       "17:15"
-    ],
-    "blocked_times": []
+    ]
   },
   {
-    "doctor_id": "d_gb_01_genmed_1",
+    "doctor_id": "d_jh_01_ent_1",
+    "day_offset": 4,
+    "booked_times": []
+  },
+  {
+    "doctor_id": "d_jh_01_ent_1",
+    "day_offset": 5,
+    "booked_times": []
+  },
+  {
+    "doctor_id": "d_jh_01_ent_1",
+    "day_offset": 6,
+    "booked_times": [
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_cardio_1",
     "day_offset": 0,
     "booked_times": [
-      "09:15",
-      "11:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_genmed_1",
-    "day_offset": 1,
-    "booked_times": [
-      "09:00",
-      "11:30",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_genmed_1",
-    "day_offset": 2,
-    "booked_times": [
-      "09:00",
-      "09:45",
-      "10:30",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_genmed_1",
-    "day_offset": 3,
-    "booked_times": [
-      "10:45",
-      "11:15",
-      "11:45",
-      "12:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_genmed_1",
-    "day_offset": 4,
-    "booked_times": [
-      "09:00",
       "09:45",
       "10:00",
-      "12:00",
-      "12:30"
-    ],
-    "blocked_times": []
+      "10:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_01_genmed_1",
-    "day_offset": 5,
-    "booked_times": [
-      "10:00",
-      "10:45",
-      "12:30",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_genmed_1",
-    "day_offset": 6,
-    "booked_times": [
-      "09:00",
-      "09:15",
-      "11:15",
-      "11:30",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_derm_1",
-    "day_offset": 0,
-    "booked_times": [
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_derm_1",
-    "day_offset": 2,
-    "booked_times": [
-      "10:00",
-      "10:15",
-      "11:30",
-      "12:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_derm_1",
-    "day_offset": 3,
-    "booked_times": [
-      "10:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_derm_1",
-    "day_offset": 4,
-    "booked_times": [
-      "10:15",
-      "10:30",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_derm_1",
-    "day_offset": 5,
-    "booked_times": [
-      "11:00",
-      "12:00",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_derm_1",
-    "day_offset": 6,
-    "booked_times": [
-      "10:45",
-      "11:00",
-      "11:30",
-      "11:45",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_gyn_1",
-    "day_offset": 0,
-    "booked_times": [
-      "10:30",
-      "11:30",
-      "12:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_gyn_1",
+    "doctor_id": "d_jh_01_cardio_1",
     "day_offset": 1,
     "booked_times": [
-      "12:15"
-    ],
-    "blocked_times": []
+      "10:00",
+      "10:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_01_gyn_1",
+    "doctor_id": "d_jh_01_cardio_1",
     "day_offset": 2,
     "booked_times": [
-      "10:15",
-      "10:30",
-      "11:00",
-      "12:45"
-    ],
-    "blocked_times": []
+      "09:30",
+      "09:45",
+      "10:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_01_gyn_1",
+    "doctor_id": "d_jh_01_cardio_1",
     "day_offset": 3,
     "booked_times": [
-      "11:00",
-      "11:15",
-      "12:00"
-    ],
-    "blocked_times": []
+      "09:30",
+      "10:00",
+      "10:15",
+      "10:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_01_gyn_1",
-    "day_offset": 5,
-    "booked_times": [
-      "11:00",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_gyn_1",
-    "day_offset": 6,
+    "doctor_id": "d_jh_01_cardio_1",
+    "day_offset": 4,
     "booked_times": [
       "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_cardio_1",
+    "day_offset": 5,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_cardio_1",
+    "day_offset": 6,
+    "booked_times": [
+      "09:45",
+      "10:00",
+      "10:15",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_gyn_1",
+    "day_offset": 0,
+    "booked_times": [
+      "14:30",
+      "14:45",
+      "15:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_gyn_1",
+    "day_offset": 1,
+    "booked_times": [
+      "14:15",
+      "14:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_gyn_1",
+    "day_offset": 2,
+    "booked_times": [
+      "15:00",
+      "15:30",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_gyn_1",
+    "day_offset": 3,
+    "booked_times": [
+      "14:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_gyn_1",
+    "day_offset": 4,
+    "booked_times": [
+      "14:15",
+      "15:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_gyn_1",
+    "day_offset": 5,
+    "booked_times": [
+      "14:00",
+      "14:15",
+      "15:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_01_gyn_1",
+    "day_offset": 6,
+    "booked_times": [
+      "14:30",
+      "15:00",
+      "15:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_1",
+    "day_offset": 0,
+    "booked_times": [
+      "11:00",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_1",
+    "day_offset": 1,
+    "booked_times": [
+      "11:15",
+      "11:30",
       "11:45",
       "12:15",
       "12:30"
-    ],
-    "blocked_times": []
+    ]
   },
   {
-    "doctor_id": "d_gb_01_peds_1",
-    "day_offset": 0,
-    "booked_times": [
-      "17:45",
-      "18:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_peds_1",
-    "day_offset": 1,
-    "booked_times": [
-      "17:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_peds_1",
+    "doctor_id": "d_jh_02_genmed_1",
     "day_offset": 2,
     "booked_times": [
-      "17:30",
-      "17:45",
-      "18:00"
-    ],
-    "blocked_times": []
+      "11:00",
+      "11:30",
+      "11:45",
+      "12:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_01_peds_1",
+    "doctor_id": "d_jh_02_genmed_1",
+    "day_offset": 3,
+    "booked_times": [
+      "11:15",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_1",
+    "day_offset": 4,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_1",
+    "day_offset": 5,
+    "booked_times": [
+      "11:00",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_1",
+    "day_offset": 6,
+    "booked_times": [
+      "11:15",
+      "11:30",
+      "12:15",
+      "12:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_2",
+    "day_offset": 0,
+    "booked_times": [
+      "15:00",
+      "16:00",
+      "16:15",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_2",
+    "day_offset": 1,
+    "booked_times": [
+      "15:45",
+      "16:30",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_2",
+    "day_offset": 2,
+    "booked_times": [
+      "16:00",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_2",
+    "day_offset": 3,
+    "booked_times": [
+      "15:15",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_2",
+    "day_offset": 4,
+    "booked_times": [
+      "15:30",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_2",
+    "day_offset": 5,
+    "booked_times": [
+      "15:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_genmed_2",
+    "day_offset": 6,
+    "booked_times": [
+      "15:30",
+      "16:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_1",
+    "day_offset": 0,
+    "booked_times": [
+      "10:15",
+      "10:30",
+      "11:00",
+      "11:15",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_1",
+    "day_offset": 1,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_1",
+    "day_offset": 2,
+    "booked_times": [
+      "10:30",
+      "10:45",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_1",
+    "day_offset": 3,
+    "booked_times": [
+      "10:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_1",
+    "day_offset": 4,
+    "booked_times": [
+      "10:00",
+      "10:30",
+      "10:45",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_1",
+    "day_offset": 5,
+    "booked_times": [
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_1",
+    "day_offset": 6,
+    "booked_times": [
+      "10:00",
+      "10:15",
+      "10:45",
+      "11:00",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_2",
+    "day_offset": 0,
+    "booked_times": [
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_2",
+    "day_offset": 1,
+    "booked_times": [
+      "16:00",
+      "16:30",
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_2",
+    "day_offset": 2,
+    "booked_times": [
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_2",
+    "day_offset": 3,
+    "booked_times": [
+      "16:45",
+      "17:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_2",
+    "day_offset": 4,
+    "booked_times": [
+      "16:00",
+      "16:30",
+      "17:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_2",
+    "day_offset": 5,
+    "booked_times": [
+      "16:00",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ophth_2",
+    "day_offset": 6,
+    "booked_times": [
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_dental_1",
+    "day_offset": 0,
+    "booked_times": [
+      "09:45",
+      "10:00",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_dental_1",
+    "day_offset": 1,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:00",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_dental_1",
+    "day_offset": 2,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_dental_1",
+    "day_offset": 3,
+    "booked_times": [
+      "10:15",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_dental_1",
+    "day_offset": 4,
+    "booked_times": [
+      "09:30",
+      "10:15",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_dental_1",
+    "day_offset": 5,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:15",
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_dental_1",
+    "day_offset": 6,
+    "booked_times": [
+      "09:30",
+      "10:00",
+      "10:15",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_derm_1",
+    "day_offset": 0,
+    "booked_times": [
+      "14:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_derm_1",
+    "day_offset": 1,
+    "booked_times": [
+      "15:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_derm_1",
+    "day_offset": 2,
+    "booked_times": [
+      "14:00",
+      "14:15",
+      "15:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_derm_1",
+    "day_offset": 3,
+    "booked_times": [
+      "14:30",
+      "15:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_derm_1",
+    "day_offset": 4,
+    "booked_times": [
+      "14:15",
+      "14:30",
+      "15:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_derm_1",
+    "day_offset": 5,
+    "booked_times": [
+      "14:00",
+      "14:45",
+      "15:15",
+      "15:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_derm_1",
+    "day_offset": 6,
+    "booked_times": [
+      "14:00",
+      "14:15",
+      "15:00",
+      "15:15",
+      "15:30",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ortho_1",
+    "day_offset": 0,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ortho_1",
+    "day_offset": 1,
+    "booked_times": [
+      "11:00",
+      "12:00",
+      "12:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ortho_1",
+    "day_offset": 2,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45",
+      "12:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ortho_1",
+    "day_offset": 3,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:45",
+      "12:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ortho_1",
+    "day_offset": 4,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ortho_1",
+    "day_offset": 5,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45",
+      "12:00",
+      "12:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_ortho_1",
+    "day_offset": 6,
+    "booked_times": [
+      "11:15",
+      "11:45",
+      "12:00",
+      "12:30",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_cardio_1",
+    "day_offset": 0,
+    "booked_times": [
+      "15:30",
+      "15:45",
+      "16:00",
+      "16:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_cardio_1",
+    "day_offset": 1,
+    "booked_times": [
+      "15:00",
+      "16:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_cardio_1",
+    "day_offset": 2,
+    "booked_times": [
+      "15:45",
+      "16:15",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_cardio_1",
+    "day_offset": 3,
+    "booked_times": [
+      "15:00",
+      "15:15",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_cardio_1",
+    "day_offset": 4,
+    "booked_times": [
+      "15:30",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_cardio_1",
+    "day_offset": 5,
+    "booked_times": [
+      "15:00",
+      "15:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_02_cardio_1",
+    "day_offset": 6,
+    "booked_times": [
+      "15:00",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_03_derm_1",
+    "day_offset": 0,
+    "booked_times": [
+      "10:00",
+      "10:15",
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_03_derm_1",
+    "day_offset": 1,
+    "booked_times": [
+      "10:15",
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_03_derm_1",
+    "day_offset": 2,
+    "booked_times": [
+      "10:15",
+      "10:30",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_03_derm_1",
+    "day_offset": 3,
+    "booked_times": [
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_03_derm_1",
+    "day_offset": 4,
+    "booked_times": [
+      "10:30",
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_03_derm_1",
+    "day_offset": 5,
+    "booked_times": [
+      "10:15",
+      "11:00",
+      "11:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_03_derm_1",
+    "day_offset": 6,
+    "booked_times": [
+      "10:15",
+      "10:30",
+      "11:15",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_03_ophth_1",
+    "day_offset": 0,
+    "booked_times": [
+      "16:00",
+      "16:45",
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_03_ophth_1",
+    "day_offset": 1,
+    "booked_times": [
+      "16:30",
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_03_ophth_1",
+    "day_offset": 2,
+    "booked_times": [
+      "16:15",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_03_ophth_1",
     "day_offset": 3,
     "booked_times": [
       "16:45"
-    ],
-    "blocked_times": []
+    ]
   },
   {
-    "doctor_id": "d_gb_01_peds_1",
-    "day_offset": 5,
-    "booked_times": [
-      "16:45",
-      "17:30",
-      "18:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_ortho_1",
-    "day_offset": 0,
-    "booked_times": [
-      "19:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_ortho_1",
-    "day_offset": 1,
-    "booked_times": [
-      "18:30",
-      "19:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_ortho_1",
-    "day_offset": 2,
-    "booked_times": [
-      "19:30",
-      "19:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_01_ortho_1",
+    "doctor_id": "d_jh_03_ophth_1",
     "day_offset": 4,
     "booked_times": [
-      "17:00",
-      "17:30"
-    ],
-    "blocked_times": []
+      "16:00"
+    ]
   },
   {
-    "doctor_id": "d_gb_01_ortho_1",
+    "doctor_id": "d_jh_03_ophth_1",
     "day_offset": 5,
     "booked_times": [
-      "17:15",
-      "18:15",
-      "19:15"
-    ],
-    "blocked_times": []
+      "16:30",
+      "17:15"
+    ]
   },
   {
-    "doctor_id": "d_gb_01_ortho_1",
+    "doctor_id": "d_jh_03_ophth_1",
     "day_offset": 6,
     "booked_times": [
-      "17:15",
-      "19:00"
-    ],
-    "blocked_times": []
+      "16:15",
+      "16:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_01_cardio_1",
+    "doctor_id": "d_jh_04_peds_1",
+    "day_offset": 0,
+    "booked_times": [
+      "09:45",
+      "10:15",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_peds_1",
+    "day_offset": 1,
+    "booked_times": [
+      "09:45",
+      "10:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_peds_1",
+    "day_offset": 2,
+    "booked_times": [
+      "09:45",
+      "10:00",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_peds_1",
+    "day_offset": 3,
+    "booked_times": [
+      "09:45",
+      "10:00",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_peds_1",
+    "day_offset": 4,
+    "booked_times": [
+      "09:30",
+      "10:00",
+      "10:15",
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_peds_1",
+    "day_offset": 5,
+    "booked_times": [
+      "09:30",
+      "10:00",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_peds_1",
+    "day_offset": 6,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:00",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_genmed_1",
+    "day_offset": 0,
+    "booked_times": [
+      "14:15",
+      "14:30",
+      "15:15",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_genmed_1",
+    "day_offset": 1,
+    "booked_times": [
+      "14:00",
+      "14:15",
+      "14:45",
+      "15:15",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_genmed_1",
+    "day_offset": 2,
+    "booked_times": [
+      "14:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_genmed_1",
+    "day_offset": 3,
+    "booked_times": [
+      "14:00",
+      "14:30",
+      "15:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_genmed_1",
+    "day_offset": 4,
+    "booked_times": [
+      "15:15",
+      "15:30",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_genmed_1",
+    "day_offset": 5,
+    "booked_times": [
+      "14:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_genmed_1",
+    "day_offset": 6,
+    "booked_times": [
+      "14:30",
+      "15:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_ent_1",
+    "day_offset": 0,
+    "booked_times": [
+      "11:15",
+      "11:30",
+      "11:45",
+      "12:15",
+      "12:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_ent_1",
+    "day_offset": 1,
+    "booked_times": [
+      "11:45",
+      "12:00",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_ent_1",
+    "day_offset": 2,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:45",
+      "12:00",
+      "12:15",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_ent_1",
+    "day_offset": 3,
+    "booked_times": [
+      "11:15",
+      "11:30",
+      "11:45",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_ent_1",
+    "day_offset": 4,
+    "booked_times": [
+      "11:00",
+      "11:30",
+      "12:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_ent_1",
+    "day_offset": 5,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_04_ent_1",
+    "day_offset": 6,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:45",
+      "12:00",
+      "12:30",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_gyn_1",
+    "day_offset": 0,
+    "booked_times": [
+      "15:15",
+      "16:15",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_gyn_1",
+    "day_offset": 1,
+    "booked_times": []
+  },
+  {
+    "doctor_id": "d_jh_05_gyn_1",
+    "day_offset": 2,
+    "booked_times": []
+  },
+  {
+    "doctor_id": "d_jh_05_gyn_1",
+    "day_offset": 3,
+    "booked_times": [
+      "15:00",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_gyn_1",
+    "day_offset": 4,
+    "booked_times": [
+      "15:00",
+      "16:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_gyn_1",
+    "day_offset": 5,
+    "booked_times": [
+      "16:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_gyn_1",
+    "day_offset": 6,
+    "booked_times": [
+      "15:00",
+      "15:15",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_dental_1",
     "day_offset": 0,
     "booked_times": [
       "10:00",
       "10:30",
-      "11:30"
-    ],
-    "blocked_times": []
+      "10:45",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_01_cardio_1",
+    "doctor_id": "d_jh_05_dental_1",
     "day_offset": 1,
+    "booked_times": [
+      "10:00",
+      "11:15",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_dental_1",
+    "day_offset": 2,
+    "booked_times": [
+      "10:00",
+      "10:15",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_dental_1",
+    "day_offset": 3,
+    "booked_times": [
+      "10:00",
+      "10:45",
+      "11:00",
+      "11:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_dental_1",
+    "day_offset": 4,
+    "booked_times": [
+      "10:45",
+      "11:00",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_dental_1",
+    "day_offset": 5,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_dental_1",
+    "day_offset": 6,
+    "booked_times": [
+      "10:00",
+      "10:15",
+      "10:30",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_genmed_1",
+    "day_offset": 0,
+    "booked_times": [
+      "16:15",
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_genmed_1",
+    "day_offset": 1,
+    "booked_times": []
+  },
+  {
+    "doctor_id": "d_jh_05_genmed_1",
+    "day_offset": 2,
+    "booked_times": [
+      "17:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_genmed_1",
+    "day_offset": 3,
+    "booked_times": [
+      "16:00",
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_genmed_1",
+    "day_offset": 4,
+    "booked_times": [
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_genmed_1",
+    "day_offset": 5,
+    "booked_times": [
+      "17:15"
+    ]
+  },
+  {
+    "doctor_id": "d_jh_05_genmed_1",
+    "day_offset": 6,
+    "booked_times": [
+      "16:15",
+      "16:30",
+      "17:00",
+      "17:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_1",
+    "day_offset": 0,
+    "booked_times": [
+      "09:45",
+      "10:15",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_1",
+    "day_offset": 1,
+    "booked_times": [
+      "09:45",
+      "10:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_1",
+    "day_offset": 2,
+    "booked_times": [
+      "09:30",
+      "10:15",
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_1",
+    "day_offset": 3,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_1",
+    "day_offset": 4,
+    "booked_times": [
+      "09:30",
+      "10:00",
+      "10:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_1",
+    "day_offset": 5,
+    "booked_times": [
+      "09:30",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_1",
+    "day_offset": 6,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:00",
+      "10:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_2",
+    "day_offset": 0,
+    "booked_times": [
+      "14:00",
+      "14:30",
+      "15:30",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_2",
+    "day_offset": 1,
+    "booked_times": [
+      "14:15",
+      "15:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_2",
+    "day_offset": 2,
+    "booked_times": []
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_2",
+    "day_offset": 3,
+    "booked_times": [
+      "15:00",
+      "15:30",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_2",
+    "day_offset": 4,
+    "booked_times": [
+      "14:15",
+      "14:30",
+      "15:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_2",
+    "day_offset": 5,
+    "booked_times": [
+      "14:15",
+      "14:30",
+      "15:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_2",
+    "day_offset": 6,
+    "booked_times": [
+      "14:00",
+      "14:15",
+      "14:30",
+      "15:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_1",
+    "day_offset": 0,
     "booked_times": [
       "10:15",
       "10:30",
       "11:00",
       "11:15",
       "11:45"
-    ],
-    "blocked_times": [
-      "10:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_1",
+    "day_offset": 1,
+    "booked_times": [
+      "10:00",
+      "10:15",
+      "10:30",
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_1",
+    "day_offset": 2,
+    "booked_times": [
+      "10:00",
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_1",
+    "day_offset": 3,
+    "booked_times": [
+      "10:15",
+      "10:30",
+      "10:45",
+      "11:15",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_1",
+    "day_offset": 4,
+    "booked_times": [
+      "10:15",
+      "10:30",
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_1",
+    "day_offset": 5,
+    "booked_times": [
+      "10:00",
+      "10:15",
+      "10:30",
+      "11:15",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_1",
+    "day_offset": 6,
+    "booked_times": [
+      "10:00",
+      "10:15",
+      "10:45",
+      "11:00",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_2",
+    "day_offset": 0,
+    "booked_times": [
+      "15:30",
+      "16:00",
+      "16:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_2",
+    "day_offset": 1,
+    "booked_times": [
+      "15:15",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_2",
+    "day_offset": 2,
+    "booked_times": [
+      "15:45",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_2",
+    "day_offset": 3,
+    "booked_times": [
+      "15:30",
+      "15:45",
+      "16:00",
+      "16:30",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_2",
+    "day_offset": 4,
+    "booked_times": [
+      "15:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_2",
+    "day_offset": 5,
+    "booked_times": [
+      "15:15",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_derm_2",
+    "day_offset": 6,
+    "booked_times": [
+      "15:00",
+      "15:45",
+      "16:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_1",
+    "day_offset": 0,
+    "booked_times": [
+      "10:00",
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_1",
+    "day_offset": 1,
+    "booked_times": [
+      "10:00",
+      "10:15",
+      "11:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_1",
+    "day_offset": 2,
+    "booked_times": [
+      "10:15",
+      "10:30",
+      "10:45",
+      "11:00",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_1",
+    "day_offset": 3,
+    "booked_times": [
+      "10:00",
+      "10:45",
+      "11:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_1",
+    "day_offset": 4,
+    "booked_times": [
+      "10:15",
+      "10:30",
+      "10:45",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_1",
+    "day_offset": 5,
+    "booked_times": [
+      "10:00",
+      "10:45",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_1",
+    "day_offset": 6,
+    "booked_times": [
+      "10:00",
+      "10:15",
+      "10:45",
+      "11:15",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_2",
+    "day_offset": 0,
+    "booked_times": [
+      "16:15",
+      "16:30",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_2",
+    "day_offset": 1,
+    "booked_times": [
+      "16:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_2",
+    "day_offset": 2,
+    "booked_times": [
+      "16:00",
+      "16:45",
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_2",
+    "day_offset": 3,
+    "booked_times": [
+      "16:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_2",
+    "day_offset": 4,
+    "booked_times": [
+      "16:30",
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_2",
+    "day_offset": 5,
+    "booked_times": [
+      "17:00",
+      "17:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_2",
+    "day_offset": 6,
+    "booked_times": [
+      "16:15",
+      "16:30",
+      "17:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_peds_1",
+    "day_offset": 0,
+    "booked_times": [
+      "09:45",
+      "10:00",
+      "10:15",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_peds_1",
+    "day_offset": 1,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_peds_1",
+    "day_offset": 2,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_peds_1",
+    "day_offset": 3,
+    "booked_times": [
+      "10:00",
+      "10:15",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_peds_1",
+    "day_offset": 4,
+    "booked_times": [
+      "09:30",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_peds_1",
+    "day_offset": 5,
+    "booked_times": [
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_peds_1",
+    "day_offset": 6,
+    "booked_times": [
+      "09:30",
+      "10:15",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ortho_1",
+    "day_offset": 0,
+    "booked_times": [
+      "14:00",
+      "14:45",
+      "15:00",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ortho_1",
+    "day_offset": 1,
+    "booked_times": [
+      "14:30",
+      "15:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ortho_1",
+    "day_offset": 2,
+    "booked_times": [
+      "14:00",
+      "14:15",
+      "14:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ortho_1",
+    "day_offset": 3,
+    "booked_times": [
+      "14:30",
+      "14:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ortho_1",
+    "day_offset": 4,
+    "booked_times": [
+      "14:15",
+      "14:45",
+      "15:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ortho_1",
+    "day_offset": 5,
+    "booked_times": [
+      "14:45",
+      "15:30",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ortho_1",
+    "day_offset": 6,
+    "booked_times": [
+      "14:15",
+      "14:30",
+      "15:15",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ent_1",
+    "day_offset": 0,
+    "booked_times": [
+      "11:15",
+      "11:30",
+      "12:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ent_1",
+    "day_offset": 1,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "12:30",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ent_1",
+    "day_offset": 2,
+    "booked_times": [
+      "11:45",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ent_1",
+    "day_offset": 3,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:45",
+      "12:15",
+      "12:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ent_1",
+    "day_offset": 4,
+    "booked_times": [
+      "11:15",
+      "11:30",
+      "11:45",
+      "12:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ent_1",
+    "day_offset": 5,
+    "booked_times": [
+      "11:00",
+      "11:30",
+      "11:45",
+      "12:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_ent_1",
+    "day_offset": 6,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45",
+      "12:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_cardio_1",
+    "day_offset": 0,
+    "booked_times": [
+      "15:00",
+      "16:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_01_cardio_1",
+    "day_offset": 1,
+    "booked_times": [
+      "15:45",
+      "16:00",
+      "16:15",
+      "16:45"
     ]
   },
   {
     "doctor_id": "d_gb_01_cardio_1",
     "day_offset": 2,
     "booked_times": [
-      "10:15",
-      "11:15",
-      "11:30",
-      "12:45"
-    ],
-    "blocked_times": []
+      "15:45",
+      "16:00",
+      "16:45"
+    ]
   },
   {
     "doctor_id": "d_gb_01_cardio_1",
     "day_offset": 3,
     "booked_times": [
-      "10:00",
-      "11:15",
-      "11:30",
-      "11:45",
-      "12:00"
-    ],
-    "blocked_times": []
+      "15:00",
+      "16:00",
+      "16:30"
+    ]
   },
   {
     "doctor_id": "d_gb_01_cardio_1",
     "day_offset": 4,
     "booked_times": [
-      "10:15",
-      "10:45",
-      "11:00",
-      "12:30"
-    ],
-    "blocked_times": []
+      "15:00",
+      "15:15",
+      "15:30",
+      "16:15"
+    ]
   },
   {
     "doctor_id": "d_gb_01_cardio_1",
     "day_offset": 5,
     "booked_times": [
-      "10:15",
-      "11:30",
-      "11:45",
-      "12:15",
-      "12:45"
-    ],
-    "blocked_times": []
+      "16:15",
+      "16:45"
+    ]
   },
   {
     "doctor_id": "d_gb_01_cardio_1",
     "day_offset": 6,
     "booked_times": [
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_derm_1",
-    "day_offset": 0,
-    "booked_times": [
-      "17:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_derm_1",
-    "day_offset": 2,
-    "booked_times": [
-      "17:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_derm_1",
-    "day_offset": 3,
-    "booked_times": [
-      "18:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_derm_1",
-    "day_offset": 4,
-    "booked_times": [
-      "18:30"
-    ],
-    "blocked_times": []
+      "15:15",
+      "15:30",
+      "15:45",
+      "16:30"
+    ]
   },
   {
     "doctor_id": "d_gb_02_genmed_1",
     "day_offset": 0,
     "booked_times": [
+      "10:00",
+      "10:15",
       "10:30",
-      "11:30",
-      "12:15",
-      "12:30"
-    ],
-    "blocked_times": []
+      "10:45",
+      "11:00",
+      "11:30"
+    ]
   },
   {
     "doctor_id": "d_gb_02_genmed_1",
     "day_offset": 1,
     "booked_times": [
-      "10:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_genmed_1",
-    "day_offset": 3,
-    "booked_times": [
-      "10:45",
-      "11:30",
-      "11:45",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_genmed_1",
-    "day_offset": 4,
-    "booked_times": [
-      "10:30",
-      "10:45",
+      "10:00",
+      "10:15",
       "11:00",
+      "11:15",
+      "11:30",
       "11:45"
-    ],
-    "blocked_times": []
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_genmed_1",
+    "day_offset": 2,
+    "booked_times": [
+      "10:30",
+      "10:45",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_genmed_1",
+    "day_offset": 3,
+    "booked_times": [
+      "10:15",
+      "10:30",
+      "10:45",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_genmed_1",
+    "day_offset": 4,
+    "booked_times": [
+      "10:15",
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:30"
+    ]
   },
   {
     "doctor_id": "d_gb_02_genmed_1",
     "day_offset": 5,
     "booked_times": [
       "10:00",
-      "11:00",
-      "12:30"
-    ],
-    "blocked_times": []
+      "11:15",
+      "11:30"
+    ]
   },
   {
     "doctor_id": "d_gb_02_genmed_1",
     "day_offset": 6,
     "booked_times": [
-      "11:00",
-      "12:00",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_peds_1",
-    "day_offset": 0,
-    "booked_times": [
-      "10:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_peds_1",
-    "day_offset": 1,
-    "booked_times": [
-      "11:00",
-      "11:15",
-      "12:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_peds_1",
-    "day_offset": 2,
-    "booked_times": [
-      "10:45",
-      "11:00",
-      "11:30",
-      "11:45",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_peds_1",
-    "day_offset": 3,
-    "booked_times": [
       "10:15",
       "10:45",
-      "11:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_peds_1",
-    "day_offset": 4,
-    "booked_times": [
-      "11:15",
-      "12:15",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_02_peds_1",
-    "day_offset": 5,
-    "booked_times": [
       "11:00",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_genmed_1",
-    "day_offset": 0,
-    "booked_times": [
-      "17:00",
-      "18:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_genmed_1",
-    "day_offset": 1,
-    "booked_times": [
-      "17:00",
-      "19:15",
-      "19:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_genmed_1",
-    "day_offset": 2,
-    "booked_times": [
-      "17:45",
-      "18:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_genmed_1",
-    "day_offset": 3,
-    "booked_times": [
-      "17:45",
-      "18:15",
-      "19:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_genmed_1",
-    "day_offset": 4,
-    "booked_times": [
-      "17:30",
-      "18:00",
-      "19:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_cardio_1",
-    "day_offset": 0,
-    "booked_times": [
-      "10:00",
-      "11:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_cardio_1",
-    "day_offset": 1,
-    "booked_times": [
-      "10:15",
-      "10:30",
-      "11:00",
-      "11:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_cardio_1",
-    "day_offset": 2,
-    "booked_times": [
-      "11:30",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_cardio_1",
-    "day_offset": 3,
-    "booked_times": [
-      "10:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_cardio_1",
-    "day_offset": 4,
-    "booked_times": [
-      "12:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_cardio_1",
-    "day_offset": 5,
-    "booked_times": [
-      "12:00",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_cardio_1",
-    "day_offset": 6,
-    "booked_times": [
-      "10:30",
-      "11:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_ortho_1",
-    "day_offset": 0,
-    "booked_times": [
-      "10:15",
-      "11:00",
-      "11:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_ortho_1",
-    "day_offset": 1,
-    "booked_times": [
-      "10:15",
-      "10:30",
-      "10:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_ortho_1",
-    "day_offset": 2,
-    "booked_times": [
       "11:15",
       "11:30",
-      "12:00",
-      "12:30",
-      "12:45"
-    ],
-    "blocked_times": []
+      "11:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_03_ortho_1",
-    "day_offset": 4,
-    "booked_times": [
-      "10:00",
-      "11:00",
-      "12:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_ortho_1",
-    "day_offset": 6,
-    "booked_times": [
-      "11:00",
-      "11:15",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_gyn_1",
+    "doctor_id": "d_gb_02_ophth_1",
     "day_offset": 0,
-    "booked_times": [
-      "17:15",
-      "17:30",
-      "18:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_gyn_1",
-    "day_offset": 3,
     "booked_times": [
       "16:00",
-      "18:15"
-    ],
-    "blocked_times": []
+      "16:30",
+      "16:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_03_gyn_1",
+    "doctor_id": "d_gb_02_ophth_1",
+    "day_offset": 1,
+    "booked_times": [
+      "16:00",
+      "16:15",
+      "16:30",
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_ophth_1",
+    "day_offset": 2,
+    "booked_times": [
+      "16:00",
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_ophth_1",
+    "day_offset": 3,
+    "booked_times": []
+  },
+  {
+    "doctor_id": "d_gb_02_ophth_1",
     "day_offset": 4,
     "booked_times": [
-      "16:45",
-      "17:15",
-      "18:15"
-    ],
-    "blocked_times": []
+      "16:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_03_gyn_1",
+    "doctor_id": "d_gb_02_ophth_1",
+    "day_offset": 5,
+    "booked_times": []
+  },
+  {
+    "doctor_id": "d_gb_02_ophth_1",
     "day_offset": 6,
     "booked_times": [
+      "16:15",
       "17:00",
-      "18:45"
-    ],
-    "blocked_times": []
+      "17:15"
+    ]
   },
   {
-    "doctor_id": "d_gb_03_ent_1",
+    "doctor_id": "d_gb_02_dental_1",
+    "day_offset": 0,
+    "booked_times": [
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_1",
+    "day_offset": 1,
+    "booked_times": [
+      "09:30",
+      "10:00",
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_1",
+    "day_offset": 2,
+    "booked_times": [
+      "09:30",
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_1",
+    "day_offset": 3,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:15",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_1",
+    "day_offset": 4,
+    "booked_times": [
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_1",
+    "day_offset": 5,
+    "booked_times": [
+      "10:00",
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_1",
+    "day_offset": 6,
+    "booked_times": [
+      "09:30",
+      "10:15",
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_2",
+    "day_offset": 0,
+    "booked_times": [
+      "14:30",
+      "15:00",
+      "15:15",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_2",
+    "day_offset": 1,
+    "booked_times": [
+      "14:00",
+      "15:30",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_2",
+    "day_offset": 2,
+    "booked_times": [
+      "14:15",
+      "14:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_2",
+    "day_offset": 3,
+    "booked_times": [
+      "14:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_2",
+    "day_offset": 4,
+    "booked_times": [
+      "14:15",
+      "15:15",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_2",
+    "day_offset": 5,
+    "booked_times": [
+      "14:00",
+      "14:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_dental_2",
+    "day_offset": 6,
+    "booked_times": [
+      "14:15",
+      "14:30",
+      "15:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_cardio_1",
+    "day_offset": 0,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "12:15",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_cardio_1",
+    "day_offset": 1,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45",
+      "12:30",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_cardio_1",
+    "day_offset": 2,
+    "booked_times": [
+      "11:00",
+      "11:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_cardio_1",
+    "day_offset": 3,
+    "booked_times": [
+      "11:00",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_cardio_1",
+    "day_offset": 4,
+    "booked_times": [
+      "11:15",
+      "11:30",
+      "11:45",
+      "12:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_cardio_1",
+    "day_offset": 5,
+    "booked_times": [
+      "11:30",
+      "11:45",
+      "12:00",
+      "12:15",
+      "12:30",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_cardio_1",
+    "day_offset": 6,
+    "booked_times": [
+      "11:15",
+      "11:30",
+      "12:00",
+      "12:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_ortho_1",
+    "day_offset": 0,
+    "booked_times": [
+      "15:00",
+      "16:15",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_ortho_1",
+    "day_offset": 1,
+    "booked_times": [
+      "15:15",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_ortho_1",
+    "day_offset": 2,
+    "booked_times": [
+      "15:15",
+      "16:15",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_ortho_1",
+    "day_offset": 3,
+    "booked_times": [
+      "15:00",
+      "15:15",
+      "15:30",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_ortho_1",
+    "day_offset": 4,
+    "booked_times": [
+      "16:30",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_ortho_1",
+    "day_offset": 5,
+    "booked_times": [
+      "15:00",
+      "15:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_ortho_1",
+    "day_offset": 6,
+    "booked_times": [
+      "15:15",
+      "15:30",
+      "15:45",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_ortho_2",
     "day_offset": 0,
     "booked_times": [
       "10:00",
       "10:15",
-      "10:30",
-      "11:30",
-      "12:00"
-    ],
-    "blocked_times": []
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_03_ent_1",
+    "doctor_id": "d_gb_02_ortho_2",
     "day_offset": 1,
     "booked_times": [
       "10:15",
-      "11:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_ent_1",
-    "day_offset": 3,
-    "booked_times": [
-      "12:00"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_ent_1",
-    "day_offset": 4,
-    "booked_times": [
-      "11:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_ent_1",
-    "day_offset": 5,
-    "booked_times": [
-      "11:15",
-      "12:00",
-      "12:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_ent_1",
-    "day_offset": 6,
-    "booked_times": [
-      "10:30",
+      "10:45",
       "11:30",
-      "12:15"
-    ],
-    "blocked_times": []
+      "11:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_03_ophth_1",
-    "day_offset": 1,
-    "booked_times": [
-      "18:30",
-      "19:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_03_ophth_1",
+    "doctor_id": "d_gb_02_ortho_2",
     "day_offset": 2,
     "booked_times": [
-      "17:00"
-    ],
-    "blocked_times": []
+      "10:00",
+      "10:45",
+      "11:00",
+      "11:30"
+    ]
   },
   {
-    "doctor_id": "d_gb_03_ophth_1",
+    "doctor_id": "d_gb_02_ortho_2",
     "day_offset": 3,
     "booked_times": [
-      "17:45"
-    ],
-    "blocked_times": []
+      "10:15",
+      "10:30",
+      "10:45",
+      "11:00"
+    ]
   },
   {
-    "doctor_id": "d_gb_03_ophth_1",
+    "doctor_id": "d_gb_02_ortho_2",
     "day_offset": 4,
     "booked_times": [
-      "17:45",
-      "18:45"
-    ],
-    "blocked_times": []
+      "10:00"
+    ]
   },
   {
-    "doctor_id": "d_gb_03_ophth_1",
+    "doctor_id": "d_gb_02_ortho_2",
     "day_offset": 5,
+    "booked_times": [
+      "10:30",
+      "11:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_ortho_2",
+    "day_offset": 6,
+    "booked_times": [
+      "10:00",
+      "10:15",
+      "10:30",
+      "11:00",
+      "11:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_gyn_1",
+    "day_offset": 0,
+    "booked_times": [
+      "16:00",
+      "16:30",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_gyn_1",
+    "day_offset": 1,
+    "booked_times": [
+      "16:00",
+      "16:15",
+      "17:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_gyn_1",
+    "day_offset": 2,
+    "booked_times": [
+      "16:30",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_gyn_1",
+    "day_offset": 3,
     "booked_times": [
       "17:15"
-    ],
-    "blocked_times": []
+    ]
   },
   {
-    "doctor_id": "d_gb_03_ophth_1",
+    "doctor_id": "d_gb_02_gyn_1",
+    "day_offset": 4,
+    "booked_times": [
+      "16:00",
+      "16:45",
+      "17:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_02_gyn_1",
+    "day_offset": 5,
+    "booked_times": []
+  },
+  {
+    "doctor_id": "d_gb_02_gyn_1",
     "day_offset": 6,
     "booked_times": [
-      "19:00"
-    ],
-    "blocked_times": []
+      "17:15"
+    ]
   },
   {
-    "doctor_id": "d_gb_04_peds_1",
+    "doctor_id": "d_gb_03_derm_1",
     "day_offset": 0,
     "booked_times": [
+      "09:45",
       "10:00",
-      "10:45",
-      "11:00",
-      "11:15",
-      "11:30"
-    ],
-    "blocked_times": []
+      "10:15",
+      "10:30"
+    ]
   },
   {
-    "doctor_id": "d_gb_04_peds_1",
+    "doctor_id": "d_gb_03_derm_1",
+    "day_offset": 1,
+    "booked_times": [
+      "09:30",
+      "10:00",
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_03_derm_1",
     "day_offset": 2,
     "booked_times": [
-      "10:15",
-      "10:45",
-      "12:30"
-    ],
-    "blocked_times": []
+      "09:30",
+      "09:45",
+      "10:30"
+    ]
   },
   {
-    "doctor_id": "d_gb_04_peds_1",
+    "doctor_id": "d_gb_03_derm_1",
     "day_offset": 3,
     "booked_times": [
+      "09:30",
+      "09:45",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_03_derm_1",
+    "day_offset": 4,
+    "booked_times": [
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_03_derm_1",
+    "day_offset": 5,
+    "booked_times": [
+      "09:30",
+      "10:15",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_03_derm_1",
+    "day_offset": 6,
+    "booked_times": [
+      "09:45",
       "10:00",
+      "10:15",
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_03_dental_1",
+    "day_offset": 0,
+    "booked_times": [
+      "14:00",
+      "14:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_03_dental_1",
+    "day_offset": 1,
+    "booked_times": [
+      "14:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_03_dental_1",
+    "day_offset": 2,
+    "booked_times": [
+      "15:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_03_dental_1",
+    "day_offset": 3,
+    "booked_times": [
+      "14:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_03_dental_1",
+    "day_offset": 4,
+    "booked_times": [
+      "14:00",
+      "14:30",
+      "15:00",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_03_dental_1",
+    "day_offset": 5,
+    "booked_times": [
+      "14:45",
+      "15:15",
+      "15:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_03_dental_1",
+    "day_offset": 6,
+    "booked_times": [
+      "15:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_04_genmed_1",
+    "day_offset": 0,
+    "booked_times": [
+      "11:30",
+      "12:30",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_04_genmed_1",
+    "day_offset": 1,
+    "booked_times": [
+      "11:00",
       "11:15",
+      "11:30",
+      "12:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_04_genmed_1",
+    "day_offset": 2,
+    "booked_times": [
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45",
+      "12:15",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_04_genmed_1",
+    "day_offset": 3,
+    "booked_times": [
+      "11:15",
+      "11:45",
+      "12:00",
+      "12:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_04_genmed_1",
+    "day_offset": 4,
+    "booked_times": [
+      "11:00",
+      "11:30",
       "12:15",
       "12:30",
       "12:45"
-    ],
-    "blocked_times": []
+    ]
   },
   {
-    "doctor_id": "d_gb_04_peds_1",
-    "day_offset": 4,
-    "booked_times": [
-      "10:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_04_peds_1",
+    "doctor_id": "d_gb_04_genmed_1",
     "day_offset": 5,
     "booked_times": [
-      "10:15",
-      "10:45",
-      "12:00",
-      "12:45"
-    ],
-    "blocked_times": []
+      "11:00",
+      "11:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_04_genmed_1",
+    "day_offset": 6,
+    "booked_times": [
+      "11:00",
+      "11:30",
+      "11:45"
+    ]
   },
   {
     "doctor_id": "d_gb_04_peds_1",
-    "day_offset": 6,
-    "booked_times": [
-      "10:30",
-      "10:45",
-      "11:15",
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_04_peds_2",
     "day_offset": 0,
     "booked_times": [
-      "17:00",
-      "17:30",
-      "18:00"
-    ],
-    "blocked_times": []
+      "15:15",
+      "15:30",
+      "16:30",
+      "16:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_04_peds_2",
+    "doctor_id": "d_gb_04_peds_1",
+    "day_offset": 1,
+    "booked_times": []
+  },
+  {
+    "doctor_id": "d_gb_04_peds_1",
     "day_offset": 2,
     "booked_times": [
-      "17:15",
-      "17:30",
-      "18:00"
-    ],
-    "blocked_times": []
+      "15:30",
+      "15:45",
+      "16:15",
+      "16:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_04_peds_2",
-    "day_offset": 6,
-    "booked_times": [
-      "17:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_05_dental_1",
-    "day_offset": 0,
-    "booked_times": [
-      "10:00",
-      "10:30",
-      "11:00",
-      "11:15"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_05_dental_1",
-    "day_offset": 2,
-    "booked_times": [
-      "12:45"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_05_dental_1",
+    "doctor_id": "d_gb_04_peds_1",
     "day_offset": 3,
     "booked_times": [
-      "10:15",
-      "12:00",
-      "12:30"
-    ],
-    "blocked_times": []
+      "15:30"
+    ]
   },
   {
-    "doctor_id": "d_gb_05_dental_1",
+    "doctor_id": "d_gb_04_peds_1",
     "day_offset": 4,
-    "booked_times": [
-      "11:15",
-      "11:45",
-      "12:00"
-    ],
-    "blocked_times": []
+    "booked_times": []
   },
   {
-    "doctor_id": "d_gb_05_dental_1",
+    "doctor_id": "d_gb_04_peds_1",
     "day_offset": 5,
     "booked_times": [
-      "10:15",
-      "10:45",
-      "11:45",
-      "12:00"
-    ],
-    "blocked_times": []
+      "15:00",
+      "15:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_05_dental_1",
+    "doctor_id": "d_gb_04_peds_1",
     "day_offset": 6,
+    "booked_times": [
+      "15:00",
+      "15:15",
+      "16:30",
+      "16:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_04_ent_1",
+    "day_offset": 0,
+    "booked_times": [
+      "10:15",
+      "10:30",
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_04_ent_1",
+    "day_offset": 1,
     "booked_times": [
       "10:00",
-      "11:00",
-      "12:00",
-      "12:30"
-    ],
-    "blocked_times": []
+      "10:45",
+      "11:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_05_derm_1",
-    "day_offset": 0,
-    "booked_times": [
-      "16:00",
-      "18:30"
-    ],
-    "blocked_times": []
-  },
-  {
-    "doctor_id": "d_gb_05_derm_1",
+    "doctor_id": "d_gb_04_ent_1",
     "day_offset": 2,
     "booked_times": [
-      "17:30",
-      "18:45"
-    ],
-    "blocked_times": []
+      "10:00",
+      "10:15",
+      "10:30",
+      "11:00",
+      "11:30",
+      "11:45"
+    ]
   },
   {
-    "doctor_id": "d_gb_05_derm_1",
+    "doctor_id": "d_gb_04_ent_1",
+    "day_offset": 3,
+    "booked_times": [
+      "10:30",
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_04_ent_1",
     "day_offset": 4,
     "booked_times": [
-      "17:45",
-      "18:45"
-    ],
-    "blocked_times": []
+      "10:00",
+      "10:30",
+      "10:45",
+      "11:00",
+      "11:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_04_ent_1",
+    "day_offset": 5,
+    "booked_times": [
+      "10:00",
+      "10:30",
+      "10:45",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_04_ent_1",
+    "day_offset": 6,
+    "booked_times": [
+      "10:30",
+      "10:45",
+      "11:00",
+      "11:15",
+      "11:30",
+      "11:45"
+    ]
   },
   {
     "doctor_id": "d_gb_05_ophth_1",
     "day_offset": 0,
     "booked_times": [
-      "19:15"
-    ],
-    "blocked_times": []
+      "16:30",
+      "17:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_05_ophth_1",
+    "day_offset": 1,
+    "booked_times": [
+      "16:00",
+      "16:30",
+      "17:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_05_ophth_1",
+    "day_offset": 2,
+    "booked_times": [
+      "16:00"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_05_ophth_1",
+    "day_offset": 3,
+    "booked_times": [
+      "16:45"
+    ]
   },
   {
     "doctor_id": "d_gb_05_ophth_1",
     "day_offset": 4,
     "booked_times": [
-      "19:15"
-    ],
-    "blocked_times": []
+      "16:15",
+      "17:15"
+    ]
   },
   {
     "doctor_id": "d_gb_05_ophth_1",
     "day_offset": 5,
-    "booked_times": [
-      "18:15",
-      "18:30",
-      "19:00"
-    ],
-    "blocked_times": []
+    "booked_times": []
   },
   {
     "doctor_id": "d_gb_05_ophth_1",
     "day_offset": 6,
     "booked_times": [
-      "18:00",
-      "18:45",
-      "19:00"
-    ],
-    "blocked_times": []
+      "16:15",
+      "16:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_05_ortho_1",
+    "day_offset": 0,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:00",
+      "10:30"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_05_ortho_1",
+    "day_offset": 1,
+    "booked_times": [
+      "09:30",
+      "10:00",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_05_ortho_1",
+    "day_offset": 2,
+    "booked_times": [
+      "09:30",
+      "10:15"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_05_ortho_1",
+    "day_offset": 3,
+    "booked_times": [
+      "09:45",
+      "10:30",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_05_ortho_1",
+    "day_offset": 4,
+    "booked_times": [
+      "09:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_05_ortho_1",
+    "day_offset": 5,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:00",
+      "10:45"
+    ]
+  },
+  {
+    "doctor_id": "d_gb_05_ortho_1",
+    "day_offset": 6,
+    "booked_times": [
+      "09:30",
+      "09:45",
+      "10:30",
+      "10:45"
+    ]
   }
 ]

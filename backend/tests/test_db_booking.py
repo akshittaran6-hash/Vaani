@@ -1,6 +1,6 @@
 """Schema + seed + atomic booking functions against a real Postgres (marker: db).
 
-Runs schema.sql, rls.sql and seed.sql exactly as scripts/db_apply.py does, then checks
+Runs schema.sql and rls.sql exactly as scripts/db_apply.py does, plus the seed of the placeholder fixture data, then checks
 the booking rules and a concurrent race. Uses a throwaway cluster (see conftest.py).
 """
 
@@ -15,6 +15,7 @@ import pytest
 
 from backend.catalog.models import Catalog
 from backend.db import SQL_FILES, SUPABASE_DIR, run_sql
+from backend.tests.conftest import SEED_SQL
 
 pytestmark = pytest.mark.db
 
@@ -28,7 +29,7 @@ def seeded(seeded_url: str) -> str:
 def conn(seeded: str) -> Iterator[psycopg.Connection]:
     with psycopg.connect(seeded, autocommit=True) as c:
         # Each test starts from a clean booking state.
-        run_sql(c, (SUPABASE_DIR / "seed.sql").read_text(encoding="utf-8"))
+        run_sql(c, SEED_SQL)
         yield c
 
 
@@ -151,6 +152,22 @@ def test_book_table_rejects_the_past(conn: psycopg.Connection) -> None:
     with pytest.raises(psycopg.errors.RaiseException) as exc:
         book_table(conn, "r_jh_01", today(conn) - timedelta(days=1), "20:00", 2)
     assert error_code(exc) == "INVALID_TIME"
+
+
+def test_frozen_clock_setting(conn: psycopg.Connection) -> None:
+    """The eval freezes "now" with vaani.now_ist; the booking functions must follow it."""
+    d = today(conn)
+    try:
+        conn.execute("select set_config('vaani.now_ist', %s, false)", (f"{d} 09:00:00",))
+        row = conn.execute("select public.vaani_now_ist(), public.vaani_today()").fetchone()
+        assert row is not None and str(row[0]) == f"{d} 09:00:00" and row[1] == d
+        book_table(conn, "r_jh_01", d, "12:30", 2)  # still ahead of a frozen 09:00
+        conn.execute("select set_config('vaani.now_ist', %s, false)", (f"{d} 23:00:00",))
+        with pytest.raises(psycopg.errors.RaiseException) as exc:
+            book_table(conn, "r_jh_01", d, "21:30", 2)
+        assert error_code(exc) == "INVALID_TIME"
+    finally:
+        conn.execute("select set_config('vaani.now_ist', '', false)")
 
 
 def test_book_appointment_rules(conn: psycopg.Connection) -> None:

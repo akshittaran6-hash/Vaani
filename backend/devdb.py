@@ -14,6 +14,7 @@ import subprocess
 import tempfile
 from collections.abc import Iterator
 from contextlib import contextmanager
+from datetime import datetime
 from pathlib import Path
 
 import psycopg
@@ -94,6 +95,15 @@ def make_template(admin_url: str) -> str:
     url = with_db(admin_url, TEMPLATE_DB)
     apply_all(url)
     return url
+
+
+def freeze_db(admin_url: str, name: str, at: datetime) -> None:
+    """Make vaani_now_ist() / vaani_today() in database `name` return `at` (IST wall time)."""
+    stamp = at.strftime("%Y-%m-%d %H:%M:%S")
+    with psycopg.connect(admin_url, autocommit=True) as conn:
+        conn.execute(
+            sql.SQL("alter database {} set vaani.now_ist = {}").format(sql.Identifier(name), sql.Literal(stamp))
+        )
 
 
 def clone(admin_url: str, name: str) -> str:

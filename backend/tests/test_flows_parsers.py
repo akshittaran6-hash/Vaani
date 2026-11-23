@@ -106,3 +106,64 @@ def test_language_split_of_test_calls_mostly_matches(catalog: object) -> None:
     want = {"te-en": "te", "hi-en": "hi", "en-IN": "en"}
     hits = sum(detect_language(t.caller_turns[0])[0] == want[t.language_mix] for t in catalog.test_calls)
     assert hits >= 34, hits  # ≥ 85% from one sentence; the agent can still switch later
+
+
+def test_clock_freeze_pins_now_and_today() -> None:
+    from datetime import date, datetime, time
+
+    from backend import clock
+
+    at = datetime.combine(date(2026, 12, 5), time(9, 0), clock.IST)
+    clock.freeze(at)
+    try:
+        assert clock.now_ist() == at and clock.today_ist() == date(2026, 12, 5)
+        assert clock.is_past(date(2026, 12, 5), time(8, 45)) and not clock.is_past(date(2026, 12, 5), time(12, 30))
+    finally:
+        clock.freeze(None)
+    assert clock.frozen_at() is None
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        # Forms from the real test calls (eval on Akshit's data, 23 Nov)
+        ("ee roju night naluguriki", 4),
+        ("ee roju lunch lo mugguram vastam", 3),
+        ("12:30 pm ki mugguriki book cheyandi", 3),
+        ("repu raatri eight thirty ki aaruguriki table kavali", 6),
+        ("repu yedintiki iddaram vastam", 2),
+        ("Actually iddaru kaadu, naluguru", 4),
+        ("for six tomorrow at lunch", 6),
+        ("Change that to four, please. 12:30 pm is fine.", 4),  # eval T19
+        ("Make it eight pm instead", None),
+        ("Change that to four, please.", 4),
+        ("Make it 7:30 instead of 9", None),
+        ("Kal dinner ke liye aath logon ki table chahiye", 8),
+    ],
+)
+def test_parse_party_real_forms(text: str, expected: int | None) -> None:
+    from backend.flows.extract import parse_party
+
+    assert parse_party(text) == expected
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("Anuvi Selavolu peru meeda pettandi.", "Anuvi Selavolu"),
+        ("Reyan Dharavolu ke naam se rakh dijiye.", "Reyan Dharavolu"),
+        ("Please put it under Ilaari Moonalapalli.", "Ilaari Moonalapalli"),
+        ("Patient ka naam Rishvi Kalatiruma hai.", "Rishvi Kalatiruma"),
+        ("Patient peru Esha Tallavolu.", "Esha Tallavolu"),
+        ("The patient’s name is Navon Koyalagunta.", "Navon Koyalagunta"),
+        ("Sare, Aavakaaya Arugu lo 12:30 pm ki book cheyandi.", None),
+    ],
+)
+def test_parse_name_real_forms(text: str, expected: str | None) -> None:
+    from backend.flows.extract import parse_name
+
+    assert parse_name(text) == expected
+
+
+def test_parson_is_day_after_tomorrow() -> None:
+    assert parse_day("Parson Jubilee Hills mein chaar logon ke liye", TODAY) == date(2026, 11, 24)

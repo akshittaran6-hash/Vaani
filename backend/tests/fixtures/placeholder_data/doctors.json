@@ -1,0 +1,1219 @@
+[
+  {
+    "doctor_id": "d_jh_01_genmed_1",
+    "hospital_id": "h_jh_01",
+    "name": "Dr. Kiran Reddy",
+    "name_spoken_te": "డాక్టర్ కిరణ్ రెడ్డి",
+    "name_spoken_hi": "डॉक्टर किरण रेड्डी",
+    "gender": "male",
+    "speciality": "General Medicine",
+    "qualification": "MBBS, MD (General Medicine)",
+    "experience_years": 14,
+    "languages": [
+      "Telugu",
+      "English",
+      "Hindi"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "mon": "09:00-13:00",
+      "tue": "09:00-13:00",
+      "wed": "09:00-13:00",
+      "thu": "09:00-13:00",
+      "fri": "09:00-13:00",
+      "sat": "09:00-13:00",
+      "sun": "09:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_01_gyn_1",
+    "hospital_id": "h_jh_01",
+    "name": "Dr. Meera Iyer",
+    "name_spoken_te": "డాక్టర్ మీరా అయ్యర్",
+    "name_spoken_hi": "डॉक्टर मीरा अय्यर",
+    "gender": "female",
+    "speciality": "Gynecology",
+    "qualification": "MBBS, MS (Obstetrics & Gynaecology)",
+    "experience_years": 11,
+    "languages": [
+      "English",
+      "Hindi",
+      "Telugu"
+    ],
+    "consultation_fee_inr": 800,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_01_peds_1",
+    "hospital_id": "h_jh_01",
+    "name": "Dr. Arjun Naidu",
+    "name_spoken_te": "డాక్టర్ అర్జున్ నాయుడు",
+    "name_spoken_hi": "डॉक्टर अर्जुन नायडू",
+    "gender": "male",
+    "speciality": "Pediatrics",
+    "qualification": "MBBS, MD (Paediatrics)",
+    "experience_years": 9,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 600,
+    "schedule": {
+      "mon": "16:00-19:00",
+      "tue": "16:00-19:00",
+      "wed": "16:00-19:00",
+      "thu": "16:00-19:00",
+      "fri": "16:00-19:00",
+      "sat": "16:00-19:00",
+      "sun": "16:00-19:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_01_ortho_1",
+    "hospital_id": "h_jh_01",
+    "name": "Dr. Farah Siddiqui",
+    "name_spoken_te": "డాక్టర్ ఫరా సిద్దిఖీ",
+    "name_spoken_hi": "डॉक्टर फ़रा सिद्दीक़ी",
+    "gender": "female",
+    "speciality": "Orthopedics",
+    "qualification": "MBBS, MS (Orthopaedics)",
+    "experience_years": 12,
+    "languages": [
+      "Hindi",
+      "English",
+      "Telugu"
+    ],
+    "consultation_fee_inr": 900,
+    "schedule": {
+      "mon": "10:00-14:00",
+      "wed": "10:00-14:00",
+      "fri": "10:00-14:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_01_ortho_2",
+    "hospital_id": "h_jh_01",
+    "name": "Dr. Suresh Varma",
+    "name_spoken_te": "డాక్టర్ సురేష్ వర్మ",
+    "name_spoken_hi": "डॉक्टर सुरेश वर्मा",
+    "gender": "male",
+    "speciality": "Orthopedics",
+    "qualification": "MBBS, MS (Orthopaedics)",
+    "experience_years": 18,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 1000,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "tue": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "thu": "17:00-20:00",
+      "fri": "17:00-20:00",
+      "sat": "17:00-20:00",
+      "sun": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_01_cardio_1",
+    "hospital_id": "h_jh_01",
+    "name": "Dr. Vikram Mehta",
+    "name_spoken_te": "డాక్టర్ విక్రమ్ మెహతా",
+    "name_spoken_hi": "डॉक्टर विक्रम मेहता",
+    "gender": "male",
+    "speciality": "Cardiology",
+    "qualification": "MBBS, MD, DM (Cardiology)",
+    "experience_years": 20,
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "consultation_fee_inr": 1200,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_02_derm_1",
+    "hospital_id": "h_jh_02",
+    "name": "Dr. Kavya Sharma",
+    "name_spoken_te": "డాక్టర్ కావ్య శర్మ",
+    "name_spoken_hi": "डॉक्टर काव्या शर्मा",
+    "gender": "female",
+    "speciality": "Dermatology",
+    "qualification": "MBBS, MD (Dermatology)",
+    "experience_years": 8,
+    "languages": [
+      "Hindi",
+      "English",
+      "Telugu"
+    ],
+    "consultation_fee_inr": 700,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_02_derm_2",
+    "hospital_id": "h_jh_02",
+    "name": "Dr. Sameer Khan",
+    "name_spoken_te": "డాక్టర్ సమీర్ ఖాన్",
+    "name_spoken_hi": "डॉक्टर समीर ख़ान",
+    "gender": "male",
+    "speciality": "Dermatology",
+    "qualification": "MBBS, MD (Dermatology)",
+    "experience_years": 6,
+    "languages": [
+      "Hindi",
+      "Urdu",
+      "English"
+    ],
+    "consultation_fee_inr": 600,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "tue": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "thu": "17:00-20:00",
+      "fri": "17:00-20:00",
+      "sat": "17:00-20:00",
+      "sun": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_02_peds_1",
+    "hospital_id": "h_jh_02",
+    "name": "Dr. Swathi Chowdary",
+    "name_spoken_te": "డాక్టర్ స్వాతి చౌదరి",
+    "name_spoken_hi": "डॉक्टर स्वाति चौधरी",
+    "gender": "female",
+    "speciality": "Pediatrics",
+    "qualification": "MBBS, MD (Paediatrics)",
+    "experience_years": 10,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_03_gyn_1",
+    "hospital_id": "h_jh_03",
+    "name": "Dr. Nandini Rao",
+    "name_spoken_te": "డాక్టర్ నందిని రావు",
+    "name_spoken_hi": "डॉक्टर नंदिनी राव",
+    "gender": "female",
+    "speciality": "Gynecology",
+    "qualification": "MBBS, MS (Obstetrics & Gynaecology)",
+    "experience_years": 15,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 700,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_03_genmed_1",
+    "hospital_id": "h_jh_03",
+    "name": "Dr. Rahul Gupta",
+    "name_spoken_te": "డాక్టర్ రాహుల్ గుప్తా",
+    "name_spoken_hi": "डॉक्टर राहुल गुप्ता",
+    "gender": "male",
+    "speciality": "General Medicine",
+    "qualification": "MBBS, MD (General Medicine)",
+    "experience_years": 7,
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "consultation_fee_inr": 400,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "tue": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "thu": "17:00-20:00",
+      "fri": "17:00-20:00",
+      "sat": "17:00-20:00",
+      "sun": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_03_peds_1",
+    "hospital_id": "h_jh_03",
+    "name": "Dr. Harini Pillai",
+    "name_spoken_te": "డాక్టర్ హరిణి పిళ్ళై",
+    "name_spoken_hi": "डॉक्टर हरिणी पिल्लई",
+    "gender": "female",
+    "speciality": "Pediatrics",
+    "qualification": "MBBS, MD (Paediatrics)",
+    "experience_years": 9,
+    "languages": [
+      "English",
+      "Telugu",
+      "Tamil"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "tue": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "sat": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_04_genmed_1",
+    "hospital_id": "h_jh_04",
+    "name": "Dr. Naveen Kulkarni",
+    "name_spoken_te": "డాక్టర్ నవీన్ కులకర్ణి",
+    "name_spoken_hi": "डॉक्टर नवीन कुलकर्णी",
+    "gender": "male",
+    "speciality": "General Medicine",
+    "qualification": "MBBS, MD (General Medicine)",
+    "experience_years": 11,
+    "languages": [
+      "Hindi",
+      "Marathi",
+      "English"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "mon": "09:00-12:00",
+      "tue": "09:00-12:00",
+      "wed": "09:00-12:00",
+      "thu": "09:00-12:00",
+      "fri": "09:00-12:00",
+      "sat": "09:00-12:00",
+      "sun": "09:00-12:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_04_derm_1",
+    "hospital_id": "h_jh_04",
+    "name": "Dr. Divya Menon",
+    "name_spoken_te": "డాక్టర్ దివ్య మేనన్",
+    "name_spoken_hi": "डॉक्टर दिव्या मेनन",
+    "gender": "female",
+    "speciality": "Dermatology",
+    "qualification": "MBBS, MD (Dermatology)",
+    "experience_years": 10,
+    "languages": [
+      "English",
+      "Telugu",
+      "Malayalam"
+    ],
+    "consultation_fee_inr": 800,
+    "schedule": {
+      "mon": "16:00-19:00",
+      "tue": "16:00-19:00",
+      "wed": "16:00-19:00",
+      "thu": "16:00-19:00",
+      "fri": "16:00-19:00",
+      "sat": "16:00-19:00",
+      "sun": "16:00-19:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_04_ortho_1",
+    "hospital_id": "h_jh_04",
+    "name": "Dr. Prakash Reddy",
+    "name_spoken_te": "డాక్టర్ ప్రకాష్ రెడ్డి",
+    "name_spoken_hi": "डॉक्टर प्रकाश रेड्डी",
+    "gender": "male",
+    "speciality": "Orthopedics",
+    "qualification": "MBBS, MS (Orthopaedics)",
+    "experience_years": 16,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 900,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_04_ent_1",
+    "hospital_id": "h_jh_04",
+    "name": "Dr. Pooja Bhat",
+    "name_spoken_te": "డాక్టర్ పూజ భట్",
+    "name_spoken_hi": "डॉक्टर पूजा भट",
+    "gender": "female",
+    "speciality": "ENT",
+    "qualification": "MBBS, MS (ENT)",
+    "experience_years": 8,
+    "languages": [
+      "Kannada",
+      "English",
+      "Hindi"
+    ],
+    "consultation_fee_inr": 600,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_04_cardio_1",
+    "hospital_id": "h_jh_04",
+    "name": "Dr. Imran Ali",
+    "name_spoken_te": "డాక్టర్ ఇమ్రాన్ అలీ",
+    "name_spoken_hi": "डॉक्टर इमरान अली",
+    "gender": "male",
+    "speciality": "Cardiology",
+    "qualification": "MBBS, MD, DM (Cardiology)",
+    "experience_years": 17,
+    "languages": [
+      "Hindi",
+      "Urdu",
+      "English",
+      "Telugu"
+    ],
+    "consultation_fee_inr": 1300,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "tue": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "thu": "17:00-20:00",
+      "fri": "17:00-20:00",
+      "sat": "17:00-20:00",
+      "sun": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_04_ophth_1",
+    "hospital_id": "h_jh_04",
+    "name": "Dr. Shalini Das",
+    "name_spoken_te": "డాక్టర్ శాలిని దాస్",
+    "name_spoken_hi": "डॉक्टर शालिनी दास",
+    "gender": "female",
+    "speciality": "Ophthalmology",
+    "qualification": "MBBS, MS (Ophthalmology)",
+    "experience_years": 13,
+    "languages": [
+      "English",
+      "Hindi",
+      "Bengali"
+    ],
+    "consultation_fee_inr": 700,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_05_dental_1",
+    "hospital_id": "h_jh_05",
+    "name": "Dr. Rohan Joshi",
+    "name_spoken_te": "డాక్టర్ రోహన్ జోషి",
+    "name_spoken_hi": "डॉक्टर रोहन जोशी",
+    "gender": "male",
+    "speciality": "Dental",
+    "qualification": "BDS, MDS (Conservative Dentistry)",
+    "experience_years": 9,
+    "languages": [
+      "Hindi",
+      "English",
+      "Telugu"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_05_dental_2",
+    "hospital_id": "h_jh_05",
+    "name": "Dr. Sana Fatima",
+    "name_spoken_te": "డాక్టర్ సనా ఫాతిమా",
+    "name_spoken_hi": "डॉक्टर सना फ़ातिमा",
+    "gender": "female",
+    "speciality": "Dental",
+    "qualification": "BDS",
+    "experience_years": 5,
+    "languages": [
+      "Urdu",
+      "Hindi",
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 400,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "tue": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "thu": "17:00-20:00",
+      "fri": "17:00-20:00",
+      "sat": "17:00-20:00",
+      "sun": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_05_ophth_1",
+    "hospital_id": "h_jh_05",
+    "name": "Dr. Aditya Rao",
+    "name_spoken_te": "డాక్టర్ ఆదిత్య రావు",
+    "name_spoken_hi": "डॉक्टर आदित्य राव",
+    "gender": "male",
+    "speciality": "Ophthalmology",
+    "qualification": "MBBS, MS (Ophthalmology)",
+    "experience_years": 7,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 600,
+    "schedule": {
+      "mon": "16:00-19:00",
+      "tue": "16:00-19:00",
+      "wed": "16:00-19:00",
+      "thu": "16:00-19:00",
+      "fri": "16:00-19:00",
+      "sat": "16:00-19:00",
+      "sun": "16:00-19:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_jh_05_ent_1",
+    "hospital_id": "h_jh_05",
+    "name": "Dr. Bhavana Reddy",
+    "name_spoken_te": "డాక్టర్ భావన రెడ్డి",
+    "name_spoken_hi": "डॉक्टर भावना रेड्डी",
+    "gender": "female",
+    "speciality": "ENT",
+    "qualification": "MBBS, MS (ENT)",
+    "experience_years": 6,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "fri": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_01_genmed_1",
+    "hospital_id": "h_gb_01",
+    "name": "Dr. Srinivas Naidu",
+    "name_spoken_te": "డాక్టర్ శ్రీనివాస్ నాయుడు",
+    "name_spoken_hi": "डॉक्टर श्रीनिवास नायडू",
+    "gender": "male",
+    "speciality": "General Medicine",
+    "qualification": "MBBS, MD (General Medicine)",
+    "experience_years": 19,
+    "languages": [
+      "Telugu",
+      "English",
+      "Hindi"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "mon": "09:00-13:00",
+      "tue": "09:00-13:00",
+      "wed": "09:00-13:00",
+      "thu": "09:00-13:00",
+      "fri": "09:00-13:00",
+      "sat": "09:00-13:00",
+      "sun": "09:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_01_derm_1",
+    "hospital_id": "h_gb_01",
+    "name": "Dr. Ananya Rao",
+    "name_spoken_te": "డాక్టర్ అనన్య రావు",
+    "name_spoken_hi": "डॉक्टर अनन्या राव",
+    "gender": "female",
+    "speciality": "Dermatology",
+    "qualification": "MBBS, MD (Dermatology)",
+    "experience_years": 9,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 600,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_01_gyn_1",
+    "hospital_id": "h_gb_01",
+    "name": "Dr. Ritu Sharma",
+    "name_spoken_te": "డాక్టర్ రీతు శర్మ",
+    "name_spoken_hi": "डॉक्टर रितु शर्मा",
+    "gender": "female",
+    "speciality": "Gynecology",
+    "qualification": "MBBS, MS (Obstetrics & Gynaecology)",
+    "experience_years": 12,
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "consultation_fee_inr": 800,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_01_peds_1",
+    "hospital_id": "h_gb_01",
+    "name": "Dr. Varun Iyer",
+    "name_spoken_te": "డాక్టర్ వరుణ్ అయ్యర్",
+    "name_spoken_hi": "डॉक्टर वरुण अय्यर",
+    "gender": "male",
+    "speciality": "Pediatrics",
+    "qualification": "MBBS, MD (Paediatrics)",
+    "experience_years": 8,
+    "languages": [
+      "English",
+      "Tamil",
+      "Telugu"
+    ],
+    "consultation_fee_inr": 600,
+    "schedule": {
+      "mon": "16:00-19:00",
+      "tue": "16:00-19:00",
+      "wed": "16:00-19:00",
+      "thu": "16:00-19:00",
+      "fri": "16:00-19:00",
+      "sat": "16:00-19:00",
+      "sun": "16:00-19:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_01_ortho_1",
+    "hospital_id": "h_gb_01",
+    "name": "Dr. Manoj Chowdary",
+    "name_spoken_te": "డాక్టర్ మనోజ్ చౌదరి",
+    "name_spoken_hi": "डॉक्टर मनोज चौधरी",
+    "gender": "male",
+    "speciality": "Orthopedics",
+    "qualification": "MBBS, MS (Orthopaedics)",
+    "experience_years": 14,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 900,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "tue": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "thu": "17:00-20:00",
+      "fri": "17:00-20:00",
+      "sat": "17:00-20:00",
+      "sun": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_01_cardio_1",
+    "hospital_id": "h_gb_01",
+    "name": "Dr. Aparna Kulkarni",
+    "name_spoken_te": "డాక్టర్ అపర్ణ కులకర్ణి",
+    "name_spoken_hi": "डॉक्टर अपर्णा कुलकर्णी",
+    "gender": "female",
+    "speciality": "Cardiology",
+    "qualification": "MBBS, MD, DM (Cardiology)",
+    "experience_years": 16,
+    "languages": [
+      "Marathi",
+      "Hindi",
+      "English"
+    ],
+    "consultation_fee_inr": 1200,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_02_derm_1",
+    "hospital_id": "h_gb_02",
+    "name": "Dr. Ravi Kumar",
+    "name_spoken_te": "డాక్టర్ రవి కుమార్",
+    "name_spoken_hi": "डॉक्टर रवि कुमार",
+    "gender": "male",
+    "speciality": "Dermatology",
+    "qualification": "MBBS, MD (Dermatology)",
+    "experience_years": 7,
+    "languages": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "tue": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "thu": "17:00-20:00",
+      "fri": "17:00-20:00",
+      "sat": "17:00-20:00",
+      "sun": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_02_genmed_1",
+    "hospital_id": "h_gb_02",
+    "name": "Dr. Priya Reddy",
+    "name_spoken_te": "డాక్టర్ ప్రియ రెడ్డి",
+    "name_spoken_hi": "डॉक्टर प्रिया रेड्डी",
+    "gender": "female",
+    "speciality": "General Medicine",
+    "qualification": "MBBS, MD (General Medicine)",
+    "experience_years": 6,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 400,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [
+      2
+    ],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_02_peds_1",
+    "hospital_id": "h_gb_02",
+    "name": "Dr. Faisal Khan",
+    "name_spoken_te": "డాక్టర్ ఫైసల్ ఖాన్",
+    "name_spoken_hi": "डॉक्टर फ़ैसल ख़ान",
+    "gender": "male",
+    "speciality": "Pediatrics",
+    "qualification": "MBBS, MD (Paediatrics)",
+    "experience_years": 11,
+    "languages": [
+      "Urdu",
+      "Hindi",
+      "English",
+      "Telugu"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_03_genmed_1",
+    "hospital_id": "h_gb_03",
+    "name": "Dr. Harsha Varma",
+    "name_spoken_te": "డాక్టర్ హర్ష వర్మ",
+    "name_spoken_hi": "डॉक्टर हर्ष वर्मा",
+    "gender": "male",
+    "speciality": "General Medicine",
+    "qualification": "MBBS, MD (General Medicine)",
+    "experience_years": 10,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "tue": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "thu": "17:00-20:00",
+      "fri": "17:00-20:00",
+      "sat": "17:00-20:00",
+      "sun": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_03_cardio_1",
+    "hospital_id": "h_gb_03",
+    "name": "Dr. Zoya Ali",
+    "name_spoken_te": "డాక్టర్ జోయా అలీ",
+    "name_spoken_hi": "डॉक्टर ज़ोया अली",
+    "gender": "female",
+    "speciality": "Cardiology",
+    "qualification": "MBBS, MD, DM (Cardiology)",
+    "experience_years": 13,
+    "languages": [
+      "Hindi",
+      "Urdu",
+      "English"
+    ],
+    "consultation_fee_inr": 1300,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_03_ortho_1",
+    "hospital_id": "h_gb_03",
+    "name": "Dr. Teja Reddy",
+    "name_spoken_te": "డాక్టర్ తేజ రెడ్డి",
+    "name_spoken_hi": "डॉक्टर तेजा रेड्डी",
+    "gender": "male",
+    "speciality": "Orthopedics",
+    "qualification": "MBBS, MS (Orthopaedics)",
+    "experience_years": 8,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 800,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_03_gyn_1",
+    "hospital_id": "h_gb_03",
+    "name": "Dr. Sravani Rao",
+    "name_spoken_te": "డాక్టర్ శ్రావణి రావు",
+    "name_spoken_hi": "डॉक्टर श्रावणी राव",
+    "gender": "female",
+    "speciality": "Gynecology",
+    "qualification": "MBBS, MS (Obstetrics & Gynaecology)",
+    "experience_years": 10,
+    "languages": [
+      "Telugu",
+      "English",
+      "Hindi"
+    ],
+    "consultation_fee_inr": 800,
+    "schedule": {
+      "mon": "16:00-19:00",
+      "tue": "16:00-19:00",
+      "wed": "16:00-19:00",
+      "thu": "16:00-19:00",
+      "fri": "16:00-19:00",
+      "sat": "16:00-19:00",
+      "sun": "16:00-19:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_03_ent_1",
+    "hospital_id": "h_gb_03",
+    "name": "Dr. Nikhil Joshi",
+    "name_spoken_te": "డాక్టర్ నిఖిల్ జోషి",
+    "name_spoken_hi": "डॉक्टर निखिल जोशी",
+    "gender": "male",
+    "speciality": "ENT",
+    "qualification": "MBBS, MS (ENT)",
+    "experience_years": 9,
+    "languages": [
+      "Hindi",
+      "English",
+      "Telugu"
+    ],
+    "consultation_fee_inr": 600,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_03_ophth_1",
+    "hospital_id": "h_gb_03",
+    "name": "Dr. Deepa Menon",
+    "name_spoken_te": "డాక్టర్ దీప మేనన్",
+    "name_spoken_hi": "डॉक्टर दीपा मेनन",
+    "gender": "female",
+    "speciality": "Ophthalmology",
+    "qualification": "MBBS, MS (Ophthalmology)",
+    "experience_years": 12,
+    "languages": [
+      "English",
+      "Malayalam",
+      "Hindi"
+    ],
+    "consultation_fee_inr": 700,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "tue": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "thu": "17:00-20:00",
+      "fri": "17:00-20:00",
+      "sat": "17:00-20:00",
+      "sun": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_04_peds_1",
+    "hospital_id": "h_gb_04",
+    "name": "Dr. Keerthi Naidu",
+    "name_spoken_te": "డాక్టర్ కీర్తి నాయుడు",
+    "name_spoken_hi": "डॉक्टर कीर्ति नायडू",
+    "gender": "female",
+    "speciality": "Pediatrics",
+    "qualification": "MBBS, MD (Paediatrics)",
+    "experience_years": 7,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_04_peds_2",
+    "hospital_id": "h_gb_04",
+    "name": "Dr. Gautam Sharma",
+    "name_spoken_te": "డాక్టర్ గౌతమ్ శర్మ",
+    "name_spoken_hi": "डॉक्टर गौतम शर्मा",
+    "gender": "male",
+    "speciality": "Pediatrics",
+    "qualification": "MBBS, MD (Paediatrics)",
+    "experience_years": 15,
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "consultation_fee_inr": 700,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "tue": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "thu": "17:00-20:00",
+      "fri": "17:00-20:00",
+      "sat": "17:00-20:00",
+      "sun": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_04_ent_1",
+    "hospital_id": "h_gb_04",
+    "name": "Dr. Anjali Gupta",
+    "name_spoken_te": "డాక్టర్ అంజలి గుప్తా",
+    "name_spoken_hi": "डॉक्टर अंजलि गुप्ता",
+    "gender": "female",
+    "speciality": "ENT",
+    "qualification": "MBBS, MS (ENT)",
+    "experience_years": 6,
+    "languages": [
+      "Hindi",
+      "English"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "tue": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "sat": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_05_dental_1",
+    "hospital_id": "h_gb_05",
+    "name": "Dr. Mohan Reddy",
+    "name_spoken_te": "డాక్టర్ మోహన్ రెడ్డి",
+    "name_spoken_hi": "डॉक्टर मोहन रेड्डी",
+    "gender": "male",
+    "speciality": "Dental",
+    "qualification": "BDS, MDS (Conservative Dentistry)",
+    "experience_years": 12,
+    "languages": [
+      "Telugu",
+      "English"
+    ],
+    "consultation_fee_inr": 500,
+    "schedule": {
+      "mon": "10:00-13:00",
+      "tue": "10:00-13:00",
+      "wed": "10:00-13:00",
+      "thu": "10:00-13:00",
+      "fri": "10:00-13:00",
+      "sat": "10:00-13:00",
+      "sun": "10:00-13:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_05_derm_1",
+    "hospital_id": "h_gb_05",
+    "name": "Dr. Rekha Iyer",
+    "name_spoken_te": "డాక్టర్ రేఖ అయ్యర్",
+    "name_spoken_hi": "डॉक्टर रेखा अय्यर",
+    "gender": "female",
+    "speciality": "Dermatology",
+    "qualification": "MBBS, MD (Dermatology)",
+    "experience_years": 9,
+    "languages": [
+      "English",
+      "Tamil",
+      "Hindi"
+    ],
+    "consultation_fee_inr": 600,
+    "schedule": {
+      "mon": "16:00-19:00",
+      "tue": "16:00-19:00",
+      "wed": "16:00-19:00",
+      "thu": "16:00-19:00",
+      "fri": "16:00-19:00",
+      "sat": "16:00-19:00",
+      "sun": "16:00-19:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  },
+  {
+    "doctor_id": "d_gb_05_ophth_1",
+    "hospital_id": "h_gb_05",
+    "name": "Dr. Ajay Chowdary",
+    "name_spoken_te": "డాక్టర్ అజయ్ చౌదరి",
+    "name_spoken_hi": "डॉक्टर अजय चौधरी",
+    "gender": "male",
+    "speciality": "Ophthalmology",
+    "qualification": "MBBS, MS (Ophthalmology)",
+    "experience_years": 8,
+    "languages": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "consultation_fee_inr": 600,
+    "schedule": {
+      "mon": "17:00-20:00",
+      "tue": "17:00-20:00",
+      "wed": "17:00-20:00",
+      "thu": "17:00-20:00",
+      "fri": "17:00-20:00",
+      "sat": "17:00-20:00",
+      "sun": "17:00-20:00"
+    },
+    "slot_length_minutes": 15,
+    "on_leave_day_offsets": [],
+    "is_sample_data": true
+  }
+]

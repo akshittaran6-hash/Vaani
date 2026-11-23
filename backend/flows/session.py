@@ -12,6 +12,7 @@ Per caller turn:
 from __future__ import annotations
 
 import json
+import logging
 import re
 from dataclasses import dataclass, field
 from datetime import date, timedelta
@@ -21,13 +22,15 @@ from backend.api.deps import Services
 from backend.clock import today_ist
 from backend.flows import prompts
 from backend.flows.context import CallContext
-from backend.flows.extract import find_business, find_doctor_named, parse_name, parse_party
+from backend.flows.extract import find_business, find_doctor_named, is_entity_name, parse_name, parse_party
 from backend.flows.language import detect_language
 from backend.flows.nodes import NODES, FunctionSpec, functions_for
 from backend.flows.when import latest_day, latest_time
 from backend.text import mask_phone, norm
 from backend.tools.hospitals import find_emergency, find_speciality_phrase
 from backend.voice.llm import LLM, LLMReply
+
+log = logging.getLogger(__name__)
 
 MAX_STEPS = 6
 MAX_ACTIONS_PER_STEP = 3
@@ -103,6 +106,13 @@ FAQ_WORDS = {
     "walk-in",
     "walkin",
     "lift",
+    "lab",
+    "timings",
+    "timing",
+    "opd",
+    "vegetarian",
+    "menu",
+    "accessible",
 }
 KIDS_WORDS = {"kids", "kid", "children", "child", "bachchon", "bachon", "bachche", "pillalu", "pillalaki"}
 BOOKING_WORDS = {"kavali", "chahiye", "need", "want", "book", "booking", "table", "appointment", "doctor", "slot"}
@@ -145,6 +155,31 @@ YES_WORDS = {
     "correct",
     "right",
     "chalega",
+    "dijiye",
+    "kijiye",
+    "pettandi",
+}
+# A booking needs one of these in the caller's own turn (not just "nothing negative").
+CORE_YES = {
+    "avunu",
+    "avnu",
+    "sare",
+    "ok",
+    "okay",
+    "confirm",
+    "haan",
+    "han",
+    "ha",
+    "haanji",
+    "theek",
+    "thik",
+    "bilkul",
+    "yes",
+    "yeah",
+    "yep",
+    "sure",
+    "correct",
+    "chalega",
 }
 NO_WORDS = {
     "ledu",
@@ -162,10 +197,15 @@ NO_WORDS = {
     "aagu",
     "ruko",
 }
+# "₹650", "650 rupaye", "650 rupees", "650 రూపాయలు", "650 रुपये"
+MONEY_RE = re.compile(
+    r"₹\s*(\d[\d,]*)|(\d[\d,]*)\s*(?:rupaye|rupay|rupees|rupee|rupayalu|rs\b|inr\b|रुपये|रुपए|రూపాయలు)",
+    re.IGNORECASE,
+)
 DAY_WORDS = {
     0: ("today", "aaj", "ivala"),
     1: ("tomorrow", "kal", "repu"),
-    2: ("day after tomorrow", "parso", "ellundi"),
+    2: ("day after tomorrow", "parso", "parson", "ellundi"),
 }
 
 
@@ -383,11 +423,12 @@ class Session:
                     }
                 )
                 continue
+            say = self._verified_amounts(reply.say)
             if not reply.actions:
-                out.reply = reply.say
+                out.reply = say
                 break
-            if reply.say:
-                out.fillers.append(reply.say)
+            if say:
+                out.fillers.append(say)
             results = await self._run_actions(reply, out)
             self.history.append(
                 {
@@ -425,9 +466,49 @@ class Session:
             out.reply = self.phrase("didnt_catch_that")
         return out
 
+    def _verified_amounts(self, text: str) -> str:
+        """Drop sentences where the LLM states a ₹ amount no tool returned in this call (it once
+        read back "fee 1000 rupaye" for a ₹650 doctor). Fees and deposits come from code."""
+        if not text or not MONEY_RE.search(text):
+            return text
+        # ensure_ascii=False: "₹300" must stay "₹300", not "\u20b9300" (which reads as 9300).
+        dumped = json.dumps(self.tools.timeline, default=str, ensure_ascii=False)
+        known = {int(n) for n in re.findall(r"\d+", dumped)} | self._catalogue_amounts()
+        kept = []
+        for sentence in re.split(r"(?<=[.?!।])\s+", text):
+            amounts = {int(a.replace(",", "")) for m in MONEY_RE.finditer(sentence) for a in m.groups() if a}
+            if amounts <= known:
+                kept.append(sentence)
+        if len(kept) < len(re.split(r"(?<=[.?!।])\s+", text)):
+            log.warning("dropped an unverified amount from the LLM reply: %r", text)
+        return " ".join(kept)
+
+    def _catalogue_amounts(self) -> set[int]:
+        """₹ facts of the business in this call: deposit and price for two, or its doctors' fees."""
+        biz = str(self.ctx.slots.get("business_id") or "")
+        amounts: set[int] = set()
+        for r in self.catalog.restaurants:
+            if r.restaurant_id == biz:
+                amounts |= {r.booking_rules.deposit_inr, r.price_for_two_inr}
+        # Once a doctor is chosen, only their fee (T29: "fee 900" was another doctor's fee).
+        doc = self.ctx.slots.get("doctor_id")
+        amounts |= {
+            d.consultation_fee_inr
+            for d in self.catalog.doctors
+            if (d.doctor_id == doc if doc else d.hospital_id == biz)
+        }
+        return amounts
+
     def _is_yes_words(self, text: str) -> bool:
         words = re.findall(r"[a-z]+", text.lower())
         return 0 < len(words) <= 6 and not (set(words) & NO_WORDS) and all(w in YES_WORDS for w in words)
+
+    def caller_said_yes(self) -> bool:
+        """The caller's latest turn agrees: a yes word and nothing negative ("Haan, confirm kar dijiye")."""
+        last = self.last_caller_text()
+        words = set(re.findall(r"[a-z]+", last.lower()))
+        native_yes = any(w in last for w in ("అవును", "సరే", "హాఁ", "हाँ", "हां", "ठीक"))
+        return bool(words & CORE_YES or native_yes) and not (words & NO_WORDS)
 
     def _is_plain_yes(self, text: str) -> bool:
         p = self.ctx.pending
@@ -457,7 +538,7 @@ class Session:
             (t["text"].lower() for t in reversed(self.ctx.transcript[:-1]) if t["speaker"] == "vaani"), ""
         )
         asked = any(w in last_vaani for w in ("peru", "naam", "name"))
-        if name := parse_name(text, asked_for_name=asked):
+        if (name := parse_name(text, asked_for_name=asked)) and not is_entity_name(name, self.catalog):
             await self.set_slot("name", name)
         biz = find_business(text, self.catalog)
         doc = find_doctor_named(text, self.catalog, getattr(biz, "hospital_id", None))

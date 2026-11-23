@@ -157,7 +157,7 @@ The brief is "crazy frontend", but every screen must show real data, never decor
 
 ### 6.10 Live Call Studio `/studio` (dark) — the demo centrepiece
 - Layout: left = big voice orb + call status (ringing / talking / ended, duration, channel phone/web, caller's masked number); centre = **live transcript** (speaker bubbles, language tag TE/HI/EN on each line, partial text in a lighter shade until final); right = **slots panel** (area, business, date, time, party size / speciality / doctor, name — each ticks to ✓ with a small animation when filled) and **active agent badge** (Router → Restaurant / Hospital, with a transition when it switches).
-- Bottom: **agent activity timeline** — each `tool_called` event as a row: time, icon, plain-language summary (e.g. "Checked Spice Garden slots → 19:30, 20:30 free (20:00 full)"); `booking_created` row highlighted with the booking ID and a link to the portal.
+- Bottom: **agent activity timeline** — each `tool_called` event as a row: time, icon, plain-language summary (e.g. "Checked Dumgalli Courtyard slots → 19:00 free (20:30 full)"); `booking_created` row highlighted with the booking ID and a link to the portal.
 - **Latency meter:** per turn, stacked bar (STT / LLM / TTS) with the total, plus running median; colour turns warning above 1.5 s.
 - **Multi-call grid** (toggle): one tile per live call (status, language, service, last line of transcript, latency); tiles turn green when a booking is made. Used for the "rush hour" demo (4 calls).
 - Controls: Talk to Vaani (browser call), Replay demo call (Hindi restaurant / Telugu hospital), Rush hour replay (mock), pin a call.

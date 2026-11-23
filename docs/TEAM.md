@@ -46,7 +46,7 @@ Everyone owns a starting area, but nobody is limited to it. Pick up anything, ti
 ### Phase 3 — Text-mode agent
 - [x] Router / restaurant / hospital flows + `python -m backend.flows.cli`
 - [x] Prompts + 3 example dialogues per service per language
-- [x] `eval.py` with accuracy by language (40/40 on placeholder data; re-run on real data)
+- [x] `eval.py` with accuracy by language (placeholder data 40/40; real data 32/40 first run → 40/40 after fixes, clock frozen at 09:00)
 
 ### Phase 4 — Voice over browser
 - [ ] STT / LLM / TTS adapters, pipeline, WebRTC + `/webrtc/offer`

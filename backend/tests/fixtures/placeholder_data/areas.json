@@ -1,0 +1,68 @@
+[
+  {
+    "area_id": "jubilee_hills",
+    "name_en": "Jubilee Hills",
+    "name_te": "జూబ్లీ హిల్స్",
+    "name_hi": "जुबली हिल्स",
+    "aliases": [
+      "jubilee hills",
+      "jubili hills",
+      "jubilee",
+      "jublee hills",
+      "jh",
+      "jubilee hill",
+      "joobli hills",
+      "జూబ్లీ హిల్స్",
+      "जुबली हिल्स"
+    ],
+    "lat": 17.4326,
+    "lng": 78.4071,
+    "nearby_unsupported_areas": [
+      "Banjara Hills",
+      "Madhapur",
+      "Film Nagar",
+      "Yousufguda",
+      "Ameerpet",
+      "Panjagutta"
+    ],
+    "unsupported_area_reply": {
+      "te": "Sorry andi, ee demo lo Jubilee Hills, Gachibowli lo matrame chudagalanu. Vaatilo okati chudamantara?",
+      "hi": "Sorry ji, is demo mein abhi sirf Jubilee Hills aur Gachibowli hain. Inmein se koi dekhoon?",
+      "en": "Sorry, for this demo we only cover Jubilee Hills and Gachibowli. Shall I check one of these?"
+    },
+    "is_sample_data": true
+  },
+  {
+    "area_id": "gachibowli",
+    "name_en": "Gachibowli",
+    "name_te": "గచ్చిబౌలి",
+    "name_hi": "गाचीबौली",
+    "aliases": [
+      "gachibowli",
+      "gachibouli",
+      "gachi bowli",
+      "gachibowly",
+      "gacchibowli",
+      "gachibawli",
+      "gb",
+      "గచ్చిబౌలి",
+      "गाचीबौली"
+    ],
+    "lat": 17.4401,
+    "lng": 78.3489,
+    "nearby_unsupported_areas": [
+      "Kondapur",
+      "Madhapur",
+      "Nanakramguda",
+      "Financial District",
+      "Kukatpally",
+      "Manikonda"
+    ],
+    "unsupported_area_reply": {
+      "te": "Sorry andi, ee demo lo Jubilee Hills, Gachibowli lo matrame chudagalanu. Vaatilo okati chudamantara?",
+      "hi": "Sorry ji, is demo mein abhi sirf Jubilee Hills aur Gachibowli hain. Inmein se koi dekhoon?",
+      "en": "Sorry, for this demo we only cover Jubilee Hills and Gachibowli. Shall I check one of these?"
+    },
+    "is_sample_data": true
+  }
+]

@@ -133,6 +133,11 @@ async def test_confirm_needs_an_earlier_readback(reseed: None, services: Service
     res, _ = await confirm_booking(s, {})
     assert res["error"] == "WAIT_FOR_YES"  # same turn: the caller hasn't said yes yet
     s.ctx.turn = 2
+    s.ctx.transcript.append({"ts": "", "speaker": "caller", "lang": "te", "text": "Asha Rao peru meeda pettandi"})
+    res, _ = await confirm_booking(s, {})
+    assert res["error"] == "WAIT_FOR_YES"  # a later turn, but the caller gave a name, not a yes (eval T05)
+    s.ctx.turn = 3
+    s.ctx.transcript.append({"ts": "", "speaker": "caller", "lang": "hi", "text": "Haan, confirm kar dijiye"})
     res, _ = await confirm_booking(s, {})
     assert res["ok"] and res["booking_id"].startswith("VN-")
 
@@ -244,3 +249,22 @@ async def test_llm_cannot_invent_the_callers_name(reseed: None, services: Servic
     )
     await s.handle("Gachibowli mein kal raat 9 baje Royal Zafraan, chaar log")
     assert s.ctx.pending is None and s.ctx.slots["name"] is None
+
+
+async def test_llm_cannot_state_an_unverified_amount(reseed: None, services: Services) -> None:
+    """Eval T29 (real data, run 1): the LLM read back "fee 1000 rupaye" for a ₹650 doctor."""
+    s, _ = await new_session(services, [])
+    s.tools.timeline.append({"tool": "search_hospitals", "result": {"fee_inr": 650}})
+    assert s._verified_amounts("Fee 1000 rupaye hai. Aapka naam?") == "Aapka naam?"
+    assert s._verified_amounts("Fee ₹650 hai. Aapka naam?") == "Fee ₹650 hai. Aapka naam?"
+    assert s._verified_amounts("Kal 10:15 free hai.") == "Kal 10:15 free hai."
+    s.ctx.slots["business_id"] = "r_jh_01"  # the named business's own deposit counts as verified
+    deposit = services.catalog.restaurants[0].booking_rules.deposit_inr
+    assert s._verified_amounts(f"There's a ₹{deposit} deposit.") == f"There's a ₹{deposit} deposit."
+    hosp = [d for d in services.catalog.doctors if d.hospital_id == "h_gb_01"]
+    a, b = next((x, y) for x in hosp for y in hosp if x.consultation_fee_inr != y.consultation_fee_inr)
+    s.ctx.slots.update(business_id="h_gb_01", doctor_id=a.doctor_id)
+    assert s._verified_amounts(f"Fee ₹{b.consultation_fee_inr}.") == ""  # another doctor's fee
+    assert s._verified_amounts(f"Fee ₹{a.consultation_fee_inr}.") == f"Fee ₹{a.consultation_fee_inr}."
+    s.tools.timeline.append({"tool": "answer_faq", "result": {"answer": "A sample deposit of ₹300 applies."}})
+    assert s._verified_amounts("Yes, a deposit of ₹300 applies.") == "Yes, a deposit of ₹300 applies."
