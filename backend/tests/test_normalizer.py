@@ -115,3 +115,7 @@ def test_code_readbacks_have_no_digits_left() -> None:
 
 def test_digits_words() -> None:
     assert digits_words("0712", "hi") == "shunya saat ek do"
+
+
+def test_helplines_digit_by_digit() -> None:
+    assert normalize("Tele-MANAS 1-800-891-4416", "hi") == "Tele-MANAS one eight zero zero eight nine one four four one six"

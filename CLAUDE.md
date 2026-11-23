@@ -36,7 +36,7 @@ Full plan: `docs/MASTER_PLAN.md`. Call stages: `docs/CALL_FLOW.md`. Pages: `docs
 4. Replies: 1–2 short sentences, casual Hyderabad-style code-mixing; numbers/times converted to spoken form by `voice/normalizer.py` before TTS.
 5. Stream everything; target ~1 s to first audio; log `stt`, `llm_first_token`, `tts_first_audio`, `turn_total` per turn. Barge-in on (stop TTS within 0.5 s).
 6. Unsupported area → the polite "only Jubilee Hills and Gachibowli" reply from `data/areas.json`.
-7. Hospital: map plain words to a speciality; never diagnose; emergency phrases → "call 108 / 112 immediately", **no booking**.
+7. Hospital: map plain words to a speciality; never diagnose; emergency phrases → "call 108 / 112 immediately", **no booking**. Self-harm words (any call) → the gentle `self_harm_reply` (Tele-MANAS 14416 / 1-800-891-4416, 112 if in danger now), **no booking**.
 8. Never ask for OTP, PIN, CVV, card or account numbers; say so if the caller offers one.
 9. Use the caller's number from caller ID for confirmations; never ask for email.
 10. Payments only in provider test mode.

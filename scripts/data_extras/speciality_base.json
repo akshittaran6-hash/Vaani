@@ -1,5 +1,5 @@
 {
-  "_comment": "Baseline phrases merged into data/speciality_mapping.json by scripts/import_data.py (teammate's phrases win on conflicts). Short, common forms the agent's tests rely on: 'chest pain', 'सीने में दर्द', 'behosh', 'heart doctor', 'gynecologist'.",
+  "_comment": "Baseline phrases merged into data/speciality_mapping.json by scripts/import_data.py (teammate's phrases win on conflicts). Short, common forms the agent's tests rely on: 'chest pain', 'सीने में दर्द', 'behosh', 'heart doctor', 'gynecologist'. self_harm_phrases + self_harm_reply: a gentle reply with India's Tele-MANAS mental-health helpline (14416 / 1-800-891-4416, free, 24x7) and 112 for immediate danger; teammate emergency phrases about suicide/self-harm are moved here by import_data.py. Reply text needs a native te/hi speaker's review.",
   "phrases": [
     {
       "phrase": "skin doctor",
@@ -597,14 +597,6 @@
       "lang": "en"
     },
     {
-      "phrase": "want to end my life",
-      "lang": "en"
-    },
-    {
-      "phrase": "suicidal thoughts",
-      "lang": "en"
-    },
-    {
       "phrase": "gunde noppi",
       "lang": "te"
     },
@@ -657,10 +649,6 @@
       "lang": "te"
     },
     {
-      "phrase": "chanipovalani undi",
-      "lang": "te"
-    },
-    {
       "phrase": "seene mein dard",
       "lang": "hi"
     },
@@ -705,12 +693,131 @@
       "lang": "hi"
     },
     {
+      "phrase": "lakwa",
+      "lang": "hi"
+    }
+  ],
+  "self_harm_phrases": [
+    {
+      "phrase": "want to end my life",
+      "lang": "en"
+    },
+    {
+      "phrase": "suicidal thoughts",
+      "lang": "en"
+    },
+    {
+      "phrase": "chanipovalani undi",
+      "lang": "te"
+    },
+    {
       "phrase": "marna chahta hoon",
       "lang": "hi"
     },
     {
-      "phrase": "lakwa",
+      "phrase": "I want to kill myself",
+      "lang": "en"
+    },
+    {
+      "phrase": "I don't want to live anymore",
+      "lang": "en"
+    },
+    {
+      "phrase": "I want to hurt myself",
+      "lang": "en"
+    },
+    {
+      "phrase": "naaku chanipovalani undi",
+      "lang": "te"
+    },
+    {
+      "phrase": "aatmahatya chesukovali",
+      "lang": "te"
+    },
+    {
+      "phrase": "bratakalani ledu",
+      "lang": "te"
+    },
+    {
+      "phrase": "నాకు చనిపోవాలని ఉంది",
+      "lang": "te"
+    },
+    {
+      "phrase": "marna chahti hoon",
       "lang": "hi"
+    },
+    {
+      "phrase": "aatmahatya karna chahta hoon",
+      "lang": "hi"
+    },
+    {
+      "phrase": "jeena nahi chahta",
+      "lang": "hi"
+    },
+    {
+      "phrase": "मैं मरना चाहता हूँ",
+      "lang": "hi"
+    },
+    {
+      "phrase": "मुझे जीना नहीं है",
+      "lang": "hi"
+    },
+    {
+      "phrase": "suicide",
+      "lang": "en"
+    },
+    {
+      "phrase": "kill myself",
+      "lang": "en"
+    },
+    {
+      "phrase": "end my life",
+      "lang": "en"
+    },
+    {
+      "phrase": "marna chahta hu",
+      "lang": "hi"
+    },
+    {
+      "phrase": "marna chahti hu",
+      "lang": "hi"
+    },
+    {
+      "phrase": "mar jaana chahta hoon",
+      "lang": "hi"
+    },
+    {
+      "phrase": "suicide karna",
+      "lang": "hi"
+    },
+    {
+      "phrase": "aatmahatya",
+      "lang": "hi"
+    },
+    {
+      "phrase": "आत्महत्या",
+      "lang": "hi"
+    },
+    {
+      "phrase": "suicide chesukovali",
+      "lang": "te"
+    },
+    {
+      "phrase": "aatmahatya",
+      "lang": "te"
+    },
+    {
+      "phrase": "ఆత్మహత్య",
+      "lang": "te"
+    },
+    {
+      "phrase": "chachipovalani undi",
+      "lang": "te"
     }
-  ]
+  ],
+  "self_harm_reply": {
+    "te": "మీకు ఇలా అనిపిస్తోందని విని నాకు చాలా బాధగా ఉంది. మీరు ఒంటరి కాదు. దయచేసి టెలీ-మానస్‌కి 14416 లేదా 1-800-891-4416 కి కాల్ చేయండి — ఉచితం, ఎప్పుడైనా మాట్లాడొచ్చు. మీరు ఇప్పుడే ప్రమాదంలో ఉంటే, వెంటనే 112 కి కాల్ చేయండి.",
+    "hi": "मुझे बहुत दुख है कि आप ऐसा महसूस कर रहे हैं। आप अकेले नहीं हैं। कृपया टेली-मानस को 14416 या 1-800-891-4416 पर कॉल करें — यह मुफ़्त है और दिन-रात कभी भी बात कर सकते हैं। अगर आप अभी ख़तरे में हैं, तो तुरंत 112 पर कॉल करें।",
+    "en": "I'm really sorry you're feeling this way, and you don't have to go through it alone. Please call Tele-MANAS on 14416 or 1-800-891-4416 — it's free and open day and night. If you might be in danger right now, please call 112 straight away."
+  }
 }

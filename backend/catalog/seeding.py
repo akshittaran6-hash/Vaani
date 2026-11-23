@@ -346,7 +346,9 @@ def build_seed_sql(cat: Catalog) -> str:
             "speciality_map",
             ["phrase", "lang", "speciality", "is_emergency"],
             [[q(p.phrase), q(p.lang), q(p.speciality), "false"] for p in m.phrases]
-            + [[q(e.phrase), q(e.lang), "null", "true"] for e in m.emergency_phrases],
+            + [[q(e.phrase), q(e.lang), "null", "true"] for e in m.emergency_phrases]
+            # Self-harm phrases are urgent too (no booking); the reply text lives in data/.
+            + [[q(e.phrase), q(e.lang), "null", "true"] for e in m.self_harm_phrases],
         )
     )
 

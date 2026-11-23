@@ -84,6 +84,10 @@ def _time_only_on_some_weekdays(raw: Raw) -> None:
     row["booked_times"].append(end)  # first slot after the usual close: Saturday only
 
 
+def _self_harm_reply_without_helpline(raw: Raw) -> None:
+    raw["speciality_mapping"]["self_harm_reply"]["en"] = "Please talk to someone you trust."
+
+
 def _part_week_doctor_in_availability(raw: Raw) -> None:
     did = raw["doctor_availability"][0]["doctor_id"]
     doc = next(d for d in raw["doctors"] if d["doctor_id"] == did)
@@ -140,6 +144,7 @@ MUTATIONS: list[tuple[Callable[[Raw], None], str]] = [
     (_party_bigger_than_tables, "bigger than the largest table"),
     (_closed_day, "no bookable time on mon"),
     (_emergency_reply_without_108, "must mention 108 and 112"),
+    (_self_harm_reply_without_helpline, "must mention Tele-MANAS 14416 and 112"),
     (_too_few_phrases, "need >= 60"),
 ]
 

@@ -42,6 +42,7 @@ Required slots:
 | Abuse | One polite warning, then goodbye |
 | "Talk to a human" | `transfer_to_human`: handoff/callback message, logged |
 | Emergency phrase in a hospital call (chest pain, can't breathe, …) | *"Please call 108 or 112 immediately"*, **no booking** |
+| Caller talks about self-harm or not wanting to live (any call) | A gentle reply: *"I'm really sorry you're feeling this way… Please call Tele-MANAS on 14416 or 1-800-891-4416, free, day and night. If you might be in danger right now, call 112."* **No booking**; the call stays open |
 | Unsupported area | *"For this demo we only cover Jubilee Hills and Gachibowli. Shall I check one of these?"* (from `areas.json`) |
 | Caller offers OTP / PIN / CVV / card / account number | Say we never need it; don't repeat or store it |
 | Switch service mid-call | `switch_service`: name, phone and language carry over |
@@ -54,7 +55,7 @@ Each caller turn runs, in order (`backend/flows/session.py`):
 1. **Redact** OTP / PIN / card / long digit runs, before anything is logged, stored or sent to the LLM.
 2. **Language** of the first sentence (`flows/language.py`): Telugu/Devanagari script, or romanised function words.
 3. **Extract** from the caller's words (`flows/extract.py`, `flows/when.py`): party size ("naluguru" = 4), name ("peru Rajesh"), a named restaurant / hospital / doctor, a speciality phrase ("pallu noppi" → Dental, which also routes to the hospital agent), the day ("repu", "parso", "3 din baad", "the day after that") and the time ("saadhe aath", "enimidinnara", "shaam 6 baje"; corrections like "4:30… ledu, 5:30" keep the last).
-4. **Guards** (no LLM call): emergency phrase → 108/112 line; a locality outside the demo → the polite reply; an FAQ about a named place → its own FAQ answer.
+4. **Guards** (no LLM call): self-harm words (any call) → gentle Tele-MANAS 14416 / 112 line; emergency phrase → 108/112 line; a locality outside the demo → the polite reply; an FAQ about a named place → its own FAQ answer.
 5. **Confirm**: a plain "yes" to a waiting read-back books it. If every detail is already known, code builds the read-back itself.
 6. **LLM loop** (JSON actions, at most 6 steps) for everything else: searching, choosing, asking for what's missing.
 

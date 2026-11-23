@@ -80,9 +80,8 @@ def test_seed_counts_match_catalog(conn: psycopg.Connection, catalog: Catalog) -
     assert count("restaurants") == 10 and count("hospitals") == 10
     assert count("doctors") == len(catalog.doctors)
     assert count("restaurant_tables") == sum(len(r.tables) for r in catalog.restaurants)
-    assert count("speciality_map") == len(catalog.speciality_mapping.phrases) + len(
-        catalog.speciality_mapping.emergency_phrases
-    )
+    m = catalog.speciality_mapping
+    assert count("speciality_map") == len(m.phrases) + len(m.emergency_phrases) + len(m.self_harm_phrases)
     assert count("bookings") == 0
     # Slots cover exactly today .. today+6
     row = conn.execute("select min(date), max(date) from public.restaurant_slots").fetchone()

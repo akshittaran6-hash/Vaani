@@ -10,7 +10,7 @@ import psycopg
 from pydantic import Field
 from rapidfuzz import fuzz
 
-from backend.catalog.models import DAYS, SPECIALITIES, Catalog, Doctor, Speciality
+from backend.catalog.models import DAYS, SPECIALITIES, Catalog, Doctor, EmergencyPhrase, Speciality
 from backend.clock import is_past, today_ist, window
 from backend.text import norm
 from backend.tools.base import Args, Result, ToolContext, ToolError, day_word, require_area, require_window, tool
@@ -58,17 +58,37 @@ def _window_score(text: str, phrase: str) -> float:
     return max(fuzz.ratio(" ".join(words[i : i + n]), phrase) for i in range(len(words) - n + 1))
 
 
+def _find_phrase(text: str, phrases: list[EmergencyPhrase], fuzzy: bool = True) -> str | None:
+    t = norm(text)
+    for e in phrases:
+        p = norm(e.phrase)
+        if _contains(t, p) or (fuzzy and len(p) >= 6 and _window_score(t, p) >= EMERGENCY_FUZZY_CUTOFF):
+            return e.phrase
+    return None
+
+
 def find_emergency(text: str, catalog: Catalog) -> str | None:
     """The emergency phrase found in `text` (exact, or one letter off), else None.
 
     Shared by map_speciality and the session's pre-LLM guard, so both always agree.
     """
-    t = norm(text)
-    for e in catalog.speciality_mapping.emergency_phrases:
-        p = norm(e.phrase)
-        if _contains(t, p) or (len(p) >= 6 and _window_score(t, p) >= EMERGENCY_FUZZY_CUTOFF):
-            return e.phrase
-    return None
+    return _find_phrase(text, catalog.speciality_mapping.emergency_phrases)
+
+
+def find_self_harm(text: str, catalog: Catalog) -> str | None:
+    """A self-harm / suicidal-thoughts phrase in `text` (whole phrase, exact), else None.
+
+    No fuzzy matching here: one letter turns "karna chahta hoon" (I want to do) into
+    "marna chahta hoon" (I want to die), and "jana nahi chahta" into "jeena nahi chahta",
+    so a fuzzy match would give ordinary booking callers the helpline reply."""
+    m = catalog.speciality_mapping
+    return _find_phrase(text, m.self_harm_phrases, fuzzy=False) if m.self_harm_reply else None
+
+
+def self_harm_reply(catalog: Catalog, lang: str) -> str:
+    reply = catalog.speciality_mapping.self_harm_reply
+    assert reply is not None
+    return str(getattr(reply, lang if lang in ("te", "hi", "en") else "en"))
 
 
 def find_speciality_phrase(text: str, catalog: Catalog) -> str | None:
@@ -100,6 +120,15 @@ async def map_speciality(ctx: ToolContext, a: MapSpecialityArgs) -> tuple[Result
     m = ctx.catalog.speciality_mapping
     lang = a.lang or ctx.language
     reply = getattr(m.emergency_reply, lang if lang in ("te", "hi", "en") else "en")
+
+    # 0. Self-harm: a gentle reply with Tele-MANAS 14416 and 112. Never a booking.
+    if hit := find_self_harm(a.text, ctx.catalog):
+        return {
+            "emergency": True,
+            "self_harm": True,
+            "matched": hit,
+            "reply": self_harm_reply(ctx.catalog, lang),
+        }, "Self-harm words → gave Tele-MANAS 14416 and 112, no booking"
 
     # 1. Emergency always wins (CLAUDE.md rule 7): exact phrase, then near-identical spelling.
     if hit := find_emergency(a.text, ctx.catalog):

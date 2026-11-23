@@ -16,9 +16,21 @@ Every agent session adds an entry here (rules and template: `AGENTS.md` §5). **
 | 7 Integration, eval, deploy | ⬜ not started | open | — |
 | 8 Submission polish | ⬜ not started | open | — |
 
-Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeholder data). On `phase-4-voice`: **301 passed** · ruff ✓ · mypy ✓ · `validate_data.py` ✓ (real data, 0 errors, 7 warnings) · eval on real data 32/40 first run → 40/40 × 5.
+Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeholder data). On `main`: **311 passed** (after the self-harm PR) · ruff ✓ · mypy ✓ · `validate_data.py` ✓ (real data, 0 errors, 7 warnings) · eval on real data 32/40 first run → 40/40 × 5.
 
 ## Entries
+
+### 2026-11-23 17:45 IST · Self-harm reply · Pranav via Claude Code · done (18:00 IST)
+**Branch:** `self-harm-reply` (from `main` @ `3e50fd3`) · **Commits:** see `git log main..self-harm-reply`
+**Goal:** a separate, gentle reply for self-harm / suicidal thoughts (approved by Pranav), instead of the 108/112 emergency line.
+**Done:**
+- Data schema (approved): `speciality_mapping.json` gains optional `self_harm_phrases` + `self_harm_reply` {te, hi, en}. Reply: sorry you feel this way, you're not alone, Tele-MANAS **14416** / **1-800-891-4416** (free, day and night), **112** if in danger now. Validator requires 14416 and 112 in every language.
+- `import_data.py` moves suicide/self-harm phrases out of `emergency_phrases` (4 of Akshit's + 4 baseline) and merges 12 more baseline phrases → real data: 78 emergency + 33 self-harm. Re-import changed only `speciality_mapping.json`.
+- Code: `find_self_harm` checked before emergencies in `map_speciality` (`{"emergency": true, "self_harm": true, "reply"}`) and as a session guard in **any** call (restaurant too), no LLM, no booking, call stays open; voice never drops it as stale; `ctx.self_harm` flag. Prompt rule 8 updated.
+**PR #4 review:** self-harm matching was fuzzy like emergencies, so "booking karna chahta hoon" matched "marna chahta hoon" and "jana nahi chahta" matched "jeena nahi chahta" (ordinary callers would have got the helpline reply and lost their booking). Now exact whole-phrase only, plus STT spellings and the unambiguous words (suicide, aatmahatya, आत्महत्या, ఆత్మహత్య) → 33 self-harm phrases; regression tests. Noted, not changed: the emergency matcher has no negation ("accident nahi hua" still counts, hospital calls only).
+**Tests / checks:** `uv run pytest -q` → **311 passed** · ruff ✓ · mypy ✓ · `validate_data.py` ✓ · text eval 40/40 (provider slow: LLM median 3.6 s, p95 21.7 s at 17:55).
+**Needs from humans:** a native Telugu and Hindi speaker should read the reply text in `scripts/data_extras/speciality_base.json` / `data/speciality_mapping.json`; ask Akshit to add `self_harm_phrases` / `self_harm_reply` to the data prompt for future regenerations.
+**Next steps:** Sarvam credits, Supabase DB password, then Phase 6 (Twilio) / Phase 5 integration.
 
 ### 2026-11-23 10:10 IST · Phase 4 · Pranav via Claude Code · done (17:40 IST)
 **Branch:** `phase-4-voice` (from `main` @ `f60f5d0`) · **Commits:** see `git log main..phase-4-voice`

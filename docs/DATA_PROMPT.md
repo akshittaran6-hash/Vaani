@@ -89,9 +89,13 @@ A JSON array. List ONLY doctor-days that already have bookings or blocked slots;
 One JSON object:
 {"phrases": [{"phrase": "skin doctor", "lang": "en", "speciality": "Dermatology"}, ...],
  "emergency_phrases": [{"phrase": "chest pain", "lang": "en"}, ...],
- "emergency_reply": {"te": "...", "hi": "...", "en": "Please call 108 or 112 immediately. I can't book for emergencies."}}
+ "emergency_reply": {"te": "...", "hi": "...", "en": "Please call 108 or 112 immediately. I can't book for emergencies."},
+ "self_harm_phrases": [{"phrase": "I want to end my life", "lang": "en"}, ...],
+ "self_harm_reply": {"te": "...", "hi": "...", "en": "I'm really sorry you're feeling this way... Please call Tele-MANAS on 14416 or 1-800-891-4416, free, day and night. If you might be in danger right now, call 112."}}
 - At least 60 everyday phrases covering every speciality, in English, Telugu (script AND romanised) and Hindi (script AND romanised), e.g. "skin doctor", "pillala doctor", "aankh ka doctor", "pallu noppi", "periods problem", "knee pain", "chevi noppi", "fever". lang is "en", "te" or "hi".
-- At least 30 emergency phrases (te/hi/en): chest pain, can't breathe, heavy bleeding, unconscious, accident, stroke signs, poisoning, seizures, suicidal thoughts, etc.
+- At least 30 emergency phrases (te/hi/en): chest pain, can't breathe, heavy bleeding, unconscious, accident, stroke signs, poisoning, seizures, etc. NOT suicide / self-harm: those go in self_harm_phrases.
+- 10+ self_harm_phrases (te/hi/en, script and romanised): wanting to die, suicidal thoughts, wanting to hurt oneself.
+- self_harm_reply: warm and calm, not clinical; says they're not alone; gives India's Tele-MANAS helpline 14416 / 1-800-891-4416 (free, 24x7) and 112 if they might be in danger right now. Every language must contain "14416" and "112".
 - emergency_reply: the exact line the AI says (tells the caller to call 108 or 112 immediately; no booking), te and hi romanised code-mixed.
 
 === FILE 8: test_calls.json (evaluation set) ===

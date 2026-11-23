@@ -82,6 +82,6 @@ Entry template:
 
 1. The LLM talks; **code decides**. Availability, party limits, supported areas, booking IDs and payments are validated in tools. Never invent businesses, slots or IDs.
 2. At most 3 options read aloud. Greeting always discloses "I'm Vaani, an AI assistant". Never claim to be human.
-3. Emergency phrases in hospital calls → "call 108 / 112 immediately", **no booking**. Never diagnose.
+3. Emergency phrases in hospital calls → "call 108 / 112 immediately", **no booking**. Self-harm words in any call → the gentle Tele-MANAS 14416 / 112 reply, **no booking**. Never diagnose.
 4. Never ask for OTP, PIN, CVV, card or account numbers. Use caller ID; never ask for email.
 5. Payments test mode only. All data fictional (`is_sample_data: true`).

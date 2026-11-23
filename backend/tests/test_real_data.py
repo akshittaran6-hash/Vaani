@@ -220,3 +220,33 @@ def test_stt_spellings_of_business_names(real_catalog: Catalog) -> None:
     assert getattr(find_business("Vana Grove lo appointment", real_catalog), "hospital_id", None) == "h_gb_01"
     assert getattr(find_business("Dumgali Courtyard 8:30 baje", real_catalog), "restaurant_id", None) == "r_jh_01"
     assert find_business("Nenu Vaani tho matladutunna", real_catalog) is None  # not "Vaana Grove"
+
+
+@pytest.mark.db
+async def test_self_harm_vs_emergency_on_real_phrases(real_ctx: ToolContext, real_catalog: Catalog) -> None:
+    m = real_catalog.speciality_mapping
+    assert m.self_harm_reply is not None and len(m.self_harm_phrases) >= 12
+    for p in m.self_harm_phrases:  # Akshit's suicide phrases moved here + baseline ones
+        r = await run_tool(real_ctx, "map_speciality", {"text": p.phrase, "lang": p.lang})
+        assert r.get("self_harm") is True and "14416" in r["reply"], p.phrase
+    r = await run_tool(real_ctx, "map_speciality", {"text": "I can't breathe", "lang": "en"})
+    assert r.get("emergency") is True and not r.get("self_harm") and "108" in r["reply"]
+    hi = await run_tool(
+        real_ctx, "map_speciality", {"text": "मुझे आत्महत्या करने का ख़याल आ रहा है", "lang": "hi"}
+    )
+    assert hi.get("self_harm") is True and "टेली-मानस" in hi["reply"]
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Mujhe table book karna chahta hoon",  # "karna" (do) is one letter from "marna" (die)
+        "booking karna chahti hoon kal ke liye",
+        "jana nahi chahta, doosra restaurant batao",  # "jana" (go) vs "jeena" (live)
+        "I want to kill time before dinner",
+    ],
+)
+def test_everyday_words_are_not_self_harm(real_catalog: Catalog, text: str) -> None:
+    from backend.tools.hospitals import find_self_harm
+
+    assert find_self_harm(text, real_catalog) is None

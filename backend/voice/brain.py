@@ -185,7 +185,12 @@ class VaaniBrain(FrameProcessor):
             stale = seq < self._latest_seq
             # The caller kept talking ("7 baje theek hai. … Mera naam Pranav hai."): the next turn
             # answers both, so skip this reply, unless it's an emergency line or a booking confirmation.
-            if stale and result.guard != "emergency" and not booked_now and not self.session.ctx.ended:
+            if (
+                stale
+                and result.guard not in ("emergency", "self_harm")
+                and not booked_now
+                and not self.session.ctx.ended
+            ):
                 logger.info(f"skipping stale reply for turn {seq}: {result.reply!r}")
                 return  # the newer turn's timing (already started) measures its own first audio
             await self.say(result.reply)
