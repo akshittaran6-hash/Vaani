@@ -57,6 +57,7 @@ class CallContext:
 
     transcript: list[dict[str, Any]] = field(default_factory=list)
     llm_ms: list[int] = field(default_factory=list)
+    llm_models: list[str] = field(default_factory=list)  # which model answered each step
     # Voice calls: one row per turn {turn, stt, llm_first_token, tts_first_audio, turn_total} (ms).
     voice_turns: list[dict[str, int]] = field(default_factory=list)
     barge_in_ms: list[int] = field(default_factory=list)

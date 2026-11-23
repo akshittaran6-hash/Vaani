@@ -79,7 +79,7 @@ With `DEV_SIMULATE=true`, `POST /api/dev/simulate-booking {"business_id": "r_jh_
 
 ### Chat with Vaani (text) and run the eval
 
-Needs `LLM_BASE_URL`, `LLM_MODEL`, `LLM_API_KEY` in `.env` (any OpenAI-compatible API) and local Postgres binaries (`brew install postgresql@16`) for the throwaway databases.
+Needs `LLM_BASE_URL`, `LLM_MODEL`, `LLM_API_KEY` in `.env` (any OpenAI-compatible API) and local Postgres binaries (`brew install postgresql@16`) for the throwaway databases. Free option: Groq's free tier with several models chained (`LLM_MODEL=qwen/qwen3.8-27b@none,openai/gpt-oss-20b@low,openai/gpt-oss-120b@low`) plus an optional paid fallback (`LLM_FALLBACK_*`); see `.env.example`.
 
 ```bash
 uv run python -m backend.flows.cli                 # chat in Telugu / Hindi / English

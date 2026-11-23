@@ -115,7 +115,7 @@ Anon (frontend) reads `bookings` through **column-level grants that leave out `p
 `payment_id` PK, `booking_id` FK, `amount_inr`, `provider` (`razorpay`\|`stripe`\|`mock`), `provider_ref`, `status` (`created`\|`paid`\|`failed`\|`refunded`), `created_at`, `updated_at`.
 
 ### calls
-`call_id` PK, `channel` (`phone`\|`web`), `direction` (`inbound`\|`outbound`), `from_number`, `started_at`, `ended_at`, `language text[]`, `services_used text[]`, `transcript {}` (`[{"ts","speaker":"caller|vaani","lang","text"}]`), `outcome_json {}` (§5), `tool_timeline {}` (`[{"ts","tool","args","result","summary","ms"}]`), `latency_json {}` (`{llm_median, llm_p95, llm_calls, per_step_ms, voice_turns: [§4 latency rows], barge_in_ms: [..], tokens_in, tokens_out}`), `recording_url`, `summary` (2 lines).
+`call_id` PK, `channel` (`phone`\|`web`), `direction` (`inbound`\|`outbound`), `from_number`, `started_at`, `ended_at`, `language text[]`, `services_used text[]`, `transcript {}` (`[{"ts","speaker":"caller|vaani","lang","text"}]`), `outcome_json {}` (§5), `tool_timeline {}` (`[{"ts","tool","args","result","summary","ms"}]`), `latency_json {}` (`{llm_median, llm_p95, llm_calls, per_step_ms, per_step_model, voice_turns: [§4 latency rows], barge_in_ms: [..], tokens_in, tokens_out}`), `recording_url`, `summary` (2 lines).
 
 The row is inserted at `call_started` and completed by the post-call processor.
 
@@ -233,7 +233,9 @@ See `.env.example` (kept in sync with this list).
 | TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER, TWILIO_WHATSAPP_FROM | backend | trial account; WhatsApp sandbox sender |
 | SARVAM_API_KEY | backend | STT (+ TTS when `TTS_PROVIDER=sarvam`) |
 | STT_PROVIDER | backend | `sarvam` (default) \| `deepgram` \| `whisper` |
-| LLM_API_KEY, LLM_BASE_URL, LLM_MODEL | backend | any OpenAI-compatible API |
+| LLM_API_KEY, LLM_BASE_URL, LLM_MODEL | backend | any OpenAI-compatible API. `LLM_MODEL` may list several models, tried in order (`qwen/qwen3.8-27b@none,openai/gpt-oss-20b@low,…`; `@x` = that model's `reasoning_effort`): on Groq's free tier each model has its own 8K tokens/min budget |
+| LLM_REASONING_EFFORT | backend | sent as `reasoning_effort` when set (`low` for gpt-oss: faster) |
+| LLM_FALLBACK_BASE_URL, LLM_FALLBACK_MODEL, LLM_FALLBACK_API_KEY | backend | optional second provider, used when the first fails or returns 429 (primary skipped for 30 s after a 429) |
 | TTS_PROVIDER, TTS_API_KEY | backend | `sarvam` (default) \| `elevenlabs` \| `azure` \| `google` |
 | SUPABASE_URL, SUPABASE_SERVICE_KEY | backend | Supabase API (Storage for recordings, Phase 4+); service key never reaches the browser |
 | SUPABASE_DB_URL | backend, scripts | Postgres connection string: the backend's pool (use the pooler URL when hosted) and `db_apply.py` / `seed.py` (these **wipe and reload** the database) |

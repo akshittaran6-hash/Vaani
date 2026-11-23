@@ -38,6 +38,7 @@ class CaseResult:
     reasons: list[str] = field(default_factory=list)
     llm_calls: int = 0
     llm_ms: list[int] = field(default_factory=list)
+    llm_models: list[str] = field(default_factory=list)
     tokens_in: int = 0
     tokens_out: int = 0
     transcript: list[dict[str, Any]] = field(default_factory=list)
@@ -120,6 +121,7 @@ def score(case: TestCall, ctx: CallContext, booking: dict[str, Any] | None, toda
     c["passed"] = bool(c["outcome"]) and c.get("booking") is not False and actual_ok_for_non_booking(e.outcome, actual)
     res.llm_calls = len(ctx.llm_ms)
     res.llm_ms = list(ctx.llm_ms)
+    res.llm_models = list(ctx.llm_models)
     res.tokens_in, res.tokens_out = ctx.tokens_in, ctx.tokens_out
     res.transcript = list(ctx.transcript)
     return res

@@ -459,6 +459,7 @@ class Session:
                         {
                             **lat,
                             "per_step_ms": self.ctx.llm_ms,
+                            "per_step_model": self.ctx.llm_models,
                             "voice_turns": self.ctx.voice_turns,
                             "barge_in_ms": self.ctx.barge_in_ms,
                             "tokens_in": self.ctx.tokens_in,
@@ -822,6 +823,7 @@ class Session:
 
     def _track(self, reply: LLMReply) -> None:
         self.ctx.llm_ms.append(reply.ms)
+        self.ctx.llm_models.append(reply.model)
         self.ctx.tokens_in += reply.prompt_tokens
         self.ctx.tokens_out += reply.completion_tokens
 

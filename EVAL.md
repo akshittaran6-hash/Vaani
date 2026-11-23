@@ -81,6 +81,19 @@ Per-turn timings (49 turns from those 10 calls; ms):
 
 Not measured yet: real voices and rooms, phone audio (Phase 6), many calls at once. Sarvam credits ran out at the end of this session (402 `insufficient_quota_error`), which stopped the last run.
 
+## LLM provider: Groq free tier (23 Nov, evening)
+
+Featherless (paid) had slowed to a median of 2–3.6 s per step and a p95 of 12–22 s in the evening. Groq's free tier is much faster but has small limits: **8,000 tokens per minute and 1,000 requests per day per model** (from its response headers), and each Vaani step sends ~2,500–2,750 tokens, so one model handles ~3 steps a minute. Vaani now chains three free Groq models and keeps Featherless last (`LLM_MODEL=qwen/qwen3.8-27b@none,openai/gpt-oss-20b@low,openai/gpt-oss-120b@low`, `LLM_FALLBACK_*`); a model that answers 429 is skipped for 30 s.
+
+12-call slice (T01, T02, T05, T09, T13, T19, T21, T23, T27, T29, T35, T40), one call at a time, clock frozen at 09:00:
+
+| Run | Calls passed | Steps by model | Step median (p90) per model |
+|---|---|---|---|
+| gpt-oss-120b → Featherless | 11/12 (T02: no 2 nearest times) | mostly Featherless after the limit | — |
+| qwen3.8 → gpt-oss-20b → gpt-oss-120b → Featherless | **12/12**, all bookings correct | qwen 7 · gpt-oss-20b 7 · gpt-oss-120b 9 · Featherless 36 | qwen 480 (577) ms · gpt-oss-20b 689 (828) · gpt-oss-120b 614 (933) · Featherless 2112 (6640) |
+
+What this means: Groq steps are 3–4× faster, and free. The eval fires calls back-to-back, so it exhausts the per-minute budgets and most steps fell to Featherless; a real caller speaks every 5–10 s, which fits ~3 models × 3 steps a minute for **one** call. Several simultaneous calls or a full 40-call eval will still spill over to the fallback (or need Groq's paid tier). gpt-oss models sometimes answer with a native tool call or invalid JSON (HTTP 400); the chain moves on to the next model. Not yet measured by voice (Sarvam credits ran out).
+
 ## Load test
 
 | Concurrent callers | Median time to first audio | Slowest | Success % |
