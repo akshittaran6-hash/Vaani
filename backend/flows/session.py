@@ -217,6 +217,12 @@ MONEY_RE = re.compile(
     re.IGNORECASE,
 )
 MONEY_KEY = re.compile(r"(_inr$|fee|deposit|amount|price)")
+# A free-text "shall I confirm?" from the LLM (te / hi / en)
+CONFIRM_QUESTION = re.compile(
+    r"confirm\s+(?:cheyyana|cheyana|cheyyamantara|karoon|karun|karu|kar\s*doon|kar\s*dun)|shall i (?:confirm|book)"
+    r"|కన్ఫర్మ్ చేయనా|कन्फर्म करूँ",
+    re.IGNORECASE,
+)
 DAY_WORDS = {
     0: ("today", "aaj", "ivala"),
     1: ("tomorrow", "kal", "repu"),
@@ -456,6 +462,7 @@ class Session:
 
     async def _llm_loop(self) -> TurnResult:
         out = TurnResult(reply="")
+        nudged = False
         for _ in range(MAX_STEPS):
             reply = await self.llm.complete(
                 [{"role": "system", "content": self._system_prompt()}, *self.history[-HISTORY_TURNS:]]
@@ -472,6 +479,18 @@ class Session:
                 )
                 continue
             say = self._verified_amounts(reply.say)
+            if not reply.actions and self.ctx.pending is None and CONFIRM_QUESTION.search(say) and not nudged:
+                # The LLM wrote its own read-back ("…Confirm cheyyana?"). Read-backs come from code,
+                # so ask it once to call propose_* instead (voice run: it looped on its own read-back).
+                nudged = True
+                self.history.append(
+                    {
+                        "role": "user",
+                        "content": "<note>Never read back a booking yourself. Call propose_booking / "
+                        "propose_appointment with the details; code reads it back.</note>",
+                    }
+                )
+                continue
             if not reply.actions:
                 out.reply = say
                 break

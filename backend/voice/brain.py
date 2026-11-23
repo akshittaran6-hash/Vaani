@@ -50,16 +50,18 @@ class VaaniBrain(FrameProcessor):
         filler_after_s: float = 0.6,
         max_silence_checks: int = 2,
         on_call_end: Callable[[], Awaitable[None]] | None = None,
+        still_checking_after_s: float = 3.5,
         **kwargs: Any,
     ) -> None:
         super().__init__(**kwargs)
         self.session = session
         self.filler_after_s = filler_after_s
+        self.still_checking_after_s = still_checking_after_s
         self.max_silence_checks = max_silence_checks
         self.on_call_end = on_call_end
         self._lock = asyncio.Lock()
         self._tts_lang = session.ctx.language
-        self._turn_task: asyncio.Task[None] | None = None
+        self._turn_tasks: set[asyncio.Task[None]] = set()
         self._silence_checks = 0
         self._ending = False
         # Per-turn timing (perf_counter seconds)
@@ -90,7 +92,9 @@ class VaaniBrain(FrameProcessor):
                 self._awaiting_audio = True  # the turn's first audio (filler or reply) is "time to first audio"
                 self._silence_checks = 0
                 self._latest_seq += 1
-                self._turn_task = self.create_task(self._handle_turn(text, self._latest_seq), name="vaani-turn")
+                task = self.create_task(self._handle_turn(text, self._latest_seq), name="vaani-turn")
+                self._turn_tasks.add(task)
+                task.add_done_callback(self._turn_tasks.discard)
             return
         if isinstance(frame, UserStartedSpeakingFrame):
             if self._bot_speaking and self._t_barge is None:
@@ -111,6 +115,12 @@ class VaaniBrain(FrameProcessor):
                 await self.session.emit("tool_called", {"tool": "barge_in", "summary": summary, "ms": ms, "ok": True})
                 self._t_barge = None
         await self.push_frame(frame, direction)
+
+    async def cleanup(self) -> None:
+        """Call over: stop any turn still waiting on the LLM (it would only speak to nobody)."""
+        for task in list(self._turn_tasks):
+            await self.cancel_task(task)
+        await super().cleanup()  # type: ignore[no-untyped-call]
 
     @staticmethod
     def _last_user_text(frame: LLMContextFrame) -> str:
@@ -154,6 +164,9 @@ class VaaniBrain(FrameProcessor):
             async def filler_after_delay() -> None:
                 await asyncio.sleep(self.filler_after_s)
                 await progress(self.session.phrase("filler_checking"))
+                # Still waiting (a slow LLM step): one more short line so the caller isn't left in silence.
+                await asyncio.sleep(self.still_checking_after_s)
+                await self.say(self.session.phrase("filler_checking", self._turn_no + 1))
 
             self.session.on_progress = progress
             booking_before = self.session.ctx.booking_id

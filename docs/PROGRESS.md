@@ -21,4 +21,4 @@ Short "phase done" notes so a new session can resume quickly. Details, test coun
 ## Phase 4 done (23 Nov 2026)
 - **Built:** one Pipecat 1.16 pipeline per call (Sarvam STT translit → Silero VAD + Smart Turn → `VaaniBrain` running the Phase 3 Session → normaliser → Sarvam Bulbul TTS), `POST/PATCH /webrtc/offer`, `/voice-test` page, SSE events, silence handler, fillers, barge-in, per-turn latency → `latency` events + `calls.latency_json`, headless probe `backend/eval/voice_probe.py`, `VAANI_DEV_DB=ephemeral` for local runs.
 - **Results:** Hindi restaurant and Telugu hospital demo scenarios book correctly by voice (synthetic callers); latency and barge-in in EVAL.md; 295 tests pass; text eval 40/40.
-- **Open:** Supabase DB password (schema/seed not applied to the hosted project), real-mic test, self-harm reply approval, Pipecat Flows FlowManager not used (decision in ARCHITECTURE.md).
+- **Open:** Sarvam credits exhausted (top up to use voice), Supabase DB password (schema/seed not applied to the hosted project), real-mic test, self-harm reply approval, Pipecat Flows FlowManager not used (decision in ARCHITECTURE.md).

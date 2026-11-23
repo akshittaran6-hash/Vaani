@@ -221,7 +221,18 @@ async def run_scenario(base: str, name: str, barge_in: bool) -> dict[str, Any]:
         t0 = time.perf_counter()
         greeting_onset = await ear.wait_onset_after(t0, timeout=20)
         await ear.wait_quiet()
+        def vaani_lines() -> int:
+            return sum(1 for e in server_events if e["type"] == "transcript" and e["payload"]["speaker"] == "vaani")
+
+        async def wait_reply(before: int, timeout: float = 25) -> None:
+            """Vaani's real reply (fillers aren't in the transcript), then quiet."""
+            end = time.perf_counter() + timeout
+            while vaani_lines() <= before and time.perf_counter() < end:
+                await asyncio.sleep(0.05)
+            await ear.wait_quiet()
+
         for i, (text, pcm) in enumerate(zip(lines, audio, strict=True)):
+            replies_before = vaani_lines()
             mic.speak(pcm)
             t_end = mic.speaking_until
             await asyncio.sleep(max(0.0, t_end - time.perf_counter()))
@@ -230,8 +241,14 @@ async def run_scenario(base: str, name: str, barge_in: bool) -> dict[str, Any]:
                 {"turn": i + 1, "caller": text, "first_audio_ms": round((onset - t_end) * 1000) if onset else None}
             )
             if barge_in and i == 0 and onset:
-                # Talk over Vaani's top-3 answer one second in, with the next line.
-                await asyncio.sleep(1.0)
+                # Talk over Vaani's real answer (not the filler) one second in, with the next line.
+                end_wait = time.perf_counter() + 25
+                while vaani_lines() <= replies_before and time.perf_counter() < end_wait:
+                    await asyncio.sleep(0.02)
+                answer_onset = await ear.wait_onset_after(time.perf_counter() - 0.05, timeout=10)
+                if answer_onset is None:
+                    break
+                await asyncio.sleep(max(0.0, answer_onset + 1.0 - time.perf_counter()))
                 t_barge = time.perf_counter()
                 mic.speak(audio[1])
                 offsets_after = None
@@ -246,7 +263,7 @@ async def run_scenario(base: str, name: str, barge_in: bool) -> dict[str, Any]:
                 await asyncio.sleep(max(0.0, mic.speaking_until - time.perf_counter()))
                 await ear.wait_quiet()
                 break  # the barge-in run only checks interruption
-            await ear.wait_quiet()
+            await wait_reply(replies_before)
         await asyncio.sleep(1.0)
         await pc.close()
         await asyncio.sleep(1.5)

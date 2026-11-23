@@ -50,7 +50,9 @@ async def webrtc_offer(body: dict[str, Any], request: Request, svc: Svc) -> dict
     if llm is None:
         from backend.voice.llm import from_env
 
-        llm = request.app.state.llm = from_env()
+        llm = request.app.state.llm = from_env(
+            timeout_s=svc.settings.llm_voice_timeout_s, retries=svc.settings.llm_voice_retries
+        )
     try:
         offer = SmallWebRTCRequest.from_dict(dict(body))
     except TypeError as e:

@@ -124,3 +124,26 @@ async def test_latency_row_recorded_at_first_tts_audio(reseed: None, services: S
     rows = brain.session.ctx.voice_turns
     assert len(rows) == 1 and set(rows[0]) == {"turn", "stt", "llm_first_token", "tts_first_audio", "turn_total"}
     assert rows[0]["stt"] >= 300 and rows[0]["turn_total"] >= rows[0]["stt"]
+
+
+async def test_very_slow_llm_gets_a_second_filler_and_a_failed_one_an_apology(
+    reseed: None, services: Services
+) -> None:
+    class StallingLLM(ScriptedLLM):
+        async def complete(self, messages: Any) -> Any:
+            await asyncio.sleep(0.4)
+            raise TimeoutError("provider stalled")
+
+    session = Session(services, StallingLLM([]), phone=CALLER)
+    brain = VaaniBrain(session, filler_after_s=0.05, still_checking_after_s=0.1)
+    sent: list[Frame] = []
+
+    async def capture(frame: Frame, direction: FrameDirection = FrameDirection.DOWNSTREAM) -> None:
+        sent.append(frame)
+
+    brain.push_frame = capture  # type: ignore[method-assign]
+    await brain.greet()
+    await brain._handle_turn("restaurant kavali", 1)
+    lines = spoken(sent)
+    # greeting, filler at 0.05 s, "still checking" at 0.15 s, then an apology instead of silence
+    assert len(lines) == 4 and lines[-1] == session.phrase("didnt_catch_that")

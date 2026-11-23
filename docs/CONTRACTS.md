@@ -249,6 +249,7 @@ See `.env.example` (kept in sync with this list).
 | STT_MODEL, STT_MODE | backend | Sarvam STT model (`saaras:v3`) and mode (`translit` = romanised te/hi, what the parsers expect) |
 | TTS_MODEL, TTS_VOICE | backend | Sarvam Bulbul model (`bulbul:v3`) and voice (`priya`), one voice for te / hi / en-IN |
 | SILENCE_TIMEOUT_S, FILLER_AFTER_S, TURN_MAX_SILENCE_S | backend | voice timing: silence check after 5 s (twice, then goodbye); filler if the reply isn't ready after 0.6 s; longest wait when Smart Turn thinks the caller isn't done (1.5 s) |
+| LLM_VOICE_TIMEOUT_S, LLM_VOICE_RETRIES | backend | voice calls only: per-step LLM timeout (4.5 s) and retries (1), then an apology line; text mode keeps 25 s × 2 |
 | WEB_CALLER_PHONE | backend | caller number for browser calls (no caller ID) unless the page sends one |
 | VAANI_DEV_DB | backend | `ephemeral` = throwaway local Postgres when `SUPABASE_DB_URL` is empty (local voice testing only) |
 

@@ -324,3 +324,17 @@ async def test_full_doctor_time_is_checked_before_asking_the_name(reseed: None, 
     free = slots["free"][0]
     res, _ = await propose_appointment(s, {"doctor": doc, "date": tomorrow.isoformat(), "time": free})
     assert res["error"] == "MISSING_DETAILS" and res["missing"] == ["name"] and res["time_free"] is True
+
+
+async def test_llm_self_written_readback_is_sent_back(reseed: None, services: Services) -> None:
+    """Voice run: the LLM said "…Confirm cheyyana?" without propose_*, then looped on it."""
+    s, llm = await new_session(
+        services,
+        [
+            {"say": "Madhyaanam 3 ki Dr. Suvin garu tho, Lakshmi garu peru meeda. Confirm cheyyana?", "actions": []},
+            {"say": "Ae time kavali andi?", "actions": []},
+        ],
+    )
+    t = await s.handle("skin doctor kavali")
+    assert len(llm.calls) == 2 and t.reply == "Ae time kavali andi?"
+    assert "Never read back a booking yourself" in str(llm.calls[1])

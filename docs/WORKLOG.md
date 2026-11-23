@@ -16,11 +16,11 @@ Every agent session adds an entry here (rules and template: `AGENTS.md` §5). **
 | 7 Integration, eval, deploy | ⬜ not started | open | — |
 | 8 Submission polish | ⬜ not started | open | — |
 
-Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeholder data). On `data-real-import`: **231 passed** · ruff ✓ · mypy ✓ · `validate_data.py` ✓ (real data, 0 errors, 7 warnings) · eval on real data 32/40 first run → 40/40 × 5.
+Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeholder data). On `phase-4-voice`: **300 passed** · ruff ✓ · mypy ✓ · `validate_data.py` ✓ (real data, 0 errors, 7 warnings) · eval on real data 32/40 first run → 40/40 × 5.
 
 ## Entries
 
-### 2026-11-23 10:10 IST · Phase 4 · Pranav via Claude Code · done (17:10 IST)
+### 2026-11-23 10:10 IST · Phase 4 · Pranav via Claude Code · done (17:40 IST)
 **Branch:** `phase-4-voice` (from `main` @ `f60f5d0`) · **Commits:** see `git log main..phase-4-voice`
 **Goal:** talk to Vaani by voice in the browser with the Phase 3 brain; measure latency and barge-in.
 **Done:**
@@ -28,10 +28,10 @@ Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeh
 - `pipecat-ai[sarvam,silero,webrtc,local-smart-turn]==1.16.0` (1.17.0 was a day old). APIs read from the installed source + Context7.
 - `voice/stt.py` (Sarvam saaras, `translit` → romanised te/hi), `voice/tts.py` (Bulbul v3, voice `priya`, language switch frame), `voice/normalizer.py` (+51 tests), `voice/brain.py` (`VaaniBrain` + `AudioTap`), `voice/pipeline.py` (`run_call(transport, …)`), `voice/events.py`, `api/voice_routes.py` (`POST/PATCH /webrtc/offer`, `/voice/events/{pc_id}`, `/voice-test`), `static/voice_test.html`, `eval/voice_probe.py` (aiortc synthetic caller), `VAANI_DEV_DB=ephemeral` dev DB.
 - Session hooks: listeners (also on ToolContext → `booking_created` reaches the page), `on_progress` interim lines, per-turn `voice_turns` + `barge_in_ms` in `calls.latency_json`, real `call_ended.duration_s`.
-- Fixes found by voice runs (all tested): Sarvam's "chhah" (six); split turns → stale replies dropped; a second "yes" after booking no longer re-books (was SLOT_TAKEN → "slot full"); "Kavali N D" (STT for "kavali andi") no longer a name; slot checked before asking the name, nearest 2 times for doctors too; repeated doctor first names (two Dr. Suvins) — fuzzy surname + hospital/area/speciality, tie → ask (a run had booked the wrong Dr. Suvin); fuzzy business names ("Vana Grove"); Smart Turn wait capped at 1.5 s (a 3.2 s turn); first audio timed at the TTS output (a run logged a fake 15 s); booking IDs/helplines read digit by digit in English.
-**Tests / checks:** `uv run pytest -q` → **295 passed** · ruff ✓ · mypy ✓ · text eval 40/40 after the changes. Voice: see EVAL.md (both demo scenarios book correctly by voice).
+- Fixes found by voice runs (all tested): Sarvam's "chhah" (six); split turns → stale replies dropped; a second "yes" after booking no longer re-books (was SLOT_TAKEN → "slot full"); "Kavali N D" (STT for "kavali andi") no longer a name; slot checked before asking the name, nearest 2 times for doctors too; repeated doctor first names (two Dr. Suvins) — fuzzy surname + hospital/area/speciality, tie → ask (a run had booked the wrong Dr. Suvin); fuzzy business names ("Vana Grove"); Smart Turn wait capped at 1.5 s (a 3.2 s turn); first audio timed at the TTS output (a run logged a fake 15 s); booking IDs/helplines read digit by digit in English; voice LLM timeout 4.5 s × 1 retry + second filler + apology (provider stalls of 10–20 s); turn tasks cancelled at call end; STT "bantlaki" = gantalaki; an LLM that writes its own read-back is sent back once to call `propose_*`.
+**Tests / checks:** `uv run pytest -q` → **300 passed** · ruff ✓ · mypy ✓ · text eval 40/40 after the changes (LLM p95 12.3 s in the evening vs 2.2 s in the morning). Voice (EVAL.md): 9/10 late calls booked correctly (the 10th fixed after), final code 4/4; turn total median 1.24 s server / 1.51 s caller; code-only turns 0.54 s; barge-in 236 ms median after VAD.
 **Decisions:** kept the Phase 3 Session (custom Pipecat processor) instead of Pipecat Flows' FlowManager (guards + code read-backs + JSON-action LLM already 40/40; native tool calling failed on Featherless). Fillers at 0.6 s. English digits for IDs.
-**Blockers / needs from humans:** Supabase DB password (for `SUPABASE_DB_URL` + `scripts/db_apply.py`); approval of the self-harm data change; a real-mic try in Chrome at `/voice-test`.
+**Blockers / needs from humans:** **Sarvam credits ran out** (402 `insufficient_quota_error`) — voice (STT + TTS) stops until topped up; Supabase DB password (for `SUPABASE_DB_URL` + `scripts/db_apply.py`); approval of the self-harm data change; a real-mic try in Chrome at `/voice-test`.
 **Next steps:**
 1. With the DB password: `uv run python scripts/db_apply.py` on the hosted project, check RLS (anon can't read phone) and Realtime.
 2. Try `/voice-test` with real voices in te/hi/en; note STT errors.

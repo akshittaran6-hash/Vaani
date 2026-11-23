@@ -50,6 +50,9 @@ class Settings(BaseSettings):
     tts_api_key: str = ""
     # Seconds of caller silence before "Hello, vinipistunda?" (twice, then goodbye).
     silence_timeout_s: float = 5.0
+    # Voice LLM step: give up after this long and retry once (then an apology, never 20 s of silence).
+    llm_voice_timeout_s: float = 4.5
+    llm_voice_retries: int = 1
     # Longest silence before a turn ends when Smart Turn thinks the caller isn't done.
     turn_max_silence_s: float = 1.5
     # Speak a short filler if the reply isn't ready after this long.

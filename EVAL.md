@@ -2,7 +2,7 @@
 
 Every number here is measured, split by Telugu (te-en), Hindi (hi-en) and Indian English (en-IN), and mirrored on the `/eval` page.
 
-> Status: **text eval re-run on the real data** (23 Nov 2026, numbers below). Voice latency, barge-in, naturalness, load and live sync come in Phases 4–7.
+> Status: **text eval on the real data** and **first voice measurements** (23 Nov 2026, synthetic callers over local WebRTC, numbers below). Naturalness, load, phone audio and live sync come in Phases 5–7.
 
 ## How we measure
 
@@ -22,8 +22,8 @@ Every number here is measured, split by Telugu (te-en), Hindi (hi-en) and Indian
 | Slot full → 2 nearest offered | ≥ 90% | 2/2 | 1/1 | — | **3/3 (100%)** |
 | FAQ answered from the business's own data | report | 2/2 | — | 2/2 | **4/4 (100%)** |
 | Call outcome matches expected (all 40 calls) | report | 16/16 | 14/14 | 10/10 | **40/40 (100%)** |
-| Time to first audio (median / slowest) | ~1 s / < 2 s | TBD | TBD | TBD | TBD (Phase 4; text-mode LLM step: median 1.53 s, p95 2.2 s) |
-| Stop speaking on interruption | < 0.5 s | | | | TBD |
+| Time to first audio (median / p90 / slowest) | ~1 s / < 2 s | | | | **1.24 s / 3.2 s / 9.4 s** server · 1.51 s / 3.2 s / 9.7 s caller side ² |
+| Stop speaking on interruption | < 0.5 s | | | | **0.24 s** median after the VAD hears the caller (≈ 0.44 s from speech onset); caller side 0.28–1.37 s ³ |
 | Naturalness (blind 1–5, 10 people) | ≥ 4 | TBD | TBD | TBD | TBD |
 | Live sync call → portal + mini-site + WhatsApp | < 2 s | | | | TBD |
 | Cost per call minute (telephony + STT + LLM + TTS) | report | | | | TBD |
@@ -56,6 +56,30 @@ What the first real-data run found, and the fixes (all with tests):
 ¹ All 3 misses (T06, T13, T15) are calls where the caller named a place that is full or too small at the requested time, so the agent's search correctly left it out; each call still ends with the expected outcome.
 
 Earlier, on the placeholder data the agent was built on (22 Nov), three runs scored 40/40 after the first scored 23/40 (work log, Phase 3).
+
+## Voice (Phase 4)
+
+Measured with `backend/eval/voice_probe.py`: a synthetic caller (Sarvam TTS voice "rahul", romanised Hindi / Telugu lines) talks to the running server over WebRTC (aiortc, localhost), waits for each reply and records timings from its side; the server logs its own per-turn timings (`latency` events / `calls.latency_json`). Scenarios = the two DEMO.md demos (Hindi restaurant: Dumgalli 8:30 full → 7:00; Telugu hospital: Dr. Navisha full → Dr. Suvin 15:00). Stack: Sarvam saaras:v3 STT (translit) · Silero VAD + Smart Turn v3 · Featherless Qwen3-30B-A3B (JSON actions) · Sarvam Bulbul v3 TTS.
+
+**Bookings by voice:** 9 of the last 10 calls (17:15–17:33 IST) booked the right place, doctor/table, day and time; the 10th stalled on two issues fixed right after (STT wrote "gantalaki" as "bantlaki"; the LLM wrote its own read-back instead of calling `propose_*`, so code had nothing to confirm; nothing wrong was booked). The two runs on the final code: 4/4 correct. Telugu calls that show 15:30 had 15:00 already taken by an earlier run on the same test database; Vaani read back 15:30 and the caller confirmed it.
+
+Per-turn timings (49 turns from those 10 calls; ms):
+
+| Stage | Median | p90 | Slowest | What it covers |
+|---|---|---|---|---|
+| STT + end of turn | 341 | 1701 | 1704 | caller stops → final transcript and Smart Turn's "done" (p90 = turns where Smart Turn was unsure and waited the 1.5 s cap) |
+| Think | 601 | 2152 | 7486 | transcript → first words to TTS: guards and code read-backs take ~5 ms; LLM turns hit the 0.6 s filler |
+| TTS first audio | 216 | 237 | 538 | Bulbul streaming |
+| **Turn total** | **1237** | 3199 | 9386 | caller stops → Vaani audible (server) |
+| Caller side | 1511 | 3163 | 9678 | end of the caller's audio → Vaani's audio heard (adds VAD stop window, WebRTC, jitter buffer) |
+| Turns decided by code only | 541 | 594 | 601 | read-back, confirm, guards (9 turns) |
+| Greeting | 948 | 1025 | 1633 | connect → greeting heard |
+
+² The slow tail is the LLM provider: in the same hour the text eval showed LLM median 2.1 s and p95 12.3 s (morning: 1.5 s / 2.2 s). Voice now gives up on an LLM step after 4.5 s, retries once, and says a second filler at ~4 s; the slowest turns above were measured before that change. Run-to-run spread is large; treat these as first numbers, not a benchmark.
+
+³ Barge-in: the server measures from the VAD's "caller started" to Vaani's audio stopping: median 236 ms, 17 interruptions, max 608 ms; Silero needs ~0.2 s of speech first. From the caller's side (probe talks over Vaani 1 s into her answer; detected by audio energy): 1018, 279, 978, 1372, 913, 1027 ms, which also includes audio already in flight and the probe's 250 ms silence detector.
+
+Not measured yet: real voices and rooms, phone audio (Phase 6), many calls at once. Sarvam credits ran out at the end of this session (402 `insufficient_quota_error`), which stopped the last run.
 
 ## Load test
 
