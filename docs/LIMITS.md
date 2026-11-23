@@ -39,5 +39,6 @@ Cost per call minute (telephony + STT + LLM + TTS) is measured and reported in `
 - Voice numbers so far come from synthetic callers (Sarvam TTS voices) over local WebRTC; real voices, noisy rooms and phone audio (8 kHz) will be worse.
 - STT spells English names in Telugu/Hindi speech loosely ("Vana Grove", "Relimudi"); fuzzy matching handles close spellings, and the read-back lets the caller correct the rest.
 - Self-harm phrases match exactly (no fuzzy: "karna" vs "marna" is one letter), so an unusual wording or STT spelling can miss the gentle reply; emergency matching has no negation ("accident nahi hua" still counts as an emergency in hospital calls).
+- Free LLM tier (Groq): 8K tokens/min and 1,000 requests/day per model. Three models are chained, enough for one caller at a time; simultaneous calls and batch evals fall back to the paid provider (Featherless) when the free budgets run out.
 - Payments are test mode only.
 - All businesses, doctors, ratings and bookings are fictional sample data.

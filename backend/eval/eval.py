@@ -18,6 +18,7 @@ import asyncio
 import json
 import statistics
 import time
+from collections import Counter
 from datetime import datetime
 from datetime import time as dtime
 from pathlib import Path
@@ -100,6 +101,7 @@ async def run_all(
 
 def report(results: list[CaseResult], model: str, seconds: float, price_in: float, price_out: float) -> dict[str, Any]:
     summary = summarize(results)
+    served = Counter(m for r in results for m in r.llm_models)
     ms = [m for r in results for m in r.llm_ms]
     tok_in = sum(r.tokens_in for r in results)
     tok_out = sum(r.tokens_out for r in results)
@@ -107,6 +109,7 @@ def report(results: list[CaseResult], model: str, seconds: float, price_in: floa
     ordered = sorted(ms)
     stats = {
         "llm_calls": len(ms),
+        "llm_models": dict(served),
         "llm_ms_median": round(statistics.median(ms)) if ms else 0,
         "llm_ms_p95": ordered[round(0.95 * (len(ordered) - 1))] if ordered else 0,
         "tokens_in": tok_in,
@@ -159,6 +162,7 @@ def main(argv: list[str] | None = None) -> int:
     print("\n" + markdown_table(summarize(results)))
     s = rep["stats"]
     print(
+        f"\nLLM steps by model: {s['llm_models']}"
         f"\nLLM: {s['llm_calls']} calls · median {s['llm_ms_median']} ms · p95 {s['llm_ms_p95']} ms · "
         f"{s['tokens_in']:,} in / {s['tokens_out']:,} out tokens · ≈ ${s['cost_usd']} · {s['wall_seconds']} s"
     )

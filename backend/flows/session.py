@@ -822,6 +822,7 @@ class Session:
 
     def _track(self, reply: LLMReply) -> None:
         self.ctx.llm_ms.append(reply.ms)
+        self.ctx.llm_models.append(reply.model)
         self.ctx.tokens_in += reply.prompt_tokens
         self.ctx.tokens_out += reply.completion_tokens
 

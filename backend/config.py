@@ -37,6 +37,12 @@ class Settings(BaseSettings):
     llm_base_url: str = ""
     llm_model: str = ""
     llm_api_key: str = ""
+    # "low" for gpt-oss (Groq): less hidden reasoning before the JSON reply = faster. Empty = not sent.
+    llm_reasoning_effort: str = ""
+    # Optional second provider, used when the first fails or hits its (free-tier) rate limit.
+    llm_fallback_base_url: str = ""
+    llm_fallback_model: str = ""
+    llm_fallback_api_key: str = ""
 
     # Voice (Phase 4). Providers are swappable; Sarvam by default (STT saaras, TTS Bulbul).
     sarvam_api_key: str = ""
