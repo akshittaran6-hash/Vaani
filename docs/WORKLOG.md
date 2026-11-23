@@ -20,7 +20,7 @@ Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeh
 
 ## Entries
 
-### 2026-11-23 18:05 IST · Free LLM (Groq) · Pranav via Claude Code · done (18:35 IST)
+### 2026-11-23 18:05 IST · Free LLM (Groq) · Pranav via Claude Code · done (18:26 IST)
 **Branch:** `llm-groq-free` (from `main` @ `5eaa7b4`) · **Commits:** see `git log main..llm-groq-free`
 **Goal:** cut LLM cost and latency with Groq's free tier (key in `.env` as `LLM_API_KEY`; never committed).
 **Done:** `LLM_MODEL` takes a comma list of models (`model@effort` = that model's `reasoning_effort`); `LLM_FALLBACK_*` adds another provider last; `FallbackLLM` tries them in order, skips a model for 30 s after a 429, and only the last one retries. `LLMReply.model` + `ctx.llm_models`: the eval prints steps by model. `.env`: Groq chain (qwen3.8-27b@none → gpt-oss-20b@low → gpt-oss-120b@low) → Featherless Qwen3-30B.
