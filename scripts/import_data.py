@@ -12,6 +12,8 @@ What it changes (content is never edited, only shape):
 - missing `slug` (name + area, e.g. `dumgalli-courtyard-jubilee-hills`) and `accent_color`
   (a stable pick from a fixed palette by name) on restaurants and hospitals;
 - missing test-call `scenario`, inferred from the expected outcome and the caller's words;
+- moves suicide / self-harm phrases out of `emergency_phrases` into `self_harm_phrases` (they get
+  their own gentle reply with the Tele-MANAS helpline 14416 and 112, not the 108/112 line);
 - merges the baseline phrases in `scripts/data_extras/speciality_base.json` into
   `speciality_mapping.json` (short common forms like "chest pain", "सीने में दर्द", "heart doctor";
   the teammate's phrases win when the same phrase maps to a different speciality).
@@ -110,19 +112,44 @@ def _phrase_key(row: dict[str, Any]) -> tuple[str, str]:
     return (" ".join(row["phrase"].lower().split()), row["lang"])
 
 
+SELF_HARM_WORDS = (
+    "suicid",
+    "kill myself",
+    "hurt myself",
+    "end my life",
+    "aatmahatya",
+    "atmahatya",
+    "आत्महत्या",
+    "ఆత్మహత్య",
+    "chanipovalani",
+    "marna chahta",
+    "marna chahti",
+    "jeena nahi",
+)
+
+
+def split_self_harm(spec: dict[str, Any]) -> dict[str, Any]:
+    """Teammate emergency phrases about suicide / self-harm → self_harm_phrases."""
+    out = dict(spec)
+    is_sh = [any(w in e["phrase"].lower() for w in SELF_HARM_WORDS) for e in spec["emergency_phrases"]]
+    out["emergency_phrases"] = [e for e, sh in zip(spec["emergency_phrases"], is_sh, strict=True) if not sh]
+    out["self_harm_phrases"] = list(spec.get("self_harm_phrases", [])) + [
+        e for e, sh in zip(spec["emergency_phrases"], is_sh, strict=True) if sh
+    ]
+    return out
+
+
 def merge_phrases(spec: dict[str, Any], base: dict[str, Any]) -> dict[str, Any]:
     """Add baseline phrases that the teammate's file doesn't already have (by phrase + lang)."""
     out = dict(spec)
-    for key in ("phrases", "emergency_phrases"):
-        rows = list(spec[key])
-        seen = {_phrase_key(r) for r in rows}
-        if key == "phrases":
-            # A baseline phrase that is an emergency in the teammate's file must not become a speciality.
-            seen |= {_phrase_key(r) for r in spec["emergency_phrases"]}
-        else:
-            seen |= {_phrase_key(r) for r in spec["phrases"]}
-        rows += [r for r in base.get(key, []) if _phrase_key(r) not in seen]
+    every = {_phrase_key(r) for k in ("phrases", "emergency_phrases", "self_harm_phrases") for r in spec.get(k, [])}
+    for key in ("phrases", "emergency_phrases", "self_harm_phrases"):
+        rows = list(spec.get(key, []))
+        # A baseline phrase the teammate's file already has (in any list) is not added again.
+        rows += [r for r in base.get(key, []) if _phrase_key(r) not in every]
         out[key] = rows
+    if "self_harm_reply" not in out and base.get("self_harm_reply"):
+        out["self_harm_reply"] = base["self_harm_reply"]
     return out
 
 
@@ -137,6 +164,7 @@ def convert(src: dict[str, Any], base_phrases: dict[str, Any] | None = None) -> 
         spec["phrases"] = spec.pop("mappings")
     spec["phrases"] = _strip_flag(spec["phrases"])
     spec["emergency_phrases"] = _strip_flag(spec["emergency_phrases"])
+    spec = split_self_harm(spec)
     if base_phrases:
         spec = merge_phrases(spec, base_phrases)
 

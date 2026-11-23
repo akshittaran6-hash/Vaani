@@ -596,14 +596,6 @@
       "lang": "en"
     },
     {
-      "phrase": "want to end my life",
-      "lang": "en"
-    },
-    {
-      "phrase": "suicidal thoughts",
-      "lang": "en"
-    },
-    {
       "phrase": "gunde noppi",
       "lang": "te"
     },
@@ -656,10 +648,6 @@
       "lang": "te"
     },
     {
-      "phrase": "chanipovalani undi",
-      "lang": "te"
-    },
-    {
       "phrase": "seene mein dard",
       "lang": "hi"
     },
@@ -704,10 +692,6 @@
       "lang": "hi"
     },
     {
-      "phrase": "marna chahta hoon",
-      "lang": "hi"
-    },
-    {
       "phrase": "lakwa",
       "lang": "hi"
     }
@@ -716,5 +700,76 @@
     "te": "Idi emergency laaga undi andi. Ventane 108 leda 112 ki call cheyyandi. Emergency ki nenu booking cheyyalenu.",
     "hi": "Yeh emergency lag rahi hai. Turant 108 ya 112 pe call kijiye. Emergency ke liye main booking nahi kar sakti.",
     "en": "This sounds like an emergency. Please call 108 or 112 immediately. I can't book appointments for emergencies."
+  },
+  "self_harm_phrases": [
+    {
+      "phrase": "want to end my life",
+      "lang": "en"
+    },
+    {
+      "phrase": "suicidal thoughts",
+      "lang": "en"
+    },
+    {
+      "phrase": "chanipovalani undi",
+      "lang": "te"
+    },
+    {
+      "phrase": "marna chahta hoon",
+      "lang": "hi"
+    },
+    {
+      "phrase": "I want to kill myself",
+      "lang": "en"
+    },
+    {
+      "phrase": "I don't want to live anymore",
+      "lang": "en"
+    },
+    {
+      "phrase": "I want to hurt myself",
+      "lang": "en"
+    },
+    {
+      "phrase": "naaku chanipovalani undi",
+      "lang": "te"
+    },
+    {
+      "phrase": "aatmahatya chesukovali",
+      "lang": "te"
+    },
+    {
+      "phrase": "bratakalani ledu",
+      "lang": "te"
+    },
+    {
+      "phrase": "నాకు చనిపోవాలని ఉంది",
+      "lang": "te"
+    },
+    {
+      "phrase": "marna chahti hoon",
+      "lang": "hi"
+    },
+    {
+      "phrase": "aatmahatya karna chahta hoon",
+      "lang": "hi"
+    },
+    {
+      "phrase": "jeena nahi chahta",
+      "lang": "hi"
+    },
+    {
+      "phrase": "मैं मरना चाहता हूँ",
+      "lang": "hi"
+    },
+    {
+      "phrase": "मुझे जीना नहीं है",
+      "lang": "hi"
+    }
+  ],
+  "self_harm_reply": {
+    "te": "మీకు ఇలా అనిపిస్తోందని విని నాకు చాలా బాధగా ఉంది. మీరు ఒంటరి కాదు. దయచేసి టెలీ-మానస్‌కి 14416 లేదా 1-800-891-4416 కి కాల్ చేయండి — ఉచితం, ఎప్పుడైనా మాట్లాడొచ్చు. మీరు ఇప్పుడే ప్రమాదంలో ఉంటే, వెంటనే 112 కి కాల్ చేయండి.",
+    "hi": "मुझे बहुत दुख है कि आप ऐसा महसूस कर रहे हैं। आप अकेले नहीं हैं। कृपया टेली-मानस को 14416 या 1-800-891-4416 पर कॉल करें — यह मुफ़्त है और दिन-रात कभी भी बात कर सकते हैं। अगर आप अभी ख़तरे में हैं, तो तुरंत 112 पर कॉल करें।",
+    "en": "I'm really sorry you're feeling this way, and you don't have to go through it alone. Please call Tele-MANAS on 14416 or 1-800-891-4416 — it's free and open day and night. If you might be in danger right now, please call 112 straight away."
   }
 }

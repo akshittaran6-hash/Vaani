@@ -17,6 +17,7 @@ from backend.catalog.models import (
     SPECIALITIES,
     Catalog,
     Doctor,
+    SpecialityMapping,
     parse_range,
 )
 from backend.catalog.schedule import (
@@ -315,6 +316,27 @@ def _check_speciality_mapping(cat: Catalog, r: Report) -> None:
     for lang, text in m.emergency_reply.model_dump().items():
         if "108" not in text or "112" not in text:
             r.error(f"speciality_mapping.json: emergency_reply.{lang} must mention 108 and 112")
+    _check_self_harm(m, normal, r)
+
+
+def _check_self_harm(m: SpecialityMapping, normal: set[str], r: Report) -> None:
+    """Self-harm phrases get their own gentle reply: Tele-MANAS 14416 (+ 1-800-891-4416) and 112."""
+    if not m.self_harm_phrases and m.self_harm_reply is None:
+        r.warn("speciality_mapping.json: no self_harm_phrases / self_harm_reply (they share the 108/112 reply)")
+        return
+    if m.self_harm_reply is None:
+        r.error("speciality_mapping.json: self_harm_phrases need a self_harm_reply")
+        return
+    for lang, text in m.self_harm_reply.model_dump().items():
+        if "14416" not in text or "112" not in text:
+            r.error(f"speciality_mapping.json: self_harm_reply.{lang} must mention Tele-MANAS 14416 and 112")
+    emergency = {e.phrase.lower() for e in m.emergency_phrases}
+    for lang in ("te", "hi", "en"):
+        if not any(p.lang == lang for p in m.self_harm_phrases):
+            r.warn(f"speciality_mapping.json: no {lang} self_harm_phrases")
+    for p in m.self_harm_phrases:
+        if p.phrase.lower() in normal or p.phrase.lower() in emergency:
+            r.error(f"speciality_mapping.json: {p.phrase!r} is a self-harm phrase and also another kind")
 
 
 def _check_test_calls(cat: Catalog, r: Report) -> None:

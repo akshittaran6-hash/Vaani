@@ -28,7 +28,7 @@ from backend.flows.language import detect_language
 from backend.flows.nodes import NODES, FunctionSpec, functions_for
 from backend.flows.when import latest_day, latest_time
 from backend.text import mask_phone, norm
-from backend.tools.hospitals import find_emergency, find_speciality_phrase
+from backend.tools.hospitals import find_emergency, find_self_harm, find_speciality_phrase, self_harm_reply
 from backend.voice.llm import LLM, LLMReply
 
 log = logging.getLogger(__name__)
@@ -341,6 +341,24 @@ class Session:
         elif d := latest_day(text, today_ist()):
             self.ctx.heard_day = d.isoformat()
         new_info = await self._extract(text)
+
+        # Guard 0.5: self-harm / suicidal thoughts, in ANY call (a restaurant caller too). A gentle
+        # reply with Tele-MANAS (14416) and 112; no LLM, no booking; the call stays open.
+        if hit := find_self_harm(text, self.catalog):
+            self.ctx.emergency = True  # blocks any booking on this call
+            self.ctx.self_harm = True
+            self.ctx.pending = None
+            await self.emit(
+                "tool_called",
+                {
+                    "tool": "self_harm_guard",
+                    "summary": "Self-harm words → gave Tele-MANAS 14416 and 112, no booking",
+                    "ms": 0,
+                    "ok": True,
+                },
+            )
+            reply = self_harm_reply(self.catalog, self.ctx.language)
+            return await self._finish_turn(text, TurnResult(reply=reply, guard="self_harm"))
 
         # Guard 1: emergency (router / hospital calls). No LLM, no booking.
         if self.ctx.service != "restaurant" and (hit := find_emergency(text, self.catalog)):

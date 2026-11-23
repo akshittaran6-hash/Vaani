@@ -338,3 +338,21 @@ async def test_llm_self_written_readback_is_sent_back(reseed: None, services: Se
     t = await s.handle("skin doctor kavali")
     assert len(llm.calls) == 2 and t.reply == "Ae time kavali andi?"
     assert "Never read back a booking yourself" in str(llm.calls[1])
+
+
+@pytest.mark.parametrize(
+    ("text", "lang"),
+    [
+        ("Actually I want to kill myself", "en"),
+        ("naaku chanipovalani undi", "te"),
+        ("marna chahta hoon, kuch accha nahi lagta", "hi"),
+    ],
+)
+async def test_self_harm_guard_any_service(reseed: None, services: Services, text: str, lang: str) -> None:
+    """A gentle reply with Tele-MANAS 14416 and 112, even mid restaurant call; no LLM, no booking."""
+    s, llm = await new_session(services, [])
+    s.ctx.service = "restaurant"  # the emergency guard skips restaurant calls; this one must not
+    t = await s.handle(text)
+    assert t.guard == "self_harm" and llm.calls == []
+    assert "14416" in t.reply and "112" in t.reply and "108" not in t.reply
+    assert s.ctx.emergency and s.ctx.self_harm and s.ctx.outcome == "redirected_emergency"

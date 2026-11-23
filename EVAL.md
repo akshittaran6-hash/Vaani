@@ -46,7 +46,7 @@ What the first real-data run found, and the fixes (all with tests):
 - **Safety:** in T05 the LLM booked when the caller only gave a name. A booking now also needs a yes word in the caller's own turn (`Session.caller_said_yes`), checked in code.
 - **Safety:** the LLM wrote its own read-back with an invented fee ("fee 1000 rupaye" for a ₹650 doctor). Sentences with a ₹ amount that no tool returned and that isn't the chosen business's / doctor's own figure are now dropped (`Session._verified_amounts`); the guard fired on 1–2 replies per run afterwards. It trusts only money fields in tool results (`*_inr`, fee, deposit, amount, price) and ₹ amounts in answer text, never dates, times, IDs or timings.
 - **"Parson"** (Hindi spelling of parso) wasn't a day word; FAQ topics lacked wheelchair access, lab, fee and Sunday timings.
-- **Short emergency forms**: the real emergency list had only long sentences, so "सीने में दर्द" and "chest pain" weren't caught. `import_data.py` merges the earlier tested phrases (`scripts/data_extras/speciality_base.json`), 166 speciality + 86 emergency phrases in total.
+- **Short emergency forms**: the real emergency list had only long sentences, so "सीने में दर्द" and "chest pain" weren't caught. `import_data.py` merges the earlier tested phrases (`scripts/data_extras/speciality_base.json`), 166 speciality + 86 emergency phrases in total (since 23 Nov evening: 78 emergency + 20 self-harm, which get their own Tele-MANAS reply).
 
 **Read these numbers with care:**
 - 32/40 is the honest first-contact number; 40/40 is after fixing what those 8 calls exposed, so it's no longer held-out. A fresh set of 10–20 test calls that nobody has looked at would give a held-out number.
@@ -103,12 +103,13 @@ _STT / LLM / TTS candidates compared on latency, accuracy and cost go here._
 | Data integrity | `scripts/validate_data.py` + 16 mutation tests (incl. weekday-specific hours) | ✅ real set: 0 errors, 7 warnings (no blocked slots, no doctor on leave, scenario mix) |
 | Real data still gives the demo scenarios | `backend/tests/test_real_data.py`: top 3 in Jubilee Hills, Dumgalli 19:00 only, ₹300 deposit, Pulao Pankthi full for 6, Dr. Navisha full / Dr. Suvin from 15:00, real FAQs | ✅ |
 | Tools enforce every rule | `backend/tests/test_tools_*.py`: slot full → 2 nearest, party limit, deposits, unsupported area, blocked slots, doctor leave, fully booked, past times, ≤ 3 results, 10-way race through the tool runner | ✅ (Phase 2) |
-| Emergency phrases never book | every emergency phrase → `emergency`; every speciality phrase → its speciality, none flagged as emergency (fixture: 46 + 105; real data: 86 + 166, checked by `test_real_data.py`) | ✅ |
+| Emergency phrases never book | every emergency phrase → `emergency`; every speciality phrase → its speciality, none flagged as emergency (fixture: 42 emergency + 16 self-harm + 105; real data: 78 emergency + 20 self-harm + 166, checked by `test_real_data.py`) | ✅ |
 | Blocked slot refused (tool level) | `test_api.py::test_blocked_slot_is_refused_by_the_ai`: portal block → `book_table` returns `BLOCKED` | ✅ (Phase 2); full voice E2E in Phase 7 |
 | Read-back = what gets booked | `test_flows_session.py::test_readback_comes_from_code_not_the_llm`; read-backs are built in code from the booking arguments (the LLM once read back 8:30 while asking to book 19:30) | ✅ (Phase 3) |
 | No booking without a confirmed read-back | `test_confirm_needs_an_earlier_readback` (needs `propose_*` on an earlier turn, then a yes word in the caller's own turn; a name is not a yes) | ✅ |
 | LLM can't state a ₹ amount code didn't give it | `test_llm_cannot_state_an_unverified_amount` | ✅ |
 | LLM can't invent the caller's name | `test_llm_cannot_invent_the_callers_name` (name must appear in the caller's words) | ✅ (Phase 3) |
+| Self-harm → Tele-MANAS 14416 + 112, no booking, in any call | `test_self_harm_guard_any_service` (te/hi/en, even mid restaurant call, no LLM call) + every one of the 20 real self-harm phrases → `self_harm` (`test_real_data.py`); validator requires 14416 and 112 in every language | ✅ |
 | Emergency handled without the LLM | `test_emergency_guard_never_calls_the_llm` + 3/3 eval calls | ✅ (Phase 3) |
 | OTP / card numbers never stored or sent to the LLM | `test_otp_is_redacted_and_refused` (redacted before transcript, events and LLM) | ✅ (Phase 3) |
 | Blocked slot refused by the AI | E2E test (Phase 7) | TBD |

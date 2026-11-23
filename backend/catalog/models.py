@@ -300,6 +300,10 @@ class SpecialityMapping(Strict):
     phrases: list[SpecialityPhrase]
     emergency_phrases: list[EmergencyPhrase]
     emergency_reply: LocalizedText
+    # Self-harm / suicidal thoughts: a separate, gentle reply with the Tele-MANAS helpline
+    # (14416 / 1-800-891-4416) and 112 for immediate danger. Checked before emergencies.
+    self_harm_phrases: list[EmergencyPhrase] = Field(default_factory=list)
+    self_harm_reply: LocalizedText | None = None
 
 
 class TestCallExpected(Strict):

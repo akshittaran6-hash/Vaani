@@ -42,6 +42,7 @@ class CallContext:
 
     # What happened, for the outcome JSON and the eval.
     emergency: bool = False
+    self_harm: bool = False  # the caller mentioned self-harm (counts as an emergency: no booking)
     transferred: bool = False
     unsupported_heard: str | None = None
     offered_alternatives: bool = False

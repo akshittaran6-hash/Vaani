@@ -120,7 +120,7 @@ vaani/
 4. 1–2 short sentences per reply, casual Hyderabad-style code-mixing, numbers/times in spoken form.
 5. Stream everything; ~1 s to first audio; barge-in on.
 6. Unsupported area → polite reply from `areas.json`.
-7. Hospital: map plain words to a speciality; never diagnose; emergency phrases → "call 108 / 112 immediately", no booking.
+7. Hospital: map plain words to a speciality; never diagnose; emergency phrases → "call 108 / 112 immediately", no booking. Self-harm words (any call) → a gentle reply with Tele-MANAS 14416 and 112, no booking.
 8. Never ask for OTP, PIN, CVV, card or account numbers; say so if the caller offers one.
 9. Use caller ID for confirmations; never ask for email.
 10. Payments only in test mode. All data fictional and labelled sample data; no real business names, photos or logos.
