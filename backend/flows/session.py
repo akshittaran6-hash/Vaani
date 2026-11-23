@@ -14,8 +14,9 @@ from __future__ import annotations
 import json
 import logging
 import re
+from collections.abc import Awaitable, Callable
 from dataclasses import dataclass, field
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from typing import Any, Literal
 
 from backend.api.deps import Services
@@ -256,12 +257,22 @@ class Session:
         self.ctx = CallContext(phone=phone, channel=channel, language=language)  # type: ignore[arg-type]
         self.tools = svc.tool_context(phone=phone, language=language)
         self.history: list[dict[str, str]] = []
+        # Voice hooks (Phase 4): listeners get every event (the voice test page streams them);
+        # on_progress speaks the LLM's interim line ("checking…") while its tools run.
+        self.listeners: list[Callable[[str, dict[str, Any]], Awaitable[None]]] = []
+        self.tools.listeners = self.listeners  # tool events (booking_created, tool_called) too
+        self.on_progress: Callable[[str], Awaitable[None]] | None = None
 
     # -- helpers used by node handlers -------------------------------------
 
     async def emit(self, type_: str, payload: dict[str, Any]) -> None:
         if self.ctx.call_id:
             await self.svc.store.emit(self.ctx.call_id, type_, payload)
+        for listener in self.listeners:
+            try:
+                await listener(type_, payload)
+            except Exception:  # noqa: BLE001 - a broken listener must never break the call
+                log.exception("event listener failed")
 
     async def set_slot(self, key: str, value: Any) -> None:
         if self.ctx.slots.get(key) != value:
@@ -382,7 +393,10 @@ class Session:
 
         self.history.append({"role": "user", "content": text})
         # A plain "yes" to a waiting read-back: code books it (no LLM call, no paraphrase).
-        if self._is_plain_yes(text):
+        if self.ctx.booking_id and self.ctx.pending is None and self._is_yes_words(text):
+            # Already booked ("Avunu." … "Confirm cheyandi." as two turns): never book twice.
+            result = TurnResult(reply=self.phrase("anything_else"))
+        elif self._is_plain_yes(text):
             result = await self._confirm_now()
         elif self._is_yes_words(text) and self.ctx.pending is None and (proposal := await self._propose_from_slots()):
             # The LLM read details back without propose_*: rebuild the real read-back from code.
@@ -421,6 +435,8 @@ class Session:
                         {
                             **lat,
                             "per_step_ms": self.ctx.llm_ms,
+                            "voice_turns": self.ctx.voice_turns,
+                            "barge_in_ms": self.ctx.barge_in_ms,
                             "tokens_in": self.ctx.tokens_in,
                             "tokens_out": self.ctx.tokens_out,
                         }
@@ -429,8 +445,10 @@ class Session:
                     "c": self.ctx.call_id,
                 },
             )
+            started = datetime.fromisoformat(self.ctx.started_at)
+            duration = round((datetime.now(started.tzinfo) - started).total_seconds())
             await self.emit(
-                "call_ended", {"outcome": outcome["outcome"], "duration_s": 0, "booking_id": self.ctx.booking_id}
+                "call_ended", {"outcome": outcome["outcome"], "duration_s": duration, "booking_id": self.ctx.booking_id}
             )
         return outcome
 
@@ -459,6 +477,8 @@ class Session:
                 break
             if say:
                 out.fillers.append(say)
+                if self.on_progress is not None:
+                    await self.on_progress(say)
             results = await self._run_actions(reply, out)
             self.history.append(
                 {
@@ -517,6 +537,10 @@ class Session:
         native_yes = any(w in text for w in ("అవును", "సరే", "హాఁ", "हाँ", "हां", "ठीक"))
         return bool(words & CORE_YES or native_yes) and not (words & NO_WORDS)
 
+    def _current_hospital(self) -> str | None:
+        biz = str(self.ctx.slots.get("business_id") or "")
+        return biz if biz.startswith("h_") else None
+
     def _catalogue_amounts(self) -> set[int]:
         """₹ facts of the business in this call: deposit and price for two, or its doctors' fees."""
         biz = str(self.ctx.slots.get("business_id") or "")
@@ -572,7 +596,13 @@ class Session:
         if (name := parse_name(text, asked_for_name=asked)) and not is_entity_name(name, self.catalog):
             await self.set_slot("name", name)
         biz = find_business(text, self.catalog)
-        doc = find_doctor_named(text, self.catalog, getattr(biz, "hospital_id", None))
+        doc = find_doctor_named(
+            text,
+            self.catalog,
+            hospital_id=getattr(biz, "hospital_id", None) or self._current_hospital(),
+            area_id=getattr(biz, "area_id", None) or self.ctx.slots.get("area_id"),
+            speciality=self.ctx.slots.get("speciality"),
+        )
         if (spec := find_speciality_phrase(text, self.catalog)) and self.ctx.service in (None, "hospital"):
             # "pallu noppi", "skin doctor": a health need → hospital agent, decided in code.
             await self._route_if_needed("hospital")

@@ -15,7 +15,7 @@ One ready-to-paste prompt per phase, for whoever picks it up (Rithvik, Pranav or
 | 1 Data + database | ✅ done (local Supabase check open) | `chore/supabase-local-check` | Docker Desktop |
 | 2 Tools + API | ✅ done | — | — |
 | 3 Text-mode agent + eval | ✅ done (real data: 32/40 first run → 40/40) | `phase-3-text-agent` | `LLM_*` in `.env` |
-| 4 Voice over browser | ⬜ | `phase-4-voice` | Phase 3; `SARVAM_API_KEY` (+ optional TTS key) |
+| 4 Voice over browser | ✅ done (synthetic-caller tests; live-mic check pending) | `phase-4-voice` | Phase 3; `SARVAM_API_KEY` (+ optional TTS key) |
 | 5 Websites | 🟡 Akshit + Karthik | `phase-5-frontend` | `docs/FRONTEND_PROMPT.md` |
 | 6 Phone calls + WhatsApp | ⬜ | `phase-6-telephony` | Phase 4; Twilio trial + verified numbers; ngrok |
 | 7 Integration, eval, deploy | ⬜ | `phase-7-integration` | Phases 3–6; Supabase project; Fly/Render/Railway + Vercel |

@@ -115,7 +115,7 @@ Anon (frontend) reads `bookings` through **column-level grants that leave out `p
 `payment_id` PK, `booking_id` FK, `amount_inr`, `provider` (`razorpay`\|`stripe`\|`mock`), `provider_ref`, `status` (`created`\|`paid`\|`failed`\|`refunded`), `created_at`, `updated_at`.
 
 ### calls
-`call_id` PK, `channel` (`phone`\|`web`), `direction` (`inbound`\|`outbound`), `from_number`, `started_at`, `ended_at`, `language text[]`, `services_used text[]`, `transcript {}` (`[{"ts","speaker":"caller|vaani","lang","text"}]`), `outcome_json {}` (§5), `tool_timeline {}` (`[{"ts","tool","args","result","summary","ms"}]`), `latency_json {}` (per-turn list + medians), `recording_url`, `summary` (2 lines).
+`call_id` PK, `channel` (`phone`\|`web`), `direction` (`inbound`\|`outbound`), `from_number`, `started_at`, `ended_at`, `language text[]`, `services_used text[]`, `transcript {}` (`[{"ts","speaker":"caller|vaani","lang","text"}]`), `outcome_json {}` (§5), `tool_timeline {}` (`[{"ts","tool","args","result","summary","ms"}]`), `latency_json {}` (`{llm_median, llm_p95, llm_calls, per_step_ms, voice_turns: [§4 latency rows], barge_in_ms: [..], tokens_in, tokens_out}`), `recording_url`, `summary` (2 lines).
 
 The row is inserted at `call_started` and completed by the post-call processor.
 
@@ -176,7 +176,10 @@ Partner actions need header **`X-Partner-Passcode`**: a per-business 6-digit dem
 | `POST /api/payments/webhook` | payment provider | raw JSON; `mock`: `{"event": "payment.paid", "payment_id", "provider_ref"?}` signed `X-Vaani-Signature: hex(HMAC-SHA256(PAYMENT_WEBHOOK_SECRET, body))` | `{"ok", "booking_status", "already_paid"}`; idempotent; emits `payment_updated` for call bookings. 401 bad signature, 503 no secret, 501 for razorpay/stripe until Phase 6 |
 | `POST /api/payments/{booking_id}/mock-pay` | "Pay (test)" button on `/pay/[booking_id]` | — | same path as a paid webhook; only when `PAYMENT_PROVIDER=mock` |
 | `POST /api/dev/simulate-booking` | website testing; only if `DEV_SIMULATE=true` (else 404) | `{"business_id", "doctor_id"?, "date"?, "time"?, "party_size"?, "name"?, "language"?}` | `{call_id, booking, confirmation, timeline}`; books through the real tools, so it emits exactly a call's events |
-| `POST /webrtc/offer` | "Talk to Vaani" button | SDP offer | SDP answer (Phase 4) |
+| `POST /webrtc/offer` | "Talk to Vaani" button | `{"sdp", "type": "offer", "pc_id"?, "request_data"?: {"phone"?: "+91…"}}` (Pipecat SmallWebRTC shape; `requestData` also accepted) | `{"sdp", "type": "answer", "pc_id"}`; the call's pipeline starts in the background. 503 `VOICE_NOT_CONFIGURED` without `SARVAM_API_KEY` |
+| `PATCH /webrtc/offer` | Pipecat JS client (trickle ICE) | `{"pc_id", "candidates": [{"candidate", "sdp_mid", "sdp_mline_index"}]}` | `{"ok": true}` |
+| `GET /voice/events/{pc_id}` | `/voice-test` page | `pc_id` URL-encoded (it contains `#`) | Server-Sent Events: `{"type", "payload"}` for every §4 event of that call, then `call_closed`. In-process only; the websites use Supabase Realtime |
+| `GET /voice-test` | developers | — | minimal browser test page (mic, live transcript, latency, agent activity) |
 | `POST /twilio/inbound` | Twilio voice webhook | Twilio form | TwiML `<Connect><Stream url="{PUBLIC_WS_URL}/ws/twilio"/></Connect>` (Phase 6) |
 | `WS /ws/twilio` | Twilio Media Streams | — | Pipecat Twilio serializer (Phase 6) |
 
@@ -200,7 +203,7 @@ Partner actions need header **`X-Partner-Passcode`**: a per-business 6-digit dem
 | `payment_updated` | `{booking_id, payment_id, status}` |
 | `call_ended` | `{outcome, duration_s, booking_id?}` |
 | `transcript` | `{speaker, lang, text, final: bool}` — live transcript lines for the Studio |
-| `latency` | `{turn, stt, llm_first_token, tts_first_audio, turn_total}` (ms) |
+| `latency` | `{turn, stt, llm_first_token, tts_first_audio, turn_total}` (ms). Voice calls: `stt` = end of the caller's speech → final transcript and end-of-turn decision; `llm_first_token` = transcript → first words handed to TTS (guards, LLM or filler); `tts_first_audio` = → first TTS audio; `turn_total` = end of speech → first audio |
 
 `transcript` and `latency` are additions for the Live Call Studio; the first eight are the fixed list.
 
@@ -243,6 +246,11 @@ See `.env.example` (kept in sync with this list).
 | PUBLIC_WS_URL | backend | public `wss://` base for Twilio (ngrok locally) |
 | DEMO_AREA_1, DEMO_AREA_2 | backend, scripts | default `jubilee_hills`, `gachibowli` |
 | DEV_SIMULATE | backend, frontend | enables `/api/dev/simulate-booking` |
+| STT_MODEL, STT_MODE | backend | Sarvam STT model (`saaras:v3`) and mode (`translit` = romanised te/hi, what the parsers expect) |
+| TTS_MODEL, TTS_VOICE | backend | Sarvam Bulbul model (`bulbul:v3`) and voice (`priya`), one voice for te / hi / en-IN |
+| SILENCE_TIMEOUT_S, FILLER_AFTER_S, TURN_MAX_SILENCE_S | backend | voice timing: silence check after 5 s (twice, then goodbye); filler if the reply isn't ready after 0.6 s; longest wait when Smart Turn thinks the caller isn't done (1.5 s) |
+| WEB_CALLER_PHONE | backend | caller number for browser calls (no caller ID) unless the page sends one |
+| VAANI_DEV_DB | backend | `ephemeral` = throwaway local Postgres when `SUPABASE_DB_URL` is empty (local voice testing only) |
 
 ---
 

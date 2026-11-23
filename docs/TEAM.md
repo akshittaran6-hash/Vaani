@@ -49,9 +49,10 @@ Everyone owns a starting area, but nobody is limited to it. Pick up anything, ti
 - [x] `eval.py` with accuracy by language (placeholder data 40/40; real data 32/40 first run → 40/40 after fixes, clock frozen at 09:00)
 
 ### Phase 4 — Voice over browser
-- [ ] STT / LLM / TTS adapters, pipeline, WebRTC + `/webrtc/offer`
-- [ ] Barge-in, silence handler, fillers, normaliser (tested), latency logging
-- [ ] Post-call processor; minimal test page
+- [x] STT / LLM / TTS adapters, pipeline, WebRTC + `/webrtc/offer`
+- [x] Barge-in, silence handler, fillers, normaliser (tested), latency logging
+- [x] Post-call processor; minimal test page (`/voice-test`) + headless probe (`backend/eval/voice_probe.py`)
+- [ ] Try it by mic in Chrome with a real voice (probe uses synthetic callers) and on the hosted Supabase (needs DB password)
 
 ### Phase 5 — Websites
 - [ ] Design system + every route in `WEBSITES.md`

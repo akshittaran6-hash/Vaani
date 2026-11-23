@@ -56,6 +56,9 @@ class CallContext:
 
     transcript: list[dict[str, Any]] = field(default_factory=list)
     llm_ms: list[int] = field(default_factory=list)
+    # Voice calls: one row per turn {turn, stt, llm_first_token, tts_first_audio, turn_total} (ms).
+    voice_turns: list[dict[str, int]] = field(default_factory=list)
+    barge_in_ms: list[int] = field(default_factory=list)
     tokens_in: int = 0
     tokens_out: int = 0
 
@@ -115,11 +118,22 @@ class CallContext:
             "slots": dict(self.slots),
             "outcome": self.outcome,
             "booking_id": self.booking_id,
-            # Text mode has no audio: STT/TTS stay 0 until Phase 4.
-            "latency_ms": {
-                "stt": 0,
-                "llm_first_token": lat["llm_median"],
-                "tts_first_audio": 0,
-                "turn_median": lat["llm_median"],
-            },
+            # Voice calls: medians over the turns. Text mode (eval/CLI) has no audio, so STT/TTS stay 0.
+            "latency_ms": self.voice_latency_medians()
+            or {"stt": 0, "llm_first_token": lat["llm_median"], "tts_first_audio": 0, "turn_median": lat["llm_median"]},
+        }
+
+    def voice_latency_medians(self) -> dict[str, int] | None:
+        if not self.voice_turns:
+            return None
+
+        def med(key: str) -> int:
+            vals = [t[key] for t in self.voice_turns if t.get(key) is not None]
+            return round(statistics.median(vals)) if vals else 0
+
+        return {
+            "stt": med("stt"),
+            "llm_first_token": med("llm_first_token"),
+            "tts_first_audio": med("tts_first_audio"),
+            "turn_median": med("turn_total"),
         }

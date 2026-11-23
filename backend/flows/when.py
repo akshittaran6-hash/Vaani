@@ -39,6 +39,9 @@ NUM = {
     "panch": 5,
     "chhe": 6,
     "che": 6,
+    "chhah": 6,  # Sarvam STT (translit) spells six this way
+    "chah": 6,
+    "chhai": 6,
     "saat": 7,
     "aath": 8,
     "nau": 9,

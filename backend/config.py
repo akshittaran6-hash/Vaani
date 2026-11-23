@@ -38,6 +38,36 @@ class Settings(BaseSettings):
     llm_model: str = ""
     llm_api_key: str = ""
 
+    # Voice (Phase 4). Providers are swappable; Sarvam by default (STT saaras, TTS Bulbul).
+    sarvam_api_key: str = ""
+    stt_provider: Literal["sarvam"] = "sarvam"
+    stt_model: str = "saaras:v3"
+    # "translit" returns romanised te/hi, which is what the parsers and the eval use.
+    stt_mode: Literal["transcribe", "translit", "codemix"] = "translit"
+    tts_provider: Literal["sarvam"] = "sarvam"
+    tts_model: str = "bulbul:v3"
+    tts_voice: str = "priya"  # one voice across te / hi / en-IN (Bulbul voices are Indian)
+    tts_api_key: str = ""
+    # Seconds of caller silence before "Hello, vinipistunda?" (twice, then goodbye).
+    silence_timeout_s: float = 5.0
+    # Longest silence before a turn ends when Smart Turn thinks the caller isn't done.
+    turn_max_silence_s: float = 1.5
+    # Speak a short filler if the reply isn't ready after this long.
+    filler_after_s: float = 0.6
+    # Local voice testing without Supabase: VAANI_DEV_DB=ephemeral starts a throwaway Postgres.
+    vaani_dev_db: Literal["", "ephemeral"] = ""
+    web_caller_phone: str = "+910000000000"
+
+    @field_validator("stt_provider", "tts_provider", mode="before")
+    @classmethod
+    def _default_provider(cls, v: str) -> str:
+        return v or "sarvam"
+
+    @field_validator("stt_mode", mode="before")
+    @classmethod
+    def _default_mode(cls, v: str) -> str:
+        return v or "translit"
+
     twilio_account_sid: str = ""
     twilio_auth_token: str = ""
     twilio_phone_number: str = ""

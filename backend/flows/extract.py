@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import re
 
+from rapidfuzz import fuzz
+
 from backend.catalog.models import Catalog, Doctor, Hospital, Restaurant
 from backend.flows.when import NUM
 from backend.text import norm
@@ -196,24 +198,68 @@ def find_business(text: str, catalog: Catalog) -> Restaurant | Hospital | None:
             key = norm(alias)
             if len(key) >= 4 and f" {key} " in t and (best is None or len(key) > best[0]):
                 best = (len(key), b)
-    return best[1] if best else None
+    if best:
+        return best[1]
+    # STT spellings of multi-word names ("Vana Grove", "Dumgali Courtyard"): same-length word
+    # windows, fuzzy ≥ 88, names of 8+ letters only (short ones like "Vaani" collide too easily).
+    words = t.split()
+    fuzzy: tuple[float, Restaurant | Hospital] | None = None
+    for b in businesses:
+        for alias in [b.name, *b.name_aliases]:
+            key = norm(alias)
+            n = len(key.split())
+            if n < 2 or len(key) < 8:
+                continue
+            for i in range(len(words) - n + 1):
+                score = fuzz.ratio(" ".join(words[i : i + n]), key)
+                if score >= 88 and (fuzzy is None or score > fuzzy[0]):
+                    fuzzy = (score, b)
+    return fuzzy[1] if fuzzy else None
 
 
-def find_doctor_named(text: str, catalog: Catalog, hospital_id: str | None = None) -> Doctor | None:
-    """'Dr. Kavya Sharma garu', 'Dr. Ananya garu', 'Dr Priya Reddy' → that doctor."""
+def find_doctor_named(
+    text: str,
+    catalog: Catalog,
+    hospital_id: str | None = None,
+    area_id: str | None = None,
+    speciality: str | None = None,
+) -> Doctor | None:
+    """'Dr. Suvin Rellimudi garu', 'Dr. Suvin Relimudi' (STT spelling) → that doctor.
+
+    First names repeat across hospitals (two Dr. Suvins, three Mihiras), so: the first name must
+    match, a surname close to the doctor's (fuzzy ≥ 80) wins, then the call's hospital / area /
+    speciality break ties. Still tied → None, so the agent asks instead of guessing (voice run:
+    "Suvin Relimudi" once booked Dr. Suvin Harivelu at the other hospital)."""
     t = norm(text).replace("dr ", "dr. ")
     if "dr" not in t and "doctor" not in t:
         return None
-    hits = []
+    words = re.findall(r"[a-z]+", t)
+    hospitals = {h.hospital_id: h for h in catalog.hospitals}
+    scored: list[tuple[tuple[int, int, int, int], Doctor]] = []
     for d in catalog.doctors:
-        if hospital_id and d.hospital_id != hospital_id:
-            continue
         first, *rest = norm(d.name.replace("Dr. ", "")).split()
-        if re.search(rf"\b{first}\b", t) and (
-            not rest or re.search(rf"\b{rest[-1]}\b", t) or re.search(rf"(dr\.?|doctor)\s+{first}\b", t)
-        ):
-            hits.append((bool(rest and re.search(rf"\b{rest[-1]}\b", t)), d))
-    if not hits:
+        if not re.search(rf"\b{first}\b", t):
+            continue
+        last = rest[-1] if rest else ""
+        surname = bool(last) and max((fuzz.ratio(w, last) for w in words if len(w) >= 4), default=0) >= 80
+        titled = bool(re.search(rf"(dr\.?|doctor)\s+{first}\b", t))
+        if not (surname or titled):
+            continue
+        h = hospitals.get(d.hospital_id)
+        scored.append(
+            (
+                (
+                    int(surname),
+                    int(hospital_id == d.hospital_id),
+                    int(bool(area_id) and h is not None and h.area_id == area_id),
+                    int(speciality == d.speciality),
+                ),
+                d,
+            )
+        )
+    if not scored:
         return None
-    hits.sort(key=lambda x: not x[0])  # full-name matches first
-    return hits[0][1]
+    scored.sort(key=lambda x: x[0], reverse=True)
+    if len(scored) > 1 and scored[0][0] == scored[1][0]:
+        return None  # ambiguous ("Dr. Suvin" with no surname, area or hospital): ask, don't guess
+    return scored[0][1]

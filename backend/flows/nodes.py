@@ -26,6 +26,7 @@ from backend.flows.extract import NOT_NAMES, is_entity_name
 from backend.flows.speech import appointment_readback, restaurant_readback, spoken_time
 from backend.flows.when import parse_day, parse_time
 from backend.tools import run_tool
+from backend.tools.restaurants import nearest
 
 if TYPE_CHECKING:
     from backend.flows.session import Session
@@ -125,6 +126,20 @@ def find_doctor(s: Session, ref: str | None) -> Doctor | None:
     if by_id or not ref:
         return by_id
     clean = re.sub(r"\b(dr|doctor|garu|ji)\b\.?", " ", ref.lower())
+    # Prefer doctors in the call's hospital, then its area: first names repeat across hospitals.
+    hospital = str(s.ctx.slots.get("business_id") or "")
+    area = s.ctx.slots.get("area_id")
+    in_area = {h.hospital_id for h in s.catalog.hospitals if h.area_id == area}
+    pools = [
+        [d for d in docs if d.hospital_id == hospital],
+        [d for d in docs if d.hospital_id in in_area],
+        list(docs),
+    ]
+    for pool in pools:
+        names = {d.doctor_id: d.name.replace("Dr. ", "") for d in pool}
+        hit = process.extractOne(clean, names, scorer=fuzz.WRatio, score_cutoff=85) if names else None
+        if hit:
+            return next(d for d in pool if d.doctor_id == hit[2])
     names = {d.doctor_id: d.name.replace("Dr. ", "") for d in docs}
     hit = process.extractOne(clean, names, scorer=fuzz.WRatio, score_cutoff=70)
     return next(d for d in docs if d.doctor_id == hit[2]) if hit else None
@@ -148,7 +163,10 @@ def caller_name(s: Session, llm_name: Any) -> str:
     if any(w in NOT_NAMES for w in name.lower().split()) or is_entity_name(name, s.catalog):
         return ""  # "Sare", "Meeda Pettandi" (filler words) or the doctor's own name: not the caller
     said = " ".join(t["text"].lower() for t in s.ctx.transcript if t["speaker"] == "caller")
-    return name if name and all(w in said for w in name.lower().split()) else ""
+    words = name.lower().split()
+    # Whole words the caller said, 2+ letters each ("Kavali N D" is STT for "kavali andi", not a name)
+    ok = bool(words) and all(len(w) >= 2 and re.search(rf"\b{re.escape(w)}\b", said) for w in words)
+    return name if ok else ""
 
 
 def spoken_list(times: list[str], lang: str) -> list[str]:
@@ -464,11 +482,10 @@ async def propose_booking(s: Session, a: dict[str, Any]) -> tuple[Result, str | 
     t = caller_time(s, "restaurant") or resolve_time(a.get("time"), "restaurant") or s.ctx.slots.get("time")
     party = s.ctx.slots.get("party_size") or a.get("party_size")
     name = caller_name(s, a.get("name"))
-    missing = [
-        k for k, v in {"restaurant": rest, "date": d, "time": t, "party_size": party, "name": name}.items() if not v
-    ]
+    missing = [k for k, v in {"restaurant": rest, "date": d, "time": t, "party_size": party}.items() if not v]
     if missing:
-        return err("MISSING_DETAILS", "Ask for: " + ", ".join(missing), missing=missing), None
+        ask = missing + ([] if name else ["name"])
+        return err("MISSING_DETAILS", "Ask for: " + ", ".join(ask), missing=missing), None
     assert rest and d and t and party
     party = int(party)
     check = await run_tool(
@@ -488,6 +505,9 @@ async def propose_booking(s: Session, a: dict[str, Any]) -> tuple[Result, str | 
             f"{spoken_time(t, s.ctx.language)} is full",
             nearest=spoken_list(check.get("nearest", []), s.ctx.language),
         ), None
+    if not name:
+        # The slot is free: say so and ask the one missing thing (slot is checked BEFORE the name).
+        return err("MISSING_DETAILS", "The time is free. Ask for: name", missing=["name"], time_free=True), None
     for k, v in (
         ("business_id", rest.restaurant_id),
         ("date", d.isoformat()),
@@ -694,9 +714,10 @@ async def propose_appointment(s: Session, a: dict[str, Any]) -> tuple[Result, st
     d = caller_day(s) or resolve_date(s, a.get("date"))
     t = caller_time(s, "hospital") or resolve_time(a.get("time"), "hospital") or s.ctx.slots.get("time")
     name = caller_name(s, a.get("name"))
-    missing = [k for k, v in {"doctor": doc, "date": d, "time": t, "name": name}.items() if not v]
+    missing = [k for k, v in {"doctor": doc, "date": d, "time": t}.items() if not v]
     if missing:
-        return err("MISSING_DETAILS", "Ask for: " + ", ".join(missing), missing=missing), None
+        ask = missing + ([] if name else ["name"])
+        return err("MISSING_DETAILS", "Ask for: " + ", ".join(ask), missing=missing), None
     assert doc and d and t
     check = await run_tool(s.tools, "get_doctor_slots", {"doctor_id": doc.doctor_id, "date": d.isoformat()})
     if not check.get("ok"):
@@ -705,13 +726,18 @@ async def propose_appointment(s: Session, a: dict[str, Any]) -> tuple[Result, st
         s.ctx.offered_alternatives = True
         free = check.get("free", [])
         lang = s.ctx.language
+        near = nearest(free, t)
+        s.ctx.nearest_offered = near
         return err(
             "SLOT_TAKEN",
-            f"{spoken_time(t, lang)} is not free",
+            f"{spoken_time(t, lang)} is not free; offer the nearest times",
+            nearest=spoken_list(near, lang),
             free=spoken_list(free[:6], lang),
             on_leave=check.get("on_leave"),
             next_free_date=check.get("next_free_date"),
         ), None
+    if not name:
+        return err("MISSING_DETAILS", "The time is free. Ask for: name", missing=["name"], time_free=True), None
     hosp = next(h for h in s.catalog.hospitals if h.hospital_id == doc.hospital_id)
     for k, v in (
         ("business_id", hosp.hospital_id),
