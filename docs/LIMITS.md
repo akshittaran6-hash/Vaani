@@ -34,6 +34,8 @@ Cost per call minute (telephony + STT + LLM + TTS) is measured and reported in `
 - The real data has no blocked slots and no doctor on leave; those rules are tested on the fixture data and shown live by blocking a slot on the partner portal.
 - The LLM step takes ~1.5 s, so turns that need it start with a short filler line ("Oka second andi…") at 0.6 s; turns decided by code (read-back, confirm, guards) answer in ~0.5 s.
 - Smart Turn (end-of-turn model) is less sure on Telugu/Hindi: a caller who pauses mid-sentence can be answered early; we cap its wait at 1.5 s and drop replies made stale by the caller's next words.
+- Browser calls have no caller ID: the test page lets the caller type a number for the WhatsApp card. Fine with the mock messenger; before real WhatsApp sends (Phase 6) that number must be verified (OTP-free: e.g. only allow-listed demo phones), or web calls send no message.
+- `POST /webrtc/offer` is public; only a concurrent-call cap (`MAX_WEB_CALLS`) protects the speech/LLM credits. Add rate limiting before a public deploy (Phase 7).
 - Voice numbers so far come from synthetic callers (Sarvam TTS voices) over local WebRTC; real voices, noisy rooms and phone audio (8 kHz) will be worse.
 - STT spells English names in Telugu/Hindi speech loosely ("Vana Grove", "Relimudi"); fuzzy matching handles close spellings, and the read-back lets the caller correct the rest.
 - Payments are test mode only.

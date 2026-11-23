@@ -35,6 +35,11 @@ def _request_handler() -> Any:
     return _handler
 
 
+def _log_failure(task: asyncio.Task[Any]) -> None:
+    if not task.cancelled() and task.exception() is not None:
+        logger.error(f"call failed: {task.exception()!r}")
+
+
 @router.post("/webrtc/offer")
 async def webrtc_offer(body: dict[str, Any], request: Request, svc: Svc) -> dict[str, Any]:
     """SDP offer in → SDP answer out; the call's pipeline starts in the background."""
@@ -46,6 +51,10 @@ async def webrtc_offer(body: dict[str, Any], request: Request, svc: Svc) -> dict
 
     if not svc.settings.sarvam_api_key:
         fail("VOICE_NOT_CONFIGURED", "SARVAM_API_KEY is not set", 503)
+    # The endpoint is public (the "Talk to Vaani" button); cap concurrent calls so one page
+    # or script can't burn the STT / TTS / LLM credits.
+    if len(_calls) >= svc.settings.max_web_calls:
+        fail("BUSY", "Vaani is on too many calls right now; please try again in a minute", 503)
     llm = getattr(request.app.state, "llm", None)
     if llm is None:
         from backend.voice.llm import from_env
@@ -72,7 +81,7 @@ async def webrtc_offer(body: dict[str, Any], request: Request, svc: Svc) -> dict
         )
         _calls.add(task)
         task.add_done_callback(_calls.discard)
-        task.add_done_callback(lambda t: t.exception() and logger.error(f"call failed: {t.exception()!r}"))
+        task.add_done_callback(_log_failure)
 
     answer: dict[str, Any] = await _request_handler().handle_web_request(
         request=offer, webrtc_connection_callback=on_connection
@@ -85,6 +94,8 @@ async def webrtc_ice(body: dict[str, Any]) -> dict[str, bool]:
     """Trickle ICE candidates (the Pipecat JS client sends these)."""
     from pipecat.transports.smallwebrtc.request_handler import IceCandidate, SmallWebRTCPatchRequest
 
+    if not isinstance(body.get("pc_id"), str):
+        fail("INVALID_ARGS", "pc_id is required")
     candidates = [
         IceCandidate(
             candidate=c.get("candidate", ""), sdp_mid=c.get("sdp_mid"), sdp_mline_index=c.get("sdp_mline_index")

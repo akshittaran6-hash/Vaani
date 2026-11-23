@@ -60,6 +60,7 @@ class Settings(BaseSettings):
     # Local voice testing without Supabase: VAANI_DEV_DB=ephemeral starts a throwaway Postgres.
     vaani_dev_db: Literal["", "ephemeral"] = ""
     web_caller_phone: str = "+910000000000"
+    max_web_calls: int = 10
 
     @field_validator("stt_provider", "tts_provider", mode="before")
     @classmethod
