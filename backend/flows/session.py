@@ -180,6 +180,18 @@ CORE_YES = {
     "sure",
     "correct",
     "chalega",
+    "go",
+    "ahead",
+    "book",
+    "done",
+    "perfect",
+    "right",
+    "kar",
+    "kardo",
+    "karo",
+    "chey",
+    "cheyandi",
+    "cheyyandi",
 }
 NO_WORDS = {
     "ledu",
@@ -199,14 +211,32 @@ NO_WORDS = {
 }
 # "₹650", "650 rupaye", "650 rupees", "650 రూపాయలు", "650 रुपये"
 MONEY_RE = re.compile(
-    r"₹\s*(\d[\d,]*)|(\d[\d,]*)\s*(?:rupaye|rupay|rupees|rupee|rupayalu|rs\b|inr\b|रुपये|रुपए|రూపాయలు)",
+    r"(?:₹|\brs\.?|\binr)\s*(\d[\d,]*)"
+    r"|(\d[\d,]*)\s*(?:rupaye|rupay|rupees|rupee|rupayalu|rs\b|inr\b|रुपये|रुपए|రూపాయలు)",
     re.IGNORECASE,
 )
+MONEY_KEY = re.compile(r"(_inr$|fee|deposit|amount|price)")
 DAY_WORDS = {
     0: ("today", "aaj", "ivala"),
     1: ("tomorrow", "kal", "repu"),
     2: ("day after tomorrow", "parso", "parson", "ellundi"),
 }
+
+
+def _money_in(value: Any, key: str = "") -> set[int]:
+    """₹ amounts in tool results: numbers under money keys (fee_inr, deposit_inr, amount_inr …)
+    and ₹ amounts inside text (FAQ answers). Not dates, times, IDs or millisecond timings."""
+    if isinstance(value, dict):
+        return {a for k, v in value.items() for a in _money_in(v, str(k))}
+    if isinstance(value, list):
+        return {a for v in value for a in _money_in(v, key)}
+    if isinstance(value, bool):
+        return set()
+    if isinstance(value, int | float) and MONEY_KEY.search(key.lower()):
+        return {int(value)}
+    if isinstance(value, str):
+        return {int(a.replace(",", "")) for m in MONEY_RE.finditer(value) for a in m.groups() if a}
+    return set()
 
 
 @dataclass
@@ -471,9 +501,7 @@ class Session:
         read back "fee 1000 rupaye" for a ₹650 doctor). Fees and deposits come from code."""
         if not text or not MONEY_RE.search(text):
             return text
-        # ensure_ascii=False: "₹300" must stay "₹300", not "\u20b9300" (which reads as 9300).
-        dumped = json.dumps(self.tools.timeline, default=str, ensure_ascii=False)
-        known = {int(n) for n in re.findall(r"\d+", dumped)} | self._catalogue_amounts()
+        known = _money_in(self.tools.timeline) | self._catalogue_amounts()
         kept = []
         for sentence in re.split(r"(?<=[.?!।])\s+", text):
             amounts = {int(a.replace(",", "")) for m in MONEY_RE.finditer(sentence) for a in m.groups() if a}
@@ -482,6 +510,12 @@ class Session:
         if len(kept) < len(re.split(r"(?<=[.?!।])\s+", text)):
             log.warning("dropped an unverified amount from the LLM reply: %r", text)
         return " ".join(kept)
+
+    def _affirmative(self, text: str) -> bool:
+        """A yes word and nothing negative. Names and requests ("X peru meeda pettandi") don't count."""
+        words = set(re.findall(r"[a-z]+", text.lower()))
+        native_yes = any(w in text for w in ("అవును", "సరే", "హాఁ", "हाँ", "हां", "ठीक"))
+        return bool(words & CORE_YES or native_yes) and not (words & NO_WORDS)
 
     def _catalogue_amounts(self) -> set[int]:
         """₹ facts of the business in this call: deposit and price for two, or its doctors' fees."""
@@ -504,15 +538,12 @@ class Session:
         return 0 < len(words) <= 6 and not (set(words) & NO_WORDS) and all(w in YES_WORDS for w in words)
 
     def caller_said_yes(self) -> bool:
-        """The caller's latest turn agrees: a yes word and nothing negative ("Haan, confirm kar dijiye")."""
-        last = self.last_caller_text()
-        words = set(re.findall(r"[a-z]+", last.lower()))
-        native_yes = any(w in last for w in ("అవును", "సరే", "హాఁ", "हाँ", "हां", "ठीक"))
-        return bool(words & CORE_YES or native_yes) and not (words & NO_WORDS)
+        """The caller's latest turn agrees ("Haan, confirm kar dijiye", "Go ahead", "Kar do")."""
+        return self._affirmative(self.last_caller_text())
 
     def _is_plain_yes(self, text: str) -> bool:
         p = self.ctx.pending
-        return p is not None and p.turn < self.ctx.turn and self._is_yes_words(text)
+        return p is not None and p.turn < self.ctx.turn and self._is_yes_words(text) and self._affirmative(text)
 
     def _is_closing(self, text: str) -> bool:
         t = norm(text)

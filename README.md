@@ -4,7 +4,7 @@
 
 **Homingo Hack Days, Edition 01 · Track: LLM apps · Problem C2 "Voice is the interface" · Team PARK**
 
-> 🚧 Work in progress — Phase 3 done and re-checked on the real demo data (text-mode agent in te/hi/en; eval: 32/40 on first contact with the new data, 40/40 on five runs after the fixes — see [EVAL.md](EVAL.md)). Voice, websites, phone calls and the live URL land in later phases.
+> 🚧 Work in progress — Phase 3 done and re-checked on the real demo data (text-mode agent in te/hi/en; eval: 32/40 on first contact with the new data, 40/40 on six runs after the fixes — see [EVAL.md](EVAL.md)). Voice, websites, phone calls and the live URL land in later phases.
 
 ## The problem
 

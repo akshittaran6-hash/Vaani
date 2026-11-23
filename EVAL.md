@@ -37,13 +37,14 @@ Every number here is measured, split by Telugu (te-en), Hindi (hi-en) and Indian
 | 09:43 | same | 40/40 | 148 | 1470 / 2128 ms | 362k / 10k | $0.050 |
 | 09:44 | same | 40/40 | 146 | 1462 / 1981 ms | 361k / 11k | $0.050 |
 | 09:46 | amount guard: fixed a false alarm on "₹" | 40/40 | 154 | 1514 / 2155 ms | 396k / 11k | $0.055 |
-| 09:47 | final code (amount guard tightened) | 40/40 | 151 | 1528 / 2232 ms | 377k / 10k | $0.052 |
+| 09:47 | amount guard tightened to the chosen doctor | 40/40 | 151 | 1528 / 2232 ms | 377k / 10k | $0.052 |
+| 10:00 | final code after PR review (guard trusts only money fields; one shared yes check) | 40/40 | 149 | 1490 / 2235 ms | 366k / 11k | $0.051 |
 
 What the first real-data run found, and the fixes (all with tests):
 - **Party size** missed Telugu forms `naluguriki` / `mugguram` / `aaruguriki` and "Change that to four" → stem + suffix rules in `flows/extract.py`.
 - **Names**: "Anuvi Selavolu peru meeda pettandi" became "Meeda Pettandi"; the LLM used "Sare" and the *doctor's* name as the caller's → name-before-marker patterns, filler-word and doctor/business-name checks.
 - **Safety:** in T05 the LLM booked when the caller only gave a name. A booking now also needs a yes word in the caller's own turn (`Session.caller_said_yes`), checked in code.
-- **Safety:** the LLM wrote its own read-back with an invented fee ("fee 1000 rupaye" for a ₹650 doctor). Sentences with a ₹ amount that no tool returned and that isn't the chosen business's / doctor's own figure are now dropped (`Session._verified_amounts`); the guard fired on 1–2 replies per run afterwards.
+- **Safety:** the LLM wrote its own read-back with an invented fee ("fee 1000 rupaye" for a ₹650 doctor). Sentences with a ₹ amount that no tool returned and that isn't the chosen business's / doctor's own figure are now dropped (`Session._verified_amounts`); the guard fired on 1–2 replies per run afterwards. It trusts only money fields in tool results (`*_inr`, fee, deposit, amount, price) and ₹ amounts in answer text, never dates, times, IDs or timings.
 - **"Parson"** (Hindi spelling of parso) wasn't a day word; FAQ topics lacked wheelchair access, lab, fee and Sunday timings.
 - **Short emergency forms**: the real emergency list had only long sentences, so "सीने में दर्द" and "chest pain" weren't caught. `import_data.py` merges the earlier tested phrases (`scripts/data_extras/speciality_base.json`), 166 speciality + 86 emergency phrases in total.
 

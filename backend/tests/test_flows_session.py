@@ -258,6 +258,9 @@ async def test_llm_cannot_state_an_unverified_amount(reseed: None, services: Ser
     assert s._verified_amounts("Fee 1000 rupaye hai. Aapka naam?") == "Aapka naam?"
     assert s._verified_amounts("Fee ₹650 hai. Aapka naam?") == "Fee ₹650 hai. Aapka naam?"
     assert s._verified_amounts("Kal 10:15 free hai.") == "Kal 10:15 free hai."
+    s.tools.timeline.append({"tool": "get_doctor_slots", "ms": 900, "result": {"free": ["09:00"]}})
+    assert s._verified_amounts("Fee 900 rupaye.") == ""  # a 900 ms timing is not a ₹900 fact
+    assert s._verified_amounts("Fee Rs 1000.") == ""
     s.ctx.slots["business_id"] = "r_jh_01"  # the named business's own deposit counts as verified
     deposit = services.catalog.restaurants[0].booking_rules.deposit_inr
     assert s._verified_amounts(f"There's a ₹{deposit} deposit.") == f"There's a ₹{deposit} deposit."
@@ -268,3 +271,12 @@ async def test_llm_cannot_state_an_unverified_amount(reseed: None, services: Ser
     assert s._verified_amounts(f"Fee ₹{a.consultation_fee_inr}.") == f"Fee ₹{a.consultation_fee_inr}."
     s.tools.timeline.append({"tool": "answer_faq", "result": {"answer": "A sample deposit of ₹300 applies."}})
     assert s._verified_amounts("Yes, a deposit of ₹300 applies.") == "Yes, a deposit of ₹300 applies."
+
+
+async def test_yes_words_and_name_turns(reseed: None, services: Services) -> None:
+    """A read-back is confirmed by "Go ahead" / "Kar do" / "Avunu", never by a name turn (eval T05)."""
+    s, _ = await new_session(services, [])
+    for text in ("Go ahead", "Book it", "Haan, kar do", "Avunu, confirm cheyandi", "Yes, please confirm it.", "అవును"):
+        assert s._affirmative(text), text
+    for text in ("Veya Madduluri peru meeda pettandi.", "Reyan Dharavolu ke naam se rakh dijiye.", "Haan, but change it"):
+        assert not s._affirmative(text), text

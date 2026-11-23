@@ -16,7 +16,7 @@ Every agent session adds an entry here (rules and template: `AGENTS.md` §5). **
 | 7 Integration, eval, deploy | ⬜ not started | open | — |
 | 8 Submission polish | ⬜ not started | open | — |
 
-Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeholder data). On `data-real-import`: **230 passed** · ruff ✓ · mypy ✓ · `validate_data.py` ✓ (real data, 0 errors, 7 warnings) · eval on real data 32/40 first run → 40/40 × 5.
+Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeholder data). On `data-real-import`: **231 passed** · ruff ✓ · mypy ✓ · `validate_data.py` ✓ (real data, 0 errors, 7 warnings) · eval on real data 32/40 first run → 40/40 × 5.
 
 ## Entries
 
@@ -31,7 +31,8 @@ Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeh
 - Tests: placeholder set moved to `backend/tests/fixtures/placeholder_data/` (unit/DB tests seed from it in memory); new `test_real_data.py` (validation, weekday rule, demo scenarios, FAQ, every phrase maps, doctor-name check).
 - Eval on real data, first run **32/40**. Fixes: Telugu party forms (naluguriki, mugguram, aaruguriki), "Change that to four", names before "peru meeda" / "ke naam se" / "under", "parson", FAQ topics (wheelchair, lab, fee, Sunday). **Safety:** a booking needs a yes word in the caller's own turn (T05 booked on a name); ₹ amounts the LLM states must come from a tool or the chosen business/doctor (it invented "fee 1000 / 900" for a ₹650 doctor); the doctor's own name can't become the caller's name.
 - Prompt examples rewritten with real businesses/doctors; CALL_FLOW, DEMO (new demo-scenarios table), WEBSITES, FRONTEND_PROMPT examples moved off "Spice Garden".
-**Tests / checks:** `uv run pytest -q` → **230 passed** · ruff ✓ · mypy ✓ · eval (Featherless Qwen3-30B-A3B-Instruct-2507): 32/40 → 40/40 on 5 consecutive runs, LLM median ≈ 1.5 s, p95 ≈ 2.0–2.3 s, ≈ $0.05 per run.
+**Tests / checks:** `uv run pytest -q` → **231 passed** · ruff ✓ · mypy ✓ · eval (Featherless Qwen3-30B-A3B-Instruct-2507): 32/40 → 40/40 on 6 consecutive runs, LLM median ≈ 1.5 s, p95 ≈ 2.0–2.3 s, ≈ $0.05 per run.
+**PR review (10:00 IST):** the amount guard counted every number in the timeline (an `ms: 900` would "verify" a ₹900 fee) → only money fields + ₹ in text; the new yes check rejected "Go ahead" / "Kar do" while the plain-yes path accepted them → one shared `_affirmative()`; "Rs 500" now caught. Eval after review: 40/40.
 **Decisions:** keep the contract's file shapes and convert on import (no schema change). Merged our earlier tested phrase list into the teammate's mapping rather than trusting long-sentence emergency phrases alone.
 **Corrections to the handoff brief:** Pulao Pankthi tomorrow night is full for 3+ people, not for everyone (one 2-seater left; T16 books it). The real data has no blocked slots and no doctor on leave (validator warnings).
 **Blockers / needs from humans:** `SARVAM_API_KEY` (Phase 4); a Supabase DB (hosted URL/keys, or local `supabase start`); approval for the self-harm data change (`self_harm_phrases` + `self_harm_reply`); where Karthik/Akshit's frontend lives.
