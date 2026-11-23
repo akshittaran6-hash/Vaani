@@ -38,5 +38,6 @@ Cost per call minute (telephony + STT + LLM + TTS) is measured and reported in `
 - `POST /webrtc/offer` is public; only a concurrent-call cap (`MAX_WEB_CALLS`) protects the speech/LLM credits. Add rate limiting before a public deploy (Phase 7).
 - Voice numbers so far come from synthetic callers (Sarvam TTS voices) over local WebRTC; real voices, noisy rooms and phone audio (8 kHz) will be worse.
 - STT spells English names in Telugu/Hindi speech loosely ("Vana Grove", "Relimudi"); fuzzy matching handles close spellings, and the read-back lets the caller correct the rest.
+- Self-harm phrases match exactly (no fuzzy: "karna" vs "marna" is one letter), so an unusual wording or STT spelling can miss the gentle reply; emergency matching has no negation ("accident nahi hua" still counts as an emergency in hospital calls).
 - Payments are test mode only.
 - All businesses, doctors, ratings and bookings are fictional sample data.

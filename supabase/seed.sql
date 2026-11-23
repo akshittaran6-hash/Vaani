@@ -5916,6 +5916,19 @@ insert into public.speciality_map (phrase, lang, speciality, is_emergency) value
   ('aatmahatya karna chahta hoon', 'hi', null, true),
   ('jeena nahi chahta', 'hi', null, true),
   ('मैं मरना चाहता हूँ', 'hi', null, true),
-  ('मुझे जीना नहीं है', 'hi', null, true);
+  ('मुझे जीना नहीं है', 'hi', null, true),
+  ('suicide', 'en', null, true),
+  ('kill myself', 'en', null, true),
+  ('end my life', 'en', null, true),
+  ('marna chahta hu', 'hi', null, true),
+  ('marna chahti hu', 'hi', null, true),
+  ('mar jaana chahta hoon', 'hi', null, true),
+  ('suicide karna', 'hi', null, true),
+  ('aatmahatya', 'hi', null, true),
+  ('आत्महत्या', 'hi', null, true),
+  ('suicide chesukovali', 'te', null, true),
+  ('aatmahatya', 'te', null, true),
+  ('ఆత్మహత్య', 'te', null, true),
+  ('chachipovalani undi', 'te', null, true);
 
 commit;

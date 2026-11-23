@@ -765,6 +765,58 @@
     {
       "phrase": "मुझे जीना नहीं है",
       "lang": "hi"
+    },
+    {
+      "phrase": "suicide",
+      "lang": "en"
+    },
+    {
+      "phrase": "kill myself",
+      "lang": "en"
+    },
+    {
+      "phrase": "end my life",
+      "lang": "en"
+    },
+    {
+      "phrase": "marna chahta hu",
+      "lang": "hi"
+    },
+    {
+      "phrase": "marna chahti hu",
+      "lang": "hi"
+    },
+    {
+      "phrase": "mar jaana chahta hoon",
+      "lang": "hi"
+    },
+    {
+      "phrase": "suicide karna",
+      "lang": "hi"
+    },
+    {
+      "phrase": "aatmahatya",
+      "lang": "hi"
+    },
+    {
+      "phrase": "आत्महत्या",
+      "lang": "hi"
+    },
+    {
+      "phrase": "suicide chesukovali",
+      "lang": "te"
+    },
+    {
+      "phrase": "aatmahatya",
+      "lang": "te"
+    },
+    {
+      "phrase": "ఆత్మహత్య",
+      "lang": "te"
+    },
+    {
+      "phrase": "chachipovalani undi",
+      "lang": "te"
     }
   ],
   "self_harm_reply": {

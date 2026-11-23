@@ -235,3 +235,18 @@ async def test_self_harm_vs_emergency_on_real_phrases(real_ctx: ToolContext, rea
         real_ctx, "map_speciality", {"text": "मुझे आत्महत्या करने का ख़याल आ रहा है", "lang": "hi"}
     )
     assert hi.get("self_harm") is True and "टेली-मानस" in hi["reply"]
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Mujhe table book karna chahta hoon",  # "karna" (do) is one letter from "marna" (die)
+        "booking karna chahti hoon kal ke liye",
+        "jana nahi chahta, doosra restaurant batao",  # "jana" (go) vs "jeena" (live)
+        "I want to kill time before dinner",
+    ],
+)
+def test_everyday_words_are_not_self_harm(real_catalog: Catalog, text: str) -> None:
+    from backend.tools.hospitals import find_self_harm
+
+    assert find_self_harm(text, real_catalog) is None

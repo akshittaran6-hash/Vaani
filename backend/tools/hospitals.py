@@ -58,11 +58,11 @@ def _window_score(text: str, phrase: str) -> float:
     return max(fuzz.ratio(" ".join(words[i : i + n]), phrase) for i in range(len(words) - n + 1))
 
 
-def _find_phrase(text: str, phrases: list[EmergencyPhrase]) -> str | None:
+def _find_phrase(text: str, phrases: list[EmergencyPhrase], fuzzy: bool = True) -> str | None:
     t = norm(text)
     for e in phrases:
         p = norm(e.phrase)
-        if _contains(t, p) or (len(p) >= 6 and _window_score(t, p) >= EMERGENCY_FUZZY_CUTOFF):
+        if _contains(t, p) or (fuzzy and len(p) >= 6 and _window_score(t, p) >= EMERGENCY_FUZZY_CUTOFF):
             return e.phrase
     return None
 
@@ -76,9 +76,13 @@ def find_emergency(text: str, catalog: Catalog) -> str | None:
 
 
 def find_self_harm(text: str, catalog: Catalog) -> str | None:
-    """A self-harm / suicidal-thoughts phrase in `text` (same matching as emergencies), else None."""
+    """A self-harm / suicidal-thoughts phrase in `text` (whole phrase, exact), else None.
+
+    No fuzzy matching here: one letter turns "karna chahta hoon" (I want to do) into
+    "marna chahta hoon" (I want to die), and "jana nahi chahta" into "jeena nahi chahta",
+    so a fuzzy match would give ordinary booking callers the helpline reply."""
     m = catalog.speciality_mapping
-    return _find_phrase(text, m.self_harm_phrases) if m.self_harm_reply else None
+    return _find_phrase(text, m.self_harm_phrases, fuzzy=False) if m.self_harm_reply else None
 
 
 def self_harm_reply(catalog: Catalog, lang: str) -> str:
