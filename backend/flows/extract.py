@@ -27,6 +27,21 @@ TE_PEOPLE = {
     "tommidimandi": 9,
     "padimandi": 10,
 }
+# Telugu counting stems + endings: naluguru (4 people), naluguriki (for 4), naluguram (we 4),
+# iddariki (for 2), mugguram (we 3), aaruguriki (for 6).
+TE_PEOPLE_STEMS = {
+    "okka": 1,
+    "idda": 2,
+    "muggu": 3,
+    "nalugu": 4,
+    "naalugu": 4,
+    "aidugu": 5,
+    "ayidugu": 5,
+    "aarugu": 6,
+    "edugu": 7,
+}
+_STEMS = "|".join(sorted(TE_PEOPLE_STEMS, key=len, reverse=True))
+_TE_PEOPLE_RE = re.compile(rf"\b({_STEMS})(?:ru|riki|ram|rini|rum|ruki)\b")
 PEOPLE_NOUNS = r"(?:people|persons|person|log|logon|logo|logg|mandi|members|guests|pax|adults)"
 _CORRECTION = re.compile(r"\b(ledu|kaadu|vaddu|nahi|nahin|no|actually|instead|balki)\b")
 
@@ -64,6 +79,28 @@ NOT_NAMES = {
     "my",
     "is",
     "and",
+    "meeda",
+    "mida",
+    "pettandi",
+    "pettu",
+    "rakh",
+    "rakhiye",
+    "dijiye",
+    "do",
+    "se",
+    "pe",
+    "par",
+    "ke",
+    "ka",
+    "ki",
+    "hai",
+    "patient",
+    "lo",
+    "undi",
+    "cheyandi",
+    "cheyyandi",
+    "put",
+    "under",
 }
 
 
@@ -78,6 +115,8 @@ def parse_party(text: str) -> int | None:
         for w in reversed(words):
             if w in TE_PEOPLE:
                 return TE_PEOPLE[w]
+        if hits := _TE_PEOPLE_RE.findall(seg):
+            return TE_PEOPLE_STEMS[hits[-1]]
         joined = seg.replace(" mandi", "mandi")
         for w, count in TE_PEOPLE.items():
             if w.endswith("mandi") and w in joined:
@@ -94,6 +133,14 @@ def parse_party(text: str) -> int | None:
             us = _num(m[1])
             if us:
                 return us
+        # "Change that to four, please" — a number *word* not followed by a time ("make it eight pm").
+        if m := re.search(
+            r"\b(?:change|make) (?:that|it) (?:to|for) ([a-z]+)\b(?!\s*(?:pm|am|baje|o'?clock|thirty|fifteen|:))",
+            seg,
+        ):
+            n = NUM.get(m[1])
+            if n and 1 <= n <= 30:
+                return n
     return None
 
 
@@ -105,7 +152,12 @@ _NAME_LEADS = (
     "my name is|name is|name's|naam hai|mera naam|naa peru|na peru|mee peru|peru|naam|name|"
     "i am|i'm|this is|it's for|its for|booking for"
 )
-_NAME_PATTERNS = [rf"\b(?:{_NAME_LEADS})\s+([a-z][a-z]+(?:\s+[a-z][a-z]+)?)"]
+_NAME_PATTERNS = [
+    # Name before the marker: "Anuvi Selavolu peru meeda pettandi", "Reyan Dharavolu ke naam se".
+    r"\b([a-z][a-z]+(?:\s+[a-z][a-z]+)?)\s+(?:peru meeda|peru mida|peru tho|ke naam se|ke naam pe|ke naam par)\b",
+    r"\b(?:put it under|under the name|under)\s+([a-z][a-z]+(?:\s+[a-z][a-z]+)?)",
+    rf"\b(?:{_NAME_LEADS})\s+([a-z][a-z]+(?:\s+[a-z][a-z]+)?)",
+]
 
 
 def parse_name(text: str, asked_for_name: bool = False) -> str | None:
@@ -121,6 +173,17 @@ def parse_name(text: str, asked_for_name: bool = False) -> str | None:
         if 1 <= len(words) <= 3 and not set(words) & NOT_NAMES:
             return " ".join(w.capitalize() for w in words)
     return None
+
+
+def is_entity_name(name: str, catalog: Catalog) -> bool:
+    """True if `name` is (part of) a doctor's or business's name: "Navisha Vaanavolu" is the
+    doctor the caller asked for, not the patient (eval T29)."""
+    key = norm(name)
+    if len(key.split()) < 2:
+        return False  # a lone first name ("Ravi") is a normal caller name even if a doctor shares it
+    names: list[str] = [d.name.replace("Dr. ", "") for d in catalog.doctors]
+    names += [r.name for r in catalog.restaurants] + [h.name for h in catalog.hospitals]
+    return any(f" {key} " in f" {norm(n)} " for n in names)
 
 
 def find_business(text: str, catalog: Catalog) -> Restaurant | Hospital | None:

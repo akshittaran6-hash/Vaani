@@ -4,7 +4,7 @@
 
 **Homingo Hack Days, Edition 01 · Track: LLM apps · Problem C2 "Voice is the interface" · Team PARK**
 
-> 🚧 Work in progress — Phase 3 done (text-mode agent in te/hi/en + eval: 40/40 scripted calls on placeholder data). Voice, websites, phone calls and the live URL land in later phases.
+> 🚧 Work in progress — Phase 3 done and re-checked on the real demo data (text-mode agent in te/hi/en; eval: 32/40 on first contact with the new data, 40/40 on six runs after the fixes — see [EVAL.md](EVAL.md)). Voice, websites, phone calls and the live URL land in later phases.
 
 ## The problem
 
@@ -65,7 +65,7 @@ uv run python scripts/db_apply.py         # schema.sql → rls.sql → seed.sql 
 
 `supabase db reset` does the same thing (config.toml lists the three files as seed paths). To reseed with fresh dates (slots always cover today + 6 days, IST): `uv run python scripts/seed.py`. After editing `data/`, regenerate the committed seed with `uv run python scripts/make_seed_sql.py`.
 
-Demo data is **placeholder** until the team runs [docs/DATA_PROMPT.md](docs/DATA_PROMPT.md); drop the new files into `data/` and the same commands load them.
+Demo data in `data/` is the team's fictional set (10 restaurants, 10 hospitals, 51 doctors, 40 test calls), generated with [docs/DATA_PROMPT.md](docs/DATA_PROMPT.md). To load a regenerated set: `uv run python scripts/import_data.py <folder>` (fixes shape, then validates), then `uv run python scripts/make_seed_sql.py`. Unit tests use a frozen copy of the earlier placeholder set (`backend/tests/fixtures/placeholder_data/`); `backend/tests/test_real_data.py` checks the real set and the demo scenarios.
 
 ### Backend API
 
@@ -84,7 +84,7 @@ Needs `LLM_BASE_URL`, `LLM_MODEL`, `LLM_API_KEY` in `.env` (any OpenAI-compatibl
 ```bash
 uv run python -m backend.flows.cli                 # chat in Telugu / Hindi / English
 uv run python -m backend.eval.eval                 # replay the 40 test calls, table by language
-uv run python -m backend.eval.eval --only T01 -v   # one call, with transcript
+uv run python -m backend.eval.eval --only T01 -v   # one call, with transcript (clock frozen at 09:00 IST; --real-clock to turn off)
 ```
 
 Voice server and website setup steps are added as later phases land (Phase 7: one-command `docker compose up`).
@@ -120,7 +120,7 @@ More: [docs/LIMITS.md](docs/LIMITS.md).
 - [x] Known limits section
 - [x] LICENSE + ATTRIBUTIONS.md (final pass in Phase 8)
 - [x] AI_USAGE.md (final pass in Phase 8)
-- [ ] Content depth: 20 businesses, 40+ test calls, phrases in 3 languages (placeholder set in place; final data pending)
+- [x] Content depth: 20 businesses, 51 doctors, 40 test calls, phrases in 3 languages (real fictional set in `data/`)
 - [ ] One-command setup: `docker compose up`
 - [ ] Pitch deck
 

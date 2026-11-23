@@ -1,60 +1,58 @@
 [
   {
     "restaurant_id": "r_jh_01",
-    "slug": "spice-garden-jubilee-hills",
-    "name": "Spice Garden",
-    "name_spoken_te": "స్పైస్ గార్డెన్",
-    "name_spoken_hi": "स्पाइस गार्डन",
+    "name": "Dumgalli Courtyard",
+    "name_spoken_te": "దమ్‌గల్లీ కోర్ట్‌యార్డ్",
+    "name_spoken_hi": "दमगल्ली कोर्टयार्ड",
     "name_aliases": [
-      "spice garden",
-      "spice",
-      "spice gardens",
-      "spys garden"
+      "Dumgalli",
+      "Dum Galli",
+      "Dumgali Courtyard"
     ],
     "area_id": "jubilee_hills",
-    "address": "Neelagiri Lane, Jubilee Hills",
+    "address": "Copper Kite Walk, Jubilee Hills",
     "cuisines": [
-      "North Indian",
+      "Hyderabadi biryani",
       "Mughlai"
     ],
     "food_type": "both",
-    "rating": 4.5,
-    "price_for_two_inr": 1400,
-    "highlight": "Tandoor and slow-cooked curries in a quiet garden setting.",
+    "rating": 4.7,
+    "price_for_two_inr": 1800,
+    "highlight": "Courtyard seating with a menu centred on dum biryani.",
     "popular_dishes": [
-      "Dal Makhani",
-      "Paneer Tikka",
-      "Butter Chicken",
-      "Garlic Naan"
+      "Chicken dum biryani",
+      "Mirchi ka salan",
+      "Paneer tikka",
+      "Double ka meetha"
     ],
     "opening_hours": {
       "mon": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "tue": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "wed": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "thu": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "fri": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:30"
       ],
       "sat": [
         "12:00-15:30",
-        "19:00-23:30"
+        "18:30-23:30"
       ],
       "sun": [
         "12:00-15:30",
-        "19:00-23:30"
+        "18:30-23:00"
       ]
     },
     "features": {
@@ -65,10 +63,10 @@
       "live_music": false
     },
     "booking_rules": {
-      "max_party_size": 12,
+      "max_party_size": 8,
       "deposit_required_for_party_size_at_least": 8,
-      "deposit_inr": 500,
-      "cancellation": "Free cancellation up to 2 hours before; deposits are refunded on time."
+      "deposit_inr": 650,
+      "cancellation": "Call at least two hours before the reservation to cancel."
     },
     "tables": [
       {
@@ -81,7 +79,7 @@
       },
       {
         "table_id": "T3",
-        "capacity": 2
+        "capacity": 4
       },
       {
         "table_id": "T4",
@@ -93,7 +91,7 @@
       },
       {
         "table_id": "T6",
-        "capacity": 4
+        "capacity": 6
       },
       {
         "table_id": "T7",
@@ -101,7 +99,7 @@
       },
       {
         "table_id": "T8",
-        "capacity": 6
+        "capacity": 8
       },
       {
         "table_id": "T9",
@@ -109,115 +107,110 @@
       },
       {
         "table_id": "T10",
-        "capacity": 12
+        "capacity": 4
       }
     ],
     "slot_length_minutes": 90,
-    "accent_color": "#C2410C",
     "faqs": [
       {
-        "q": "Do you have parking?",
-        "a_en": "Yes, we have free parking for cars and bikes.",
-        "a_te": "Avunu andi, car and bike parking free ga undi.",
-        "a_hi": "Haan ji, car aur bike ki free parking hai."
+        "q": "Is parking available?",
+        "a_en": "Yes, there is parking for guests.",
+        "a_te": "అవును, పార్కింగ్ ఉంది.",
+        "a_hi": "हाँ, मेहमानों के लिए पार्किंग है।"
       },
       {
-        "q": "What are your timings?",
-        "a_en": "We're open every day, 12:00-15:30 and 19:00-23:00.",
-        "a_te": "Prathi roju open untundi andi, 12:00-15:30 and 19:00-23:00.",
-        "a_hi": "Hum roz khule hain ji, 12:00-15:30 and 19:00-23:00."
+        "q": "What kind of menu do you have?",
+        "a_en": "We serve vegetarian and non-vegetarian dishes.",
+        "a_te": "వెజ్, నాన్‌వెజ్ రెండూ ఉన్నాయి.",
+        "a_hi": "वेज और नॉनवेज, दोनों मिलते हैं।"
       },
       {
-        "q": "Do you have veg options?",
-        "a_en": "Yes, we have plenty of veg and non-veg dishes.",
-        "a_te": "Avunu andi, veg and non-veg rendu baaga unnai.",
-        "a_hi": "Haan ji, veg aur non-veg dono kaafi options hain."
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the dining area has wheelchair access.",
+        "a_te": "అవును, వీల్‌చైర్‌తో డైనింగ్ ఏరియాకు వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से डाइनिंग एरिया तक जा सकते हैं।"
       },
       {
-        "q": "Is it kid friendly?",
-        "a_en": "Yes, it's kid friendly and we have high chairs.",
-        "a_te": "Avunu andi, pillalaki baane untundi, high chairs kuda unnai.",
-        "a_hi": "Haan ji, bachchon ke liye bilkul theek hai, high chairs bhi hain."
-      },
-      {
-        "q": "Do I need to pay a deposit?",
-        "a_en": "For groups of 8 or more we take a ₹500 deposit; smaller groups pay nothing in advance. We seat up to 12 people.",
-        "a_te": "8 mandi leda ekkuva aithe ₹500 deposit kavali andi; takkuva aithe advance emi ledu. Maximum 12 mandi varaku table istam.",
-        "a_hi": "8 ya zyada logon ke liye ₹500 deposit lagta hai ji; usse kam ho toh advance nahi. Ek table pe 12 log tak."
+        "q": "Is there a deposit for a large group?",
+        "a_en": "A sample deposit of ₹650 applies to groups of 8 or more.",
+        "a_te": "8 మంది లేదా అంతకంటే ఎక్కువైతే డెమో డిపాజిట్ ₹650.",
+        "a_hi": "8 या उससे ज़्यादा लोगों के लिए ₹650 का डेमो डिपॉज़िट है।"
       }
     ],
     "phone": "DEMO-R-001",
-    "is_sample_data": true
+    "is_sample_data": true,
+    "slug": "dumgalli-courtyard-jubilee-hills",
+    "accent_color": "#7E22CE"
   },
   {
     "restaurant_id": "r_jh_02",
-    "slug": "coastal-kitchen-jubilee-hills",
-    "name": "Coastal Kitchen",
-    "name_spoken_te": "కోస్టల్ కిచెన్",
-    "name_spoken_hi": "कोस्टल किचन",
+    "name": "Aavakaaya Arugu",
+    "name_spoken_te": "ఆవకాయ అరుగు",
+    "name_spoken_hi": "आवकाया अरुगु",
     "name_aliases": [
-      "coastal kitchen",
-      "coastal",
-      "costal kitchen"
+      "Aavakaaya",
+      "Avakaya Arugu",
+      "Avakai Arugu"
     ],
     "area_id": "jubilee_hills",
-    "address": "Kaveri Circle, Jubilee Hills",
+    "address": "Indigo Brass Turn, Jubilee Hills",
     "cuisines": [
-      "Seafood",
-      "Andhra"
+      "Andhra",
+      "South Indian",
+      "Pure veg"
     ],
-    "food_type": "non-veg",
-    "rating": 4.3,
-    "price_for_two_inr": 1600,
-    "highlight": "Fresh catch cooked in Andhra and Konkan styles.",
+    "food_type": "veg",
+    "rating": 4.4,
+    "price_for_two_inr": 760,
+    "highlight": "Vegetarian Andhra meals with seasonal pachadi.",
     "popular_dishes": [
-      "Apollo Fish",
-      "Prawn Ghee Roast",
-      "Crab Masala",
-      "Neer Dosa"
+      "Andhra vegetarian thali",
+      "Gongura pappu",
+      "Gutthi vankaya",
+      "Bellam payasam"
     ],
     "opening_hours": {
       "mon": [
-        "12:00-15:30",
-        "19:00-23:00"
+        "11:45-15:30",
+        "18:30-23:00"
       ],
       "tue": [
-        "12:00-15:30",
-        "19:00-23:00"
+        "11:45-15:30",
+        "18:30-23:00"
       ],
       "wed": [
-        "12:00-15:30",
-        "19:00-23:00"
+        "11:45-15:30",
+        "18:30-23:00"
       ],
       "thu": [
-        "12:00-15:30",
-        "19:00-23:00"
+        "11:45-15:30",
+        "18:30-23:00"
       ],
       "fri": [
-        "12:00-15:30",
-        "19:00-23:00"
+        "11:45-15:30",
+        "18:30-23:30"
       ],
       "sat": [
-        "12:00-15:30",
-        "19:00-23:30"
+        "11:45-15:30",
+        "18:30-23:30"
       ],
       "sun": [
-        "12:00-15:30",
-        "19:00-23:30"
+        "11:45-15:30",
+        "18:30-23:00"
       ]
     },
     "features": {
       "parking": true,
       "outdoor_seating": false,
       "kids_friendly": true,
-      "wheelchair_access": false,
+      "wheelchair_access": true,
       "live_music": false
     },
     "booking_rules": {
-      "max_party_size": 10,
+      "max_party_size": 8,
       "deposit_required_for_party_size_at_least": 6,
       "deposit_inr": 300,
-      "cancellation": "Free cancellation up to 2 hours before; deposits are refunded on time."
+      "cancellation": "Call at least two hours before the reservation to cancel."
     },
     "tables": [
       {
@@ -242,7 +235,7 @@
       },
       {
         "table_id": "T6",
-        "capacity": 6
+        "capacity": 4
       },
       {
         "table_id": "T7",
@@ -250,255 +243,95 @@
       },
       {
         "table_id": "T8",
-        "capacity": 10
+        "capacity": 8
       }
     ],
     "slot_length_minutes": 90,
-    "accent_color": "#0E7490",
     "faqs": [
       {
-        "q": "Do you have parking?",
-        "a_en": "Yes, we have free parking for cars and bikes.",
-        "a_te": "Avunu andi, car and bike parking free ga undi.",
-        "a_hi": "Haan ji, car aur bike ki free parking hai."
+        "q": "Is parking available?",
+        "a_en": "Yes, there is parking for guests.",
+        "a_te": "అవును, పార్కింగ్ ఉంది.",
+        "a_hi": "हाँ, मेहमानों के लिए पार्किंग है।"
       },
       {
-        "q": "What are your timings?",
-        "a_en": "We're open every day, 12:00-15:30 and 19:00-23:00.",
-        "a_te": "Prathi roju open untundi andi, 12:00-15:30 and 19:00-23:00.",
-        "a_hi": "Hum roz khule hain ji, 12:00-15:30 and 19:00-23:00."
+        "q": "What kind of menu do you have?",
+        "a_en": "Yes, this is a pure vegetarian restaurant.",
+        "a_te": "అవును, ఇక్కడ వెజ్ వంటలే ఉంటాయి.",
+        "a_hi": "हाँ, यहाँ सिर्फ़ शाकाहारी खाना मिलता है।"
       },
       {
-        "q": "Do you have veg options?",
-        "a_en": "We're mainly non-veg, with a few veg dishes too.",
-        "a_te": "Mainly non-veg andi, konni veg items kuda unnai.",
-        "a_hi": "Zyada non-veg hai ji, kuch veg dishes bhi hain."
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the dining area has wheelchair access.",
+        "a_te": "అవును, వీల్‌చైర్‌తో డైనింగ్ ఏరియాకు వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से डाइनिंग एरिया तक जा सकते हैं।"
       },
       {
-        "q": "Is it kid friendly?",
-        "a_en": "Yes, it's kid friendly and we have high chairs.",
-        "a_te": "Avunu andi, pillalaki baane untundi, high chairs kuda unnai.",
-        "a_hi": "Haan ji, bachchon ke liye bilkul theek hai, high chairs bhi hain."
-      },
-      {
-        "q": "Do I need to pay a deposit?",
-        "a_en": "For groups of 6 or more we take a ₹300 deposit; smaller groups pay nothing in advance. We seat up to 10 people.",
-        "a_te": "6 mandi leda ekkuva aithe ₹300 deposit kavali andi; takkuva aithe advance emi ledu. Maximum 10 mandi varaku table istam.",
-        "a_hi": "6 ya zyada logon ke liye ₹300 deposit lagta hai ji; usse kam ho toh advance nahi. Ek table pe 10 log tak."
+        "q": "Is there a deposit for a large group?",
+        "a_en": "A sample deposit of ₹300 applies to groups of 6 or more.",
+        "a_te": "6 మంది లేదా అంతకంటే ఎక్కువైతే డెమో డిపాజిట్ ₹300.",
+        "a_hi": "6 या उससे ज़्यादा लोगों के लिए ₹300 का डेमो डिपॉज़िट है।"
       }
     ],
     "phone": "DEMO-R-002",
-    "is_sample_data": true
+    "is_sample_data": true,
+    "slug": "aavakaaya-arugu-jubilee-hills",
+    "accent_color": "#7E22CE"
   },
   {
     "restaurant_id": "r_jh_03",
-    "slug": "green-leaf-jubilee-hills",
-    "name": "Green Leaf",
-    "name_spoken_te": "గ్రీన్ లీఫ్",
-    "name_spoken_hi": "ग्रीन लीफ",
+    "name": "Tandoor Taaraka",
+    "name_spoken_te": "తందూర్ తారక",
+    "name_spoken_hi": "तंदूर तारका",
     "name_aliases": [
-      "green leaf",
-      "greenleaf",
-      "green leaves"
+      "Taaraka",
+      "Tandur Taraka",
+      "Tandoor Taraka"
     ],
     "area_id": "jubilee_hills",
-    "address": "Tulasi Vanam Road, Jubilee Hills",
+    "address": "Amber Reed Arcade, Jubilee Hills",
     "cuisines": [
-      "South Indian",
-      "North Indian"
+      "North Indian",
+      "Punjabi"
     ],
-    "food_type": "veg",
-    "rating": 4.2,
-    "price_for_two_inr": 900,
-    "highlight": "Pure-veg thalis with a different menu every day.",
+    "food_type": "both",
+    "rating": 4.5,
+    "price_for_two_inr": 1520,
+    "highlight": "Tandoor dishes and shared platters for family groups.",
     "popular_dishes": [
-      "Mini Tiffins",
-      "Veg Thali",
-      "Bisi Bele Bath",
-      "Rasmalai"
+      "Tandoori chicken",
+      "Paneer lababdar",
+      "Dal makhani",
+      "Garlic naan"
     ],
     "opening_hours": {
       "mon": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "tue": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "wed": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "thu": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "fri": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:30"
       ],
       "sat": [
         "12:00-15:30",
-        "19:00-23:30"
+        "18:30-23:30"
       ],
       "sun": [
         "12:00-15:30",
-        "19:00-23:30"
-      ]
-    },
-    "features": {
-      "parking": false,
-      "outdoor_seating": false,
-      "kids_friendly": true,
-      "wheelchair_access": true,
-      "live_music": false
-    },
-    "booking_rules": {
-      "max_party_size": 12,
-      "deposit_required_for_party_size_at_least": 10,
-      "deposit_inr": 500,
-      "cancellation": "Free cancellation up to 2 hours before; deposits are refunded on time."
-    },
-    "tables": [
-      {
-        "table_id": "T1",
-        "capacity": 2
-      },
-      {
-        "table_id": "T2",
-        "capacity": 4
-      },
-      {
-        "table_id": "T3",
-        "capacity": 4
-      },
-      {
-        "table_id": "T4",
-        "capacity": 4
-      },
-      {
-        "table_id": "T5",
-        "capacity": 6
-      },
-      {
-        "table_id": "T6",
-        "capacity": 6
-      },
-      {
-        "table_id": "T7",
-        "capacity": 8
-      },
-      {
-        "table_id": "T8",
-        "capacity": 8
-      },
-      {
-        "table_id": "T9",
-        "capacity": 10
-      },
-      {
-        "table_id": "T10",
-        "capacity": 12
-      },
-      {
-        "table_id": "T11",
-        "capacity": 4
-      }
-    ],
-    "slot_length_minutes": 90,
-    "accent_color": "#15803D",
-    "faqs": [
-      {
-        "q": "Do you have parking?",
-        "a_en": "Sorry, we don't have our own parking; street parking is close by.",
-        "a_te": "Sorry andi, maaku separate parking ledu, pakkane street parking dorukutundi.",
-        "a_hi": "Sorry ji, apni parking nahi hai, paas mein street parking mil jaati hai."
-      },
-      {
-        "q": "What are your timings?",
-        "a_en": "We're open every day, 12:00-15:30 and 19:00-23:00.",
-        "a_te": "Prathi roju open untundi andi, 12:00-15:30 and 19:00-23:00.",
-        "a_hi": "Hum roz khule hain ji, 12:00-15:30 and 19:00-23:00."
-      },
-      {
-        "q": "Do you have veg options?",
-        "a_en": "We're a pure vegetarian restaurant.",
-        "a_te": "Maadi pure veg restaurant andi.",
-        "a_hi": "Hum pure veg restaurant hain ji."
-      },
-      {
-        "q": "Is it kid friendly?",
-        "a_en": "Yes, it's kid friendly and we have high chairs.",
-        "a_te": "Avunu andi, pillalaki baane untundi, high chairs kuda unnai.",
-        "a_hi": "Haan ji, bachchon ke liye bilkul theek hai, high chairs bhi hain."
-      },
-      {
-        "q": "Do I need to pay a deposit?",
-        "a_en": "For groups of 10 or more we take a ₹500 deposit; smaller groups pay nothing in advance. We seat up to 12 people.",
-        "a_te": "10 mandi leda ekkuva aithe ₹500 deposit kavali andi; takkuva aithe advance emi ledu. Maximum 12 mandi varaku table istam.",
-        "a_hi": "10 ya zyada logon ke liye ₹500 deposit lagta hai ji; usse kam ho toh advance nahi. Ek table pe 12 log tak."
-      }
-    ],
-    "phone": "DEMO-R-003",
-    "is_sample_data": true
-  },
-  {
-    "restaurant_id": "r_jh_04",
-    "slug": "deccan-degchi-jubilee-hills",
-    "name": "Deccan Degchi",
-    "name_spoken_te": "డెక్కన్ దేగ్చీ",
-    "name_spoken_hi": "डेक्कन देगची",
-    "name_aliases": [
-      "deccan degchi",
-      "degchi",
-      "deccan",
-      "dekkan degchi"
-    ],
-    "area_id": "jubilee_hills",
-    "address": "Old Banyan Junction, Jubilee Hills",
-    "cuisines": [
-      "Hyderabadi",
-      "Biryani"
-    ],
-    "food_type": "non-veg",
-    "rating": 4.1,
-    "price_for_two_inr": 1100,
-    "highlight": "Dum biryani cooked in copper pots, lunch and dinner.",
-    "popular_dishes": [
-      "Mutton Dum Biryani",
-      "Chicken 65",
-      "Mirchi ka Salan",
-      "Double ka Meetha"
-    ],
-    "opening_hours": {
-      "mon": [
-        "12:00-15:30",
-        "19:00-23:00"
-      ],
-      "tue": [
-        "12:00-15:30",
-        "19:00-23:00"
-      ],
-      "wed": [
-        "12:00-15:30",
-        "19:00-23:00"
-      ],
-      "thu": [
-        "12:00-15:30",
-        "19:00-23:00"
-      ],
-      "fri": [
-        "12:00-15:30",
-        "19:00-23:00"
-      ],
-      "sat": [
-        "12:00-15:30",
-        "19:00-23:30"
-      ],
-      "sun": [
-        "12:00-15:30",
-        "19:00-23:30"
+        "18:30-23:00"
       ]
     },
     "features": {
@@ -506,159 +339,13 @@
       "outdoor_seating": false,
       "kids_friendly": true,
       "wheelchair_access": true,
-      "live_music": false
-    },
-    "booking_rules": {
-      "max_party_size": 12,
-      "deposit_required_for_party_size_at_least": 8,
-      "deposit_inr": 1000,
-      "cancellation": "Free cancellation up to 2 hours before; deposits are refunded on time."
-    },
-    "tables": [
-      {
-        "table_id": "T1",
-        "capacity": 2
-      },
-      {
-        "table_id": "T2",
-        "capacity": 2
-      },
-      {
-        "table_id": "T3",
-        "capacity": 4
-      },
-      {
-        "table_id": "T4",
-        "capacity": 4
-      },
-      {
-        "table_id": "T5",
-        "capacity": 6
-      },
-      {
-        "table_id": "T6",
-        "capacity": 6
-      },
-      {
-        "table_id": "T7",
-        "capacity": 8
-      },
-      {
-        "table_id": "T8",
-        "capacity": 8
-      },
-      {
-        "table_id": "T9",
-        "capacity": 12
-      }
-    ],
-    "slot_length_minutes": 90,
-    "accent_color": "#7C2D12",
-    "faqs": [
-      {
-        "q": "Do you have parking?",
-        "a_en": "Yes, we have free parking for cars and bikes.",
-        "a_te": "Avunu andi, car and bike parking free ga undi.",
-        "a_hi": "Haan ji, car aur bike ki free parking hai."
-      },
-      {
-        "q": "What are your timings?",
-        "a_en": "We're open every day, 12:00-15:30 and 19:00-23:00.",
-        "a_te": "Prathi roju open untundi andi, 12:00-15:30 and 19:00-23:00.",
-        "a_hi": "Hum roz khule hain ji, 12:00-15:30 and 19:00-23:00."
-      },
-      {
-        "q": "Do you have veg options?",
-        "a_en": "We're mainly non-veg, with a few veg dishes too.",
-        "a_te": "Mainly non-veg andi, konni veg items kuda unnai.",
-        "a_hi": "Zyada non-veg hai ji, kuch veg dishes bhi hain."
-      },
-      {
-        "q": "Is it kid friendly?",
-        "a_en": "Yes, it's kid friendly and we have high chairs.",
-        "a_te": "Avunu andi, pillalaki baane untundi, high chairs kuda unnai.",
-        "a_hi": "Haan ji, bachchon ke liye bilkul theek hai, high chairs bhi hain."
-      },
-      {
-        "q": "Do I need to pay a deposit?",
-        "a_en": "For groups of 8 or more we take a ₹1000 deposit; smaller groups pay nothing in advance. We seat up to 12 people.",
-        "a_te": "8 mandi leda ekkuva aithe ₹1000 deposit kavali andi; takkuva aithe advance emi ledu. Maximum 12 mandi varaku table istam.",
-        "a_hi": "8 ya zyada logon ke liye ₹1000 deposit lagta hai ji; usse kam ho toh advance nahi. Ek table pe 12 log tak."
-      }
-    ],
-    "phone": "DEMO-R-004",
-    "is_sample_data": true
-  },
-  {
-    "restaurant_id": "r_jh_05",
-    "slug": "jade-lantern-jubilee-hills",
-    "name": "Jade Lantern",
-    "name_spoken_te": "జేడ్ లాంటర్న్",
-    "name_spoken_hi": "जेड लैंटर्न",
-    "name_aliases": [
-      "jade lantern",
-      "jade",
-      "lantern",
-      "jade lanton"
-    ],
-    "area_id": "jubilee_hills",
-    "address": "Hilltop Arcade, Jubilee Hills",
-    "cuisines": [
-      "Indo-Chinese",
-      "Pan-Asian"
-    ],
-    "food_type": "both",
-    "rating": 3.9,
-    "price_for_two_inr": 1000,
-    "highlight": "Indo-Chinese favourites with a small rooftop.",
-    "popular_dishes": [
-      "Veg Manchurian",
-      "Chilli Chicken",
-      "Hakka Noodles",
-      "Dragon Prawns"
-    ],
-    "opening_hours": {
-      "mon": [
-        "12:30-15:30",
-        "19:00-23:00"
-      ],
-      "tue": [
-        "12:30-15:30",
-        "19:00-23:00"
-      ],
-      "wed": [
-        "12:30-15:30",
-        "19:00-23:00"
-      ],
-      "thu": [
-        "12:30-15:30",
-        "19:00-23:00"
-      ],
-      "fri": [
-        "12:30-15:30",
-        "19:00-23:00"
-      ],
-      "sat": [
-        "12:30-15:30",
-        "19:00-23:00"
-      ],
-      "sun": [
-        "12:30-15:30",
-        "19:00-23:00"
-      ]
-    },
-    "features": {
-      "parking": false,
-      "outdoor_seating": true,
-      "kids_friendly": false,
-      "wheelchair_access": false,
       "live_music": true
     },
     "booking_rules": {
       "max_party_size": 8,
       "deposit_required_for_party_size_at_least": 8,
-      "deposit_inr": 500,
-      "cancellation": "Free cancellation up to 2 hours before; deposits are refunded on time."
+      "deposit_inr": 550,
+      "cancellation": "Call at least two hours before the reservation to cancel."
     },
     "tables": [
       {
@@ -671,7 +358,7 @@
       },
       {
         "table_id": "T3",
-        "capacity": 2
+        "capacity": 4
       },
       {
         "table_id": "T4",
@@ -683,7 +370,7 @@
       },
       {
         "table_id": "T6",
-        "capacity": 4
+        "capacity": 6
       },
       {
         "table_id": "T7",
@@ -692,236 +379,106 @@
       {
         "table_id": "T8",
         "capacity": 8
+      },
+      {
+        "table_id": "T9",
+        "capacity": 8
+      },
+      {
+        "table_id": "T10",
+        "capacity": 8
+      },
+      {
+        "table_id": "T11",
+        "capacity": 4
       }
     ],
     "slot_length_minutes": 90,
-    "accent_color": "#B91C1C",
     "faqs": [
       {
-        "q": "Do you have parking?",
-        "a_en": "Sorry, we don't have our own parking; street parking is close by.",
-        "a_te": "Sorry andi, maaku separate parking ledu, pakkane street parking dorukutundi.",
-        "a_hi": "Sorry ji, apni parking nahi hai, paas mein street parking mil jaati hai."
+        "q": "Is parking available?",
+        "a_en": "Yes, there is parking for guests.",
+        "a_te": "అవును, పార్కింగ్ ఉంది.",
+        "a_hi": "हाँ, मेहमानों के लिए पार्किंग है।"
       },
       {
-        "q": "What are your timings?",
-        "a_en": "We're open every day, 12:30-15:30 and 19:00-23:00.",
-        "a_te": "Prathi roju open untundi andi, 12:30-15:30 and 19:00-23:00.",
-        "a_hi": "Hum roz khule hain ji, 12:30-15:30 and 19:00-23:00."
+        "q": "What kind of menu do you have?",
+        "a_en": "We serve vegetarian and non-vegetarian dishes.",
+        "a_te": "వెజ్, నాన్‌వెజ్ రెండూ ఉన్నాయి.",
+        "a_hi": "वेज और नॉनवेज, दोनों मिलते हैं।"
       },
       {
-        "q": "Do you have veg options?",
-        "a_en": "Yes, we have plenty of veg and non-veg dishes.",
-        "a_te": "Avunu andi, veg and non-veg rendu baaga unnai.",
-        "a_hi": "Haan ji, veg aur non-veg dono kaafi options hain."
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the dining area has wheelchair access.",
+        "a_te": "అవును, వీల్‌చైర్‌తో డైనింగ్ ఏరియాకు వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से डाइनिंग एरिया तक जा सकते हैं।"
       },
       {
-        "q": "Is it kid friendly?",
-        "a_en": "It's more of an adults' place in the evenings, but kids are welcome at lunch.",
-        "a_te": "Evening ekkuva adults vastaru andi, lunch ki pillalu ravachu.",
-        "a_hi": "Shaam ko zyada adults aate hain ji, lunch mein bachche aa sakte hain."
-      },
-      {
-        "q": "Do I need to pay a deposit?",
-        "a_en": "For groups of 8 or more we take a ₹500 deposit; smaller groups pay nothing in advance. We seat up to 8 people.",
-        "a_te": "8 mandi leda ekkuva aithe ₹500 deposit kavali andi; takkuva aithe advance emi ledu. Maximum 8 mandi varaku table istam.",
-        "a_hi": "8 ya zyada logon ke liye ₹500 deposit lagta hai ji; usse kam ho toh advance nahi. Ek table pe 8 log tak."
+        "q": "Is there a deposit for a large group?",
+        "a_en": "A sample deposit of ₹550 applies to groups of 8 or more.",
+        "a_te": "8 మంది లేదా అంతకంటే ఎక్కువైతే డెమో డిపాజిట్ ₹550.",
+        "a_hi": "8 या उससे ज़्यादा लोगों के लिए ₹550 का डेमो डिपॉज़िट है।"
       }
     ],
-    "phone": "DEMO-R-005",
-    "is_sample_data": true
+    "phone": "DEMO-R-003",
+    "is_sample_data": true,
+    "slug": "tandoor-taaraka-jubilee-hills",
+    "accent_color": "#B45309"
   },
   {
-    "restaurant_id": "r_gb_01",
-    "slug": "cafe-monsoon-gachibowli",
-    "name": "Cafe Monsoon",
-    "name_spoken_te": "కేఫ్ మాన్సూన్",
-    "name_spoken_hi": "कैफ़े मानसून",
+    "restaurant_id": "r_jh_04",
+    "name": "Wok Vedika",
+    "name_spoken_te": "వాక్ వేదిక",
+    "name_spoken_hi": "वॉक वेदिका",
     "name_aliases": [
-      "cafe monsoon",
-      "monsoon",
-      "monsoon cafe",
-      "cafe mansoon"
+      "Wok",
+      "Wok Vedica",
+      "Wok Vaidika"
     ],
-    "area_id": "gachibowli",
-    "address": "Lakeview Tech Park Lane, Gachibowli",
+    "area_id": "jubilee_hills",
+    "address": "Jade Finch Bend, Jubilee Hills",
     "cuisines": [
-      "Cafe",
-      "Continental"
+      "Indo-Chinese",
+      "Chinese"
     ],
     "food_type": "both",
-    "rating": 4.1,
-    "price_for_two_inr": 800,
-    "highlight": "All-day cafe with board games and big windows.",
+    "rating": 4.2,
+    "price_for_two_inr": 1080,
+    "highlight": "Wok noodles, rice bowls, and small sharing plates.",
     "popular_dishes": [
-      "Masala Omelette",
-      "Pesto Pasta",
-      "Filter Coffee",
-      "Brownie Sundae"
+      "Chilli chicken",
+      "Veg Hakka noodles",
+      "Gobi Manchurian",
+      "Schezwan fried rice"
     ],
     "opening_hours": {
       "mon": [
-        "08:00-23:00"
+        "12:00-15:30",
+        "18:30-23:00"
       ],
       "tue": [
-        "08:00-23:00"
+        "12:00-15:30",
+        "18:30-23:00"
       ],
       "wed": [
-        "08:00-23:00"
+        "12:00-15:30",
+        "18:30-23:00"
       ],
       "thu": [
-        "08:00-23:00"
+        "12:00-15:30",
+        "18:30-23:00"
       ],
       "fri": [
-        "08:00-23:00"
+        "12:00-15:30",
+        "18:30-23:30"
       ],
       "sat": [
-        "08:00-23:00"
+        "12:00-15:30",
+        "18:30-23:30"
       ],
       "sun": [
-        "08:00-23:00"
-      ]
-    },
-    "features": {
-      "parking": true,
-      "outdoor_seating": true,
-      "kids_friendly": true,
-      "wheelchair_access": true,
-      "live_music": false
-    },
-    "booking_rules": {
-      "max_party_size": 6,
-      "deposit_required_for_party_size_at_least": 6,
-      "deposit_inr": 200,
-      "cancellation": "Free cancellation up to 2 hours before; deposits are refunded on time."
-    },
-    "tables": [
-      {
-        "table_id": "T1",
-        "capacity": 2
-      },
-      {
-        "table_id": "T2",
-        "capacity": 2
-      },
-      {
-        "table_id": "T3",
-        "capacity": 2
-      },
-      {
-        "table_id": "T4",
-        "capacity": 2
-      },
-      {
-        "table_id": "T5",
-        "capacity": 4
-      },
-      {
-        "table_id": "T6",
-        "capacity": 4
-      },
-      {
-        "table_id": "T7",
-        "capacity": 4
-      },
-      {
-        "table_id": "T8",
-        "capacity": 6
-      }
-    ],
-    "slot_length_minutes": 90,
-    "accent_color": "#4338CA",
-    "faqs": [
-      {
-        "q": "Do you have parking?",
-        "a_en": "Yes, we have free parking for cars and bikes.",
-        "a_te": "Avunu andi, car and bike parking free ga undi.",
-        "a_hi": "Haan ji, car aur bike ki free parking hai."
-      },
-      {
-        "q": "What are your timings?",
-        "a_en": "We're open every day, 08:00-23:00.",
-        "a_te": "Prathi roju open untundi andi, 08:00-23:00.",
-        "a_hi": "Hum roz khule hain ji, 08:00-23:00."
-      },
-      {
-        "q": "Do you have veg options?",
-        "a_en": "Yes, we have plenty of veg and non-veg dishes.",
-        "a_te": "Avunu andi, veg and non-veg rendu baaga unnai.",
-        "a_hi": "Haan ji, veg aur non-veg dono kaafi options hain."
-      },
-      {
-        "q": "Is it kid friendly?",
-        "a_en": "Yes, it's kid friendly and we have high chairs.",
-        "a_te": "Avunu andi, pillalaki baane untundi, high chairs kuda unnai.",
-        "a_hi": "Haan ji, bachchon ke liye bilkul theek hai, high chairs bhi hain."
-      },
-      {
-        "q": "Do I need to pay a deposit?",
-        "a_en": "For groups of 6 or more we take a ₹200 deposit; smaller groups pay nothing in advance. We seat up to 6 people.",
-        "a_te": "6 mandi leda ekkuva aithe ₹200 deposit kavali andi; takkuva aithe advance emi ledu. Maximum 6 mandi varaku table istam.",
-        "a_hi": "6 ya zyada logon ke liye ₹200 deposit lagta hai ji; usse kam ho toh advance nahi. Ek table pe 6 log tak."
-      }
-    ],
-    "phone": "DEMO-R-006",
-    "is_sample_data": true
-  },
-  {
-    "restaurant_id": "r_gb_02",
-    "slug": "tiffin-tales-gachibowli",
-    "name": "Tiffin Tales",
-    "name_spoken_te": "టిఫిన్ టేల్స్",
-    "name_spoken_hi": "टिफ़िन टेल्स",
-    "name_aliases": [
-      "tiffin tales",
-      "tiffin",
-      "tiffin tale",
-      "tiffins tales"
-    ],
-    "area_id": "gachibowli",
-    "address": "Sarovar Street, Gachibowli",
-    "cuisines": [
-      "South Indian",
-      "Tiffins"
-    ],
-    "food_type": "veg",
-    "rating": 4.4,
-    "price_for_two_inr": 600,
-    "highlight": "Crisp dosas, idlis and filter coffee, pure veg.",
-    "popular_dishes": [
-      "Ghee Karam Dosa",
-      "Pesarattu",
-      "Idli Vada",
-      "Filter Coffee"
-    ],
-    "opening_hours": {
-      "mon": [
-        "07:00-15:30",
-        "18:30-22:30"
-      ],
-      "tue": [
-        "07:00-15:30",
-        "18:30-22:30"
-      ],
-      "wed": [
-        "07:00-15:30",
-        "18:30-22:30"
-      ],
-      "thu": [
-        "07:00-15:30",
-        "18:30-22:30"
-      ],
-      "fri": [
-        "07:00-15:30",
-        "18:30-22:30"
-      ],
-      "sat": [
-        "07:00-15:30",
-        "18:30-22:30"
-      ],
-      "sun": [
-        "07:00-15:30",
-        "18:30-22:30"
+        "12:00-15:30",
+        "18:30-23:00"
       ]
     },
     "features": {
@@ -932,10 +489,10 @@
       "live_music": false
     },
     "booking_rules": {
-      "max_party_size": 10,
+      "max_party_size": 8,
       "deposit_required_for_party_size_at_least": 8,
-      "deposit_inr": 300,
-      "cancellation": "Free cancellation up to 2 hours before; deposits are refunded on time."
+      "deposit_inr": 400,
+      "cancellation": "Call at least two hours before the reservation to cancel."
     },
     "tables": [
       {
@@ -960,7 +517,7 @@
       },
       {
         "table_id": "T6",
-        "capacity": 6
+        "capacity": 4
       },
       {
         "table_id": "T7",
@@ -968,106 +525,235 @@
       },
       {
         "table_id": "T8",
-        "capacity": 8
+        "capacity": 6
       },
       {
         "table_id": "T9",
-        "capacity": 10
+        "capacity": 8
       }
     ],
     "slot_length_minutes": 90,
-    "accent_color": "#A16207",
     "faqs": [
       {
-        "q": "Do you have parking?",
-        "a_en": "Sorry, we don't have our own parking; street parking is close by.",
-        "a_te": "Sorry andi, maaku separate parking ledu, pakkane street parking dorukutundi.",
-        "a_hi": "Sorry ji, apni parking nahi hai, paas mein street parking mil jaati hai."
+        "q": "Is parking available?",
+        "a_en": "The restaurant has no dedicated parking.",
+        "a_te": "రెస్టారెంట్‌కి ప్రత్యేకంగా పార్కింగ్ లేదు.",
+        "a_hi": "रेस्टोरेंट की अपनी पार्किंग नहीं है।"
       },
       {
-        "q": "What are your timings?",
-        "a_en": "We're open every day, 07:00-15:30 and 18:30-22:30.",
-        "a_te": "Prathi roju open untundi andi, 07:00-15:30 and 18:30-22:30.",
-        "a_hi": "Hum roz khule hain ji, 07:00-15:30 and 18:30-22:30."
+        "q": "What kind of menu do you have?",
+        "a_en": "We serve vegetarian and non-vegetarian dishes.",
+        "a_te": "వెజ్, నాన్‌వెజ్ రెండూ ఉన్నాయి.",
+        "a_hi": "वेज और नॉनवेज, दोनों मिलते हैं।"
       },
       {
-        "q": "Do you have veg options?",
-        "a_en": "We're a pure vegetarian restaurant.",
-        "a_te": "Maadi pure veg restaurant andi.",
-        "a_hi": "Hum pure veg restaurant hain ji."
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the dining area has wheelchair access.",
+        "a_te": "అవును, వీల్‌చైర్‌తో డైనింగ్ ఏరియాకు వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से डाइनिंग एरिया तक जा सकते हैं।"
       },
       {
-        "q": "Is it kid friendly?",
-        "a_en": "Yes, it's kid friendly and we have high chairs.",
-        "a_te": "Avunu andi, pillalaki baane untundi, high chairs kuda unnai.",
-        "a_hi": "Haan ji, bachchon ke liye bilkul theek hai, high chairs bhi hain."
-      },
-      {
-        "q": "Do I need to pay a deposit?",
-        "a_en": "For groups of 8 or more we take a ₹300 deposit; smaller groups pay nothing in advance. We seat up to 10 people.",
-        "a_te": "8 mandi leda ekkuva aithe ₹300 deposit kavali andi; takkuva aithe advance emi ledu. Maximum 10 mandi varaku table istam.",
-        "a_hi": "8 ya zyada logon ke liye ₹300 deposit lagta hai ji; usse kam ho toh advance nahi. Ek table pe 10 log tak."
+        "q": "Is there a deposit for a large group?",
+        "a_en": "A sample deposit of ₹400 applies to groups of 8 or more.",
+        "a_te": "8 మంది లేదా అంతకంటే ఎక్కువైతే డెమో డిపాజిట్ ₹400.",
+        "a_hi": "8 या उससे ज़्यादा लोगों के लिए ₹400 का डेमो डिपॉज़िट है।"
       }
     ],
-    "phone": "DEMO-R-007",
-    "is_sample_data": true
+    "phone": "DEMO-R-004",
+    "is_sample_data": true,
+    "slug": "wok-vedika-jubilee-hills",
+    "accent_color": "#7E22CE"
   },
   {
-    "restaurant_id": "r_gb_03",
-    "slug": "royal-zafraan-gachibowli",
-    "name": "Royal Zafraan",
-    "name_spoken_te": "రాయల్ జాఫ్రాన్",
-    "name_spoken_hi": "रॉयल ज़ाफ़रान",
+    "restaurant_id": "r_jh_05",
+    "name": "Neeli Cup Cafe",
+    "name_spoken_te": "నీలి కప్ కేఫే",
+    "name_spoken_hi": "नीली कप कैफ़े",
     "name_aliases": [
-      "royal zafraan",
-      "zafraan",
-      "royal zafran",
-      "zafran"
+      "Neeli Cup",
+      "Nili Cup",
+      "Blue Cup Neeli"
+    ],
+    "area_id": "jubilee_hills",
+    "address": "Paper Moon Nook, Jubilee Hills",
+    "cuisines": [
+      "Cafe",
+      "Continental",
+      "Pure veg"
+    ],
+    "food_type": "veg",
+    "rating": 4.0,
+    "price_for_two_inr": 940,
+    "highlight": "A cafe with filter coffee and a small covered patio.",
+    "popular_dishes": [
+      "Filter coffee",
+      "Grilled mushroom sandwich",
+      "Tomato basil toast",
+      "Banana walnut cake"
+    ],
+    "opening_hours": {
+      "mon": [
+        "10:00-15:30",
+        "17:30-23:00"
+      ],
+      "tue": [
+        "10:00-15:30",
+        "17:30-23:00"
+      ],
+      "wed": [
+        "10:00-15:30",
+        "17:30-23:00"
+      ],
+      "thu": [
+        "10:00-15:30",
+        "17:30-23:00"
+      ],
+      "fri": [
+        "10:00-15:30",
+        "17:30-23:30"
+      ],
+      "sat": [
+        "10:00-15:30",
+        "17:30-23:30"
+      ],
+      "sun": [
+        "10:00-15:30",
+        "17:30-23:00"
+      ]
+    },
+    "features": {
+      "parking": false,
+      "outdoor_seating": true,
+      "kids_friendly": true,
+      "wheelchair_access": false,
+      "live_music": false
+    },
+    "booking_rules": {
+      "max_party_size": 6,
+      "deposit_required_for_party_size_at_least": 6,
+      "deposit_inr": 260,
+      "cancellation": "Call at least two hours before the reservation to cancel."
+    },
+    "tables": [
+      {
+        "table_id": "T1",
+        "capacity": 2
+      },
+      {
+        "table_id": "T2",
+        "capacity": 2
+      },
+      {
+        "table_id": "T3",
+        "capacity": 2
+      },
+      {
+        "table_id": "T4",
+        "capacity": 4
+      },
+      {
+        "table_id": "T5",
+        "capacity": 4
+      },
+      {
+        "table_id": "T6",
+        "capacity": 4
+      },
+      {
+        "table_id": "T7",
+        "capacity": 6
+      },
+      {
+        "table_id": "T8",
+        "capacity": 6
+      }
+    ],
+    "slot_length_minutes": 90,
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "The restaurant has no dedicated parking.",
+        "a_te": "రెస్టారెంట్‌కి ప్రత్యేకంగా పార్కింగ్ లేదు.",
+        "a_hi": "रेस्टोरेंट की अपनी पार्किंग नहीं है।"
+      },
+      {
+        "q": "What kind of menu do you have?",
+        "a_en": "Yes, this is a pure vegetarian restaurant.",
+        "a_te": "అవును, ఇక్కడ వెజ్ వంటలే ఉంటాయి.",
+        "a_hi": "हाँ, यहाँ सिर्फ़ शाकाहारी खाना मिलता है।"
+      },
+      {
+        "q": "Is there wheelchair access?",
+        "a_en": "Wheelchair access is not available at this location.",
+        "a_te": "ఇక్కడ వీల్‌చైర్ యాక్సెస్ లేదు.",
+        "a_hi": "इस जगह व्हीलचेयर की सुविधा नहीं है।"
+      },
+      {
+        "q": "Is there a deposit for a large group?",
+        "a_en": "A sample deposit of ₹260 applies to groups of 6 or more.",
+        "a_te": "6 మంది లేదా అంతకంటే ఎక్కువైతే డెమో డిపాజిట్ ₹260.",
+        "a_hi": "6 या उससे ज़्यादा लोगों के लिए ₹260 का डेमो डिपॉज़िट है।"
+      }
+    ],
+    "phone": "DEMO-R-005",
+    "is_sample_data": true,
+    "slug": "neeli-cup-cafe-jubilee-hills",
+    "accent_color": "#BE185D"
+  },
+  {
+    "restaurant_id": "r_gb_01",
+    "name": "Alalu Kosta Kitchen",
+    "name_spoken_te": "అలలు కోస్తా కిచెన్",
+    "name_spoken_hi": "अललु कोस्ता किचन",
+    "name_aliases": [
+      "Alalu",
+      "Alalu Kosta",
+      "Alalu Coastal Kitchen"
     ],
     "area_id": "gachibowli",
-    "address": "Pearl Fountain Square, Gachibowli",
+    "address": "Blue Spindle Square, Gachibowli",
     "cuisines": [
-      "Hyderabadi",
-      "Mughlai"
+      "Seafood",
+      "Coastal Andhra"
     ],
     "food_type": "non-veg",
-    "rating": 4.7,
-    "price_for_two_inr": 1800,
-    "highlight": "Hyderabadi classics and kebabs, popular for family dinners.",
+    "rating": 4.6,
+    "price_for_two_inr": 1680,
+    "highlight": "Coastal seafood dishes with Andhra-style spice blends.",
     "popular_dishes": [
-      "Kacchi Gosht Biryani",
-      "Haleem",
-      "Galouti Kebab",
-      "Khubani ka Meetha"
+      "Prawn roast",
+      "Andhra fish pulusu",
+      "Pepper crab",
+      "Fish fry"
     ],
     "opening_hours": {
       "mon": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "tue": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "wed": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "thu": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "fri": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:30"
       ],
       "sat": [
         "12:00-15:30",
-        "19:00-23:30"
+        "18:30-23:30"
       ],
       "sun": [
         "12:00-15:30",
-        "19:00-23:30"
+        "18:30-23:00"
       ]
     },
     "features": {
@@ -1075,13 +761,448 @@
       "outdoor_seating": false,
       "kids_friendly": true,
       "wheelchair_access": true,
+      "live_music": false
+    },
+    "booking_rules": {
+      "max_party_size": 8,
+      "deposit_required_for_party_size_at_least": 8,
+      "deposit_inr": 600,
+      "cancellation": "Call at least two hours before the reservation to cancel."
+    },
+    "tables": [
+      {
+        "table_id": "T1",
+        "capacity": 2
+      },
+      {
+        "table_id": "T2",
+        "capacity": 2
+      },
+      {
+        "table_id": "T3",
+        "capacity": 4
+      },
+      {
+        "table_id": "T4",
+        "capacity": 4
+      },
+      {
+        "table_id": "T5",
+        "capacity": 4
+      },
+      {
+        "table_id": "T6",
+        "capacity": 4
+      },
+      {
+        "table_id": "T7",
+        "capacity": 6
+      },
+      {
+        "table_id": "T8",
+        "capacity": 6
+      },
+      {
+        "table_id": "T9",
+        "capacity": 8
+      },
+      {
+        "table_id": "T10",
+        "capacity": 8
+      }
+    ],
+    "slot_length_minutes": 90,
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, there is parking for guests.",
+        "a_te": "అవును, పార్కింగ్ ఉంది.",
+        "a_hi": "हाँ, मेहमानों के लिए पार्किंग है।"
+      },
+      {
+        "q": "What kind of menu do you have?",
+        "a_en": "The menu is non-vegetarian and focuses on seafood.",
+        "a_te": "ఇక్కడ నాన్‌వెజ్ మెనూ ఉంటుంది, ముఖ్యంగా సీఫుడ్.",
+        "a_hi": "यहाँ नॉनवेज मेनू है, खास तौर पर सीफूड।"
+      },
+      {
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the dining area has wheelchair access.",
+        "a_te": "అవును, వీల్‌చైర్‌తో డైనింగ్ ఏరియాకు వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से डाइनिंग एरिया तक जा सकते हैं।"
+      },
+      {
+        "q": "Is there a deposit for a large group?",
+        "a_en": "A sample deposit of ₹600 applies to groups of 8 or more.",
+        "a_te": "8 మంది లేదా అంతకంటే ఎక్కువైతే డెమో డిపాజిట్ ₹600.",
+        "a_hi": "8 या उससे ज़्यादा लोगों के लिए ₹600 का डेमो डिपॉज़िट है।"
+      }
+    ],
+    "phone": "DEMO-R-006",
+    "is_sample_data": true,
+    "slug": "alalu-kosta-kitchen-gachibowli",
+    "accent_color": "#0E7490"
+  },
+  {
+    "restaurant_id": "r_gb_02",
+    "name": "Tiffin Thoranam",
+    "name_spoken_te": "టిఫిన్ తోరణం",
+    "name_spoken_hi": "टिफ़िन तोरणम",
+    "name_aliases": [
+      "Thoranam",
+      "Tiffin Toranam",
+      "Tiffin Thoran"
+    ],
+    "area_id": "gachibowli",
+    "address": "Cobalt Loom Lane, Gachibowli",
+    "cuisines": [
+      "South Indian",
+      "Pure veg"
+    ],
+    "food_type": "veg",
+    "rating": 4.3,
+    "price_for_two_inr": 540,
+    "highlight": "Vegetarian tiffins, meals, and filter coffee.",
+    "popular_dishes": [
+      "Pesarattu",
+      "Ghee podi idli",
+      "Masala dosa",
+      "Filter coffee"
+    ],
+    "opening_hours": {
+      "mon": [
+        "08:30-15:30",
+        "18:00-23:00"
+      ],
+      "tue": [
+        "08:30-15:30",
+        "18:00-23:00"
+      ],
+      "wed": [
+        "08:30-15:30",
+        "18:00-23:00"
+      ],
+      "thu": [
+        "08:30-15:30",
+        "18:00-23:00"
+      ],
+      "fri": [
+        "08:30-15:30",
+        "18:00-23:30"
+      ],
+      "sat": [
+        "08:30-15:30",
+        "18:00-23:30"
+      ],
+      "sun": [
+        "08:30-15:30",
+        "18:00-23:00"
+      ]
+    },
+    "features": {
+      "parking": true,
+      "outdoor_seating": false,
+      "kids_friendly": true,
+      "wheelchair_access": true,
+      "live_music": false
+    },
+    "booking_rules": {
+      "max_party_size": 8,
+      "deposit_required_for_party_size_at_least": 8,
+      "deposit_inr": 280,
+      "cancellation": "Call at least two hours before the reservation to cancel."
+    },
+    "tables": [
+      {
+        "table_id": "T1",
+        "capacity": 2
+      },
+      {
+        "table_id": "T2",
+        "capacity": 2
+      },
+      {
+        "table_id": "T3",
+        "capacity": 2
+      },
+      {
+        "table_id": "T4",
+        "capacity": 4
+      },
+      {
+        "table_id": "T5",
+        "capacity": 4
+      },
+      {
+        "table_id": "T6",
+        "capacity": 4
+      },
+      {
+        "table_id": "T7",
+        "capacity": 6
+      },
+      {
+        "table_id": "T8",
+        "capacity": 8
+      },
+      {
+        "table_id": "T9",
+        "capacity": 4
+      }
+    ],
+    "slot_length_minutes": 90,
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, there is parking for guests.",
+        "a_te": "అవును, పార్కింగ్ ఉంది.",
+        "a_hi": "हाँ, मेहमानों के लिए पार्किंग है।"
+      },
+      {
+        "q": "What kind of menu do you have?",
+        "a_en": "Yes, this is a pure vegetarian restaurant.",
+        "a_te": "అవును, ఇక్కడ వెజ్ వంటలే ఉంటాయి.",
+        "a_hi": "हाँ, यहाँ सिर्फ़ शाकाहारी खाना मिलता है।"
+      },
+      {
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the dining area has wheelchair access.",
+        "a_te": "అవును, వీల్‌చైర్‌తో డైనింగ్ ఏరియాకు వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से डाइनिंग एरिया तक जा सकते हैं।"
+      },
+      {
+        "q": "Is there a deposit for a large group?",
+        "a_en": "A sample deposit of ₹280 applies to groups of 8 or more.",
+        "a_te": "8 మంది లేదా అంతకంటే ఎక్కువైతే డెమో డిపాజిట్ ₹280.",
+        "a_hi": "8 या उससे ज़्यादा लोगों के लिए ₹280 का डेमो डिपॉज़िट है।"
+      }
+    ],
+    "phone": "DEMO-R-007",
+    "is_sample_data": true,
+    "slug": "tiffin-thoranam-gachibowli",
+    "accent_color": "#0369A1"
+  },
+  {
+    "restaurant_id": "r_gb_03",
+    "name": "Pulao Pankthi",
+    "name_spoken_te": "పులావ్ పంక్తి",
+    "name_spoken_hi": "पुलाव पंक्ति",
+    "name_aliases": [
+      "Pankthi",
+      "Pulav Pankti",
+      "Pulao Panti"
+    ],
+    "area_id": "gachibowli",
+    "address": "Silver Seed Court, Gachibowli",
+    "cuisines": [
+      "Multi-cuisine",
+      "Hyderabadi",
+      "North Indian"
+    ],
+    "food_type": "both",
+    "rating": 4.8,
+    "price_for_two_inr": 2180,
+    "highlight": "A dining room serving pulao, biryani, and grill dishes.",
+    "popular_dishes": [
+      "Gongura chicken pulao",
+      "Hyderabadi mutton biryani",
+      "Vegetable pulao",
+      "Qubani ka meetha"
+    ],
+    "opening_hours": {
+      "mon": [
+        "12:00-15:30",
+        "18:30-23:00"
+      ],
+      "tue": [
+        "12:00-15:30",
+        "18:30-23:00"
+      ],
+      "wed": [
+        "12:00-15:30",
+        "18:30-23:00"
+      ],
+      "thu": [
+        "12:00-15:30",
+        "18:30-23:00"
+      ],
+      "fri": [
+        "12:00-15:30",
+        "18:30-23:30"
+      ],
+      "sat": [
+        "12:00-15:30",
+        "18:30-23:30"
+      ],
+      "sun": [
+        "12:00-15:30",
+        "18:30-23:00"
+      ]
+    },
+    "features": {
+      "parking": true,
+      "outdoor_seating": true,
+      "kids_friendly": true,
+      "wheelchair_access": true,
       "live_music": true
     },
     "booking_rules": {
-      "max_party_size": 12,
+      "max_party_size": 8,
       "deposit_required_for_party_size_at_least": 8,
-      "deposit_inr": 800,
-      "cancellation": "Free cancellation up to 2 hours before; deposits are refunded on time."
+      "deposit_inr": 750,
+      "cancellation": "Call at least two hours before the reservation to cancel."
+    },
+    "tables": [
+      {
+        "table_id": "T1",
+        "capacity": 2
+      },
+      {
+        "table_id": "T2",
+        "capacity": 2
+      },
+      {
+        "table_id": "T3",
+        "capacity": 4
+      },
+      {
+        "table_id": "T4",
+        "capacity": 4
+      },
+      {
+        "table_id": "T5",
+        "capacity": 4
+      },
+      {
+        "table_id": "T6",
+        "capacity": 4
+      },
+      {
+        "table_id": "T7",
+        "capacity": 6
+      },
+      {
+        "table_id": "T8",
+        "capacity": 6
+      },
+      {
+        "table_id": "T9",
+        "capacity": 6
+      },
+      {
+        "table_id": "T10",
+        "capacity": 8
+      },
+      {
+        "table_id": "T11",
+        "capacity": 8
+      },
+      {
+        "table_id": "T12",
+        "capacity": 8
+      }
+    ],
+    "slot_length_minutes": 90,
+    "faqs": [
+      {
+        "q": "Is parking available?",
+        "a_en": "Yes, there is parking for guests.",
+        "a_te": "అవును, పార్కింగ్ ఉంది.",
+        "a_hi": "हाँ, मेहमानों के लिए पार्किंग है।"
+      },
+      {
+        "q": "What kind of menu do you have?",
+        "a_en": "We serve vegetarian and non-vegetarian dishes.",
+        "a_te": "వెజ్, నాన్‌వెజ్ రెండూ ఉన్నాయి.",
+        "a_hi": "वेज और नॉनवेज, दोनों मिलते हैं।"
+      },
+      {
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the dining area has wheelchair access.",
+        "a_te": "అవును, వీల్‌చైర్‌తో డైనింగ్ ఏరియాకు వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से डाइनिंग एरिया तक जा सकते हैं।"
+      },
+      {
+        "q": "Is there a deposit for a large group?",
+        "a_en": "A sample deposit of ₹750 applies to groups of 8 or more.",
+        "a_te": "8 మంది లేదా అంతకంటే ఎక్కువైతే డెమో డిపాజిట్ ₹750.",
+        "a_hi": "8 या उससे ज़्यादा लोगों के लिए ₹750 का डेमो डिपॉज़िट है।"
+      }
+    ],
+    "phone": "DEMO-R-008",
+    "is_sample_data": true,
+    "slug": "pulao-pankthi-gachibowli",
+    "accent_color": "#0F766E"
+  },
+  {
+    "restaurant_id": "r_gb_04",
+    "name": "Pepper Pandal",
+    "name_spoken_te": "పెప్పర్ పందల్",
+    "name_spoken_hi": "पेपर पंडाल",
+    "name_aliases": [
+      "Pepper",
+      "Pepper Pandal Cafe",
+      "Pepar Pandal"
+    ],
+    "area_id": "gachibowli",
+    "address": "Copper Tern Row, Gachibowli",
+    "cuisines": [
+      "Continental",
+      "Cafe",
+      "Multi-cuisine"
+    ],
+    "food_type": "both",
+    "rating": 4.1,
+    "price_for_two_inr": 1320,
+    "highlight": "Bistro plates and sandwiches with shaded outdoor seating.",
+    "popular_dishes": [
+      "Pepper grilled chicken",
+      "Mushroom pasta",
+      "Roasted vegetable sandwich",
+      "Lemon iced tea"
+    ],
+    "opening_hours": {
+      "mon": [
+        "11:00-15:30",
+        "18:30-23:00"
+      ],
+      "tue": [
+        "11:00-15:30",
+        "18:30-23:00"
+      ],
+      "wed": [
+        "11:00-15:30",
+        "18:30-23:00"
+      ],
+      "thu": [
+        "11:00-15:30",
+        "18:30-23:00"
+      ],
+      "fri": [
+        "11:00-15:30",
+        "18:30-23:30"
+      ],
+      "sat": [
+        "11:00-15:30",
+        "18:30-23:30"
+      ],
+      "sun": [
+        "11:00-15:30",
+        "18:30-23:00"
+      ]
+    },
+    "features": {
+      "parking": false,
+      "outdoor_seating": true,
+      "kids_friendly": true,
+      "wheelchair_access": true,
+      "live_music": false
+    },
+    "booking_rules": {
+      "max_party_size": 8,
+      "deposit_required_for_party_size_at_least": 8,
+      "deposit_inr": 450,
+      "cancellation": "Call at least two hours before the reservation to cancel."
     },
     "tables": [
       {
@@ -1115,113 +1236,95 @@
       {
         "table_id": "T8",
         "capacity": 8
-      },
-      {
-        "table_id": "T9",
-        "capacity": 8
-      },
-      {
-        "table_id": "T10",
-        "capacity": 10
-      },
-      {
-        "table_id": "T11",
-        "capacity": 12
       }
     ],
     "slot_length_minutes": 90,
-    "accent_color": "#9D174D",
     "faqs": [
       {
-        "q": "Do you have parking?",
-        "a_en": "Yes, we have free parking for cars and bikes.",
-        "a_te": "Avunu andi, car and bike parking free ga undi.",
-        "a_hi": "Haan ji, car aur bike ki free parking hai."
+        "q": "Is parking available?",
+        "a_en": "The restaurant has no dedicated parking.",
+        "a_te": "రెస్టారెంట్‌కి ప్రత్యేకంగా పార్కింగ్ లేదు.",
+        "a_hi": "रेस्टोरेंट की अपनी पार्किंग नहीं है।"
       },
       {
-        "q": "What are your timings?",
-        "a_en": "We're open every day, 12:00-15:30 and 19:00-23:00.",
-        "a_te": "Prathi roju open untundi andi, 12:00-15:30 and 19:00-23:00.",
-        "a_hi": "Hum roz khule hain ji, 12:00-15:30 and 19:00-23:00."
+        "q": "What kind of menu do you have?",
+        "a_en": "We serve vegetarian and non-vegetarian dishes.",
+        "a_te": "వెజ్, నాన్‌వెజ్ రెండూ ఉన్నాయి.",
+        "a_hi": "वेज और नॉनवेज, दोनों मिलते हैं।"
       },
       {
-        "q": "Do you have veg options?",
-        "a_en": "We're mainly non-veg, with a few veg dishes too.",
-        "a_te": "Mainly non-veg andi, konni veg items kuda unnai.",
-        "a_hi": "Zyada non-veg hai ji, kuch veg dishes bhi hain."
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the dining area has wheelchair access.",
+        "a_te": "అవును, వీల్‌చైర్‌తో డైనింగ్ ఏరియాకు వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से डाइनिंग एरिया तक जा सकते हैं।"
       },
       {
-        "q": "Is it kid friendly?",
-        "a_en": "Yes, it's kid friendly and we have high chairs.",
-        "a_te": "Avunu andi, pillalaki baane untundi, high chairs kuda unnai.",
-        "a_hi": "Haan ji, bachchon ke liye bilkul theek hai, high chairs bhi hain."
-      },
-      {
-        "q": "Do I need to pay a deposit?",
-        "a_en": "For groups of 8 or more we take a ₹800 deposit; smaller groups pay nothing in advance. We seat up to 12 people.",
-        "a_te": "8 mandi leda ekkuva aithe ₹800 deposit kavali andi; takkuva aithe advance emi ledu. Maximum 12 mandi varaku table istam.",
-        "a_hi": "8 ya zyada logon ke liye ₹800 deposit lagta hai ji; usse kam ho toh advance nahi. Ek table pe 12 log tak."
+        "q": "Is there a deposit for a large group?",
+        "a_en": "A sample deposit of ₹450 applies to groups of 8 or more.",
+        "a_te": "8 మంది లేదా అంతకంటే ఎక్కువైతే డెమో డిపాజిట్ ₹450.",
+        "a_hi": "8 या उससे ज़्यादा लोगों के लिए ₹450 का डेमो डिपॉज़िट है।"
       }
     ],
-    "phone": "DEMO-R-008",
-    "is_sample_data": true
+    "phone": "DEMO-R-009",
+    "is_sample_data": true,
+    "slug": "pepper-pandal-gachibowli",
+    "accent_color": "#0369A1"
   },
   {
-    "restaurant_id": "r_gb_04",
-    "slug": "konaseema-kitchen-gachibowli",
-    "name": "Konaseema Kitchen",
-    "name_spoken_te": "కోనసీమ కిచెన్",
-    "name_spoken_hi": "कोनसीमा किचन",
+    "restaurant_id": "r_gb_05",
+    "name": "Malle Miriyam Bhoj",
+    "name_spoken_te": "మల్లె మిరియం భోజ్",
+    "name_spoken_hi": "मल्ले मिरियम भोज",
     "name_aliases": [
-      "konaseema kitchen",
-      "konaseema",
-      "kona seema",
-      "konasima"
+      "Malle Miriyam",
+      "Malle Miryam Bhoj",
+      "Miriyam Bhoj"
     ],
     "area_id": "gachibowli",
-    "address": "Coconut Grove Road, Gachibowli",
+    "address": "Mint Lantern Walk, Gachibowli",
     "cuisines": [
-      "Andhra",
-      "Godavari"
+      "North Indian",
+      "South Indian",
+      "Pure veg"
     ],
-    "food_type": "both",
-    "rating": 4.0,
-    "price_for_two_inr": 900,
-    "highlight": "Godavari-style home food with banana-leaf meals.",
+    "food_type": "veg",
+    "rating": 3.9,
+    "price_for_two_inr": 880,
+    "highlight": "Vegetarian thalis with South and North Indian choices.",
     "popular_dishes": [
-      "Bongulo Chicken",
-      "Gongura Mutton",
-      "Pootharekulu",
-      "Veg Meals"
+      "Vegetarian thali",
+      "Lemon rice",
+      "Methi paneer",
+      "Jowar roti"
     ],
     "opening_hours": {
       "mon": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "tue": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "wed": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "thu": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:00"
       ],
       "fri": [
         "12:00-15:30",
-        "19:00-23:00"
+        "18:30-23:30"
       ],
       "sat": [
         "12:00-15:30",
-        "19:00-23:30"
+        "18:30-23:30"
       ],
       "sun": [
         "12:00-15:30",
-        "19:00-23:30"
+        "18:30-23:00"
       ]
     },
     "features": {
@@ -1232,152 +1335,10 @@
       "live_music": false
     },
     "booking_rules": {
-      "max_party_size": 12,
+      "max_party_size": 8,
       "deposit_required_for_party_size_at_least": 8,
-      "deposit_inr": 500,
-      "cancellation": "Free cancellation up to 2 hours before; deposits are refunded on time."
-    },
-    "tables": [
-      {
-        "table_id": "T1",
-        "capacity": 2
-      },
-      {
-        "table_id": "T2",
-        "capacity": 4
-      },
-      {
-        "table_id": "T3",
-        "capacity": 4
-      },
-      {
-        "table_id": "T4",
-        "capacity": 4
-      },
-      {
-        "table_id": "T5",
-        "capacity": 6
-      },
-      {
-        "table_id": "T6",
-        "capacity": 6
-      },
-      {
-        "table_id": "T7",
-        "capacity": 8
-      },
-      {
-        "table_id": "T8",
-        "capacity": 12
-      }
-    ],
-    "slot_length_minutes": 90,
-    "accent_color": "#166534",
-    "faqs": [
-      {
-        "q": "Do you have parking?",
-        "a_en": "Yes, we have free parking for cars and bikes.",
-        "a_te": "Avunu andi, car and bike parking free ga undi.",
-        "a_hi": "Haan ji, car aur bike ki free parking hai."
-      },
-      {
-        "q": "What are your timings?",
-        "a_en": "We're open every day, 12:00-15:30 and 19:00-23:00.",
-        "a_te": "Prathi roju open untundi andi, 12:00-15:30 and 19:00-23:00.",
-        "a_hi": "Hum roz khule hain ji, 12:00-15:30 and 19:00-23:00."
-      },
-      {
-        "q": "Do you have veg options?",
-        "a_en": "Yes, we have plenty of veg and non-veg dishes.",
-        "a_te": "Avunu andi, veg and non-veg rendu baaga unnai.",
-        "a_hi": "Haan ji, veg aur non-veg dono kaafi options hain."
-      },
-      {
-        "q": "Is it kid friendly?",
-        "a_en": "Yes, it's kid friendly and we have high chairs.",
-        "a_te": "Avunu andi, pillalaki baane untundi, high chairs kuda unnai.",
-        "a_hi": "Haan ji, bachchon ke liye bilkul theek hai, high chairs bhi hain."
-      },
-      {
-        "q": "Do I need to pay a deposit?",
-        "a_en": "For groups of 8 or more we take a ₹500 deposit; smaller groups pay nothing in advance. We seat up to 12 people.",
-        "a_te": "8 mandi leda ekkuva aithe ₹500 deposit kavali andi; takkuva aithe advance emi ledu. Maximum 12 mandi varaku table istam.",
-        "a_hi": "8 ya zyada logon ke liye ₹500 deposit lagta hai ji; usse kam ho toh advance nahi. Ek table pe 12 log tak."
-      }
-    ],
-    "phone": "DEMO-R-009",
-    "is_sample_data": true
-  },
-  {
-    "restaurant_id": "r_gb_05",
-    "slug": "skyline-grill-gachibowli",
-    "name": "Skyline Grill",
-    "name_spoken_te": "స్కైలైన్ గ్రిల్",
-    "name_spoken_hi": "स्काईलाइन ग्रिल",
-    "name_aliases": [
-      "skyline grill",
-      "skyline",
-      "sky line grill",
-      "skyline grilled"
-    ],
-    "area_id": "gachibowli",
-    "address": "Silver Oak Towers, Gachibowli",
-    "cuisines": [
-      "Multi-cuisine",
-      "Grills"
-    ],
-    "food_type": "both",
-    "rating": 4.5,
-    "price_for_two_inr": 2000,
-    "highlight": "Rooftop grills with a view of the city lights.",
-    "popular_dishes": [
-      "Peri Peri Chicken",
-      "Paneer Shashlik",
-      "Grilled Fish",
-      "Sizzling Brownie"
-    ],
-    "opening_hours": {
-      "mon": [
-        "12:00-15:30",
-        "19:00-23:00"
-      ],
-      "tue": [
-        "12:00-15:30",
-        "19:00-23:00"
-      ],
-      "wed": [
-        "12:00-15:30",
-        "19:00-23:00"
-      ],
-      "thu": [
-        "12:00-15:30",
-        "19:00-23:00"
-      ],
-      "fri": [
-        "12:00-15:30",
-        "19:00-23:00"
-      ],
-      "sat": [
-        "12:00-15:30",
-        "19:00-23:30"
-      ],
-      "sun": [
-        "12:00-15:30",
-        "19:00-23:30"
-      ]
-    },
-    "features": {
-      "parking": true,
-      "outdoor_seating": true,
-      "kids_friendly": false,
-      "wheelchair_access": true,
-      "live_music": true
-    },
-    "booking_rules": {
-      "max_party_size": 12,
-      "deposit_required_for_party_size_at_least": 10,
-      "deposit_inr": 1000,
-      "cancellation": "Free cancellation up to 2 hours before; deposits are refunded on time."
+      "deposit_inr": 350,
+      "cancellation": "Call at least two hours before the reservation to cancel."
     },
     "tables": [
       {
@@ -1398,7 +1359,7 @@
       },
       {
         "table_id": "T5",
-        "capacity": 6
+        "capacity": 4
       },
       {
         "table_id": "T6",
@@ -1406,7 +1367,7 @@
       },
       {
         "table_id": "T7",
-        "capacity": 8
+        "capacity": 6
       },
       {
         "table_id": "T8",
@@ -1414,52 +1375,39 @@
       },
       {
         "table_id": "T9",
-        "capacity": 10
-      },
-      {
-        "table_id": "T10",
-        "capacity": 12
-      },
-      {
-        "table_id": "T11",
-        "capacity": 12
+        "capacity": 4
       }
     ],
     "slot_length_minutes": 90,
-    "accent_color": "#1D4ED8",
     "faqs": [
       {
-        "q": "Do you have parking?",
-        "a_en": "Yes, we have free parking for cars and bikes.",
-        "a_te": "Avunu andi, car and bike parking free ga undi.",
-        "a_hi": "Haan ji, car aur bike ki free parking hai."
+        "q": "Is parking available?",
+        "a_en": "Yes, there is parking for guests.",
+        "a_te": "అవును, పార్కింగ్ ఉంది.",
+        "a_hi": "हाँ, मेहमानों के लिए पार्किंग है।"
       },
       {
-        "q": "What are your timings?",
-        "a_en": "We're open every day, 12:00-15:30 and 19:00-23:00.",
-        "a_te": "Prathi roju open untundi andi, 12:00-15:30 and 19:00-23:00.",
-        "a_hi": "Hum roz khule hain ji, 12:00-15:30 and 19:00-23:00."
+        "q": "What kind of menu do you have?",
+        "a_en": "Yes, this is a pure vegetarian restaurant.",
+        "a_te": "అవును, ఇక్కడ వెజ్ వంటలే ఉంటాయి.",
+        "a_hi": "हाँ, यहाँ सिर्फ़ शाकाहारी खाना मिलता है।"
       },
       {
-        "q": "Do you have veg options?",
-        "a_en": "Yes, we have plenty of veg and non-veg dishes.",
-        "a_te": "Avunu andi, veg and non-veg rendu baaga unnai.",
-        "a_hi": "Haan ji, veg aur non-veg dono kaafi options hain."
+        "q": "Is there wheelchair access?",
+        "a_en": "Wheelchair access is not available at this location.",
+        "a_te": "ఇక్కడ వీల్‌చైర్ యాక్సెస్ లేదు.",
+        "a_hi": "इस जगह व्हीलचेयर की सुविधा नहीं है।"
       },
       {
-        "q": "Is it kid friendly?",
-        "a_en": "It's more of an adults' place in the evenings, but kids are welcome at lunch.",
-        "a_te": "Evening ekkuva adults vastaru andi, lunch ki pillalu ravachu.",
-        "a_hi": "Shaam ko zyada adults aate hain ji, lunch mein bachche aa sakte hain."
-      },
-      {
-        "q": "Do I need to pay a deposit?",
-        "a_en": "For groups of 10 or more we take a ₹1000 deposit; smaller groups pay nothing in advance. We seat up to 12 people.",
-        "a_te": "10 mandi leda ekkuva aithe ₹1000 deposit kavali andi; takkuva aithe advance emi ledu. Maximum 12 mandi varaku table istam.",
-        "a_hi": "10 ya zyada logon ke liye ₹1000 deposit lagta hai ji; usse kam ho toh advance nahi. Ek table pe 12 log tak."
+        "q": "Is there a deposit for a large group?",
+        "a_en": "A sample deposit of ₹350 applies to groups of 8 or more.",
+        "a_te": "8 మంది లేదా అంతకంటే ఎక్కువైతే డెమో డిపాజిట్ ₹350.",
+        "a_hi": "8 या उससे ज़्यादा लोगों के लिए ₹350 का डेमो डिपॉज़िट है।"
       }
     ],
     "phone": "DEMO-R-010",
-    "is_sample_data": true
+    "is_sample_data": true,
+    "slug": "malle-miriyam-bhoj-gachibowli",
+    "accent_color": "#047857"
   }
 ]

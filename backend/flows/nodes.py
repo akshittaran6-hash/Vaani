@@ -22,6 +22,7 @@ from rapidfuzz import fuzz, process
 from backend.catalog.models import SPECIALITIES, Doctor, Hospital, Restaurant
 from backend.clock import today_ist
 from backend.flows.context import Pending
+from backend.flows.extract import NOT_NAMES, is_entity_name
 from backend.flows.speech import appointment_readback, restaurant_readback, spoken_time
 from backend.flows.when import parse_day, parse_time
 from backend.tools import run_tool
@@ -144,6 +145,8 @@ def caller_name(s: Session, llm_name: Any) -> str:
     if s.ctx.slots.get("name"):
         return str(s.ctx.slots["name"])
     name = str(llm_name or "").strip()
+    if any(w in NOT_NAMES for w in name.lower().split()) or is_entity_name(name, s.catalog):
+        return ""  # "Sare", "Meeda Pettandi" (filler words) or the doctor's own name: not the caller
     said = " ".join(t["text"].lower() for t in s.ctx.transcript if t["speaker"] == "caller")
     return name if name and all(w in said for w in name.lower().split()) else ""
 
@@ -318,6 +321,9 @@ async def confirm_booking(s: Session, a: dict[str, Any]) -> tuple[Result, str | 
         return err("NO_READBACK", "Call propose_booking / propose_appointment first and read it back"), None
     if p.turn >= s.ctx.turn:
         return err("WAIT_FOR_YES", "Read the details back and wait for the caller to say yes on their next turn"), None
+    if not s.caller_said_yes():
+        # Code, not the LLM, decides that the caller agreed (a name or a question is not a yes).
+        return err("WAIT_FOR_YES", "The caller has not said yes to the read-back; ask them to confirm"), None
     booked = await run_tool(s.tools, p.tool, p.args)
     if not booked.get("ok"):
         s.ctx.pending = None

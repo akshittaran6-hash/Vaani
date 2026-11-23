@@ -1,5 +1,10 @@
 """Shared fixtures.
 
+Unit and DB tests run on a frozen copy of the original placeholder data
+(`fixtures/placeholder_data/`, seeded from SQL built in memory), so code-rule tests don't
+change whenever data/ is regenerated. Tests of the real shipped data use `real_catalog`
+(test_real_data.py).
+
 DB tests (marker `db`) need Postgres. They use, in order:
 1. VAANI_TEST_DB_URL if set (a database the tests may WIPE — never your dev database), else
 2. a throwaway Postgres cluster started from local `initdb`/`pg_ctl` binaries, else
@@ -18,8 +23,11 @@ from pathlib import Path
 
 import pytest
 
-from backend.catalog.loader import load_catalog
+from backend.catalog.loader import DATA_DIR, load_catalog
 from backend.catalog.models import Catalog
+from backend.catalog.seeding import build_seed_sql
+
+FIXTURE_DATA = Path(__file__).resolve().parent / "fixtures" / "placeholder_data"
 
 PG_BIN_CANDIDATES = [
     "/opt/homebrew/opt/postgresql@17/bin",
@@ -33,7 +41,14 @@ PG_BIN_CANDIDATES = [
 
 @pytest.fixture(scope="session")
 def catalog() -> Catalog:
-    return load_catalog()
+    """The placeholder fixture catalogue (what the DB fixtures are seeded with)."""
+    return load_catalog(FIXTURE_DATA)
+
+
+@pytest.fixture(scope="session")
+def real_catalog() -> Catalog:
+    """The shipped data in data/."""
+    return load_catalog(DATA_DIR)
 
 
 def _pg_bin() -> Path | None:
@@ -114,7 +129,7 @@ from backend.tools import ToolContext  # noqa: E402
 
 CALLER = "+919876543210"
 WEBHOOK_SECRET = "whsec_test_only"
-SEED_SQL = (SUPABASE_DIR / "seed.sql").read_text(encoding="utf-8")
+SEED_SQL = build_seed_sql(load_catalog(FIXTURE_DATA))
 
 
 @pytest.fixture(scope="session")
@@ -142,6 +157,7 @@ def settings(seeded_url: str) -> Settings:
         payment_webhook_secret=WEBHOOK_SECRET,  # type: ignore[call-arg]
         dev_simulate=True,
         public_base_url="https://vaani.test",
+        data_dir=FIXTURE_DATA,
     )
 
 

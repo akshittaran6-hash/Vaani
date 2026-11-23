@@ -16,7 +16,8 @@ We use AI in two different ways, and we're open about both.
 |---|---|
 | Claude Code (Anthropic) | Planning, scaffolding, writing code, tests and docs together with the team, phase by phase |
 | ChatGPT | Generating the final fictional demo data from `docs/DATA_PROMPT.md` |
-| Claude Code (placeholder data) | A one-off script produced the placeholder `data/` set so development wasn't blocked; same schema, all fictional, validated by `scripts/validate_data.py` |
+| Claude Code (placeholder data) | A one-off script produced the first placeholder data set so development wasn't blocked; it now lives on only as the unit-test fixture (`backend/tests/fixtures/placeholder_data/`) |
+| Claude Code (data import) | `scripts/import_data.py` converts the generated files to the contract's shape (no content changes except merging a baseline phrase list), then validates; a human reviewed the diff |
 | _others added as used_ | |
 
 How we keep it honest:

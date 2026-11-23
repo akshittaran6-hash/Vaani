@@ -2,13 +2,34 @@
   {
     "test_id": "T01",
     "service": "restaurant",
-    "language_mix": "hi-en",
+    "language_mix": "te-en",
+    "scenario": "happy_path",
+    "caller_turns": [
+      "Jubilee Hills lo manchi biryani place cheppu, ee roju night naluguriki.",
+      "Dumgalli Courtyard okay. Ee roju 7:00 pm ki table ivvandi.",
+      "Anuvi Selavolu peru meeda pettandi.",
+      "Avunu, confirm cheyandi."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "jubilee_hills",
+      "business_id": "r_jh_01",
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": 0,
+      "time": "19:00",
+      "party_size": 4,
+      "outcome": "booked"
+    }
+  },
+  {
+    "test_id": "T02",
+    "service": "restaurant",
+    "language_mix": "te-en",
     "scenario": "slot_full",
     "caller_turns": [
-      "Jubilee Hills mein koi achha restaurant batao, kal raat 6 logon ke liye.",
-      "Spice Garden. Kitne baje available hai?",
-      "Aath baje nahi hai? Theek hai, 8:30 chalega. Naam Pranav.",
-      "Haan."
+      "Dumgalli Courtyard, Jubilee Hills lo repu raatri enimidintiki naluguriki table kavali.",
+      "Aa time full aa? Vere time unte cheppandi. Mundu options maatrame chustanu."
     ],
     "expected": {
       "intent": "book",
@@ -17,54 +38,31 @@
       "speciality": null,
       "doctor_id": null,
       "day_offset": 1,
-      "time": "20:30",
-      "party_size": 6,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T02",
-    "service": "restaurant",
-    "language_mix": "te-en",
-    "scenario": "happy_path",
-    "caller_turns": [
-      "Gachibowli lo biryani ki manchi place cheppandi, repu lunch ki naluguru.",
-      "Royal Zafraan ok. Okati gantaki.",
-      "Naa peru Srikanth.",
-      "Avunu, confirm cheyyandi."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "gachibowli",
-      "business_id": "r_gb_03",
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": 1,
-      "time": "13:00",
+      "time": "20:00",
       "party_size": 4,
-      "outcome": "booked"
+      "outcome": "offered_alternatives"
     }
   },
   {
     "test_id": "T03",
     "service": "restaurant",
-    "language_mix": "en-IN",
-    "scenario": "happy_path",
+    "language_mix": "te-en",
+    "scenario": "mid_call_change",
     "caller_turns": [
-      "Hi, I want a table for two at Green Leaf in Jubilee Hills, day after tomorrow.",
-      "Around 9 pm is fine.",
-      "Name is Ananth.",
-      "Yes, please book it."
+      "Gachibowli lo Alalu Kosta Kitchen ki repu yedintiki iddaram vastam.",
+      "Actually iddaru kaadu, naluguru. 7:30 pm ki Alalu Kosta Kitchen lo pettiyandi.",
+      "Irav Meruluri peru meeda pettandi.",
+      "Avunu, confirm cheyandi."
     ],
     "expected": {
       "intent": "book",
-      "area_id": "jubilee_hills",
-      "business_id": "r_jh_03",
+      "area_id": "gachibowli",
+      "business_id": "r_gb_01",
       "speciality": null,
       "doctor_id": null,
-      "day_offset": 2,
-      "time": "21:00",
-      "party_size": 2,
+      "day_offset": 1,
+      "time": "19:30",
+      "party_size": 4,
       "outcome": "booked"
     }
   },
@@ -74,8 +72,8 @@
     "language_mix": "te-en",
     "scenario": "unsupported_area",
     "caller_turns": [
-      "Kukatpally lo manchi restaurant cheppandi, ee roju dinner ki.",
-      "Ledu andi, Kukatpally ne kavali. Parledu, thanks."
+      "Kondapur lo repu lunch ki restaurant choostava, naluguriki?",
+      "Vaddandi, naaku Kondapur lone kavali."
     ],
     "expected": {
       "intent": "unsupported_area",
@@ -83,46 +81,22 @@
       "business_id": null,
       "speciality": null,
       "doctor_id": null,
-      "day_offset": null,
+      "day_offset": 1,
       "time": null,
-      "party_size": null,
+      "party_size": 4,
       "outcome": "declined_unsupported_area"
     }
   },
   {
     "test_id": "T05",
     "service": "restaurant",
-    "language_mix": "hi-en",
-    "scenario": "unsupported_area",
-    "caller_turns": [
-      "Kondapur mein dinner ke liye table chahiye, 5 log.",
-      "Achha, toh Gachibowli mein dekho.",
-      "Skyline Grill, 3 din baad raat 8 baje.",
-      "Naam Neha hai.",
-      "Haan, kar do."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "gachibowli",
-      "business_id": "r_gb_05",
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": 3,
-      "time": "20:00",
-      "party_size": 5,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T06",
-    "service": "restaurant",
     "language_mix": "te-en",
-    "scenario": "mid_call_change",
+    "scenario": "happy_path",
     "caller_turns": [
-      "Coastal Kitchen lo repu 7:30 ki naluguru ki table kavali.",
-      "Oka nimisham, aidu mandi avutham. Inka 8 ki marchandi.",
-      "Peru Rajesh.",
-      "Sare, confirm."
+      "Jubilee Hills lo Aavakaaya Arugu ki ee roju lunch lo mugguram vastam. Parking undaa?",
+      "Sare, Aavakaaya Arugu lo 12:30 pm ki mugguriki book cheyandi.",
+      "Veya Madduluri peru meeda pettandi.",
+      "Avunu, confirm cheyandi."
     ],
     "expected": {
       "intent": "book",
@@ -130,46 +104,86 @@
       "business_id": "r_jh_02",
       "speciality": null,
       "doctor_id": null,
-      "day_offset": 1,
-      "time": "20:00",
-      "party_size": 5,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T07",
-    "service": "restaurant",
-    "language_mix": "en-IN",
-    "scenario": "mid_call_change",
-    "caller_turns": [
-      "Can I book Tiffin Tales in Gachibowli for lunch, day after tomorrow at 1:30, three people?",
-      "Actually, make it the day after that, same time.",
-      "It's for Divya.",
-      "Yes, confirm."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "gachibowli",
-      "business_id": "r_gb_02",
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": 3,
-      "time": "13:30",
+      "day_offset": 0,
+      "time": "12:30",
       "party_size": 3,
       "outcome": "booked"
     }
   },
   {
+    "test_id": "T06",
+    "service": "restaurant",
+    "language_mix": "te-en",
+    "scenario": "party_limit",
+    "caller_turns": [
+      "Neeli Cup Cafe, Jubilee Hills lo repu lunch ki enimidi mandiki table undaa?",
+      "Akkada enimidi mandi kudarakapothe, party size tagginche option cheppandi."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "jubilee_hills",
+      "business_id": "r_jh_05",
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": 1,
+      "time": null,
+      "party_size": 8,
+      "outcome": "offered_alternatives"
+    }
+  },
+  {
+    "test_id": "T07",
+    "service": "restaurant",
+    "language_mix": "te-en",
+    "scenario": "slot_full",
+    "caller_turns": [
+      "Pulao Pankthi Gachibowli lo repu raatri eight thirty ki aaruguriki table kavali.",
+      "Full aithe inko time leda inko roju undemo cheppandi."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "gachibowli",
+      "business_id": "r_gb_03",
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": 1,
+      "time": "20:30",
+      "party_size": 6,
+      "outcome": "offered_alternatives"
+    }
+  },
+  {
     "test_id": "T08",
     "service": "restaurant",
-    "language_mix": "hi-en",
-    "scenario": "vague_request",
+    "language_mix": "te-en",
+    "scenario": "faq",
     "caller_turns": [
-      "Kahin achha khana khilao yaar, Jubilee Hills mein.",
-      "Veg chahiye, teen log, kal raat.",
-      "Green Leaf theek hai, 9 baje.",
-      "Naam Amit.",
-      "Haan."
+      "Gachibowli Pepper Pandal lo wheelchair tho lopaliki raavachaa?",
+      "Thanks andi. Ippatiki booking vaddu."
+    ],
+    "expected": {
+      "intent": "info",
+      "area_id": "gachibowli",
+      "business_id": "r_gb_04",
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": null,
+      "time": null,
+      "party_size": null,
+      "outcome": "answered_faq"
+    }
+  },
+  {
+    "test_id": "T09",
+    "service": "restaurant",
+    "language_mix": "hi-en",
+    "scenario": "deposit_needed",
+    "caller_turns": [
+      "Kal dinner ke liye Jubilee Hills mein Tandoor Taaraka mein aath logon ki table chahiye.",
+      "Haan, demo deposit theek hai. Zarurat ho toh test link bhej dijiye.",
+      "7:00 pm chalega. Tandoor Taaraka mein wahi table rakh dijiye.",
+      "Aviha Velivarla ke naam se rakh dijiye.",
+      "Haan, confirm kar dijiye."
     ],
     "expected": {
       "intent": "book",
@@ -178,22 +192,112 @@
       "speciality": null,
       "doctor_id": null,
       "day_offset": 1,
-      "time": "21:00",
-      "party_size": 3,
+      "time": "19:00",
+      "party_size": 8,
       "outcome": "booked"
     }
   },
   {
-    "test_id": "T09",
+    "test_id": "T10",
     "service": "restaurant",
-    "language_mix": "te-en",
-    "scenario": "vague_request",
+    "language_mix": "hi-en",
+    "scenario": "happy_path",
     "caller_turns": [
-      "Gachibowli lo edaina manchi place undha, family tho dinner ki?",
-      "Naluguru, naalugu rojula tarvata.",
-      "Skyline Grill, 8:30 ki.",
-      "Peru Madhavi.",
-      "Avunu."
+      "Parson Jubilee Hills mein chaar logon ke liye Indo-Chinese place dekhiye.",
+      "Wok Vedika theek hai. Parson 9:30 pm wali table de dijiye.",
+      "Navir Mekulapadu ke naam se rakh dijiye.",
+      "Haan, confirm kar dijiye."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "jubilee_hills",
+      "business_id": "r_jh_04",
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": 2,
+      "time": "21:30",
+      "party_size": 4,
+      "outcome": "booked"
+    }
+  },
+  {
+    "test_id": "T11",
+    "service": "restaurant",
+    "language_mix": "hi-en",
+    "scenario": "happy_path",
+    "caller_turns": [
+      "Gachibowli mein aaj lunch ke liye budget wala pure veg restaurant chahiye, chaar log hain.",
+      "Tiffin Thoranam mein 12:30 pm theek hai, book kijiye.",
+      "Ishavi Mabbuleni ke naam se rakh dijiye.",
+      "Haan, confirm kar dijiye."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "gachibowli",
+      "business_id": "r_gb_02",
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": 0,
+      "time": "12:30",
+      "party_size": 4,
+      "outcome": "booked"
+    }
+  },
+  {
+    "test_id": "T12",
+    "service": "restaurant",
+    "language_mix": "hi-en",
+    "scenario": "unsupported_area",
+    "caller_turns": [
+      "Madhapur mein aaj dinner ke liye table dekh sakti ho, do log hain?",
+      "Jubilee Hills aur Gachibowli dono door hain. Madhapur hi chahiye."
+    ],
+    "expected": {
+      "intent": "unsupported_area",
+      "area_id": null,
+      "business_id": null,
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": 0,
+      "time": null,
+      "party_size": 2,
+      "outcome": "declined_unsupported_area"
+    }
+  },
+  {
+    "test_id": "T13",
+    "service": "restaurant",
+    "language_mix": "hi-en",
+    "scenario": "slot_full",
+    "caller_turns": [
+      "Kal Jubilee Hills mein Dumgalli Courtyard chahiye, chaar logon ke liye raat aath baje.",
+      "Aath baje full hai toh pehle ka slot chalega.",
+      "Theek hai, Dumgalli Courtyard mein 7:00 pm kar do.",
+      "Reyan Dharavolu ke naam se rakh dijiye.",
+      "Haan, confirm kar dijiye."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "jubilee_hills",
+      "business_id": "r_jh_01",
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": 1,
+      "time": "19:00",
+      "party_size": 4,
+      "outcome": "booked"
+    }
+  },
+  {
+    "test_id": "T14",
+    "service": "restaurant",
+    "language_mix": "hi-en",
+    "scenario": "happy_path",
+    "caller_turns": [
+      "Malle Miriyam Bhoj, Gachibowli ka menu pure veg hai kya? Parson lunch pe chaar log honge.",
+      "Malle Miriyam Bhoj mein 12:30 pm wala lunch slot rakhna.",
+      "Suvira Bellavolu ke naam se rakh dijiye.",
+      "Haan, confirm kar dijiye."
     ],
     "expected": {
       "intent": "book",
@@ -201,154 +305,45 @@
       "business_id": "r_gb_05",
       "speciality": null,
       "doctor_id": null,
-      "day_offset": 4,
-      "time": "20:30",
+      "day_offset": 2,
+      "time": "12:30",
       "party_size": 4,
       "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T10",
-    "service": "restaurant",
-    "language_mix": "en-IN",
-    "scenario": "party_limit",
-    "caller_turns": [
-      "I need a table for 8 at Cafe Monsoon in Gachibowli, day after tomorrow at 8 pm.",
-      "Oh, only six? Then I'll think about it, thanks."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "gachibowli",
-      "business_id": "r_gb_01",
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": 2,
-      "time": "20:00",
-      "party_size": 8,
-      "outcome": "offered_alternatives"
-    }
-  },
-  {
-    "test_id": "T11",
-    "service": "restaurant",
-    "language_mix": "hi-en",
-    "scenario": "party_limit",
-    "caller_turns": [
-      "Jade Lantern mein 10 logon ka table chahiye, 3 din baad, raat 8:30.",
-      "Achha, toh Spice Garden mein dekh lo same time.",
-      "Naam Rohit Agarwal.",
-      "Haan, deposit theek hai, book karo."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "jubilee_hills",
-      "business_id": "r_jh_01",
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": 3,
-      "time": "20:30",
-      "party_size": 10,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T12",
-    "service": "restaurant",
-    "language_mix": "te-en",
-    "scenario": "deposit_needed",
-    "caller_turns": [
-      "Royal Zafraan lo ellundi rathri 8:30 ki tommidi mandi ki table kavali.",
-      "Deposit entha? Sare parledu.",
-      "Peru Venkat.",
-      "Avunu, book cheyyandi."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "gachibowli",
-      "business_id": "r_gb_03",
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": 2,
-      "time": "20:30",
-      "party_size": 9,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T13",
-    "service": "restaurant",
-    "language_mix": "en-IN",
-    "scenario": "deposit_needed",
-    "caller_turns": [
-      "Coastal Kitchen, Jubilee Hills, table for six, three days from now at 7:30 pm.",
-      "A deposit is fine.",
-      "Name is Suresh.",
-      "Yes, go ahead."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "jubilee_hills",
-      "business_id": "r_jh_02",
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": 3,
-      "time": "19:30",
-      "party_size": 6,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T14",
-    "service": "restaurant",
-    "language_mix": "te-en",
-    "scenario": "faq",
-    "caller_turns": [
-      "Spice Garden Jubilee Hills lo parking unda?",
-      "Sare, thanks andi, tarvata call chestanu."
-    ],
-    "expected": {
-      "intent": "info",
-      "area_id": "jubilee_hills",
-      "business_id": "r_jh_01",
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": null,
-      "time": null,
-      "party_size": null,
-      "outcome": "answered_faq"
     }
   },
   {
     "test_id": "T15",
     "service": "restaurant",
     "language_mix": "hi-en",
-    "scenario": "faq",
+    "scenario": "happy_path",
     "caller_turns": [
-      "Cafe Monsoon Gachibowli bachchon ke liye theek hai kya?",
-      "Achha, thank you."
+      "Aaj Jubilee Hills mein Neeli Cup Cafe mein do logon ki lunch table chahiye.",
+      "Neeli Cup Cafe mein 12:30 pm chalega.",
+      "Tavir Nandigala ke naam se rakh dijiye.",
+      "Haan, confirm kar dijiye."
     ],
     "expected": {
-      "intent": "info",
-      "area_id": "gachibowli",
-      "business_id": "r_gb_01",
+      "intent": "book",
+      "area_id": "jubilee_hills",
+      "business_id": "r_jh_05",
       "speciality": null,
       "doctor_id": null,
-      "day_offset": null,
-      "time": null,
-      "party_size": null,
-      "outcome": "answered_faq"
+      "day_offset": 0,
+      "time": "12:30",
+      "party_size": 2,
+      "outcome": "booked"
     }
   },
   {
     "test_id": "T16",
     "service": "restaurant",
-    "language_mix": "te-en",
-    "scenario": "slot_full",
+    "language_mix": "en-IN",
+    "scenario": "happy_path",
     "caller_turns": [
-      "Royal Zafraan lo repu rathri 8 ki naluguru ki table kavali.",
-      "8 full aa? Mari 9 ki untey cheyyandi.",
-      "Peru Farhan.",
-      "Avunu."
+      "Could you check Pulao Pankthi in Gachibowli for two tomorrow evening? Around 8:30.",
+      "Yes, 8:30 pm at Pulao Pankthi works for both of us.",
+      "Please put it under Ilaari Moonalapalli.",
+      "Yes, please confirm it."
     ],
     "expected": {
       "intent": "book",
@@ -357,8 +352,8 @@
       "speciality": null,
       "doctor_id": null,
       "day_offset": 1,
-      "time": "21:00",
-      "party_size": 4,
+      "time": "20:30",
+      "party_size": 2,
       "outcome": "booked"
     }
   },
@@ -366,101 +361,121 @@
     "test_id": "T17",
     "service": "restaurant",
     "language_mix": "en-IN",
-    "scenario": "slot_full",
+    "scenario": "happy_path",
     "caller_turns": [
-      "Table for two at Deccan Degchi tomorrow at 9 pm, please.",
-      "Neither of those works for me, I'll call later. Thanks."
+      "Any seafood option in Gachibowli for four of us tonight? Is there parking?",
+      "Let's take 7:00 pm at Alalu Kosta Kitchen.",
+      "Please put it under Rion Kavileni.",
+      "Yes, please confirm it."
     ],
     "expected": {
       "intent": "book",
-      "area_id": "jubilee_hills",
-      "business_id": "r_jh_04",
+      "area_id": "gachibowli",
+      "business_id": "r_gb_01",
       "speciality": null,
       "doctor_id": null,
-      "day_offset": 1,
-      "time": "21:00",
-      "party_size": 2,
-      "outcome": "offered_alternatives"
+      "day_offset": 0,
+      "time": "19:00",
+      "party_size": 4,
+      "outcome": "booked"
     }
   },
   {
     "test_id": "T18",
     "service": "restaurant",
-    "language_mix": "hi-en",
-    "scenario": "happy_path",
+    "language_mix": "en-IN",
+    "scenario": "faq",
     "caller_turns": [
-      "Gachibowli mein Konaseema Kitchen, parso raat 8 baje, do log.",
-      "Naam Imran.",
-      "Haan ji, confirm."
+      "Is Aavakaaya Arugu in Jubilee Hills purely vegetarian?",
+      "Good to know. Is there a deposit for a larger group? I’m just checking today."
     ],
     "expected": {
-      "intent": "book",
-      "area_id": "gachibowli",
-      "business_id": "r_gb_04",
+      "intent": "info",
+      "area_id": "jubilee_hills",
+      "business_id": "r_jh_02",
       "speciality": null,
       "doctor_id": null,
-      "day_offset": 2,
-      "time": "20:00",
-      "party_size": 2,
-      "outcome": "booked"
+      "day_offset": null,
+      "time": null,
+      "party_size": null,
+      "outcome": "answered_faq"
     }
   },
   {
     "test_id": "T19",
     "service": "restaurant",
-    "language_mix": "te-en",
-    "scenario": "happy_path",
+    "language_mix": "en-IN",
+    "scenario": "mid_call_change",
     "caller_turns": [
-      "Deccan Degchi lo biryani lunch ki aaruguru, naalugu rojula tarvata, okati gantaki.",
-      "Peru Sravya.",
-      "Avunu, confirm."
+      "Can you check Malle Miriyam Bhoj in Gachibowli for six tomorrow at lunch?",
+      "Change that to four, please. 12:30 pm at Malle Miriyam Bhoj is fine.",
+      "Please put it under Eshaan Kuriveluri.",
+      "Yes, please confirm it."
     ],
     "expected": {
       "intent": "book",
-      "area_id": "jubilee_hills",
-      "business_id": "r_jh_04",
+      "area_id": "gachibowli",
+      "business_id": "r_gb_05",
       "speciality": null,
       "doctor_id": null,
-      "day_offset": 4,
-      "time": "13:00",
-      "party_size": 6,
+      "day_offset": 1,
+      "time": "12:30",
+      "party_size": 4,
       "outcome": "booked"
     }
   },
   {
     "test_id": "T20",
     "service": "restaurant",
-    "language_mix": "hi-en",
-    "scenario": "mid_call_change",
+    "language_mix": "en-IN",
+    "scenario": "unsupported_area",
     "caller_turns": [
-      "Spice Garden mein parso shaam 7 baje chaar log.",
-      "Nahi nahi, 7 nahi, raat 9 baje kar do.",
-      "Naam Karthik.",
-      "Haan."
+      "Could you find me a table for four in Manikonda tomorrow evening?",
+      "Thanks, I need Manikonda this time."
     ],
     "expected": {
-      "intent": "book",
-      "area_id": "jubilee_hills",
-      "business_id": "r_jh_01",
+      "intent": "unsupported_area",
+      "area_id": null,
+      "business_id": null,
       "speciality": null,
       "doctor_id": null,
-      "day_offset": 2,
-      "time": "21:00",
+      "day_offset": 1,
+      "time": null,
       "party_size": 4,
-      "outcome": "booked"
+      "outcome": "declined_unsupported_area"
     }
   },
   {
     "test_id": "T21",
     "service": "hospital",
     "language_mix": "te-en",
-    "scenario": "unsupported_area",
+    "scenario": "happy_path",
     "caller_turns": [
-      "Kukatpally lo dermatologist kavali, repu.",
-      "Gachibowli chudu.",
-      "Navaniti, Dr. Ananya garu, 11 ki.",
-      "Lakshmi.",
-      "Avunu."
+      "Jubilee Hills lo Merugu Grove Hospital lo repu general physician appointment kavali.",
+      "Dr. Aaravi Aruvelli daggara repu 10:15 am ki book cheyandi.",
+      "Patient peru Esha Tallavolu.",
+      "Avunu, confirm cheyandi."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "jubilee_hills",
+      "business_id": "h_jh_01",
+      "speciality": "General Medicine",
+      "doctor_id": "d_jh_01_genmed_1",
+      "day_offset": 1,
+      "time": "10:15",
+      "party_size": null,
+      "outcome": "booked"
+    }
+  },
+  {
+    "test_id": "T22",
+    "service": "hospital",
+    "language_mix": "te-en",
+    "scenario": "doctor_fully_booked",
+    "caller_turns": [
+      "Gachibowli Vaana Grove lo Dr. Navisha Vaanavolu dermatologist kada, repu ten ki appointment kavali.",
+      "Repu full aithe inko doctor leda next day option cheppandi. Ippudu book cheyyoddu."
     ],
     "expected": {
       "intent": "book",
@@ -469,53 +484,31 @@
       "speciality": "Dermatology",
       "doctor_id": "d_gb_01_derm_1",
       "day_offset": 1,
-      "time": "11:00",
+      "time": "10:00",
       "party_size": null,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T22",
-    "service": "hospital",
-    "language_mix": "hi-en",
-    "scenario": "happy_path",
-    "caller_turns": [
-      "Gachibowli mein dermatologist chahiye parso.",
-      "Udayam clinic, shaam 6 baje.",
-      "Naam Pooja Verma.",
-      "Haan, book kar do."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "gachibowli",
-      "business_id": "h_gb_02",
-      "speciality": "Dermatology",
-      "doctor_id": "d_gb_02_derm_1",
-      "day_offset": 2,
-      "time": "18:00",
-      "party_size": null,
-      "outcome": "booked"
+      "outcome": "offered_alternatives"
     }
   },
   {
     "test_id": "T23",
     "service": "hospital",
-    "language_mix": "en-IN",
+    "language_mix": "te-en",
     "scenario": "happy_path",
     "caller_turns": [
-      "I need a child specialist in Jubilee Hills tomorrow morning.",
-      "Lotus clinic at 10:30 works.",
-      "Name is Kavitha.",
-      "Yes."
+      "Vaana Grove Gachibowli lo repu Dr. Navisha Vaanavolu tho skin appointment undaa?",
+      "Ade hospital lo inko dermatologist okay.",
+      "Sare, vere doctor Dr. Suvin Rellimudi tho 3:00 pm ki pettandi.",
+      "Patient peru Vinu Saagipalle.",
+      "Avunu, confirm cheyandi."
     ],
     "expected": {
       "intent": "book",
-      "area_id": "jubilee_hills",
-      "business_id": "h_jh_02",
-      "speciality": "Pediatrics",
-      "doctor_id": "d_jh_02_peds_1",
+      "area_id": "gachibowli",
+      "business_id": "h_gb_01",
+      "speciality": "Dermatology",
+      "doctor_id": "d_gb_01_derm_2",
       "day_offset": 1,
-      "time": "10:30",
+      "time": "15:00",
       "party_size": null,
       "outcome": "booked"
     }
@@ -524,21 +517,21 @@
     "test_id": "T24",
     "service": "hospital",
     "language_mix": "te-en",
-    "scenario": "doctor_fully_booked",
+    "scenario": "happy_path",
     "caller_turns": [
-      "Lotus clinic lo Dr. Kavya Sharma garu repu kavali, skin problem.",
-      "Repu full aa? Mari ellundi podduna 10 ki.",
-      "Peru Sirisha.",
-      "Avunu."
+      "Repu pillala doctor kavali. Jubilee Hills lo Velugu Nest Clinic open undaa?",
+      "Dr. Vaanika Velivaram daggara 9:30 am okay andi.",
+      "Patient peru Reva Neelavari.",
+      "Avunu, confirm cheyandi."
     ],
     "expected": {
       "intent": "book",
       "area_id": "jubilee_hills",
-      "business_id": "h_jh_02",
-      "speciality": "Dermatology",
-      "doctor_id": "d_jh_02_derm_1",
-      "day_offset": 2,
-      "time": "10:00",
+      "business_id": "h_jh_04",
+      "speciality": "Pediatrics",
+      "doctor_id": "d_jh_04_peds_1",
+      "day_offset": 1,
+      "time": "09:30",
       "party_size": null,
       "outcome": "booked"
     }
@@ -546,66 +539,64 @@
   {
     "test_id": "T25",
     "service": "hospital",
-    "language_mix": "hi-en",
-    "scenario": "doctor_fully_booked",
+    "language_mix": "te-en",
+    "scenario": "unsupported_area",
     "caller_turns": [
-      "Dr. Kavya Sharma se kal milna hai, Lotus clinic Jubilee Hills.",
-      "Kal nahi hai? Theek hai, main baad mein call karta hoon."
+      "Shaikpet lo skin specialist appointment repu dorukutundaa?",
+      "Naaku Shaikpet lone kavali andi."
     ],
     "expected": {
-      "intent": "book",
-      "area_id": "jubilee_hills",
-      "business_id": "h_jh_02",
-      "speciality": "Dermatology",
-      "doctor_id": "d_jh_02_derm_1",
+      "intent": "unsupported_area",
+      "area_id": null,
+      "business_id": null,
+      "speciality": null,
+      "doctor_id": null,
       "day_offset": 1,
       "time": null,
       "party_size": null,
-      "outcome": "offered_alternatives"
+      "outcome": "declined_unsupported_area"
     }
   },
   {
     "test_id": "T26",
     "service": "hospital",
     "language_mix": "te-en",
-    "scenario": "doctor_on_leave",
+    "scenario": "emergency",
     "caller_turns": [
-      "Udayam clinic lo Dr. Priya Reddy garu ellundi kavali, jvaram.",
-      "Leave aa? Sare, mudu rojula tarvata 11 ki.",
-      "Peru Ramesh.",
-      "Avunu."
+      "Gundelo baaga noppi, oopiri aadatledu. Ippude help kavali."
     ],
     "expected": {
-      "intent": "book",
-      "area_id": "gachibowli",
-      "business_id": "h_gb_02",
-      "speciality": "General Medicine",
-      "doctor_id": "d_gb_02_genmed_1",
-      "day_offset": 3,
-      "time": "11:00",
+      "intent": "emergency",
+      "area_id": null,
+      "business_id": null,
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": null,
+      "time": null,
       "party_size": null,
-      "outcome": "booked"
+      "outcome": "redirected_emergency"
     }
   },
   {
     "test_id": "T27",
     "service": "hospital",
-    "language_mix": "en-IN",
-    "scenario": "doctor_on_leave",
+    "language_mix": "te-en",
+    "scenario": "mid_call_change",
     "caller_turns": [
-      "I want Dr. Priya Reddy at Udayam clinic, day after tomorrow, for fever.",
-      "Okay, then any general physician in Gachibowli the same day, around 10.",
-      "Navaniti at 10 is fine. Name is George.",
-      "Yes."
+      "Gachibowli Nava Meru lo repu kanti doctor appointment kavali.",
+      "Okay, appatiki 4:45 pm anukunnanu.",
+      "Dr. Yugant Saagivolu daggara 5:15 pm ki maarchandi. Ade final.",
+      "Patient peru Anay Velimuri.",
+      "Avunu, confirm cheyandi."
     ],
     "expected": {
       "intent": "book",
       "area_id": "gachibowli",
-      "business_id": "h_gb_01",
-      "speciality": "General Medicine",
-      "doctor_id": "d_gb_01_genmed_1",
-      "day_offset": 2,
-      "time": "10:00",
+      "business_id": "h_gb_02",
+      "speciality": "Ophthalmology",
+      "doctor_id": "d_gb_02_ophth_1",
+      "day_offset": 1,
+      "time": "17:15",
       "party_size": null,
       "outcome": "booked"
     }
@@ -614,250 +605,120 @@
     "test_id": "T28",
     "service": "hospital",
     "language_mix": "te-en",
-    "scenario": "emergency",
+    "scenario": "faq",
     "caller_turns": [
-      "Naanna ki gunde noppi, chaathi lo baruvuga undi, Gachibowli lo doctor kavali ippude."
+      "Jubilee Hills Tarali Skin and Eye Clinic Sunday OPD timings enti?",
+      "Sare, timings chalu andi. Appointment vaddu."
     ],
     "expected": {
-      "intent": "emergency",
-      "area_id": null,
-      "business_id": null,
+      "intent": "info",
+      "area_id": "jubilee_hills",
+      "business_id": "h_jh_03",
       "speciality": null,
       "doctor_id": null,
       "day_offset": null,
       "time": null,
       "party_size": null,
-      "outcome": "redirected_emergency"
+      "outcome": "answered_faq"
     }
   },
   {
     "test_id": "T29",
     "service": "hospital",
     "language_mix": "hi-en",
-    "scenario": "emergency",
+    "scenario": "doctor_fully_booked",
     "caller_turns": [
-      "Meri maa behosh ho gayi hain, Jubilee Hills mein doctor chahiye."
-    ],
-    "expected": {
-      "intent": "emergency",
-      "area_id": null,
-      "business_id": null,
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": null,
-      "time": null,
-      "party_size": null,
-      "outcome": "redirected_emergency"
-    }
-  },
-  {
-    "test_id": "T30",
-    "service": "hospital",
-    "language_mix": "en-IN",
-    "scenario": "emergency",
-    "caller_turns": [
-      "My friend just had a road accident near Gachibowli, there's heavy bleeding, book a doctor."
-    ],
-    "expected": {
-      "intent": "emergency",
-      "area_id": null,
-      "business_id": null,
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": null,
-      "time": null,
-      "party_size": null,
-      "outcome": "redirected_emergency"
-    }
-  },
-  {
-    "test_id": "T31",
-    "service": "hospital",
-    "language_mix": "te-en",
-    "scenario": "faq",
-    "caller_turns": [
-      "Hillcrest hospital lo insurance cashless untunda?",
-      "Thanks andi."
-    ],
-    "expected": {
-      "intent": "info",
-      "area_id": "jubilee_hills",
-      "business_id": "h_jh_01",
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": null,
-      "time": null,
-      "party_size": null,
-      "outcome": "answered_faq"
-    }
-  },
-  {
-    "test_id": "T32",
-    "service": "hospital",
-    "language_mix": "hi-en",
-    "scenario": "faq",
-    "caller_turns": [
-      "Cyber Valley Hospital mein emergency 24 ghante khula hai?",
-      "Theek hai, shukriya."
-    ],
-    "expected": {
-      "intent": "info",
-      "area_id": "gachibowli",
-      "business_id": "h_gb_03",
-      "speciality": null,
-      "doctor_id": null,
-      "day_offset": null,
-      "time": null,
-      "party_size": null,
-      "outcome": "answered_faq"
-    }
-  },
-  {
-    "test_id": "T33",
-    "service": "hospital",
-    "language_mix": "te-en",
-    "scenario": "vague_request",
-    "caller_turns": [
-      "Pallu noppi ga undi, Jubilee Hills lo evaraina chudandi.",
-      "Repu 11:30 ki.",
-      "Peru Anil.",
-      "Avunu."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "jubilee_hills",
-      "business_id": "h_jh_05",
-      "speciality": "Dental",
-      "doctor_id": "d_jh_05_dental_1",
-      "day_offset": 1,
-      "time": "11:30",
-      "party_size": null,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T34",
-    "service": "hospital",
-    "language_mix": "hi-en",
-    "scenario": "vague_request",
-    "caller_turns": [
-      "Aankh mein dikkat hai, Gachibowli mein kisi ko dikhana hai.",
-      "Cyber Valley, parso shaam 5:30.",
-      "Naam Salma.",
-      "Haan."
+      "Gachibowli Vaana Grove mein Dr. Navisha Vaanavolu se kal skin appointment mil sakta hai?",
+      "Kal full hai toh parson Dr. Navisha Vaanavolu ke saath 10:15 am kar dijiye.",
+      "Patient ka naam Rishvi Kalatiruma hai.",
+      "Haan, confirm kar dijiye."
     ],
     "expected": {
       "intent": "book",
       "area_id": "gachibowli",
-      "business_id": "h_gb_03",
-      "speciality": "Ophthalmology",
-      "doctor_id": "d_gb_03_ophth_1",
+      "business_id": "h_gb_01",
+      "speciality": "Dermatology",
+      "doctor_id": "d_gb_01_derm_1",
       "day_offset": 2,
-      "time": "17:30",
-      "party_size": null,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T35",
-    "service": "hospital",
-    "language_mix": "en-IN",
-    "scenario": "mid_call_change",
-    "caller_turns": [
-      "Knee pain, need a doctor in Jubilee Hills tomorrow evening.",
-      "Hillcrest at 6 pm. Actually, can we do the day after instead, 6:30?",
-      "Name is Prakash.",
-      "Yes, confirm."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "jubilee_hills",
-      "business_id": "h_jh_01",
-      "speciality": "Orthopedics",
-      "doctor_id": "d_jh_01_ortho_2",
-      "day_offset": 2,
-      "time": "18:30",
-      "party_size": null,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T36",
-    "service": "hospital",
-    "language_mix": "te-en",
-    "scenario": "mid_call_change",
-    "caller_turns": [
-      "Gachibowli lo gynecologist kavali repu.",
-      "Cyber Valley, saayantram 4:30. Ledu, 5:30 ki marchandi.",
-      "Peru Haritha.",
-      "Avunu."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "gachibowli",
-      "business_id": "h_gb_03",
-      "speciality": "Gynecology",
-      "doctor_id": "d_gb_03_gyn_1",
-      "day_offset": 1,
-      "time": "17:30",
-      "party_size": null,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T37",
-    "service": "hospital",
-    "language_mix": "hi-en",
-    "scenario": "happy_path",
-    "caller_turns": [
-      "Dil ka doctor chahiye Jubilee Hills mein, parso.",
-      "Hillcrest, 11 baje.",
-      "Naam Mohan Lal.",
-      "Haan."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "jubilee_hills",
-      "business_id": "h_jh_01",
-      "speciality": "Cardiology",
-      "doctor_id": "d_jh_01_cardio_1",
-      "day_offset": 2,
-      "time": "11:00",
-      "party_size": null,
-      "outcome": "booked"
-    }
-  },
-  {
-    "test_id": "T38",
-    "service": "hospital",
-    "language_mix": "te-en",
-    "scenario": "happy_path",
-    "caller_turns": [
-      "Chevi noppi, Gachibowli lo ENT doctor kavali, mudu rojula tarvata.",
-      "Cyber Valley, 10:15 ki.",
-      "Peru Naveen.",
-      "Avunu."
-    ],
-    "expected": {
-      "intent": "book",
-      "area_id": "gachibowli",
-      "business_id": "h_gb_03",
-      "speciality": "ENT",
-      "doctor_id": "d_gb_03_ent_1",
-      "day_offset": 3,
       "time": "10:15",
       "party_size": null,
       "outcome": "booked"
     }
   },
   {
-    "test_id": "T39",
+    "test_id": "T30",
+    "service": "hospital",
+    "language_mix": "hi-en",
+    "scenario": "happy_path",
+    "caller_turns": [
+      "Jubilee Hills Malle Vaidya Family Clinic mein kal gynecologist ka appointment chahiye.",
+      "Dr. Arvin Rellimudi ka 3:00 pm wala appointment theek hai.",
+      "Patient ka naam Saira Minugurani hai.",
+      "Haan, confirm kar dijiye."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "jubilee_hills",
+      "business_id": "h_jh_05",
+      "speciality": "Gynecology",
+      "doctor_id": "d_jh_05_gyn_1",
+      "day_offset": 1,
+      "time": "15:00",
+      "party_size": null,
+      "outcome": "booked"
+    }
+  },
+  {
+    "test_id": "T31",
+    "service": "hospital",
+    "language_mix": "hi-en",
+    "scenario": "happy_path",
+    "caller_turns": [
+      "Gachibowli ke Eetha Family Clinic mein aaj kaan ka doctor chahiye.",
+      "Dr. Aaravi Jaabilivalasa ke saath aaj 10:00 am baje de dijiye.",
+      "Patient ka naam Harvi Koyilamuri hai.",
+      "Haan, confirm kar dijiye."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "gachibowli",
+      "business_id": "h_gb_04",
+      "speciality": "ENT",
+      "doctor_id": "d_gb_04_ent_1",
+      "day_offset": 0,
+      "time": "10:00",
+      "party_size": null,
+      "outcome": "booked"
+    }
+  },
+  {
+    "test_id": "T32",
+    "service": "hospital",
+    "language_mix": "hi-en",
+    "scenario": "emergency",
+    "caller_turns": [
+      "Bahut khoon beh raha hai aur ruk nahi raha. Humein abhi help chahiye."
+    ],
+    "expected": {
+      "intent": "emergency",
+      "area_id": null,
+      "business_id": null,
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": null,
+      "time": null,
+      "party_size": null,
+      "outcome": "redirected_emergency"
+    }
+  },
+  {
+    "test_id": "T33",
     "service": "hospital",
     "language_mix": "hi-en",
     "scenario": "unsupported_area",
     "caller_turns": [
-      "Secunderabad mein bachchon ka doctor chahiye.",
-      "Nahi, mujhe wahin chahiye. Theek hai, thank you."
+      "Khajaguda mein kal dentist ki appointment dekh lo.",
+      "Khajaguda mein hi hona chahiye. Abhi rehne dijiye."
     ],
     "expected": {
       "intent": "unsupported_area",
@@ -865,31 +726,165 @@
       "business_id": null,
       "speciality": null,
       "doctor_id": null,
-      "day_offset": null,
+      "day_offset": 1,
       "time": null,
       "party_size": null,
       "outcome": "declined_unsupported_area"
     }
   },
   {
-    "test_id": "T40",
+    "test_id": "T34",
+    "service": "hospital",
+    "language_mix": "hi-en",
+    "scenario": "happy_path",
+    "caller_turns": [
+      "Gachibowli Taarika Skin and Dental Clinic mein kal dentist chahiye. Fee kitni hogi?",
+      "Theek hai, Dr. Mihit Nelatalapu ka 2:00 pm wala slot book kar dijiye.",
+      "Patient ka naam Nehaari Harivolu hai.",
+      "Haan, confirm kar dijiye."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "gachibowli",
+      "business_id": "h_gb_03",
+      "speciality": "Dental",
+      "doctor_id": "d_gb_03_dental_1",
+      "day_offset": 1,
+      "time": "14:00",
+      "party_size": null,
+      "outcome": "booked"
+    }
+  },
+  {
+    "test_id": "T35",
+    "service": "hospital",
+    "language_mix": "hi-en",
+    "scenario": "happy_path",
+    "caller_turns": [
+      "Gachibowli ke Nava Meru mein parson cardiologist ka routine follow-up karwana hai.",
+      "Dr. Dhriti Siramodugu ka 11:30 am wala appointment le lo.",
+      "Patient ka naam Mihran Rellivolu hai.",
+      "Haan, confirm kar dijiye."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "gachibowli",
+      "business_id": "h_gb_02",
+      "speciality": "Cardiology",
+      "doctor_id": "d_gb_02_cardio_1",
+      "day_offset": 2,
+      "time": "11:30",
+      "party_size": null,
+      "outcome": "booked"
+    }
+  },
+  {
+    "test_id": "T36",
     "service": "hospital",
     "language_mix": "en-IN",
     "scenario": "happy_path",
     "caller_turns": [
-      "I need an eye checkup in Jubilee Hills tomorrow.",
-      "Pearl City at 12 noon.",
-      "Name is Farida.",
-      "Yes."
+      "I’m looking for a skin doctor in Jubilee Hills tomorrow. Is Tarali Skin and Eye Clinic an option?",
+      "Yes, I’ll take Dr. Sumira Dharamalli at 10:00 am.",
+      "The patient’s name is Dhvani Raagapalle.",
+      "Yes, please confirm it."
     ],
     "expected": {
       "intent": "book",
       "area_id": "jubilee_hills",
-      "business_id": "h_jh_04",
-      "speciality": "Ophthalmology",
-      "doctor_id": "d_jh_04_ophth_1",
+      "business_id": "h_jh_03",
+      "speciality": "Dermatology",
+      "doctor_id": "d_jh_03_derm_1",
       "day_offset": 1,
-      "time": "12:00",
+      "time": "10:00",
+      "party_size": null,
+      "outcome": "booked"
+    }
+  },
+  {
+    "test_id": "T37",
+    "service": "hospital",
+    "language_mix": "en-IN",
+    "scenario": "happy_path",
+    "caller_turns": [
+      "Does Nila Sopanam Hospital in Jubilee Hills have an orthopedics appointment the day after tomorrow?",
+      "Dr. Dhriti Yerratippa at 12:15 pm works for me.",
+      "The patient’s name is Navon Koyalagunta.",
+      "Yes, please confirm it."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "jubilee_hills",
+      "business_id": "h_jh_02",
+      "speciality": "Orthopedics",
+      "doctor_id": "d_jh_02_ortho_1",
+      "day_offset": 2,
+      "time": "12:15",
+      "party_size": null,
+      "outcome": "booked"
+    }
+  },
+  {
+    "test_id": "T38",
+    "service": "hospital",
+    "language_mix": "en-IN",
+    "scenario": "emergency",
+    "caller_turns": [
+      "I can't breathe. I need emergency help right now."
+    ],
+    "expected": {
+      "intent": "emergency",
+      "area_id": null,
+      "business_id": null,
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": null,
+      "time": null,
+      "party_size": null,
+      "outcome": "redirected_emergency"
+    }
+  },
+  {
+    "test_id": "T39",
+    "service": "hospital",
+    "language_mix": "en-IN",
+    "scenario": "faq",
+    "caller_turns": [
+      "Is there a lab at Vaana Grove Hospital in Gachibowli? Is the OPD accessible by wheelchair?",
+      "Thank you, that’s all I needed to know."
+    ],
+    "expected": {
+      "intent": "info",
+      "area_id": "gachibowli",
+      "business_id": "h_gb_01",
+      "speciality": null,
+      "doctor_id": null,
+      "day_offset": null,
+      "time": null,
+      "party_size": null,
+      "outcome": "answered_faq"
+    }
+  },
+  {
+    "test_id": "T40",
+    "service": "hospital",
+    "language_mix": "en-IN",
+    "scenario": "mid_call_change",
+    "caller_turns": [
+      "I need an eye appointment at Koyila Eye and Ortho Clinic in Gachibowli tomorrow.",
+      "Actually, could you check today instead of tomorrow?",
+      "Today works better. Can I take Dr. Nirav Veligudem at 4:00 pm today?",
+      "The patient’s name is Anik Vennapuri.",
+      "Yes, please confirm it."
+    ],
+    "expected": {
+      "intent": "book",
+      "area_id": "gachibowli",
+      "business_id": "h_gb_05",
+      "speciality": "Ophthalmology",
+      "doctor_id": "d_gb_05_ophth_1",
+      "day_offset": 0,
+      "time": "16:00",
       "party_size": null,
       "outcome": "booked"
     }

@@ -80,11 +80,11 @@ Each node only sees its own tools (restaurant node never sees `book_appointment`
 ```
 AI:     Namaste! Main Vaani hoon, AI assistant. Bataiye, kya madad karoon?
 Caller: Jubilee Hills mein koi achha restaurant batao, kal raat 6 logon ke liye.
-AI:     Jubilee Hills mein teen achhe options hain: Spice Garden, rating 4.5, North Indian; Coastal Kitchen, 4.3, seafood; Green Leaf, 4.2, pure veg. Kaunsa pasand karenge?
-Caller: Spice Garden. Kitne baje available hai?
-AI:     Kal 7:30 ya 8:30 baje table hai, 8 baje full hai.
-Caller: 8:30 theek hai. Naam Pranav.
-AI:     Kal raat 8:30, Spice Garden, 6 log, Pranav ji ke naam pe. Confirm karoon?
+AI:     Jubilee Hills mein teen achhe options hain: Dumgalli Courtyard, rating 4.7, Hyderabadi biryani; Tandoor Taaraka, 4.5, North Indian; Aavakaaya Arugu, 4.4, Andhra pure veg. Kaunsa pasand karenge?
+Caller: Dumgalli Courtyard, saadhe aath baje.
+AI:     Saadhe aath full hai ji. Dumgalli mein 7 baje table hai, ya Tandoor Taaraka mein saadhe aath?
+Caller: 7 baje Dumgalli theek hai. Naam Pranav.
+AI:     Kal shaam 7, Dumgalli Courtyard, 6 log, Pranav ji ke naam pe. Confirm karoon?
 Caller: Haan.
 AI:     Ho gaya! Booking ID VN-4821, WhatsApp pe details bhej di hain. Aur kuch?
 ```
@@ -96,13 +96,13 @@ AI:     Namaskaram! Nenu Vaani, AI assistant ni. Mee ki emi help kavali?
 Caller: Kukatpally lo dermatologist kavali, repu.
 AI:     Sorry andi, ee demo lo Jubilee Hills, Gachibowli lo matrame hospitals unnai. Vaatilo okati chudamantara?
 Caller: Gachibowli chudu.
-AI:     Gachibowli lo rendu options: Navaniti Hospital, 4.4, Dr. Ananya garu, podduna 10 to 1; Udayam Family Clinic, 4.2, Dr. Ravi garu, saayantram 5 to 8. Edi kavali?
-Caller: Navaniti, repu 11 ki.
-AI:     Repu podduna padakondu gantalaki, Navaniti lo Dr. Ananya garu tho. Mee peru cheppandi?
+AI:     Gachibowli lo options: Vaana Grove Hospital, 4.7 — Dr. Navisha Vaanavolu garu repu full, Dr. Suvin Rellimudi garu saayantram 3 nunchi; Taarika Skin and Dental Clinic, 4.5, Dr. Vaanika Neelimodugu garu, podduna. Edi kavali?
+Caller: Vaana Grove, Dr. Suvin garu tho 3 ki.
+AI:     Repu madhyaanam 3 ki Dr. Suvin Rellimudi garu tho. Mee peru cheppandi?
 Caller: Lakshmi.
-AI:     Repu 11 ki, Dr. Ananya garu, Lakshmi garu peru meeda. Confirm cheyyana?
+AI:     Repu 3 ki Dr. Suvin Rellimudi garu tho, Vaana Grove lo, Lakshmi garu peru meeda, fee ₹900. Confirm cheyyana?
 Caller: Avunu.
-AI:     Oka second andi, check chestunna… Ayipoyindi! Booking ID VN-3170. Fee 600 rupayalu, payment link WhatsApp lo pampanu. Inka emaina kavala?
+AI:     Oka second andi, check chestunna… Ayipoyindi! Booking ID VN-3170. Fee 900 rupayalu, payment link WhatsApp lo pampanu. Inka emaina kavala?
 ```
 
 ### Indian English — emergency
@@ -113,4 +113,4 @@ Caller: I need a doctor in Gachibowli, my father has severe chest pain and he's 
 AI:     This sounds like an emergency. Please call 108 or 112 immediately. I can't book appointments for emergencies.
 ```
 
-All names above are fictional and match the placeholder set in `data/` (test calls T01, T21, T30).
+All names above are fictional and come from the real demo data in `data/` (the scenarios are checked by `backend/tests/test_real_data.py`; compare test calls T13, T23, T38).

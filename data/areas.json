@@ -7,62 +7,58 @@
     "aliases": [
       "jubilee hills",
       "jubili hills",
-      "jubilee",
-      "jublee hills",
       "jh",
+      "jubli hills",
+      "jublee hills",
       "jubilee hill",
-      "joobli hills",
-      "జూబ్లీ హిల్స్",
-      "जुबली हिल्स"
+      "జుబ్లీ హిల్స్",
+      "जुबिली हिल्स"
     ],
-    "lat": 17.4326,
-    "lng": 78.4071,
+    "lat": 17.4308,
+    "lng": 78.4103,
     "nearby_unsupported_areas": [
       "Banjara Hills",
-      "Madhapur",
       "Film Nagar",
-      "Yousufguda",
-      "Ameerpet",
-      "Panjagutta"
+      "Madhapur",
+      "Shaikpet",
+      "Yousufguda"
     ],
+    "is_sample_data": true,
     "unsupported_area_reply": {
-      "te": "Sorry andi, ee demo lo Jubilee Hills, Gachibowli lo matrame chudagalanu. Vaatilo okati chudamantara?",
-      "hi": "Sorry ji, is demo mein abhi sirf Jubilee Hills aur Gachibowli hain. Inmein se koi dekhoon?",
-      "en": "Sorry, for this demo we only cover Jubilee Hills and Gachibowli. Shall I check one of these?"
-    },
-    "is_sample_data": true
+      "te": "సారీ అండి, ఈ డెమోలో జూబ్లీ హిల్స్, గచ్చిబౌలి ప్రాంతాల్లో మాత్రమే రెస్టారెంట్లు, హాస్పిటల్స్ ఉన్నాయి. ఈ రెండింట్లో ఒకటి చెక్ చేయనా?",
+      "hi": "माफ़ कीजिए, इस डेमो में रेस्टोरेंट और अस्पताल सिर्फ़ जुबली हिल्स और गच्चीबौली में हैं। इनमें से किसी एक इलाके में देखूँ?",
+      "en": "Sorry, for this demo we only have restaurants and hospitals in Jubilee Hills and Gachibowli. Shall I check one of those areas?"
+    }
   },
   {
     "area_id": "gachibowli",
     "name_en": "Gachibowli",
     "name_te": "గచ్చిబౌలి",
-    "name_hi": "गाचीबौली",
+    "name_hi": "गच्चीबौली",
     "aliases": [
       "gachibowli",
-      "gachibouli",
       "gachi bowli",
-      "gachibowly",
-      "gacchibowli",
-      "gachibawli",
       "gb",
-      "గచ్చిబౌలి",
-      "गाचीबौली"
+      "gachibawli",
+      "gachiboli",
+      "gachibouli",
+      "గచ్చిబౌళి",
+      "गाचीबोवली"
     ],
-    "lat": 17.4401,
-    "lng": 78.3489,
+    "lat": 17.4436,
+    "lng": 78.352,
     "nearby_unsupported_areas": [
       "Kondapur",
-      "Madhapur",
       "Nanakramguda",
-      "Financial District",
-      "Kukatpally",
-      "Manikonda"
+      "Khajaguda",
+      "Manikonda",
+      "Kokapet"
     ],
+    "is_sample_data": true,
     "unsupported_area_reply": {
-      "te": "Sorry andi, ee demo lo Jubilee Hills, Gachibowli lo matrame chudagalanu. Vaatilo okati chudamantara?",
-      "hi": "Sorry ji, is demo mein abhi sirf Jubilee Hills aur Gachibowli hain. Inmein se koi dekhoon?",
-      "en": "Sorry, for this demo we only cover Jubilee Hills and Gachibowli. Shall I check one of these?"
-    },
-    "is_sample_data": true
+      "te": "సారీ అండి, ఈ డెమోలో జూబ్లీ హిల్స్, గచ్చిబౌలి ప్రాంతాల్లో మాత్రమే రెస్టారెంట్లు, హాస్పిటల్స్ ఉన్నాయి. ఈ రెండింట్లో ఒకటి చెక్ చేయనా?",
+      "hi": "माफ़ कीजिए, इस डेमो में रेस्टोरेंट और अस्पताल सिर्फ़ जुबली हिल्स और गच्चीबौली में हैं। इनमें से किसी एक इलाके में देखूँ?",
+      "en": "Sorry, for this demo we only have restaurants and hospitals in Jubilee Hills and Gachibowli. Shall I check one of those areas?"
+    }
   }
 ]

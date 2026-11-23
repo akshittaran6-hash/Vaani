@@ -81,7 +81,7 @@ A JSON array. 1-3 doctors per speciality each hospital offers (clinics fewer). F
 === FILE 6: doctor_availability.json ===
 A JSON array. List ONLY doctor-days that already have bookings or blocked slots; everything else in the schedule is free.
 {"doctor_id": "d_gb_01_derm_1", "day_offset": 1, "booked_times": ["10:00", "10:15", "11:30"], "blocked_times": []}
-- day_offset maps to a different weekday depending on when we load the data. So every doctor that appears in this file or in test_calls.json must work ALL 7 days with the SAME hours every day (set that in FILE 5), and every time must be a slot start inside those hours. Mornings busier.
+- day_offset maps to a different weekday depending on when we load the data. So every doctor that appears in this file or in test_calls.json must work ALL 7 days (hours may differ by weekday, but every booked/blocked time must be a slot on every weekday) (set that in FILE 5), and every time must be a slot start inside those hours. Mornings busier.
 - At least one doctor FULLY booked tomorrow (every slot of the schedule listed).
 - 1-2 blocked_times entries in total.
 

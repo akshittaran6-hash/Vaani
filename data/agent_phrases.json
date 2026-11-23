@@ -2,325 +2,325 @@
   {
     "key": "greeting_with_ai_disclosure",
     "te-en": [
-      "Namaskaram! Nenu Vaani, AI assistant ni. Mee ki emi help kavali?",
-      "Hello andi! Nenu Vaani, oka AI assistant. Restaurant table aa, doctor appointment aa, cheppandi.",
-      "Namaskaram, Vaani ni, AI assistant. Emi chesi pettamantaru?"
+      "నమస్కారం అండి, నేను వాణి, మీ AI అసిస్టెంట్‌ని. ఎలా హెల్ప్ చేయాలి?",
+      "హలో అండి, వాణి AI మాట్లాడుతోంది. చెప్పండి, మీకేం కావాలి?",
+      "హాయ్ అండి, నేను వాణి AI. ఏదైనా బుక్ చేయాలా?"
     ],
     "hi-en": [
-      "Namaste! Main Vaani hoon, AI assistant. Bataiye, kya madad karoon?",
-      "Hello ji! Main Vaani, ek AI assistant. Table book karna hai ya doctor ka appointment?",
-      "Namaste, main Vaani hoon, AI assistant. Aaj kya kaam hai?"
+      "नमस्ते, मैं वाणी, आपकी AI असिस्टेंट हूँ। बताइए, कैसे मदद करूँ?",
+      "हैलो, वाणी AI बोल रही हूँ। आज क्या करना है?",
+      "नमस्कार, मैं वाणी AI हूँ। क्या बुक करना है?"
     ],
     "en-IN": [
-      "Hello! I'm Vaani, an AI assistant. How can I help you today?",
-      "Hi, this is Vaani, an AI assistant. Restaurant table or doctor's appointment?",
-      "Hello, I'm Vaani, your AI assistant. What can I do for you?"
+      "Hello, I’m Vaani, your AI assistant. How can I help?",
+      "Hi, you’ve reached Vaani, the AI booking assistant. What can I do for you?",
+      "Hello, Vaani AI here. What would you like to book?"
     ]
   },
   {
     "key": "ask_area",
     "te-en": [
-      "Ae area lo chudamantaru? {area_1} aa, {area_2} aa?",
-      "Area cheppandi andi, {area_1} leda {area_2}?",
-      "Ekkada kavali, {area_1} side aa {area_2} side aa?"
+      "ఏ ఏరియాలో చూడాలి అండి?",
+      "మీకు ఏ ప్రాంతంలో కావాలి?",
+      "ఏ ఏరియా అయితే బాగుంటుంది?"
     ],
     "hi-en": [
-      "Kaunse area mein dekhoon? {area_1} ya {area_2}?",
-      "Area bataiye ji, {area_1} ya {area_2}?",
-      "Kahan chahiye, {area_1} side ya {area_2} side?"
+      "किस एरिया में देखूँ?",
+      "कौन-सा इलाका आपके लिए ठीक रहेगा?",
+      "आपको किस इलाके में चाहिए?"
     ],
     "en-IN": [
-      "Which area should I check, {area_1} or {area_2}?",
-      "Which area works for you, {area_1} or {area_2}?",
-      "Where would you like it, {area_1} or {area_2}?"
+      "Which area should I check?",
+      "Which locality works for you?",
+      "Where would you like me to look?"
     ]
   },
   {
     "key": "ask_date_time",
     "te-en": [
-      "Ae roju, ennintiki kavali?",
-      "Date, time cheppandi andi.",
-      "Eppudu kavali, ee roju aa repu aa? Time entha?"
+      "ఏ రోజు, ఏ టైమ్‌కి కావాలి?",
+      "ఎప్పటికి బుక్ చేయాలి అండి?",
+      "ఏ డేట్, దాదాపు ఏ టైమ్ చెప్పండి."
     ],
     "hi-en": [
-      "Kis din aur kitne baje chahiye?",
-      "Date aur time bata dijiye.",
-      "Kab chahiye, aaj ya kal? Kitne baje?"
+      "किस दिन, किस टाइम के लिए चाहिए?",
+      "कब के लिए बुक करना है?",
+      "दिन और करीब का टाइम बता दीजिए।"
     ],
     "en-IN": [
-      "Which day and what time?",
-      "What date and time should I look for?",
-      "When would you like it, today or tomorrow? What time?"
+      "What day and time would you like?",
+      "When should I check for a slot?",
+      "Which date and roughly what time works for you?"
     ]
   },
   {
     "key": "ask_party_size",
     "te-en": [
-      "Enthamandi vastunnaru?",
-      "Mottham enthamandi andi?",
-      "Table enthamandi ki kavali?"
+      "ఎంతమంది వస్తారు అండి?",
+      "టేబుల్ ఎంతమందికి కావాలి?",
+      "మొత్తం ఎంతమంది ఉంటారు?"
     ],
     "hi-en": [
-      "Kitne log aa rahe hain?",
-      "Kul kitne log honge?",
-      "Table kitne logon ke liye chahiye?"
+      "कितने लोग आएँगे?",
+      "कितने लोगों की टेबल चाहिए?",
+      "आप सब मिलाकर कितने लोग होंगे?"
     ],
     "en-IN": [
-      "How many people?",
-      "How many of you will be coming?",
-      "The table is for how many people?"
+      "How many people are coming?",
+      "How many should I book the table for?",
+      "What’s the total number of guests?"
     ]
   },
   {
     "key": "ask_name",
     "te-en": [
-      "Booking evari peru meeda cheyyali?",
-      "Mee peru cheppandi andi?",
-      "Peru cheptara, booking ki?"
+      "ఏ పేరు మీద బుక్ చేయాలి?",
+      "బుకింగ్‌కి మీ పేరు చెప్పండి అండి.",
+      "ఏ పేరుతో పెట్టాలి?"
     ],
     "hi-en": [
-      "Booking kis naam se karoon?",
-      "Aapka naam bata dijiye?",
-      "Naam kya likhoon booking pe?"
+      "किस नाम से बुक करूँ?",
+      "बुकिंग के लिए नाम बता दीजिए।",
+      "किसके नाम पर रखूँ?"
     ],
     "en-IN": [
-      "What name should I put the booking under?",
-      "May I have your name, please?",
-      "And the name for the booking?"
+      "What name should I book under?",
+      "Could I have the name for the booking?",
+      "Whose name should I put on the booking?"
     ]
   },
   {
     "key": "reading_top3_intro",
     "te-en": [
-      "{area} lo moodu manchi options unnai: {options}. Edi kavali?",
-      "Choodandi, {options}. Veetilo edi nachindi?",
-      "{area} lo top moodu: {options}. Edi book cheyyamantaru?"
+      "{area}లో ఈ ఆప్షన్స్ దొరికాయి. వినండి.",
+      "{area}లో నేను చూసిన ఆప్షన్స్ ఇవి.",
+      "{area} కోసం చిన్న లిస్ట్ ఉంది. చెప్తాను."
     ],
     "hi-en": [
-      "{area} mein teen achhe options hain: {options}. Kaunsa pasand karenge?",
-      "Dekhiye, {options}. Inmein se kaunsa?",
-      "{area} ke top teen: {options}. Kaunsa book karoon?"
+      "{area} में ये ऑप्शन मिले हैं।",
+      "{area} में ये जगहें देख सकते हैं।",
+      "{area} के लिए ये कुछ ऑप्शन हैं, सुनिए।"
     ],
     "en-IN": [
-      "Here are three good options in {area}: {options}. Which one would you like?",
-      "I found {options}. Which one works?",
-      "The top three in {area} are {options}. Shall I book one?"
+      "I found these options in {area}.",
+      "Here are the options I found in {area}.",
+      "I have a short list for {area}."
     ]
   },
   {
     "key": "slot_full_offer_alternatives",
     "te-en": [
-      "{time} ki full ayipoyindi andi. {alternatives} ki undi, edi okay?",
-      "Sorry, {time} slot full. {alternatives} kudirithe chudandi.",
-      "{time} ki ledu andi, kani {alternatives} ki khaali undi."
+      "ఆ టైమ్ ఫుల్ అండి. {options} ఖాళీగా ఉన్నాయి. ఏది కావాలి?",
+      "మీరు అడిగిన స్లాట్ దొరకలేదు. {options} ఉన్నాయి. ఏది సూట్ అవుతుంది?",
+      "ఆ టైమ్‌కి ఖాళీ లేదు. {options}లో ఏదైనా చూడాలా?"
     ],
     "hi-en": [
-      "{time} baje full hai ji. {alternatives} pe jagah hai, kaunsa chalega?",
-      "Sorry, {time} full ho gaya. {alternatives} chalega?",
-      "{time} nahi mil raha, lekin {alternatives} khaali hai."
+      "उस टाइम स्लॉट फुल है। {options} खाली हैं। कौन-सा ठीक रहेगा?",
+      "वह टाइम नहीं मिल रहा। {options} में से चुनेंगे?",
+      "आपने जो टाइम कहा, वह भरा है। {options} कैसा रहेगा?"
     ],
     "en-IN": [
-      "Sorry, {time} is full. I have {alternatives}. Would either work?",
-      "{time} is taken, but {alternatives} are free.",
-      "That slot's full. How about {alternatives}?"
+      "That time is full. I have {options}. Which works?",
+      "The requested slot is taken. Would {options} work?",
+      "That slot is full at the moment. I can offer {options}."
     ]
   },
   {
     "key": "confirm_booking_readback",
     "te-en": [
-      "{date} {time}, {business}, {party_size} mandi, {name} garu peru meeda. Confirm cheyyana?",
-      "Okasari cheptanu: {business}, {date} {time}, {party_size} mandi, {name} garu. Ok na?",
-      "{name} garu, {business} lo {date} {time} ki {party_size} mandi. Book cheyyana?"
+      "ఒక్కసారి చెక్ చేద్దాం. {booking_details}, {name} పేరు మీద. బుక్ చేయనా?",
+      "{name} పేరుతో {booking_details}. కన్ఫర్మ్ చేయనా అండి?",
+      "{booking_details}, పేరు {name}. బుక్ చేసేయనా అండి?"
     ],
     "hi-en": [
-      "{date} {time}, {business}, {party_size} log, {name} ji ke naam pe. Confirm karoon?",
-      "Ek baar check kar lijiye: {business}, {date} {time}, {party_size} log, {name} ji. Theek hai?",
-      "{name} ji, {business} mein {date} {time} baje {party_size} log. Book kar doon?"
+      "एक बार चेक कर लें। {name} के नाम पर {booking_details}। बुक कर दूँ?",
+      "{booking_details}, नाम {name}। कन्फर्म करूँ?",
+      "मैं {name} के नाम से {booking_details} बुक करूँ?"
     ],
     "en-IN": [
-      "{business}, {date} at {time}, {party_size} people, under {name}. Shall I confirm?",
-      "Just to check: {business}, {date}, {time}, {party_size} people, for {name}. Okay?",
-      "{name}, that's {business} on {date} at {time} for {party_size}. Book it?"
+      "Let me read that back. {booking_details}, under {name}. Shall I book it?",
+      "I have {booking_details} under {name}. Is that correct?",
+      "Shall I confirm {booking_details} in the name of {name}?"
     ]
   },
   {
     "key": "booking_done_whatsapp_sent",
     "te-en": [
-      "Ayipoyindi! Booking ID {booking_id}, details WhatsApp lo pampanu. Inka emaina kavala?",
-      "Done andi! Mee booking ID {booking_id}. WhatsApp lo message vastundi.",
-      "Book chesanu andi, ID {booking_id}. Details WhatsApp lo unnai."
+      "బుక్ అయింది అండి. ఐడీ {booking_id}. డీటెయిల్స్ WhatsAppలో పంపాను.",
+      "మీ బుకింగ్ కన్ఫర్మ్. రిఫరెన్స్ {booking_id}. WhatsAppకి వివరాలు పంపించాను.",
+      "అయిపోయింది. {booking_id} మీ బుకింగ్ ఐడీ. WhatsAppలో డీటెయిల్స్ చూడొచ్చు."
     ],
     "hi-en": [
-      "Ho gaya! Booking ID {booking_id}, WhatsApp pe details bhej di hain. Aur kuch?",
-      "Done ji! Aapka booking ID {booking_id} hai. WhatsApp pe message aa jayega.",
-      "Book ho gaya, ID {booking_id}. Saari details WhatsApp pe hain."
+      "बुकिंग हो गई। आईडी {booking_id} है। डिटेल्स WhatsApp पर भेज दी हैं।",
+      "आपकी बुकिंग कन्फर्म है। रेफ़रेंस {booking_id} है। मैसेज WhatsApp पर भेज दिया है।",
+      "हो गया। बुकिंग नंबर {booking_id} है। WhatsApp पर डिटेल्स भेज दी हैं।"
     ],
     "en-IN": [
-      "Done! Your booking ID is {booking_id}, and I've sent the details on WhatsApp. Anything else?",
-      "All set, booking ID {booking_id}. You'll get a WhatsApp message shortly.",
-      "Booked! ID {booking_id}. The details are on WhatsApp."
+      "Your booking is confirmed. The reference is {booking_id}. I’ve sent the details on WhatsApp.",
+      "Booked. Your ID is {booking_id}, and I’ve sent the WhatsApp confirmation.",
+      "That’s confirmed under {booking_id}. The details have been sent on WhatsApp."
     ]
   },
   {
     "key": "filler_checking",
     "te-en": [
-      "Oka second andi, check chestunna…",
-      "Okka nimisham, chustunna…",
-      "Aagandi, available unda ledha chustanu…"
+      "ఒక్క సెకండ్ అండి, చెక్ చేస్తున్నాను.",
+      "ఒక్క నిమిషం, స్లాట్స్ చూస్తాను.",
+      "ఇప్పుడే చూసి చెప్తాను అండి."
     ],
     "hi-en": [
-      "Ek second ji, check kar rahi hoon…",
-      "Bas ek minute, dekh rahi hoon…",
-      "Ruko zara, availability dekhti hoon…"
+      "एक सेकंड, चेक कर रही हूँ।",
+      "ज़रा रुकिए, स्लॉट देख रही हूँ।",
+      "अभी देख कर बताती हूँ।"
     ],
     "en-IN": [
-      "One second, let me check…",
-      "Just a moment, checking that for you…",
-      "Hold on, let me look that up…"
+      "One moment, I’m checking.",
+      "Give me a second to check the slots.",
+      "I’ll look that up now."
     ]
   },
   {
     "key": "didnt_catch_that",
     "te-en": [
-      "Sorry andi, sariga vinapadaledu. Inkosari cheptara?",
-      "Kshaminchandi, malli cheppagalara?",
-      "Konchem clear ga cheptara andi?"
+      "సరిగ్గా వినపడలేదు అండి. మళ్లీ చెప్తారా?",
+      "ఆ మాట క్లియర్‌గా వినలేదు. ఇంకోసారి చెప్పండి.",
+      "ఒక్కసారి అది మళ్లీ చెప్తారా?"
     ],
     "hi-en": [
-      "Sorry ji, theek se suna nahi. Ek baar phir bolenge?",
-      "Maaf kijiye, dobara bataiye?",
-      "Thoda saaf bolenge ji?"
+      "ठीक से सुन नहीं पाई। फिर से कहेंगे?",
+      "वह आख़िरी बात दोबारा बता दीजिए।",
+      "एक बार फिर बोलेंगे, प्लीज़?"
     ],
     "en-IN": [
-      "Sorry, I didn't catch that. Could you say it again?",
-      "Sorry, could you repeat that?",
-      "I missed that, could you say it once more?"
+      "I didn’t catch that. Could you say it again?",
+      "Could you repeat that last part?",
+      "The line broke up a bit. Could you say that once more?"
     ]
   },
   {
     "key": "silence_check",
     "te-en": [
-      "Hello, vinipistunda?",
-      "Hello andi, unnara?",
-      "Hello? Naa maata vinipistunda andi?"
+      "హలో అండి, వినిపిస్తోందా?",
+      "హలో, మీరు లైన్‌లో ఉన్నారా?",
+      "నా వాయిస్ వినిపిస్తుందా అండి?"
     ],
     "hi-en": [
-      "Hello, sunai de raha hai?",
-      "Hello ji, aap hain?",
-      "Hello? Meri awaaz aa rahi hai?"
+      "हैलो, मेरी आवाज़ आ रही है?",
+      "हैलो, आप लाइन पर हैं?",
+      "क्या आप मुझे सुन पा रहे हैं?"
     ],
     "en-IN": [
       "Hello, can you hear me?",
-      "Hello, are you still there?",
-      "Hello? Can you hear me okay?"
+      "Hello, are you still on the line?",
+      "Can you hear me all right?"
     ]
   },
   {
     "key": "anything_else",
     "te-en": [
-      "Inka emaina help kavala?",
-      "Inkemaina chesi pettala andi?",
-      "Vere emaina kavala?"
+      "ఇంకేమైనా కావాలా అండి?",
+      "మరేదైనా చూసి చెప్పాలా?",
+      "ఇంకేమైనా హెల్ప్ చేయాలా?"
     ],
     "hi-en": [
-      "Aur kuch madad chahiye?",
-      "Kuch aur karna hai ji?",
-      "Aur koi kaam?"
+      "और कुछ चाहिए?",
+      "कुछ और देखूँ आपके लिए?",
+      "और किसी चीज़ में मदद करूँ?"
     ],
     "en-IN": [
       "Anything else I can help with?",
-      "Is there anything else?",
-      "Can I help with anything else?"
+      "Would you like me to check anything else?",
+      "Is there anything else you need?"
     ]
   },
   {
     "key": "goodbye",
     "te-en": [
-      "Thank you andi, manchi roju! Bye.",
-      "Sare andi, untanu. Take care!",
-      "Call chesinanduku thanks andi, bye!"
+      "థాంక్స్ అండి, బై.",
+      "వాణికి కాల్ చేసినందుకు థాంక్స్. నమస్కారం.",
+      "సరే అండి, మీ రోజు బాగుండాలి."
     ],
     "hi-en": [
-      "Shukriya ji, aapka din achha ho! Bye.",
-      "Theek hai ji, dhyan rakhiye. Bye!",
-      "Call karne ke liye thank you, bye!"
+      "शुक्रिया, नमस्ते।",
+      "वाणी को कॉल करने के लिए धन्यवाद।",
+      "ठीक है, आपका दिन अच्छा रहे।"
     ],
     "en-IN": [
-      "Thank you, have a great day! Bye.",
-      "Take care, bye!",
-      "Thanks for calling, bye!"
+      "Thanks for calling. Bye.",
+      "Thank you for calling Vaani.",
+      "All right, have a good day."
     ]
   },
   {
     "key": "unsupported_area",
     "te-en": [
-      "Sorry andi, ee demo lo {area_1}, {area_2} lo matrame chudagalanu. Vaatilo okati chudamantara?",
-      "{heard} lo ippudu ledu andi, {area_1} leda {area_2} lo chudana?",
-      "Prastutam {area_1}, {area_2} matrame andi. Andulo chudamantara?"
+      "ఈ డెమోలో జూబ్లీ హిల్స్, గచ్చిబౌలి మాత్రమే ఉన్నాయి. ఏది చూడాలి అండి?",
+      "సారీ అండి, జూబ్లీ హిల్స్ లేదా గచ్చిబౌలిలోనే చూడగలను. ఒకటి చెప్తారా?",
+      "ఇక్కడ జూబ్లీ హిల్స్, గచ్చిబౌలి అందుబాటులో ఉన్నాయి. వీటిలో ఏదైనా చెక్ చేయనా?"
     ],
     "hi-en": [
-      "Sorry ji, is demo mein abhi sirf {area_1} aur {area_2} hain. Inmein se koi dekhoon?",
-      "{heard} mein abhi nahi hai ji, {area_1} ya {area_2} mein dekhoon?",
-      "Abhi sirf {area_1} aur {area_2} cover hain. Wahan dekhoon?"
+      "इस डेमो में सिर्फ़ जुबली हिल्स और गच्चीबौली हैं। किसमें देखूँ?",
+      "माफ़ कीजिए, जुबली हिल्स या गच्चीबौली में देख सकती हूँ। कौन-सा ठीक है?",
+      "अभी जुबली हिल्स और गच्चीबौली के ऑप्शन हैं। इनमें से कोई इलाका चलेगा?"
     ],
     "en-IN": [
-      "Sorry, for this demo we only cover {area_1} and {area_2}. Shall I check one of these?",
-      "{heard} isn't covered yet. Shall I look in {area_1} or {area_2}?",
-      "Right now I can only book in {area_1} and {area_2}. Want me to check there?"
+      "This demo covers Jubilee Hills and Gachibowli. Which area should I check?",
+      "Sorry, I can check Jubilee Hills or Gachibowli for this demo. Does either work?",
+      "I have options in Jubilee Hills and Gachibowli. Shall I look in one of those?"
     ]
   },
   {
     "key": "emergency_redirect",
     "te-en": [
-      "Idi emergency laaga undi andi. Ventane 108 leda 112 ki call cheyyandi.",
-      "Please ippude 108 leda 112 ki call cheyyandi andi, idi emergency.",
-      "Emergency aithe ventane 108 leda 112 ki call cheyyandi. Nenu booking cheyyalenu."
+      "ఎమర్జెన్సీ సహాయం కోసం ఇప్పుడే 112కి కాల్ చేయండి. అంబులెన్స్ కోసం 108కి కూడా కాల్ చేయవచ్చు.",
+      "దయచేసి వెంటనే 112కి కాల్ చేయండి. అంబులెన్స్‌కు 108 కూడా ఉంది.",
+      "అత్యవసర సహాయానికి ఇప్పుడు 112కి ఫోన్ చేయండి. అంబులెన్స్‌కు 108కి కూడా కాల్ చేయవచ్చు."
     ],
     "hi-en": [
-      "Yeh emergency lag rahi hai. Turant 108 ya 112 pe call kijiye.",
-      "Please abhi 108 ya 112 pe call kijiye ji, yeh emergency hai.",
-      "Emergency mein turant 108 ya 112 call kijiye. Main booking nahi kar sakti."
+      "इमरजेंसी मदद के लिए अभी 112 पर कॉल करें। एम्बुलेंस के लिए 108 पर भी कॉल कर सकते हैं।",
+      "कृपया तुरंत 112 पर कॉल करें। एम्बुलेंस के लिए 108 भी उपलब्ध है।",
+      "अभी इमरजेंसी सहायता के लिए 112 डायल करें। एम्बुलेंस के लिए 108 पर भी कॉल कर सकते हैं।"
     ],
     "en-IN": [
-      "This sounds like an emergency. Please call 108 or 112 immediately.",
-      "Please call 108 or 112 right now, this is an emergency.",
-      "For an emergency, call 108 or 112 straight away. I can't book for emergencies."
+      "Please call 112 now for emergency help. You can also call 108 for an ambulance.",
+      "Please call 112 immediately for emergency assistance. 108 is also available for an ambulance.",
+      "Call 112 now for emergency help. For an ambulance, you can also dial 108."
     ]
   },
   {
     "key": "transfer_to_human",
     "te-en": [
-      "Sare andi, mana team lo okaru mee ki tvaralo call chestaru.",
-      "Ok andi, human ki connect chestanu, leda callback arrange chestanu.",
-      "Thappakunda, maa staff mee ki call back chestaru."
+      "స్టాఫ్‌తో మాట్లాడేలా కనెక్ట్ చేయనా?",
+      "మీకు స్టాఫ్‌తో మాట్లాడాలంటే ట్రాన్స్‌ఫర్ చేస్తాను అండి.",
+      "ఫ్రంట్ డెస్క్‌కి కాల్ కలపనా?"
     ],
     "hi-en": [
-      "Theek hai ji, hamari team se koi aapko jaldi call karega.",
-      "Ok ji, main aapko insaan se connect karti hoon ya callback arrange karti hoon.",
-      "Bilkul, hamara staff aapko call back karega."
+      "स्टाफ़ से बात करवाऊँ?",
+      "चाहें तो मैं आपको स्टाफ़ से कनेक्ट कर दूँ।",
+      "फ़्रंट डेस्क पर ट्रांसफ़र कर दूँ?"
     ],
     "en-IN": [
-      "Sure, someone from our team will call you back shortly.",
-      "Okay, I'll connect you to a person or arrange a callback.",
-      "Of course, a staff member will call you back."
+      "Would you like me to connect you with staff?",
+      "I can transfer you to the front desk. Shall I do that?",
+      "Would you like to speak with someone at the venue?"
     ]
   },
   {
     "key": "never_ask_otp",
     "te-en": [
-      "Nenu eppudu OTP, PIN, card number adaganu andi. Evariki cheppakandi.",
-      "Daya chesi OTP leda card details cheppakandi, avi naaku avasaram ledu.",
-      "Maaku OTP, CVV, account number emi avasaram ledu andi."
+      "మీ OTP లేదా PIN నేను అడగను అండి. కాల్‌లో షేర్ చేయకండి.",
+      "OTP, PIN చెప్పాల్సిన అవసరం లేదు. వాటిని మీ దగ్గరే ఉంచండి.",
+      "మీ OTP గానీ PIN గానీ మేము అడగం."
     ],
     "hi-en": [
-      "Main kabhi OTP, PIN ya card number nahi maangti. Kisi ko mat bataiye.",
-      "Please OTP ya card details mat bataiye, mujhe unki zaroorat nahi.",
-      "Hamein OTP, CVV ya account number ki zaroorat nahi hai ji."
+      "मैं आपका OTP या PIN नहीं पूछूँगी। कॉल पर शेयर मत कीजिए।",
+      "अपना OTP और PIN अपने पास रखें। हमें उनकी ज़रूरत नहीं है।",
+      "हम कभी आपका OTP या PIN नहीं माँगेंगे।"
     ],
     "en-IN": [
-      "I'll never ask for an OTP, PIN or card number. Please don't share them.",
-      "Please don't share OTPs or card details; I don't need them.",
-      "We never need your OTP, CVV or account number."
+      "I’ll never ask for your OTP or PIN. Please keep them private.",
+      "There’s no need to share your OTP or PIN on this call.",
+      "Vaani will never ask you to tell us your OTP or PIN."
     ]
   }
 ]

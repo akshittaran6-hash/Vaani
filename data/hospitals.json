@@ -1,26 +1,27 @@
 [
   {
     "hospital_id": "h_jh_01",
-    "slug": "hillcrest-multispeciality-hospital-jubilee-hills",
-    "name": "Hillcrest Multispeciality Hospital",
-    "name_spoken_te": "హిల్‌క్రెస్ట్ మల్టీస్పెషాలిటీ హాస్పిటల్",
-    "name_spoken_hi": "हिलक्रेस्ट मल्टीस्पेशलिटी हॉस्पिटल",
+    "name": "Merugu Grove Hospital",
+    "name_spoken_te": "మెరుగు గ్రోవ్ హాస్పిటల్",
+    "name_spoken_hi": "मेरुगु ग्रोव हॉस्पिटल",
     "name_aliases": [
-      "hillcrest",
-      "hill crest",
-      "hillcrest hospital"
+      "Merugu Grove",
+      "Merugu",
+      "Merugu Grov"
     ],
     "area_id": "jubilee_hills",
     "type": "multi-speciality hospital",
-    "address": "Sunbird Avenue, Jubilee Hills",
+    "address": "Lime Finch Junction, Jubilee Hills",
     "rating": 4.6,
-    "highlight": "Large multi-speciality hospital with a 24x7 emergency wing.",
+    "highlight": "An outpatient desk coordinates appointments across seven departments.",
     "specialities": [
       "General Medicine",
-      "Gynecology",
+      "Dermatology",
       "Pediatrics",
       "Orthopedics",
-      "Cardiology"
+      "ENT",
+      "Cardiology",
+      "Gynecology"
     ],
     "facilities": {
       "emergency_24x7": true,
@@ -31,395 +32,364 @@
       "wheelchair_access": true
     },
     "opd_hours": {
-      "mon": "08:00-21:00",
-      "tue": "08:00-21:00",
-      "wed": "08:00-21:00",
-      "thu": "08:00-21:00",
-      "fri": "08:00-21:00",
-      "sat": "08:00-21:00",
-      "sun": "08:00-21:00"
+      "mon": "09:00-20:00",
+      "tue": "09:00-20:00",
+      "wed": "09:00-20:00",
+      "thu": "09:00-20:00",
+      "fri": "09:00-20:00",
+      "sat": "09:00-19:30",
+      "sun": "09:00-18:15"
     },
     "languages_spoken": [
       "Telugu",
       "Hindi",
       "English"
     ],
-    "accent_color": "#0F766E",
     "faqs": [
       {
-        "q": "Is parking available?",
-        "a_en": "Yes, visitor parking is available at the entrance.",
-        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
-        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+        "q": "What are the Sunday appointment hours?",
+        "a_en": "The Sunday OPD runs from 09:00 to 18:15. Appointment times depend on the doctor.",
+        "a_te": "ఆదివారం ఓపీడీ 09:00 నుంచి 18:15 వరకు ఉంటుంది. అపాయింట్‌మెంట్ టైమ్ డాక్టర్ షెడ్యూల్ బట్టి ఉంటుంది.",
+        "a_hi": "रविवार को ओपीडी 09:00 से 18:15 तक खुली है। अपॉइंटमेंट का समय डॉक्टर के शेड्यूल पर है।"
       },
       {
-        "q": "Do you accept cashless insurance?",
-        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
-        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
-        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
+        "q": "How much is the consultation fee?",
+        "a_en": "The sample fee varies by doctor. Tell me the doctor's name and I can look it up.",
+        "a_te": "డెమో కన్సల్టేషన్ ఫీజు డాక్టర్‌ని బట్టి మారుతుంది. పేరు చెప్తే చెక్ చేస్తాను.",
+        "a_hi": "डेमो कंसल्टेशन फ़ीस डॉक्टर के हिसाब से है। नाम बताएँ, मैं देख लेता हूँ।"
       },
       {
-        "q": "What are the OPD timings?",
-        "a_en": "OPD is open every day, 08:00-21:00.",
-        "a_te": "OPD prathi roju untundi andi, 08:00-21:00.",
-        "a_hi": "OPD roz khula hai ji, 08:00-21:00."
+        "q": "Is there a lab at this location?",
+        "a_en": "Yes, there is a lab on site.",
+        "a_te": "అవును, ఇక్కడే ల్యాబ్ ఉంది.",
+        "a_hi": "हाँ, यहाँ लैब है।"
       },
       {
-        "q": "Can I walk in without an appointment?",
-        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
-        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
-        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
-      },
-      {
-        "q": "Do you have a 24x7 emergency?",
-        "a_en": "Yes, our emergency is open 24x7. In an emergency, please call 108 or 112 first.",
-        "a_te": "Avunu andi, emergency 24x7 open. Emergency aithe mundu 108 leda 112 ki call cheyyandi.",
-        "a_hi": "Haan ji, emergency 24x7 khula hai. Emergency mein pehle 108 ya 112 pe call kijiye."
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the OPD entrance has wheelchair access.",
+        "a_te": "అవును, ఓపీడీకి వీల్‌చైర్‌తో వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से ओपीडी में जा सकते हैं।"
       }
     ],
     "phone": "DEMO-H-001",
-    "is_sample_data": true
+    "is_sample_data": true,
+    "slug": "merugu-grove-hospital-jubilee-hills",
+    "accent_color": "#BE123C"
   },
   {
     "hospital_id": "h_jh_02",
-    "slug": "lotus-skin-child-clinic-jubilee-hills",
-    "name": "Lotus Skin & Child Clinic",
-    "name_spoken_te": "లోటస్ స్కిన్ అండ్ చైల్డ్ క్లినిక్",
-    "name_spoken_hi": "लोटस स्किन एंड चाइल्ड क्लिनिक",
+    "name": "Nila Sopanam Hospital",
+    "name_spoken_te": "నీల సోపానం హాస్పిటల్",
+    "name_spoken_hi": "नीला सोपानम हॉस्पिटल",
     "name_aliases": [
-      "lotus clinic",
-      "lotus",
-      "lotus skin clinic"
+      "Nila Sopanam",
+      "Neela Sopanam",
+      "Sopanam Hospital"
+    ],
+    "area_id": "jubilee_hills",
+    "type": "multi-speciality hospital",
+    "address": "Porcelain Kite Court, Jubilee Hills",
+    "rating": 4.5,
+    "highlight": "Has scheduled eye and dental clinics alongside general outpatient care.",
+    "specialities": [
+      "General Medicine",
+      "Ophthalmology",
+      "Dental",
+      "Dermatology",
+      "Orthopedics",
+      "Cardiology"
+    ],
+    "facilities": {
+      "emergency_24x7": true,
+      "pharmacy": true,
+      "lab": true,
+      "ambulance": true,
+      "cashless_insurance": false,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "09:00-19:30",
+      "tue": "09:00-19:30",
+      "wed": "09:00-19:30",
+      "thu": "09:00-19:30",
+      "fri": "09:00-19:30",
+      "sat": "09:00-19:00",
+      "sun": "09:00-18:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "faqs": [
+      {
+        "q": "What are the Sunday appointment hours?",
+        "a_en": "The Sunday OPD runs from 09:00 to 18:00. Appointment times depend on the doctor.",
+        "a_te": "ఆదివారం ఓపీడీ 09:00 నుంచి 18:00 వరకు ఉంటుంది. అపాయింట్‌మెంట్ టైమ్ డాక్టర్ షెడ్యూల్ బట్టి ఉంటుంది.",
+        "a_hi": "रविवार को ओपीडी 09:00 से 18:00 तक खुली है। अपॉइंटमेंट का समय डॉक्टर के शेड्यूल पर है।"
+      },
+      {
+        "q": "How much is the consultation fee?",
+        "a_en": "The sample fee varies by doctor. Tell me the doctor's name and I can look it up.",
+        "a_te": "డెమో కన్సల్టేషన్ ఫీజు డాక్టర్‌ని బట్టి మారుతుంది. పేరు చెప్తే చెక్ చేస్తాను.",
+        "a_hi": "डेमो कंसल्टेशन फ़ीस डॉक्टर के हिसाब से है। नाम बताएँ, मैं देख लेता हूँ।"
+      },
+      {
+        "q": "Is there a lab at this location?",
+        "a_en": "Yes, there is a lab on site.",
+        "a_te": "అవును, ఇక్కడే ల్యాబ్ ఉంది.",
+        "a_hi": "हाँ, यहाँ लैब है।"
+      },
+      {
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the OPD entrance has wheelchair access.",
+        "a_te": "అవును, ఓపీడీకి వీల్‌చైర్‌తో వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से ओपीडी में जा सकते हैं।"
+      }
+    ],
+    "phone": "DEMO-H-002",
+    "is_sample_data": true,
+    "slug": "nila-sopanam-hospital-jubilee-hills",
+    "accent_color": "#4338CA"
+  },
+  {
+    "hospital_id": "h_jh_03",
+    "name": "Tarali Skin and Eye Clinic",
+    "name_spoken_te": "తరళి స్కిన్ అండ్ ఐ క్లినిక్",
+    "name_spoken_hi": "तरलि स्किन ऐंड आई क्लिनिक",
+    "name_aliases": [
+      "Tarali Skin and Eye",
+      "Tarali Clinic",
+      "Taralee Clinic"
     ],
     "area_id": "jubilee_hills",
     "type": "clinic",
-    "address": "Lily Pond Lane, Jubilee Hills",
-    "rating": 4.3,
-    "highlight": "Neighbourhood clinic for skin care and children's health.",
+    "address": "Violet Loom Walk, Jubilee Hills",
+    "rating": 4.8,
+    "highlight": "A small clinic with separate dermatology and eye appointment sessions.",
     "specialities": [
       "Dermatology",
-      "Pediatrics"
+      "Ophthalmology"
+    ],
+    "facilities": {
+      "emergency_24x7": false,
+      "pharmacy": false,
+      "lab": false,
+      "ambulance": false,
+      "cashless_insurance": false,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "09:30-19:00",
+      "tue": "09:30-19:00",
+      "wed": "09:30-19:00",
+      "thu": "09:30-19:00",
+      "fri": "09:30-19:00",
+      "sat": "09:30-18:30",
+      "sun": "09:30-18:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "English"
+    ],
+    "faqs": [
+      {
+        "q": "What are the Sunday appointment hours?",
+        "a_en": "The Sunday OPD runs from 09:30 to 18:00. Appointment times depend on the doctor.",
+        "a_te": "ఆదివారం ఓపీడీ 09:30 నుంచి 18:00 వరకు ఉంటుంది. అపాయింట్‌మెంట్ టైమ్ డాక్టర్ షెడ్యూల్ బట్టి ఉంటుంది.",
+        "a_hi": "रविवार को ओपीडी 09:30 से 18:00 तक खुली है। अपॉइंटमेंट का समय डॉक्टर के शेड्यूल पर है।"
+      },
+      {
+        "q": "How much is the consultation fee?",
+        "a_en": "The sample fee varies by doctor. Tell me the doctor's name and I can look it up.",
+        "a_te": "డెమో కన్సల్టేషన్ ఫీజు డాక్టర్‌ని బట్టి మారుతుంది. పేరు చెప్తే చెక్ చేస్తాను.",
+        "a_hi": "डेमो कंसल्टेशन फ़ीस डॉक्टर के हिसाब से है। नाम बताएँ, मैं देख लेता हूँ।"
+      },
+      {
+        "q": "Is there a lab at this location?",
+        "a_en": "There is no on-site lab.",
+        "a_te": "ఇక్కడ ల్యాబ్ లేదు.",
+        "a_hi": "यहाँ लैब नहीं है।"
+      },
+      {
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the OPD entrance has wheelchair access.",
+        "a_te": "అవును, ఓపీడీకి వీల్‌చైర్‌తో వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से ओपीडी में जा सकते हैं।"
+      }
+    ],
+    "phone": "DEMO-H-003",
+    "is_sample_data": true,
+    "slug": "tarali-skin-and-eye-clinic-jubilee-hills",
+    "accent_color": "#0369A1"
+  },
+  {
+    "hospital_id": "h_jh_04",
+    "name": "Velugu Nest Clinic",
+    "name_spoken_te": "వెలుగు నెస్ట్ క్లినిక్",
+    "name_spoken_hi": "वेलुगु नेस्ट क्लिनिक",
+    "name_aliases": [
+      "Velugu Nest",
+      "Velugu Clinic",
+      "Velugu Next Clinic"
+    ],
+    "area_id": "jubilee_hills",
+    "type": "clinic",
+    "address": "Rainwood Corner, Jubilee Hills",
+    "rating": 4.4,
+    "highlight": "A neighbourhood clinic with appointments for children and adults.",
+    "specialities": [
+      "Pediatrics",
+      "General Medicine",
+      "ENT"
+    ],
+    "facilities": {
+      "emergency_24x7": false,
+      "pharmacy": false,
+      "lab": true,
+      "ambulance": false,
+      "cashless_insurance": false,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "09:00-19:30",
+      "tue": "09:00-19:30",
+      "wed": "09:00-19:30",
+      "thu": "09:00-19:30",
+      "fri": "09:00-19:30",
+      "sat": "09:00-19:00",
+      "sun": "09:00-18:00"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "faqs": [
+      {
+        "q": "What are the Sunday appointment hours?",
+        "a_en": "The Sunday OPD runs from 09:00 to 18:00. Appointment times depend on the doctor.",
+        "a_te": "ఆదివారం ఓపీడీ 09:00 నుంచి 18:00 వరకు ఉంటుంది. అపాయింట్‌మెంట్ టైమ్ డాక్టర్ షెడ్యూల్ బట్టి ఉంటుంది.",
+        "a_hi": "रविवार को ओपीडी 09:00 से 18:00 तक खुली है। अपॉइंटमेंट का समय डॉक्टर के शेड्यूल पर है।"
+      },
+      {
+        "q": "How much is the consultation fee?",
+        "a_en": "The sample fee varies by doctor. Tell me the doctor's name and I can look it up.",
+        "a_te": "డెమో కన్సల్టేషన్ ఫీజు డాక్టర్‌ని బట్టి మారుతుంది. పేరు చెప్తే చెక్ చేస్తాను.",
+        "a_hi": "डेमो कंसल्टेशन फ़ीस डॉक्टर के हिसाब से है। नाम बताएँ, मैं देख लेता हूँ।"
+      },
+      {
+        "q": "Is there a lab at this location?",
+        "a_en": "Yes, there is a lab on site.",
+        "a_te": "అవును, ఇక్కడే ల్యాబ్ ఉంది.",
+        "a_hi": "हाँ, यहाँ लैब है।"
+      },
+      {
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the OPD entrance has wheelchair access.",
+        "a_te": "అవును, ఓపీడీకి వీల్‌చైర్‌తో వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से ओपीडी में जा सकते हैं।"
+      }
+    ],
+    "phone": "DEMO-H-004",
+    "is_sample_data": true,
+    "slug": "velugu-nest-clinic-jubilee-hills",
+    "accent_color": "#6D28D9"
+  },
+  {
+    "hospital_id": "h_jh_05",
+    "name": "Malle Vaidya Family Clinic",
+    "name_spoken_te": "మల్లె వైద్య ఫ్యామిలీ క్లినిక్",
+    "name_spoken_hi": "मल्ले वैद्य फ़ैमिली क्लिनिक",
+    "name_aliases": [
+      "Malle Vaidya",
+      "Malle Vaidya Clinic",
+      "Mallay Vaidya"
+    ],
+    "area_id": "jubilee_hills",
+    "type": "clinic",
+    "address": "Ivory Lattice Loop, Jubilee Hills",
+    "rating": 4.1,
+    "highlight": "Schedules general medicine, dental, and gynecology consultations.",
+    "specialities": [
+      "Gynecology",
+      "Dental",
+      "General Medicine"
     ],
     "facilities": {
       "emergency_24x7": false,
       "pharmacy": true,
       "lab": false,
       "ambulance": false,
-      "cashless_insurance": true,
-      "wheelchair_access": true
-    },
-    "opd_hours": {
-      "mon": "09:00-21:00",
-      "tue": "09:00-21:00",
-      "wed": "09:00-21:00",
-      "thu": "09:00-21:00",
-      "fri": "09:00-21:00",
-      "sat": "09:00-21:00",
-      "sun": "09:00-20:00"
-    },
-    "languages_spoken": [
-      "Telugu",
-      "Hindi",
-      "English"
-    ],
-    "accent_color": "#BE185D",
-    "faqs": [
-      {
-        "q": "Is parking available?",
-        "a_en": "Yes, visitor parking is available at the entrance.",
-        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
-        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
-      },
-      {
-        "q": "Do you accept cashless insurance?",
-        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
-        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
-        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
-      },
-      {
-        "q": "What are the OPD timings?",
-        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
-        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
-        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
-      },
-      {
-        "q": "Can I walk in without an appointment?",
-        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
-        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
-        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
-      },
-      {
-        "q": "Do you have a 24x7 emergency?",
-        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
-        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
-        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
-      }
-    ],
-    "phone": "DEMO-H-002",
-    "is_sample_data": true
-  },
-  {
-    "hospital_id": "h_jh_03",
-    "slug": "banyan-women-family-clinic-jubilee-hills",
-    "name": "Banyan Women & Family Clinic",
-    "name_spoken_te": "బన్యన్ ఉమెన్ అండ్ ఫ్యామిలీ క్లినిక్",
-    "name_spoken_hi": "बनयन वुमन एंड फ़ैमिली क्लिनिक",
-    "name_aliases": [
-      "banyan clinic",
-      "banyan",
-      "banyan family clinic"
-    ],
-    "area_id": "jubilee_hills",
-    "type": "clinic",
-    "address": "Old Banyan Junction, Jubilee Hills",
-    "rating": 4.1,
-    "highlight": "Family clinic focused on women's and children's care.",
-    "specialities": [
-      "General Medicine",
-      "Gynecology",
-      "Pediatrics"
-    ],
-    "facilities": {
-      "emergency_24x7": false,
-      "pharmacy": true,
-      "lab": true,
-      "ambulance": false,
       "cashless_insurance": false,
-      "wheelchair_access": true
+      "wheelchair_access": false
     },
     "opd_hours": {
-      "mon": "09:00-21:00",
-      "tue": "09:00-21:00",
-      "wed": "09:00-21:00",
-      "thu": "09:00-21:00",
-      "fri": "09:00-21:00",
-      "sat": "09:00-21:00",
-      "sun": "09:00-20:00"
+      "mon": "09:00-19:30",
+      "tue": "09:00-19:30",
+      "wed": "09:00-19:30",
+      "thu": "09:00-19:30",
+      "fri": "09:00-19:30",
+      "sat": "09:00-19:00",
+      "sun": "09:00-18:00"
     },
     "languages_spoken": [
       "Telugu",
-      "Hindi",
       "English"
     ],
-    "accent_color": "#7E22CE",
     "faqs": [
       {
-        "q": "Is parking available?",
-        "a_en": "Yes, visitor parking is available at the entrance.",
-        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
-        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+        "q": "What are the Sunday appointment hours?",
+        "a_en": "The Sunday OPD runs from 09:00 to 18:00. Appointment times depend on the doctor.",
+        "a_te": "ఆదివారం ఓపీడీ 09:00 నుంచి 18:00 వరకు ఉంటుంది. అపాయింట్‌మెంట్ టైమ్ డాక్టర్ షెడ్యూల్ బట్టి ఉంటుంది.",
+        "a_hi": "रविवार को ओपीडी 09:00 से 18:00 तक खुली है। अपॉइंटमेंट का समय डॉक्टर के शेड्यूल पर है।"
       },
       {
-        "q": "Do you accept cashless insurance?",
-        "a_en": "We don't offer cashless yet; you can pay and claim reimbursement from your insurer.",
-        "a_te": "Ippudu cashless ledu andi; pay chesi insurance lo reimbursement claim cheyyochu.",
-        "a_hi": "Abhi cashless nahi hai ji; pay karke insurance se reimbursement claim kar sakte hain."
+        "q": "How much is the consultation fee?",
+        "a_en": "The sample fee varies by doctor. Tell me the doctor's name and I can look it up.",
+        "a_te": "డెమో కన్సల్టేషన్ ఫీజు డాక్టర్‌ని బట్టి మారుతుంది. పేరు చెప్తే చెక్ చేస్తాను.",
+        "a_hi": "डेमो कंसल्टेशन फ़ीस डॉक्टर के हिसाब से है। नाम बताएँ, मैं देख लेता हूँ।"
       },
       {
-        "q": "What are the OPD timings?",
-        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
-        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
-        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
+        "q": "Is there a lab at this location?",
+        "a_en": "There is no on-site lab.",
+        "a_te": "ఇక్కడ ల్యాబ్ లేదు.",
+        "a_hi": "यहाँ लैब नहीं है।"
       },
       {
-        "q": "Can I walk in without an appointment?",
-        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
-        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
-        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
-      },
-      {
-        "q": "Do you have a 24x7 emergency?",
-        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
-        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
-        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
-      }
-    ],
-    "phone": "DEMO-H-003",
-    "is_sample_data": true
-  },
-  {
-    "hospital_id": "h_jh_04",
-    "slug": "pearl-city-hospital-jubilee-hills",
-    "name": "Pearl City Hospital",
-    "name_spoken_te": "పెర్ల్ సిటీ హాస్పిటల్",
-    "name_spoken_hi": "पर्ल सिटी हॉस्पिटल",
-    "name_aliases": [
-      "pearl city",
-      "pearl hospital",
-      "pearl city hospital"
-    ],
-    "area_id": "jubilee_hills",
-    "type": "multi-speciality hospital",
-    "address": "Moonstone Road, Jubilee Hills",
-    "rating": 4.4,
-    "highlight": "Multi-speciality hospital known for its eye and heart departments.",
-    "specialities": [
-      "General Medicine",
-      "Dermatology",
-      "Orthopedics",
-      "ENT",
-      "Cardiology",
-      "Ophthalmology"
-    ],
-    "facilities": {
-      "emergency_24x7": true,
-      "pharmacy": true,
-      "lab": true,
-      "ambulance": true,
-      "cashless_insurance": true,
-      "wheelchair_access": true
-    },
-    "opd_hours": {
-      "mon": "08:00-21:00",
-      "tue": "08:00-21:00",
-      "wed": "08:00-21:00",
-      "thu": "08:00-21:00",
-      "fri": "08:00-21:00",
-      "sat": "08:00-21:00",
-      "sun": "08:00-21:00"
-    },
-    "languages_spoken": [
-      "Telugu",
-      "Hindi",
-      "English"
-    ],
-    "accent_color": "#1E40AF",
-    "faqs": [
-      {
-        "q": "Is parking available?",
-        "a_en": "Yes, visitor parking is available at the entrance.",
-        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
-        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
-      },
-      {
-        "q": "Do you accept cashless insurance?",
-        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
-        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
-        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
-      },
-      {
-        "q": "What are the OPD timings?",
-        "a_en": "OPD is open every day, 08:00-21:00.",
-        "a_te": "OPD prathi roju untundi andi, 08:00-21:00.",
-        "a_hi": "OPD roz khula hai ji, 08:00-21:00."
-      },
-      {
-        "q": "Can I walk in without an appointment?",
-        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
-        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
-        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
-      },
-      {
-        "q": "Do you have a 24x7 emergency?",
-        "a_en": "Yes, our emergency is open 24x7. In an emergency, please call 108 or 112 first.",
-        "a_te": "Avunu andi, emergency 24x7 open. Emergency aithe mundu 108 leda 112 ki call cheyyandi.",
-        "a_hi": "Haan ji, emergency 24x7 khula hai. Emergency mein pehle 108 ya 112 pe call kijiye."
-      }
-    ],
-    "phone": "DEMO-H-004",
-    "is_sample_data": true
-  },
-  {
-    "hospital_id": "h_jh_05",
-    "slug": "smilebright-dental-eye-clinic-jubilee-hills",
-    "name": "SmileBright Dental & Eye Clinic",
-    "name_spoken_te": "స్మైల్‌బ్రైట్ డెంటల్ అండ్ ఐ క్లినిక్",
-    "name_spoken_hi": "स्माइलब्राइट डेंटल एंड आई क्लिनिक",
-    "name_aliases": [
-      "smilebright",
-      "smile bright",
-      "smilebright clinic"
-    ],
-    "area_id": "jubilee_hills",
-    "type": "clinic",
-    "address": "Hilltop Arcade, Jubilee Hills",
-    "rating": 3.9,
-    "highlight": "Dental, eye and ENT care under one roof.",
-    "specialities": [
-      "ENT",
-      "Dental",
-      "Ophthalmology"
-    ],
-    "facilities": {
-      "emergency_24x7": false,
-      "pharmacy": true,
-      "lab": true,
-      "ambulance": false,
-      "cashless_insurance": false,
-      "wheelchair_access": true
-    },
-    "opd_hours": {
-      "mon": "09:00-21:00",
-      "tue": "09:00-21:00",
-      "wed": "09:00-21:00",
-      "thu": "09:00-21:00",
-      "fri": "09:00-21:00",
-      "sat": "09:00-21:00",
-      "sun": "09:00-20:00"
-    },
-    "languages_spoken": [
-      "Telugu",
-      "Hindi",
-      "English"
-    ],
-    "accent_color": "#0369A1",
-    "faqs": [
-      {
-        "q": "Is parking available?",
-        "a_en": "Yes, visitor parking is available at the entrance.",
-        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
-        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
-      },
-      {
-        "q": "Do you accept cashless insurance?",
-        "a_en": "We don't offer cashless yet; you can pay and claim reimbursement from your insurer.",
-        "a_te": "Ippudu cashless ledu andi; pay chesi insurance lo reimbursement claim cheyyochu.",
-        "a_hi": "Abhi cashless nahi hai ji; pay karke insurance se reimbursement claim kar sakte hain."
-      },
-      {
-        "q": "What are the OPD timings?",
-        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
-        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
-        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
-      },
-      {
-        "q": "Can I walk in without an appointment?",
-        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
-        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
-        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
-      },
-      {
-        "q": "Do you have a 24x7 emergency?",
-        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
-        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
-        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
+        "q": "Is there wheelchair access?",
+        "a_en": "Wheelchair access is not listed for this clinic.",
+        "a_te": "ఈ క్లినిక్‌లో వీల్‌చైర్ సదుపాయం లిస్ట్‌లో లేదు.",
+        "a_hi": "इस क्लिनिक के लिए व्हीलचेयर की सुविधा सूची में नहीं है।"
       }
     ],
     "phone": "DEMO-H-005",
-    "is_sample_data": true
+    "is_sample_data": true,
+    "slug": "malle-vaidya-family-clinic-jubilee-hills",
+    "accent_color": "#4D7C0F"
   },
   {
     "hospital_id": "h_gb_01",
-    "slug": "navaniti-hospital-gachibowli",
-    "name": "Navaniti Hospital",
-    "name_spoken_te": "నవనీతి హాస్పిటల్",
-    "name_spoken_hi": "नवनीति हॉस्पिटल",
+    "name": "Vaana Grove Hospital",
+    "name_spoken_te": "వాన గ్రోవ్ హాస్పిటల్",
+    "name_spoken_hi": "वाना ग्रोव हॉस्पिटल",
     "name_aliases": [
-      "navaniti",
-      "navaneeti",
-      "navniti hospital"
+      "Vaana Grove",
+      "Vana Grove",
+      "Vaana Hospital"
     ],
     "area_id": "gachibowli",
     "type": "multi-speciality hospital",
-    "address": "Lakeview Tech Park Lane, Gachibowli",
-    "rating": 4.4,
-    "highlight": "Multi-speciality hospital close to the tech parks.",
+    "address": "Coral Spindle Court, Gachibowli",
+    "rating": 4.7,
+    "highlight": "Runs several specialist appointment desks and has a lab on site.",
     "specialities": [
       "General Medicine",
       "Dermatology",
       "Gynecology",
       "Pediatrics",
       "Orthopedics",
+      "ENT",
       "Cardiology"
     ],
     "facilities": {
@@ -431,371 +401,340 @@
       "wheelchair_access": true
     },
     "opd_hours": {
-      "mon": "08:00-21:00",
-      "tue": "08:00-21:00",
-      "wed": "08:00-21:00",
-      "thu": "08:00-21:00",
-      "fri": "08:00-21:00",
-      "sat": "08:00-21:00",
-      "sun": "08:00-21:00"
+      "mon": "09:00-20:00",
+      "tue": "09:00-20:00",
+      "wed": "09:00-20:00",
+      "thu": "09:00-20:00",
+      "fri": "09:00-20:00",
+      "sat": "09:00-19:30",
+      "sun": "09:00-18:15"
     },
     "languages_spoken": [
       "Telugu",
       "Hindi",
       "English"
     ],
-    "accent_color": "#047857",
     "faqs": [
       {
-        "q": "Is parking available?",
-        "a_en": "Yes, visitor parking is available at the entrance.",
-        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
-        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+        "q": "What are the Sunday appointment hours?",
+        "a_en": "The Sunday OPD runs from 09:00 to 18:15. Appointment times depend on the doctor.",
+        "a_te": "ఆదివారం ఓపీడీ 09:00 నుంచి 18:15 వరకు ఉంటుంది. అపాయింట్‌మెంట్ టైమ్ డాక్టర్ షెడ్యూల్ బట్టి ఉంటుంది.",
+        "a_hi": "रविवार को ओपीडी 09:00 से 18:15 तक खुली है। अपॉइंटमेंट का समय डॉक्टर के शेड्यूल पर है।"
       },
       {
-        "q": "Do you accept cashless insurance?",
-        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
-        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
-        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
+        "q": "How much is the consultation fee?",
+        "a_en": "The sample fee varies by doctor. Tell me the doctor's name and I can look it up.",
+        "a_te": "డెమో కన్సల్టేషన్ ఫీజు డాక్టర్‌ని బట్టి మారుతుంది. పేరు చెప్తే చెక్ చేస్తాను.",
+        "a_hi": "डेमो कंसल्टेशन फ़ीस डॉक्टर के हिसाब से है। नाम बताएँ, मैं देख लेता हूँ।"
       },
       {
-        "q": "What are the OPD timings?",
-        "a_en": "OPD is open every day, 08:00-21:00.",
-        "a_te": "OPD prathi roju untundi andi, 08:00-21:00.",
-        "a_hi": "OPD roz khula hai ji, 08:00-21:00."
+        "q": "Is there a lab at this location?",
+        "a_en": "Yes, there is a lab on site.",
+        "a_te": "అవును, ఇక్కడే ల్యాబ్ ఉంది.",
+        "a_hi": "हाँ, यहाँ लैब है।"
       },
       {
-        "q": "Can I walk in without an appointment?",
-        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
-        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
-        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
-      },
-      {
-        "q": "Do you have a 24x7 emergency?",
-        "a_en": "Yes, our emergency is open 24x7. In an emergency, please call 108 or 112 first.",
-        "a_te": "Avunu andi, emergency 24x7 open. Emergency aithe mundu 108 leda 112 ki call cheyyandi.",
-        "a_hi": "Haan ji, emergency 24x7 khula hai. Emergency mein pehle 108 ya 112 pe call kijiye."
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the OPD entrance has wheelchair access.",
+        "a_te": "అవును, ఓపీడీకి వీల్‌చైర్‌తో వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से ओपीडी में जा सकते हैं।"
       }
     ],
     "phone": "DEMO-H-006",
-    "is_sample_data": true
+    "is_sample_data": true,
+    "slug": "vaana-grove-hospital-gachibowli",
+    "accent_color": "#A16207"
   },
   {
     "hospital_id": "h_gb_02",
-    "slug": "udayam-family-clinic-gachibowli",
-    "name": "Udayam Family Clinic",
-    "name_spoken_te": "ఉదయం ఫ్యామిలీ క్లినిక్",
-    "name_spoken_hi": "उदयम फ़ैमिली क्लिनिक",
+    "name": "Nava Meru Hospital",
+    "name_spoken_te": "నవ మేరు హాస్పిటల్",
+    "name_spoken_hi": "नव मेरु हॉस्पिटल",
     "name_aliases": [
-      "udayam",
-      "udayam clinic",
-      "udaya clinic"
+      "Nava Meru",
+      "Navameru",
+      "Nava Meru Clinic"
     ],
     "area_id": "gachibowli",
-    "type": "clinic",
-    "address": "Sarovar Street, Gachibowli",
-    "rating": 4.2,
-    "highlight": "Family clinic with evening skin and general consultations.",
+    "type": "multi-speciality hospital",
+    "address": "Ochre Kite Rise, Gachibowli",
+    "rating": 4.3,
+    "highlight": "Coordinates general, cardiac, eye, and other outpatient appointments.",
     "specialities": [
       "General Medicine",
-      "Dermatology",
-      "Pediatrics"
+      "Ophthalmology",
+      "Dental",
+      "Cardiology",
+      "Orthopedics",
+      "Gynecology"
     ],
     "facilities": {
       "emergency_24x7": false,
       "pharmacy": true,
       "lab": true,
       "ambulance": false,
-      "cashless_insurance": false,
-      "wheelchair_access": true
-    },
-    "opd_hours": {
-      "mon": "09:00-21:00",
-      "tue": "09:00-21:00",
-      "wed": "09:00-21:00",
-      "thu": "09:00-21:00",
-      "fri": "09:00-21:00",
-      "sat": "09:00-21:00",
-      "sun": "09:00-20:00"
-    },
-    "languages_spoken": [
-      "Telugu",
-      "Hindi",
-      "English"
-    ],
-    "accent_color": "#C2410C",
-    "faqs": [
-      {
-        "q": "Is parking available?",
-        "a_en": "Yes, visitor parking is available at the entrance.",
-        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
-        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
-      },
-      {
-        "q": "Do you accept cashless insurance?",
-        "a_en": "We don't offer cashless yet; you can pay and claim reimbursement from your insurer.",
-        "a_te": "Ippudu cashless ledu andi; pay chesi insurance lo reimbursement claim cheyyochu.",
-        "a_hi": "Abhi cashless nahi hai ji; pay karke insurance se reimbursement claim kar sakte hain."
-      },
-      {
-        "q": "What are the OPD timings?",
-        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
-        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
-        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
-      },
-      {
-        "q": "Can I walk in without an appointment?",
-        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
-        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
-        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
-      },
-      {
-        "q": "Do you have a 24x7 emergency?",
-        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
-        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
-        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
-      }
-    ],
-    "phone": "DEMO-H-007",
-    "is_sample_data": true
-  },
-  {
-    "hospital_id": "h_gb_03",
-    "slug": "cyber-valley-hospital-gachibowli",
-    "name": "Cyber Valley Hospital",
-    "name_spoken_te": "సైబర్ వ్యాలీ హాస్పిటల్",
-    "name_spoken_hi": "साइबर वैली हॉस्पिटल",
-    "name_aliases": [
-      "cyber valley",
-      "cyber valley hospital",
-      "cyber hospital"
-    ],
-    "area_id": "gachibowli",
-    "type": "multi-speciality hospital",
-    "address": "Silver Oak Towers, Gachibowli",
-    "rating": 4.7,
-    "highlight": "Large hospital with cardiology, orthopaedics and a 24x7 emergency.",
-    "specialities": [
-      "General Medicine",
-      "Gynecology",
-      "Orthopedics",
-      "ENT",
-      "Cardiology",
-      "Ophthalmology"
-    ],
-    "facilities": {
-      "emergency_24x7": true,
-      "pharmacy": true,
-      "lab": true,
-      "ambulance": true,
       "cashless_insurance": true,
       "wheelchair_access": true
     },
     "opd_hours": {
-      "mon": "08:00-21:00",
-      "tue": "08:00-21:00",
-      "wed": "08:00-21:00",
-      "thu": "08:00-21:00",
-      "fri": "08:00-21:00",
-      "sat": "08:00-21:00",
-      "sun": "08:00-21:00"
+      "mon": "09:00-19:30",
+      "tue": "09:00-19:30",
+      "wed": "09:00-19:30",
+      "thu": "09:00-19:30",
+      "fri": "09:00-19:30",
+      "sat": "09:00-19:00",
+      "sun": "09:00-18:00"
     },
     "languages_spoken": [
       "Telugu",
       "Hindi",
       "English"
     ],
-    "accent_color": "#1D4ED8",
     "faqs": [
       {
-        "q": "Is parking available?",
-        "a_en": "Yes, visitor parking is available at the entrance.",
-        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
-        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+        "q": "What are the Sunday appointment hours?",
+        "a_en": "The Sunday OPD runs from 09:00 to 18:00. Appointment times depend on the doctor.",
+        "a_te": "ఆదివారం ఓపీడీ 09:00 నుంచి 18:00 వరకు ఉంటుంది. అపాయింట్‌మెంట్ టైమ్ డాక్టర్ షెడ్యూల్ బట్టి ఉంటుంది.",
+        "a_hi": "रविवार को ओपीडी 09:00 से 18:00 तक खुली है। अपॉइंटमेंट का समय डॉक्टर के शेड्यूल पर है।"
       },
       {
-        "q": "Do you accept cashless insurance?",
-        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
-        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
-        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
+        "q": "How much is the consultation fee?",
+        "a_en": "The sample fee varies by doctor. Tell me the doctor's name and I can look it up.",
+        "a_te": "డెమో కన్సల్టేషన్ ఫీజు డాక్టర్‌ని బట్టి మారుతుంది. పేరు చెప్తే చెక్ చేస్తాను.",
+        "a_hi": "डेमो कंसल्टेशन फ़ीस डॉक्टर के हिसाब से है। नाम बताएँ, मैं देख लेता हूँ।"
       },
       {
-        "q": "What are the OPD timings?",
-        "a_en": "OPD is open every day, 08:00-21:00.",
-        "a_te": "OPD prathi roju untundi andi, 08:00-21:00.",
-        "a_hi": "OPD roz khula hai ji, 08:00-21:00."
+        "q": "Is there a lab at this location?",
+        "a_en": "Yes, there is a lab on site.",
+        "a_te": "అవును, ఇక్కడే ల్యాబ్ ఉంది.",
+        "a_hi": "हाँ, यहाँ लैब है।"
       },
       {
-        "q": "Can I walk in without an appointment?",
-        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
-        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
-        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
-      },
-      {
-        "q": "Do you have a 24x7 emergency?",
-        "a_en": "Yes, our emergency is open 24x7. In an emergency, please call 108 or 112 first.",
-        "a_te": "Avunu andi, emergency 24x7 open. Emergency aithe mundu 108 leda 112 ki call cheyyandi.",
-        "a_hi": "Haan ji, emergency 24x7 khula hai. Emergency mein pehle 108 ya 112 pe call kijiye."
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the OPD entrance has wheelchair access.",
+        "a_te": "అవును, ఓపీడీకి వీల్‌చైర్‌తో వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से ओपीडी में जा सकते हैं।"
       }
     ],
-    "phone": "DEMO-H-008",
-    "is_sample_data": true
+    "phone": "DEMO-H-007",
+    "is_sample_data": true,
+    "slug": "nava-meru-hospital-gachibowli",
+    "accent_color": "#7E22CE"
   },
   {
-    "hospital_id": "h_gb_04",
-    "slug": "little-steps-childrens-clinic-gachibowli",
-    "name": "Little Steps Children's Clinic",
-    "name_spoken_te": "లిటిల్ స్టెప్స్ చిల్డ్రన్స్ క్లినిక్",
-    "name_spoken_hi": "लिटिल स्टेप्स चिल्ड्रन्स क्लिनिक",
+    "hospital_id": "h_gb_03",
+    "name": "Taarika Skin and Dental Clinic",
+    "name_spoken_te": "తారిక స్కిన్ అండ్ డెంటల్ క్లినిక్",
+    "name_spoken_hi": "तारिका स्किन ऐंड डेंटल क्लिनिक",
     "name_aliases": [
-      "little steps",
-      "little steps clinic",
-      "littlesteps"
+      "Taarika Clinic",
+      "Tarika Skin and Dental",
+      "Taarika Skin"
     ],
     "area_id": "gachibowli",
     "type": "clinic",
-    "address": "Coconut Grove Road, Gachibowli",
-    "rating": 4.0,
-    "highlight": "Children's clinic with a play corner and ENT care.",
+    "address": "Poppy Prism Nook, Gachibowli",
+    "rating": 4.5,
+    "highlight": "Uses separate appointment schedules for dermatology and dentistry.",
     "specialities": [
+      "Dermatology",
+      "Dental"
+    ],
+    "facilities": {
+      "emergency_24x7": false,
+      "pharmacy": false,
+      "lab": false,
+      "ambulance": false,
+      "cashless_insurance": false,
+      "wheelchair_access": true
+    },
+    "opd_hours": {
+      "mon": "09:30-19:00",
+      "tue": "09:30-19:00",
+      "wed": "09:30-19:00",
+      "thu": "09:30-19:00",
+      "fri": "09:30-19:00",
+      "sat": "09:30-18:30",
+      "sun": "09:30-17:30"
+    },
+    "languages_spoken": [
+      "Telugu",
+      "Hindi",
+      "English"
+    ],
+    "faqs": [
+      {
+        "q": "What are the Sunday appointment hours?",
+        "a_en": "The Sunday OPD runs from 09:30 to 17:30. Appointment times depend on the doctor.",
+        "a_te": "ఆదివారం ఓపీడీ 09:30 నుంచి 17:30 వరకు ఉంటుంది. అపాయింట్‌మెంట్ టైమ్ డాక్టర్ షెడ్యూల్ బట్టి ఉంటుంది.",
+        "a_hi": "रविवार को ओपीडी 09:30 से 17:30 तक खुली है। अपॉइंटमेंट का समय डॉक्टर के शेड्यूल पर है।"
+      },
+      {
+        "q": "How much is the consultation fee?",
+        "a_en": "The sample fee varies by doctor. Tell me the doctor's name and I can look it up.",
+        "a_te": "డెమో కన్సల్టేషన్ ఫీజు డాక్టర్‌ని బట్టి మారుతుంది. పేరు చెప్తే చెక్ చేస్తాను.",
+        "a_hi": "डेमो कंसल्टेशन फ़ीस डॉक्टर के हिसाब से है। नाम बताएँ, मैं देख लेता हूँ।"
+      },
+      {
+        "q": "Is there a lab at this location?",
+        "a_en": "There is no on-site lab.",
+        "a_te": "ఇక్కడ ల్యాబ్ లేదు.",
+        "a_hi": "यहाँ लैब नहीं है।"
+      },
+      {
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the OPD entrance has wheelchair access.",
+        "a_te": "అవును, ఓపీడీకి వీల్‌చైర్‌తో వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से ओपीडी में जा सकते हैं।"
+      }
+    ],
+    "phone": "DEMO-H-008",
+    "is_sample_data": true,
+    "slug": "taarika-skin-and-dental-clinic-gachibowli",
+    "accent_color": "#7E22CE"
+  },
+  {
+    "hospital_id": "h_gb_04",
+    "name": "Eetha Family Clinic",
+    "name_spoken_te": "ఈత ఫ్యామిలీ క్లినిక్",
+    "name_spoken_hi": "ईथा फ़ैमिली क्लिनिक",
+    "name_aliases": [
+      "Eetha Clinic",
+      "Itha Family Clinic",
+      "Eeta Family"
+    ],
+    "area_id": "gachibowli",
+    "type": "clinic",
+    "address": "Fern Lantern Bend, Gachibowli",
+    "rating": 4.2,
+    "highlight": "Offers scheduled general medicine, children’s, and ENT visits.",
+    "specialities": [
+      "General Medicine",
       "Pediatrics",
       "ENT"
     ],
     "facilities": {
       "emergency_24x7": false,
-      "pharmacy": true,
-      "lab": true,
+      "pharmacy": false,
+      "lab": false,
       "ambulance": false,
       "cashless_insurance": false,
       "wheelchair_access": true
     },
     "opd_hours": {
-      "mon": "09:00-21:00",
-      "tue": "09:00-21:00",
-      "wed": "09:00-21:00",
-      "thu": "09:00-21:00",
-      "fri": "09:00-21:00",
-      "sat": "09:00-21:00",
-      "sun": "09:00-20:00"
+      "mon": "09:00-19:30",
+      "tue": "09:00-19:30",
+      "wed": "09:00-19:30",
+      "thu": "09:00-19:30",
+      "fri": "09:00-19:30",
+      "sat": "09:00-19:00",
+      "sun": "09:00-18:00"
     },
     "languages_spoken": [
       "Telugu",
-      "Hindi",
       "English"
     ],
-    "accent_color": "#CA8A04",
     "faqs": [
       {
-        "q": "Is parking available?",
-        "a_en": "Yes, visitor parking is available at the entrance.",
-        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
-        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+        "q": "What are the Sunday appointment hours?",
+        "a_en": "The Sunday OPD runs from 09:00 to 18:00. Appointment times depend on the doctor.",
+        "a_te": "ఆదివారం ఓపీడీ 09:00 నుంచి 18:00 వరకు ఉంటుంది. అపాయింట్‌మెంట్ టైమ్ డాక్టర్ షెడ్యూల్ బట్టి ఉంటుంది.",
+        "a_hi": "रविवार को ओपीडी 09:00 से 18:00 तक खुली है। अपॉइंटमेंट का समय डॉक्टर के शेड्यूल पर है।"
       },
       {
-        "q": "Do you accept cashless insurance?",
-        "a_en": "We don't offer cashless yet; you can pay and claim reimbursement from your insurer.",
-        "a_te": "Ippudu cashless ledu andi; pay chesi insurance lo reimbursement claim cheyyochu.",
-        "a_hi": "Abhi cashless nahi hai ji; pay karke insurance se reimbursement claim kar sakte hain."
+        "q": "How much is the consultation fee?",
+        "a_en": "The sample fee varies by doctor. Tell me the doctor's name and I can look it up.",
+        "a_te": "డెమో కన్సల్టేషన్ ఫీజు డాక్టర్‌ని బట్టి మారుతుంది. పేరు చెప్తే చెక్ చేస్తాను.",
+        "a_hi": "डेमो कंसल्टेशन फ़ीस डॉक्टर के हिसाब से है। नाम बताएँ, मैं देख लेता हूँ।"
       },
       {
-        "q": "What are the OPD timings?",
-        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
-        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
-        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
+        "q": "Is there a lab at this location?",
+        "a_en": "There is no on-site lab.",
+        "a_te": "ఇక్కడ ల్యాబ్ లేదు.",
+        "a_hi": "यहाँ लैब नहीं है।"
       },
       {
-        "q": "Can I walk in without an appointment?",
-        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
-        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
-        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
-      },
-      {
-        "q": "Do you have a 24x7 emergency?",
-        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
-        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
-        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the OPD entrance has wheelchair access.",
+        "a_te": "అవును, ఓపీడీకి వీల్‌చైర్‌తో వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से ओपीडी में जा सकते हैं।"
       }
     ],
     "phone": "DEMO-H-009",
-    "is_sample_data": true
+    "is_sample_data": true,
+    "slug": "eetha-family-clinic-gachibowli",
+    "accent_color": "#4338CA"
   },
   {
     "hospital_id": "h_gb_05",
-    "slug": "neem-tree-dental-skin-clinic-gachibowli",
-    "name": "Neem Tree Dental & Skin Clinic",
-    "name_spoken_te": "నీమ్ ట్రీ డెంటల్ అండ్ స్కిన్ క్లినిక్",
-    "name_spoken_hi": "नीम ट्री डेंटल एंड स्किन क्लिनिक",
+    "name": "Koyila Eye and Ortho Clinic",
+    "name_spoken_te": "కోయిల ఐ అండ్ ఆర్థో క్లినిక్",
+    "name_spoken_hi": "कोयिला आई ऐंड ऑर्थो क्लिनिक",
     "name_aliases": [
-      "neem tree",
-      "neem tree clinic",
-      "neem clinic"
+      "Koyila Clinic",
+      "Koyila Eye and Ortho",
+      "Koila Clinic"
     ],
     "area_id": "gachibowli",
     "type": "clinic",
-    "address": "Pearl Fountain Square, Gachibowli",
-    "rating": 3.8,
-    "highlight": "Dental, skin and eye consultations.",
+    "address": "Vermilion Leaf Court, Gachibowli",
+    "rating": 3.9,
+    "highlight": "Has bookable sessions for eye and orthopedics consultations.",
     "specialities": [
-      "Dermatology",
-      "Dental",
-      "Ophthalmology"
+      "Ophthalmology",
+      "Orthopedics"
     ],
     "facilities": {
       "emergency_24x7": false,
-      "pharmacy": true,
+      "pharmacy": false,
       "lab": false,
       "ambulance": false,
-      "cashless_insurance": true,
+      "cashless_insurance": false,
       "wheelchair_access": true
     },
     "opd_hours": {
-      "mon": "09:00-21:00",
-      "tue": "09:00-21:00",
-      "wed": "09:00-21:00",
-      "thu": "09:00-21:00",
-      "fri": "09:00-21:00",
-      "sat": "09:00-21:00",
-      "sun": "09:00-20:00"
+      "mon": "09:30-19:00",
+      "tue": "09:30-19:00",
+      "wed": "09:30-19:00",
+      "thu": "09:30-19:00",
+      "fri": "09:30-19:00",
+      "sat": "09:30-18:30",
+      "sun": "09:30-17:30"
     },
     "languages_spoken": [
       "Telugu",
       "Hindi",
       "English"
     ],
-    "accent_color": "#15803D",
     "faqs": [
       {
-        "q": "Is parking available?",
-        "a_en": "Yes, visitor parking is available at the entrance.",
-        "a_te": "Avunu andi, entrance daggara visitors ki parking undi.",
-        "a_hi": "Haan ji, entrance ke paas visitors ki parking hai."
+        "q": "What are the Sunday appointment hours?",
+        "a_en": "The Sunday OPD runs from 09:30 to 17:30. Appointment times depend on the doctor.",
+        "a_te": "ఆదివారం ఓపీడీ 09:30 నుంచి 17:30 వరకు ఉంటుంది. అపాయింట్‌మెంట్ టైమ్ డాక్టర్ షెడ్యూల్ బట్టి ఉంటుంది.",
+        "a_hi": "रविवार को ओपीडी 09:30 से 17:30 तक खुली है। अपॉइंटमेंट का समय डॉक्टर के शेड्यूल पर है।"
       },
       {
-        "q": "Do you accept cashless insurance?",
-        "a_en": "Yes, we accept cashless insurance from most major insurers; please bring your card.",
-        "a_te": "Avunu andi, chala insurance companies tho cashless undi; card teesukuni randi.",
-        "a_hi": "Haan ji, zyadatar insurance companies ka cashless chalta hai; card le aaiye."
+        "q": "How much is the consultation fee?",
+        "a_en": "The sample fee varies by doctor. Tell me the doctor's name and I can look it up.",
+        "a_te": "డెమో కన్సల్టేషన్ ఫీజు డాక్టర్‌ని బట్టి మారుతుంది. పేరు చెప్తే చెక్ చేస్తాను.",
+        "a_hi": "डेमो कंसल्टेशन फ़ीस डॉक्टर के हिसाब से है। नाम बताएँ, मैं देख लेता हूँ।"
       },
       {
-        "q": "What are the OPD timings?",
-        "a_en": "OPD is open every day, 09:00-21:00, and 09:00-20:00 on Sundays.",
-        "a_te": "OPD prathi roju untundi andi, 09:00-21:00, Sunday 09:00-20:00.",
-        "a_hi": "OPD roz khula hai ji, 09:00-21:00, Sunday ko 09:00-20:00."
+        "q": "Is there a lab at this location?",
+        "a_en": "There is no on-site lab.",
+        "a_te": "ఇక్కడ ల్యాబ్ లేదు.",
+        "a_hi": "यहाँ लैब नहीं है।"
       },
       {
-        "q": "Can I walk in without an appointment?",
-        "a_en": "Walk-ins are welcome, but booked appointments are seen first.",
-        "a_te": "Walk-in ga ravachu andi, kani appointment unna vallani mundu chustaru.",
-        "a_hi": "Walk-in aa sakte hain ji, lekin appointment waalon ko pehle dekha jaata hai."
-      },
-      {
-        "q": "Do you have a 24x7 emergency?",
-        "a_en": "We don't have a 24x7 emergency. In an emergency, please call 108 or 112 right away.",
-        "a_te": "Maa daggara 24x7 emergency ledu andi. Emergency aithe ventane 108 leda 112 ki call cheyyandi.",
-        "a_hi": "Hamare yahan 24x7 emergency nahi hai ji. Emergency mein turant 108 ya 112 pe call kijiye."
+        "q": "Is there wheelchair access?",
+        "a_en": "Yes, the OPD entrance has wheelchair access.",
+        "a_te": "అవును, ఓపీడీకి వీల్‌చైర్‌తో వెళ్లొచ్చు.",
+        "a_hi": "हाँ, व्हीलचेयर से ओपीडी में जा सकते हैं।"
       }
     ],
     "phone": "DEMO-H-010",
-    "is_sample_data": true
+    "is_sample_data": true,
+    "slug": "koyila-eye-and-ortho-clinic-gachibowli",
+    "accent_color": "#047857"
   }
 ]

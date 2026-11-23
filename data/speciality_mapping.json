@@ -1,532 +1,173 @@
 {
-  "phrases": [
-    {
-      "phrase": "skin doctor",
-      "lang": "en",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "skin rash",
-      "lang": "en",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "pimples",
-      "lang": "en",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "acne",
-      "lang": "en",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "hair fall",
-      "lang": "en",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "dermatologist",
-      "lang": "en",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "itching",
-      "lang": "en",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "fever",
-      "lang": "en",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "cold and cough",
-      "lang": "en",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "body pains",
-      "lang": "en",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "general physician",
-      "lang": "en",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "sugar check",
-      "lang": "en",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "bp check",
-      "lang": "en",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "child specialist",
-      "lang": "en",
-      "speciality": "Pediatrics"
-    },
-    {
-      "phrase": "baby doctor",
-      "lang": "en",
-      "speciality": "Pediatrics"
-    },
-    {
-      "phrase": "kids doctor",
-      "lang": "en",
-      "speciality": "Pediatrics"
-    },
-    {
-      "phrase": "paediatrician",
-      "lang": "en",
-      "speciality": "Pediatrics"
-    },
-    {
-      "phrase": "ladies doctor",
-      "lang": "en",
-      "speciality": "Gynecology"
-    },
-    {
-      "phrase": "periods problem",
-      "lang": "en",
-      "speciality": "Gynecology"
-    },
-    {
-      "phrase": "pregnancy checkup",
-      "lang": "en",
-      "speciality": "Gynecology"
-    },
-    {
-      "phrase": "gynecologist",
-      "lang": "en",
-      "speciality": "Gynecology"
-    },
-    {
-      "phrase": "knee pain",
-      "lang": "en",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "back pain",
-      "lang": "en",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "bone doctor",
-      "lang": "en",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "joint pain",
-      "lang": "en",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "ear pain",
-      "lang": "en",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "throat infection",
-      "lang": "en",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "sinus",
-      "lang": "en",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "nose block",
-      "lang": "en",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "heart doctor",
-      "lang": "en",
-      "speciality": "Cardiology"
-    },
-    {
-      "phrase": "heart checkup",
-      "lang": "en",
-      "speciality": "Cardiology"
-    },
-    {
-      "phrase": "cardiologist",
-      "lang": "en",
-      "speciality": "Cardiology"
-    },
-    {
-      "phrase": "tooth pain",
-      "lang": "en",
-      "speciality": "Dental"
-    },
-    {
-      "phrase": "dentist",
-      "lang": "en",
-      "speciality": "Dental"
-    },
-    {
-      "phrase": "braces",
-      "lang": "en",
-      "speciality": "Dental"
-    },
-    {
-      "phrase": "teeth cleaning",
-      "lang": "en",
-      "speciality": "Dental"
-    },
-    {
-      "phrase": "eye doctor",
-      "lang": "en",
-      "speciality": "Ophthalmology"
-    },
-    {
-      "phrase": "blurry vision",
-      "lang": "en",
-      "speciality": "Ophthalmology"
-    },
-    {
-      "phrase": "eye checkup",
-      "lang": "en",
-      "speciality": "Ophthalmology"
-    },
-    {
-      "phrase": "spectacles",
-      "lang": "en",
-      "speciality": "Ophthalmology"
-    },
-    {
-      "phrase": "charmam doctor",
-      "lang": "te",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "చర్మం డాక్టర్",
-      "lang": "te",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "motimalu",
-      "lang": "te",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "మొటిమలు",
-      "lang": "te",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "juttu raalutundi",
-      "lang": "te",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "జుట్టు రాలుతుంది",
-      "lang": "te",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "jvaram",
-      "lang": "te",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "జ్వరం",
-      "lang": "te",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "jaluba daggu",
-      "lang": "te",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "జలుబు దగ్గు",
-      "lang": "te",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "pillala doctor",
-      "lang": "te",
-      "speciality": "Pediatrics"
-    },
-    {
-      "phrase": "పిల్లల డాక్టర్",
-      "lang": "te",
-      "speciality": "Pediatrics"
-    },
-    {
-      "phrase": "aadavalla doctor",
-      "lang": "te",
-      "speciality": "Gynecology"
-    },
-    {
-      "phrase": "ఆడవాళ్ళ డాక్టర్",
-      "lang": "te",
-      "speciality": "Gynecology"
-    },
-    {
-      "phrase": "nelasari samasya",
-      "lang": "te",
-      "speciality": "Gynecology"
-    },
-    {
-      "phrase": "నెలసరి సమస్య",
-      "lang": "te",
-      "speciality": "Gynecology"
-    },
-    {
-      "phrase": "mokalu noppi",
-      "lang": "te",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "మోకాలు నొప్పి",
-      "lang": "te",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "nadumu noppi",
-      "lang": "te",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "నడుము నొప్పి",
-      "lang": "te",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "emukala doctor",
-      "lang": "te",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "ఎముకల డాక్టర్",
-      "lang": "te",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "chevi noppi",
-      "lang": "te",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "చెవి నొప్పి",
-      "lang": "te",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "gonthu noppi",
-      "lang": "te",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "గొంతు నొప్పి",
-      "lang": "te",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "gunde doctor",
-      "lang": "te",
-      "speciality": "Cardiology"
-    },
-    {
-      "phrase": "గుండె డాక్టర్",
-      "lang": "te",
-      "speciality": "Cardiology"
-    },
-    {
-      "phrase": "pallu noppi",
-      "lang": "te",
-      "speciality": "Dental"
-    },
-    {
-      "phrase": "పళ్ళు నొప్పి",
-      "lang": "te",
-      "speciality": "Dental"
-    },
-    {
-      "phrase": "kanti doctor",
-      "lang": "te",
-      "speciality": "Ophthalmology"
-    },
-    {
-      "phrase": "కంటి డాక్టర్",
-      "lang": "te",
-      "speciality": "Ophthalmology"
-    },
-    {
-      "phrase": "kallu sariga kanipinchatledu",
-      "lang": "te",
-      "speciality": "Ophthalmology"
-    },
-    {
-      "phrase": "skin ka doctor",
-      "lang": "hi",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "त्वचा का डॉक्टर",
-      "lang": "hi",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "muhase",
-      "lang": "hi",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "मुंहासे",
-      "lang": "hi",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "baal jhad rahe hain",
-      "lang": "hi",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "बाल झड़ रहे हैं",
-      "lang": "hi",
-      "speciality": "Dermatology"
-    },
-    {
-      "phrase": "bukhar",
-      "lang": "hi",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "बुखार",
-      "lang": "hi",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "sardi khansi",
-      "lang": "hi",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "सर्दी खांसी",
-      "lang": "hi",
-      "speciality": "General Medicine"
-    },
-    {
-      "phrase": "bachchon ka doctor",
-      "lang": "hi",
-      "speciality": "Pediatrics"
-    },
-    {
-      "phrase": "बच्चों का डॉक्टर",
-      "lang": "hi",
-      "speciality": "Pediatrics"
-    },
-    {
-      "phrase": "mahila doctor",
-      "lang": "hi",
-      "speciality": "Gynecology"
-    },
-    {
-      "phrase": "महिला डॉक्टर",
-      "lang": "hi",
-      "speciality": "Gynecology"
-    },
-    {
-      "phrase": "periods ki problem",
-      "lang": "hi",
-      "speciality": "Gynecology"
-    },
-    {
-      "phrase": "ghutne mein dard",
-      "lang": "hi",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "घुटने में दर्द",
-      "lang": "hi",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "kamar dard",
-      "lang": "hi",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "कमर दर्द",
-      "lang": "hi",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "haddi ka doctor",
-      "lang": "hi",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "हड्डी का डॉक्टर",
-      "lang": "hi",
-      "speciality": "Orthopedics"
-    },
-    {
-      "phrase": "kaan mein dard",
-      "lang": "hi",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "कान में दर्द",
-      "lang": "hi",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "gale mein kharash",
-      "lang": "hi",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "गले में खराश",
-      "lang": "hi",
-      "speciality": "ENT"
-    },
-    {
-      "phrase": "dil ka doctor",
-      "lang": "hi",
-      "speciality": "Cardiology"
-    },
-    {
-      "phrase": "दिल का डॉक्टर",
-      "lang": "hi",
-      "speciality": "Cardiology"
-    },
-    {
-      "phrase": "daant dard",
-      "lang": "hi",
-      "speciality": "Dental"
-    },
-    {
-      "phrase": "दांत दर्द",
-      "lang": "hi",
-      "speciality": "Dental"
-    },
-    {
-      "phrase": "aankh ka doctor",
-      "lang": "hi",
-      "speciality": "Ophthalmology"
-    },
-    {
-      "phrase": "आंख का डॉक्टर",
-      "lang": "hi",
-      "speciality": "Ophthalmology"
-    },
-    {
-      "phrase": "aankh mein dikkat",
-      "lang": "hi",
-      "speciality": "Ophthalmology"
-    }
-  ],
   "emergency_phrases": [
+    {
+      "phrase": "severe chest pain right now",
+      "lang": "en"
+    },
+    {
+      "phrase": "my chest hurts and I cannot breathe",
+      "lang": "en"
+    },
+    {
+      "phrase": "I can't breathe",
+      "lang": "en"
+    },
+    {
+      "phrase": "there is heavy bleeding",
+      "lang": "en"
+    },
+    {
+      "phrase": "the bleeding won't stop",
+      "lang": "en"
+    },
+    {
+      "phrase": "they passed out and won't wake up",
+      "lang": "en"
+    },
+    {
+      "phrase": "there has been a serious accident",
+      "lang": "en"
+    },
+    {
+      "phrase": "their face suddenly drooped on one side",
+      "lang": "en"
+    },
+    {
+      "phrase": "suddenly they cannot speak clearly",
+      "lang": "en"
+    },
+    {
+      "phrase": "someone swallowed poison",
+      "lang": "en"
+    },
+    {
+      "phrase": "I might hurt myself right now",
+      "lang": "en"
+    },
+    {
+      "phrase": "I am thinking about suicide",
+      "lang": "en"
+    },
+    {
+      "phrase": "they are not responding",
+      "lang": "en"
+    },
+    {
+      "phrase": "we need emergency help now",
+      "lang": "en"
+    },
+    {
+      "phrase": "విపరీతంగా ఛాతీ నొప్పిగా ఉంది",
+      "lang": "te"
+    },
+    {
+      "phrase": "ఊపిరి ఆడట్లేదు",
+      "lang": "te"
+    },
+    {
+      "phrase": "చాలా రక్తం పోతోంది",
+      "lang": "te"
+    },
+    {
+      "phrase": "స్పృహ తప్పి పడిపోయారు",
+      "lang": "te"
+    },
+    {
+      "phrase": "పెద్ద ప్రమాదం జరిగింది",
+      "lang": "te"
+    },
+    {
+      "phrase": "ముఖం ఒక్కసారిగా ఒకవైపు వాలింది",
+      "lang": "te"
+    },
+    {
+      "phrase": "ఒక్కసారిగా మాట తడబడుతోంది",
+      "lang": "te"
+    },
+    {
+      "phrase": "విషం తాగారు",
+      "lang": "te"
+    },
+    {
+      "phrase": "నాకు ఆత్మహత్య చేసుకోవాలనిపిస్తోంది",
+      "lang": "te"
+    },
+    {
+      "phrase": "oopiri aadatledu",
+      "lang": "te"
+    },
+    {
+      "phrase": "chala bleeding avutondi",
+      "lang": "te"
+    },
+    {
+      "phrase": "pedda accident ayyindi",
+      "lang": "te"
+    },
+    {
+      "phrase": "spruha ledu",
+      "lang": "te"
+    },
+    {
+      "phrase": "ventane emergency help kavali",
+      "lang": "te"
+    },
+    {
+      "phrase": "सीने में बहुत तेज़ दर्द है",
+      "lang": "hi"
+    },
+    {
+      "phrase": "साँस नहीं आ रही है",
+      "lang": "hi"
+    },
+    {
+      "phrase": "बहुत ख़ून बह रहा है",
+      "lang": "hi"
+    },
+    {
+      "phrase": "वह बेहोश है और होश नहीं आ रहा",
+      "lang": "hi"
+    },
+    {
+      "phrase": "बहुत बड़ा हादसा हुआ है",
+      "lang": "hi"
+    },
+    {
+      "phrase": "अचानक चेहरा एक तरफ़ झुक गया है",
+      "lang": "hi"
+    },
+    {
+      "phrase": "अचानक बोल नहीं पा रहे हैं",
+      "lang": "hi"
+    },
+    {
+      "phrase": "किसी ने ज़हर पी लिया है",
+      "lang": "hi"
+    },
+    {
+      "phrase": "मुझे आत्महत्या करने का ख़याल आ रहा है",
+      "lang": "hi"
+    },
+    {
+      "phrase": "saans nahi aa rahi",
+      "lang": "hi"
+    },
+    {
+      "phrase": "bahut khoon beh raha hai",
+      "lang": "hi"
+    },
+    {
+      "phrase": "bada accident hua hai",
+      "lang": "hi"
+    },
+    {
+      "phrase": "woh behosh hai",
+      "lang": "hi"
+    },
+    {
+      "phrase": "abhi emergency help chahiye",
+      "lang": "hi"
+    },
     {
       "phrase": "chest pain",
       "lang": "en"
@@ -628,10 +269,6 @@
       "lang": "te"
     },
     {
-      "phrase": "spruha ledu",
-      "lang": "te"
-    },
-    {
       "phrase": "స్పృహ లేదు",
       "lang": "te"
     },
@@ -665,10 +302,6 @@
     },
     {
       "phrase": "सीने में दर्द",
-      "lang": "hi"
-    },
-    {
-      "phrase": "saans nahi aa rahi",
       "lang": "hi"
     },
     {
@@ -713,8 +346,840 @@
     }
   ],
   "emergency_reply": {
-    "te": "Idi emergency laaga undi andi. Ventane 108 leda 112 ki call cheyyandi. Emergency ki nenu booking cheyyalenu.",
-    "hi": "Yeh emergency lag rahi hai. Turant 108 ya 112 pe call kijiye. Emergency ke liye main booking nahi kar sakti.",
-    "en": "This sounds like an emergency. Please call 108 or 112 immediately. I can't book appointments for emergencies."
-  }
+    "te": "ఎమర్జెన్సీ సహాయం కోసం ఇప్పుడే 112కి కాల్ చేయండి. అంబులెన్స్ కోసం 108కి కూడా కాల్ చేయవచ్చు.",
+    "hi": "इमरजेंसी मदद के लिए अभी 112 पर कॉल करें। एम्बुलेंस के लिए 108 पर भी कॉल कर सकते हैं।",
+    "en": "Please call 112 now for emergency help. You can also call 108 for an ambulance."
+  },
+  "phrases": [
+    {
+      "phrase": "general physician",
+      "lang": "en",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "fever",
+      "lang": "en",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "routine health check-up",
+      "lang": "en",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "జ్వరం",
+      "lang": "te",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "జనరల్ డాక్టర్",
+      "lang": "te",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "jwaram ki doctor",
+      "lang": "te",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "general checkup kavali",
+      "lang": "te",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "बुखार के लिए डॉक्टर",
+      "lang": "hi",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "जनरल फिज़िशियन",
+      "lang": "hi",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "bukhar ke liye doctor",
+      "lang": "hi",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "general checkup chahiye",
+      "lang": "hi",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "skin doctor",
+      "lang": "en",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "skin specialist",
+      "lang": "en",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "చర్మం డాక్టర్",
+      "lang": "te",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "చర్మం మీద దద్దుర్లు",
+      "lang": "te",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "skin doctor kavali",
+      "lang": "te",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "charmam doctor",
+      "lang": "te",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "त्वचा का डॉक्टर",
+      "lang": "hi",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "स्किन स्पेशलिस्ट",
+      "lang": "hi",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "skin ka doctor",
+      "lang": "hi",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "twacha ka specialist",
+      "lang": "hi",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "gynecologist appointment",
+      "lang": "en",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "periods problem",
+      "lang": "en",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "గైనకాలజిస్ట్ కావాలి",
+      "lang": "te",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "పీరియడ్స్ సమస్య",
+      "lang": "te",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "periods problem undi",
+      "lang": "te",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "gynac appointment kavali",
+      "lang": "te",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "गायनेकोलॉजिस्ट चाहिए",
+      "lang": "hi",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "पीरियड्स की दिक्कत",
+      "lang": "hi",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "periods ki problem",
+      "lang": "hi",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "gynae appointment chahiye",
+      "lang": "hi",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "children's doctor",
+      "lang": "en",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "pediatrician appointment",
+      "lang": "en",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "పిల్లల డాక్టర్",
+      "lang": "te",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "చిన్నపిల్లకి డాక్టర్ కావాలి",
+      "lang": "te",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "pillala doctor",
+      "lang": "te",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "papa ki doctor kavali",
+      "lang": "te",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "बच्चों का डॉक्टर",
+      "lang": "hi",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "पीडियाट्रिशियन चाहिए",
+      "lang": "hi",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "bachchon ka doctor",
+      "lang": "hi",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "bacche ka checkup",
+      "lang": "hi",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "knee pain",
+      "lang": "en",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "bone and joint specialist",
+      "lang": "en",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "మోకాలి నొప్పి",
+      "lang": "te",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "ఎముకల డాక్టర్",
+      "lang": "te",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "mokali noppi",
+      "lang": "te",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "ortho doctor kavali",
+      "lang": "te",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "घुटने का दर्द",
+      "lang": "hi",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "हड्डियों का डॉक्टर",
+      "lang": "hi",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "ghutne mein dard",
+      "lang": "hi",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "haddi ka doctor",
+      "lang": "hi",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "ear doctor",
+      "lang": "en",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "ear nose and throat specialist",
+      "lang": "en",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "చెవి నొప్పి",
+      "lang": "te",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "చెవి ముక్కు గొంతు డాక్టర్",
+      "lang": "te",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "chevi noppi",
+      "lang": "te",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "ENT doctor kavali",
+      "lang": "te",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "कान में दर्द",
+      "lang": "hi",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "नाक कान गले का डॉक्टर",
+      "lang": "hi",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "kaan mein dard",
+      "lang": "hi",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "naak kaan gale ka doctor",
+      "lang": "hi",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "heart specialist",
+      "lang": "en",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "routine cardiologist follow-up",
+      "lang": "en",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "గుండె డాక్టర్",
+      "lang": "te",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "కార్డియాలజీ ఫాలోఅప్",
+      "lang": "te",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "gunde doctor kavali",
+      "lang": "te",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "cardio follow-up undi",
+      "lang": "te",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "दिल का डॉक्टर",
+      "lang": "hi",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "कार्डियोलॉजी फ़ॉलो-अप",
+      "lang": "hi",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "dil ka doctor",
+      "lang": "hi",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "cardiologist ka follow-up",
+      "lang": "hi",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "dentist appointment",
+      "lang": "en",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "toothache",
+      "lang": "en",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "పంటి నొప్పి",
+      "lang": "te",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "పళ్ల డాక్టర్",
+      "lang": "te",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "pallu noppi",
+      "lang": "te",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "dental checkup kavali",
+      "lang": "te",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "दाँत में दर्द",
+      "lang": "hi",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "दाँत का डॉक्टर",
+      "lang": "hi",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "daant mein dard",
+      "lang": "hi",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "dentist appointment chahiye",
+      "lang": "hi",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "eye doctor",
+      "lang": "en",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "routine eye check-up",
+      "lang": "en",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "కంటి డాక్టర్",
+      "lang": "te",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "కంటి పరీక్ష కావాలి",
+      "lang": "te",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "kanti doctor",
+      "lang": "te",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "eye checkup kavali",
+      "lang": "te",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "आँख का डॉक्टर",
+      "lang": "hi",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "नज़र की जाँच",
+      "lang": "hi",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "aankh ka doctor",
+      "lang": "hi",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "aankhon ka checkup",
+      "lang": "hi",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "skin rash",
+      "lang": "en",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "pimples",
+      "lang": "en",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "acne",
+      "lang": "en",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "hair fall",
+      "lang": "en",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "dermatologist",
+      "lang": "en",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "itching",
+      "lang": "en",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "cold and cough",
+      "lang": "en",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "body pains",
+      "lang": "en",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "sugar check",
+      "lang": "en",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "bp check",
+      "lang": "en",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "child specialist",
+      "lang": "en",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "baby doctor",
+      "lang": "en",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "kids doctor",
+      "lang": "en",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "paediatrician",
+      "lang": "en",
+      "speciality": "Pediatrics"
+    },
+    {
+      "phrase": "ladies doctor",
+      "lang": "en",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "pregnancy checkup",
+      "lang": "en",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "gynecologist",
+      "lang": "en",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "back pain",
+      "lang": "en",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "bone doctor",
+      "lang": "en",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "joint pain",
+      "lang": "en",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "ear pain",
+      "lang": "en",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "throat infection",
+      "lang": "en",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "sinus",
+      "lang": "en",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "nose block",
+      "lang": "en",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "heart doctor",
+      "lang": "en",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "heart checkup",
+      "lang": "en",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "cardiologist",
+      "lang": "en",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "tooth pain",
+      "lang": "en",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "dentist",
+      "lang": "en",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "braces",
+      "lang": "en",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "teeth cleaning",
+      "lang": "en",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "blurry vision",
+      "lang": "en",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "eye checkup",
+      "lang": "en",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "spectacles",
+      "lang": "en",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "motimalu",
+      "lang": "te",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "మొటిమలు",
+      "lang": "te",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "juttu raalutundi",
+      "lang": "te",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "జుట్టు రాలుతుంది",
+      "lang": "te",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "jvaram",
+      "lang": "te",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "jaluba daggu",
+      "lang": "te",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "జలుబు దగ్గు",
+      "lang": "te",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "aadavalla doctor",
+      "lang": "te",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "ఆడవాళ్ళ డాక్టర్",
+      "lang": "te",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "nelasari samasya",
+      "lang": "te",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "నెలసరి సమస్య",
+      "lang": "te",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "mokalu noppi",
+      "lang": "te",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "మోకాలు నొప్పి",
+      "lang": "te",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "nadumu noppi",
+      "lang": "te",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "నడుము నొప్పి",
+      "lang": "te",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "emukala doctor",
+      "lang": "te",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "gonthu noppi",
+      "lang": "te",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "గొంతు నొప్పి",
+      "lang": "te",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "gunde doctor",
+      "lang": "te",
+      "speciality": "Cardiology"
+    },
+    {
+      "phrase": "పళ్ళు నొప్పి",
+      "lang": "te",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "kallu sariga kanipinchatledu",
+      "lang": "te",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "muhase",
+      "lang": "hi",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "मुंहासे",
+      "lang": "hi",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "baal jhad rahe hain",
+      "lang": "hi",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "बाल झड़ रहे हैं",
+      "lang": "hi",
+      "speciality": "Dermatology"
+    },
+    {
+      "phrase": "bukhar",
+      "lang": "hi",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "बुखार",
+      "lang": "hi",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "sardi khansi",
+      "lang": "hi",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "सर्दी खांसी",
+      "lang": "hi",
+      "speciality": "General Medicine"
+    },
+    {
+      "phrase": "mahila doctor",
+      "lang": "hi",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "महिला डॉक्टर",
+      "lang": "hi",
+      "speciality": "Gynecology"
+    },
+    {
+      "phrase": "घुटने में दर्द",
+      "lang": "hi",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "kamar dard",
+      "lang": "hi",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "कमर दर्द",
+      "lang": "hi",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "हड्डी का डॉक्टर",
+      "lang": "hi",
+      "speciality": "Orthopedics"
+    },
+    {
+      "phrase": "gale mein kharash",
+      "lang": "hi",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "गले में खराश",
+      "lang": "hi",
+      "speciality": "ENT"
+    },
+    {
+      "phrase": "daant dard",
+      "lang": "hi",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "दांत दर्द",
+      "lang": "hi",
+      "speciality": "Dental"
+    },
+    {
+      "phrase": "आंख का डॉक्टर",
+      "lang": "hi",
+      "speciality": "Ophthalmology"
+    },
+    {
+      "phrase": "aankh mein dikkat",
+      "lang": "hi",
+      "speciality": "Ophthalmology"
+    }
+  ]
 }

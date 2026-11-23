@@ -20,13 +20,15 @@ from backend.catalog.models import (
     parse_range,
 )
 from backend.catalog.schedule import (
-    doctor_times,
+    every_day_times,
     opd_range,
     restaurant_times,
-    works_every_day_same_hours,
+    works_every_day,
 )
 
 PER_AREA = 5
+# The greeting must name Vaani: Latin, Telugu or Devanagari spelling.
+VAANI_SPELLINGS = ("Vaani", "వాణి", "वाणी")
 MIN_PHRASES = 60
 MIN_EMERGENCY = 30
 TEST_CALLS = 40
@@ -250,9 +252,9 @@ def _check_doctors(cat: Catalog, r: Report) -> None:
 
 
 def _require_daily(doc: Doctor, why: str, r: Report) -> None:
-    if not works_every_day_same_hours(doc):
+    if not works_every_day(doc):
         r.error(
-            f"doctors.json [{doc.doctor_id}]: {why}, so it must work all 7 days with the same hours "
+            f"doctors.json [{doc.doctor_id}]: {why}, so it must work all 7 days "
             "(CONTRACTS §7 weekday rule)"
         )
 
@@ -273,10 +275,10 @@ def _check_doctor_availability(cat: Catalog, r: Report) -> None:
         if doc.doctor_id not in flagged:
             flagged.add(doc.doctor_id)
             _require_daily(doc, "appears in doctor_availability.json", r)
-        valid = set(doctor_times(doc, "mon")) if works_every_day_same_hours(doc) else set()
+        valid = set(every_day_times(doc))
         for t in row.booked_times + row.blocked_times:
             if valid and t not in valid:
-                r.error(f"{tag}: {t} is not a slot inside the schedule ({doc.schedule.get('mon')})")
+                r.error(f"{tag}: {t} is not a slot on every weekday of the schedule")
         for d in _dupes(row.booked_times + row.blocked_times):
             r.error(f"{tag}: time {d} listed twice (booked and/or blocked)")
         blocked += len(row.blocked_times)
@@ -361,8 +363,9 @@ def _check_test_calls(cat: Catalog, r: Report) -> None:
                 if doc.doctor_id not in flagged:
                     flagged.add(doc.doctor_id)
                     _require_daily(doc, "is used in test_calls.json", r)
-                if e.time is not None and works_every_day_same_hours(doc) and e.time not in doctor_times(doc, "mon"):
-                    r.error(f"{tag}: {e.time} is not a slot of {e.doctor_id}")
+                common = every_day_times(doc)
+                if e.time is not None and common and e.time not in common:
+                    r.error(f"{tag}: {e.time} is not a slot of {e.doctor_id} on every weekday")
         if t.service == "restaurant" and e.business_id in rest and e.time is not None:
             x = rest[e.business_id]
             if any(e.time not in restaurant_times(x, d) for d in DAYS):
@@ -395,7 +398,7 @@ def _check_agent_phrases(cat: Catalog, r: Report) -> None:
                 r.error(f"agent_phrases.json [{p.key}]: {lang} has {len(lines)} variations, need 3")
             if p.key == "greeting_with_ai_disclosure":
                 for line in lines:
-                    if "Vaani" not in line or "AI" not in line:
+                    if not any(n in line for n in VAANI_SPELLINGS) or "AI" not in line:
                         r.error(f"agent_phrases.json [{p.key}]: {lang} line must say Vaani is an AI: {line!r}")
             if p.key == "emergency_redirect":
                 for line in lines:
