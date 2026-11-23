@@ -72,6 +72,8 @@ def test_from_env_builds_fallback(monkeypatch: Any) -> None:
     assert built.chain[0].extra_body == {"reasoning_effort": "none"} and built.chain[0].retries == 0
     assert built.chain[1].extra_body == {"reasoning_effort": "low"}  # LLM_REASONING_EFFORT default
     assert built.chain[-1].extra_body == {} and built.chain[-1].timeout_s == 4.5 and built.chain[-1].retries == 1
+    # earlier links give up fast (a hung free-tier model mustn't stack timeouts before the fallback)
+    assert all(x.timeout_s == 3.0 for x in built.chain[:-1])
 
 
 async def test_three_model_chain_skips_cooling_models() -> None:

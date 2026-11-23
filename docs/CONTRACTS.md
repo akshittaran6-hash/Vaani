@@ -115,7 +115,7 @@ Anon (frontend) reads `bookings` through **column-level grants that leave out `p
 `payment_id` PK, `booking_id` FK, `amount_inr`, `provider` (`razorpay`\|`stripe`\|`mock`), `provider_ref`, `status` (`created`\|`paid`\|`failed`\|`refunded`), `created_at`, `updated_at`.
 
 ### calls
-`call_id` PK, `channel` (`phone`\|`web`), `direction` (`inbound`\|`outbound`), `from_number`, `started_at`, `ended_at`, `language text[]`, `services_used text[]`, `transcript {}` (`[{"ts","speaker":"caller|vaani","lang","text"}]`), `outcome_json {}` (§5), `tool_timeline {}` (`[{"ts","tool","args","result","summary","ms"}]`), `latency_json {}` (`{llm_median, llm_p95, llm_calls, per_step_ms, voice_turns: [§4 latency rows], barge_in_ms: [..], tokens_in, tokens_out}`), `recording_url`, `summary` (2 lines).
+`call_id` PK, `channel` (`phone`\|`web`), `direction` (`inbound`\|`outbound`), `from_number`, `started_at`, `ended_at`, `language text[]`, `services_used text[]`, `transcript {}` (`[{"ts","speaker":"caller|vaani","lang","text"}]`), `outcome_json {}` (§5), `tool_timeline {}` (`[{"ts","tool","args","result","summary","ms"}]`), `latency_json {}` (`{llm_median, llm_p95, llm_calls, per_step_ms, per_step_model, voice_turns: [§4 latency rows], barge_in_ms: [..], tokens_in, tokens_out}`), `recording_url`, `summary` (2 lines).
 
 The row is inserted at `call_started` and completed by the post-call processor.
 

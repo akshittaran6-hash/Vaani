@@ -459,6 +459,7 @@ class Session:
                         {
                             **lat,
                             "per_step_ms": self.ctx.llm_ms,
+                            "per_step_model": self.ctx.llm_models,
                             "voice_turns": self.ctx.voice_turns,
                             "barge_in_ms": self.ctx.barge_in_ms,
                             "tokens_in": self.ctx.tokens_in,

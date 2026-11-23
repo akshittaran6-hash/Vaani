@@ -26,6 +26,7 @@ Baseline on `main`: **195 passed** · ruff ✓ · mypy ✓ · eval 40/40 (placeh
 **Done:** `LLM_MODEL` takes a comma list of models (`model@effort` = that model's `reasoning_effort`); `LLM_FALLBACK_*` adds another provider last; `FallbackLLM` tries them in order, skips a model for 30 s after a 429, and only the last one retries. `LLMReply.model` + `ctx.llm_models`: the eval prints steps by model. `.env`: Groq chain (qwen3.8-27b@none → gpt-oss-20b@low → gpt-oss-120b@low) → Featherless Qwen3-30B.
 **Findings:** Groq free = 8K tokens/min and 1K requests/day **per model** (headers); our steps are ~2.7K tokens, so ~3 steps/min/model. Groq steps 0.48–0.69 s median vs Featherless 2.1 s (p90 6.6 s). gpt-oss sometimes returns HTTP 400 (native tool call / invalid JSON) → next model.
 **Tests / checks:** `uv run pytest -q` → **316 passed** · ruff ✓ · mypy ✓ · eval slice 12/12 on the chain (36/59 steps still served by Featherless because the eval runs calls back-to-back).
+**PR #5 review:** chain links before the last now give up after 3 s (a hung free-tier model could otherwise stack 4 × 4.5 s before the voice apology); `calls.latency_json.per_step_model` records which model answered. Smoke test 3/3, step median 0.7 s.
 **Next steps:** voice test once Sarvam has credits; consider trimming history/tool results in the prompt to fit more steps in the free budget; Cerebras free tier as another chain member if a key is available.
 
 ### 2026-11-23 17:45 IST · Self-harm reply · Pranav via Claude Code · done (18:00 IST)

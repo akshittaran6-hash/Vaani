@@ -174,6 +174,11 @@ class ScriptedLLM:
         return parse_reply(json.dumps(obj, ensure_ascii=False))
 
 
+# Groq answers in well under a second; if an earlier model in the chain hasn't answered by
+# then, the next one is the better bet (otherwise a hang could stack 4 × the timeout).
+CHAIN_FAIL_FAST_S = 3.0
+
+
 def from_env(timeout_s: float | None = None, retries: int | None = None) -> OpenAICompatLLM | FallbackLLM:
     """Text mode (eval, CLI) keeps the patient defaults; voice passes a short timeout, because a
     caller can't wait 25 s (the provider sometimes stalls for 10–20 s). LLM_MODEL may list several
@@ -209,4 +214,5 @@ def from_env(timeout_s: float | None = None, retries: int | None = None) -> Open
         return chain[0]
     for llm in chain[:-1]:
         llm.retries = 0  # fail fast to the next one; only the last gets retries
+        llm.timeout_s = min(llm.timeout_s, CHAIN_FAIL_FAST_S)
     return FallbackLLM(chain=chain)
