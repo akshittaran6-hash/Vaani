@@ -1,6 +1,7 @@
 import "./styles.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { voiceDemoUrl } from "./voice-demo.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -8,6 +9,11 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const isReduced = reducedMotion.matches;
 
 document.documentElement.classList.add("js");
+
+const voiceUrl = voiceDemoUrl(import.meta.env.VITE_VAANI_VOICE_URL, window.location.hostname);
+document.querySelectorAll("[data-voice-link]").forEach((link) => {
+  link.setAttribute("href", voiceUrl);
+});
 
 /* Header and mobile navigation */
 const header = document.querySelector("[data-header]");
